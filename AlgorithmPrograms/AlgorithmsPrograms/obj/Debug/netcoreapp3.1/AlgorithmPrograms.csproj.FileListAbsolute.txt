@@ -1,0 +1,11 @@
+C:\Users\tree\source\repos\AlgorithmPrograms\AlgorithmsPrograms\obj\Debug\netcoreapp3.1\AlgorithmPrograms.csprojAssemblyReference.cache
+C:\Users\tree\source\repos\AlgorithmPrograms\AlgorithmsPrograms\obj\Debug\netcoreapp3.1\AlgorithmPrograms.AssemblyInfoInputs.cache
+C:\Users\tree\source\repos\AlgorithmPrograms\AlgorithmsPrograms\obj\Debug\netcoreapp3.1\AlgorithmPrograms.AssemblyInfo.cs
+C:\Users\tree\source\repos\AlgorithmPrograms\AlgorithmsPrograms\bin\Debug\netcoreapp3.1\AlgorithmPrograms.exe
+C:\Users\tree\source\repos\AlgorithmPrograms\AlgorithmsPrograms\bin\Debug\netcoreapp3.1\AlgorithmPrograms.deps.json
+C:\Users\tree\source\repos\AlgorithmPrograms\AlgorithmsPrograms\bin\Debug\netcoreapp3.1\AlgorithmPrograms.runtimeconfig.json
+C:\Users\tree\source\repos\AlgorithmPrograms\AlgorithmsPrograms\bin\Debug\netcoreapp3.1\AlgorithmPrograms.runtimeconfig.dev.json
+C:\Users\tree\source\repos\AlgorithmPrograms\AlgorithmsPrograms\bin\Debug\netcoreapp3.1\AlgorithmPrograms.dll
+C:\Users\tree\source\repos\AlgorithmPrograms\AlgorithmsPrograms\bin\Debug\netcoreapp3.1\AlgorithmPrograms.pdb
+C:\Users\tree\source\repos\AlgorithmPrograms\AlgorithmsPrograms\obj\Debug\netcoreapp3.1\AlgorithmPrograms.dll
+C:\Users\tree\source\repos\AlgorithmPrograms\AlgorithmsPrograms\obj\Debug\netcoreapp3.1\AlgorithmPrograms.pdb
