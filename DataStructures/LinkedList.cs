@@ -23,7 +23,7 @@ namespace DataStructures
             }
             else
             {
-                //head = head.next;
+              
                 head.next = newnode;
                 newnode = head;
             }

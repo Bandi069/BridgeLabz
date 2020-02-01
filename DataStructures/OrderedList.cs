@@ -39,10 +39,20 @@ namespace DataStructures
                 int number = Utility.UserIntInput();
                 OrderList.additem(number);
 
-                Console.WriteLine("Enter number to add to list");
+                Console.WriteLine("Enter number to remove from the list");
                 int removeitem = Utility.UserIntInput();
                 OrderList.RemoveItem(removeitem);
 
+                Console.WriteLine("Enter a number to Search in the list ");
+                int Searchnumber = Utility.UserIntInput();
+                OrderList.Search(Searchnumber);
+
+                Console.WriteLine("The Size of List is :");
+                OrderList.size();
+
+                Console.WriteLine("Enter the valuue to get the index position");
+                int indexnumber = Utility.UserIntInput();
+                OrderList.index(indexnumber);
 
             }
             catch (Exception e)
@@ -52,5 +62,7 @@ namespace DataStructures
 
 
         }
+
+      
     }
 }
