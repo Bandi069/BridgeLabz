@@ -12,10 +12,12 @@ namespace DataStructures
             Console.WriteLine("Enter a String to add Dequeue");
             string Str = Utility.UserStringInput();
             Char[] array = Str.ToCharArray();
-            for(int i=0;i<array.Length;i++)
+            Console.WriteLine("Dequeue ");
+            for (int i = 0; i < array.Length; i++)
             {
-
+                dequeue.AddRear(array[i]);
             }
+
         }
 
     }

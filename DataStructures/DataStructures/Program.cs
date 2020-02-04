@@ -12,13 +12,15 @@ namespace DataStructures
         static void Main(string[] args)
         {
             //// Printing List of Programs 
-            Console.WriteLine("*********************");
-            Console.WriteLine("1. UnOrder List and Its Implementation");
-            Console.WriteLine("2. Order List and its implementation");
+            Console.WriteLine("*********************\n");
+            Console.WriteLine("1. UnOrder List and Its implementation");
+            Console.WriteLine("2. Order List and Its implementation");
             Console.WriteLine("3. Balanced Paranthesis");
             Console.WriteLine("4. Banking Counter ");
             Console.WriteLine("5. Palindromic Checker using Dequeue");
-            Console.WriteLine("*********************");
+            Console.WriteLine("6. Print Calender Program");
+            Console.WriteLine("7. Print Prime Range Program");
+            Console.WriteLine("\n*********************");
 
             //// User Input value taken from utility class by calling 
 
@@ -46,6 +48,14 @@ namespace DataStructures
                 case 5:
                     Palindrome PaliObj = new Palindrome();
                     PaliObj.CheckPalindrome();
+                    break;
+                case 6:
+                    Calender calobj = new Calender();
+                    calobj.calender();
+                    break;
+                case 7:
+                    PrimeRange PrimeObj = new PrimeRange();
+                    PrimeObj.printprimerange();
                     break;
                 default:
                     Console.WriteLine("Invalid Choice");

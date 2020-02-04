@@ -10,12 +10,16 @@ namespace DataStructures
         public Node<T> next;
         public Node<T> front;
         public Node<T> rear;
+
+        public Node<T> Prev;
+
         public Node(T data)
         {
             this.data = data;
             this.next = null;
             this.front = null;
             this.rear = null;
+            this.Prev = null;
         }
 
     }
