@@ -1,18 +1,29 @@
-﻿using System;
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="TicTOcToe.cs" company="Bridgelabz">
+// Copyright © 2020  Company="BridgeLabz"
+// </copyright>
+// <creator name="Bandi Venu"/>
+// --------------------------------------------------------------------------------------------------------------------
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace FunctionalPrograms
-{
+{/// <summary>
+/// TicTocTOe game class
+/// </summary>
     class TicTocToe
     {
         static int player = 0;
         static int[,] BOARD = new int[3, 3];
-        static Boolean isEmpty = true;
-
+        static bool isEmpty = true;
+        /// <summary>
+        /// Initializes the board.
+        /// </summary>
         public static void initBoard()
         {
-            Console.WriteLine("TIC TAC TOE GAME\nComputer is X\nPlayer  is O ");
+            Console.WriteLine("TICTACTOE Game\n1.Computer is X\n2.Player  is O ");
             for (int i = 0; i < 3; i++)
             {
                 for (int j = 0; j < 3; j++)
@@ -20,11 +31,13 @@ namespace FunctionalPrograms
                     BOARD[i, j] = -10;
                 }
             }
-            Console.WriteLine("Board is this :");
-            dispBoard();
+            Console.WriteLine("Board :");
+            DisplayBoard();//// Calling Borad Display Function
         }
-
-        public static void dispBoard()
+        /// <summary>
+        /// Displays the board of the game.
+        /// </summary>
+        public static void DisplayBoard()
         {
             int count = 0;
             for (int i = 0; i < 3; i++)
@@ -36,12 +49,12 @@ namespace FunctionalPrograms
                     if (BOARD[i, j] == 0)
                     {
                         count++;
-                        Console.Write(" o |");
+                        Console.Write(" O |");
                     }
                     else if (BOARD[i, j] == 1)
                     {
                         count++;
-                        Console.Write(" x |");
+                        Console.Write(" X |");
                     }
                     else
                         Console.Write("   |");
@@ -54,8 +67,13 @@ namespace FunctionalPrograms
             }
             Console.WriteLine("---------------");
         }
-        
-		 public void putVal(int i, int j, int player)
+        /// <summary>
+        /// Puts the value.
+        /// </summary>
+        /// <param name="i">The i.</param>
+        /// <param name="j">The j.</param>
+        /// <param name="player">The player.</param>
+        public void putVal(int i, int j, int player)
         {
             if (player % 2 == 0)
             {
@@ -67,8 +85,10 @@ namespace FunctionalPrograms
             } 
         }
 
-
-        public static void putVal()
+        /// <summary>
+        /// Puts the value.
+        /// </summary>
+        public static void putValue()
         {
             Random random = new Random();
             int i;
@@ -82,8 +102,9 @@ namespace FunctionalPrograms
             {
 
                 Console.WriteLine("enter value of x and y by space");
-                i = Util.userinputs();
-                j = Util.userinputs();
+                i = Util.userinputs(); //// Taking userinputs from Util Class
+                j = Util.userinputs(); //// Taking userinputs from Util Class
+
             }
             if (BOARD[i, j] == -10)
             {
@@ -99,12 +120,16 @@ namespace FunctionalPrograms
             }
             else
             {
-                putVal();
+                putValue(); //// Calling put vaue method
             }
 
         }
-
-        public static Boolean win()
+        /// <summary>
+        /// Method for Wins printing
+        /// Wins this instance.
+        /// </summary>
+        /// <returns></returns>
+        public static bool win()
         {
             return ((BOARD[0, 0] + BOARD[0, 1] + BOARD[0, 2] == player * 3)
                  || (BOARD[1, 0] + BOARD[1, 1] + BOARD[1, 2] == player * 3)
@@ -116,14 +141,18 @@ namespace FunctionalPrograms
                  || (BOARD[2, 0] + BOARD[1, 1] + BOARD[0, 2] == player * 3));
         }
 
+        /// <summary>
+        /// Method for Playing the game
+        /// Plays this instance.
+        /// </summary>
         public static void play()
         {
             initBoard();
             while (isEmpty)
             {
                 Console.WriteLine("Players turn");
-                putVal();
-                dispBoard();
+                putValue();
+                DisplayBoard();
                 if (win())
                 {
                     Console.WriteLine("Player won");
@@ -131,8 +160,8 @@ namespace FunctionalPrograms
                 }
                 player = 1;
                 Console.WriteLine("Computers turn");
-                putVal();
-                dispBoard();
+                putValue();
+                DisplayBoard();
                 if (win())
                 {
                     Console.WriteLine("Computer won");

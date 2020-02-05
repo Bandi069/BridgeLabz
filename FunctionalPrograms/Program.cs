@@ -1,4 +1,11 @@
-﻿using System;
+﻿
+// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="Program.cs" company="Bridgelabz">
+// Copyright © 2020  Company="BridgeLabz"
+// </copyright>
+// <creator name="Bandi Venu"/>
+// --------------------------------------------------------------------------------------------------------------------
+using System;
 
 namespace FunctionalPrograms
 {
@@ -7,31 +14,31 @@ namespace FunctionalPrograms
 		static void Main(string[] args)
 		{
 			Console.WriteLine("************************************\n");
-			Console.WriteLine("1.String Replace Program");
-			Console.WriteLine("2.Factorial Program ");
-			Console.WriteLine("3.To find the leap year ");
-			Console.WriteLine("4.Power of Two program ");
-			Console.WriteLine("5.Harmonic series program ");
-			Console.WriteLine("6. FlipCoin Program	");
-			Console.WriteLine("7.Temperature Conversion Program");
-			Console.WriteLine("8.Square root of a number ");
-			Console.WriteLine("9.Printing Two dimensional Array in C# ");
-			Console.WriteLine("10.Stop watch Program");
-			Console.WriteLine("11.Distance calculation ");
+			Console.WriteLine(" 1. String Replace Program");
+			Console.WriteLine(" 2. Factorial Program ");
+			Console.WriteLine(" 3. To find the leap year ");
+			Console.WriteLine(" 4. Power of Two program ");
+			Console.WriteLine(" 5. Harmonic series program ");
+			Console.WriteLine(" 6. FlipCoin Program	");
+			Console.WriteLine(" 7. Temperature Conversion Program");
+			Console.WriteLine(" 8. Square root of a number ");
+			Console.WriteLine(" 9. Printing Two dimensional Array in C# ");
+			Console.WriteLine("10. Stop watch Program");
+			Console.WriteLine("11. Distance calculation ");
 			Console.WriteLine("12. Finding roots of Quadratic equation  Program");
-			Console.WriteLine("13.Windchill Program ");
-			Console.WriteLine("14.Triplet Program ");
-			Console.WriteLine("15.Finding the day of the week ");
-			Console.WriteLine("16.Finding Monthly Payment Program ");
+			Console.WriteLine("13. Windchill Program ");
+			Console.WriteLine("14. Triplet Program ");
+			Console.WriteLine("15. Finding the day of the week ");
+			Console.WriteLine("16. Finding Monthly Payment Program ");
 			Console.WriteLine("17. Gambler Program");
-			Console.WriteLine("18.Coupon number Program ");
-			Console.WriteLine("19.Vending Machine Program ");
-			Console.WriteLine("20.  Decimal to Binary Conversion Program ");
+			Console.WriteLine("18. Coupon number Program ");
+			Console.WriteLine("19. Vending Machine Program ");
+			Console.WriteLine("20. Decimal to Binary Conversion Program ");
 			Console.WriteLine("21. Tictoctoe Program ");
-			Console.WriteLine("22.Binary Nibble Swapping Program \n");
+			Console.WriteLine("22. Binary Nibble Swapping Program \n");
 			Console.WriteLine("************************************\n");
 			
-			Console.WriteLine("Enter Choice to implement the required Program \n");
+			Console.WriteLine("Enter Choice to implement the required Program ");
 			int choice = int.Parse(Console.ReadLine());
 			switch (choice)
 			{
@@ -88,7 +95,7 @@ namespace FunctionalPrograms
 					Gambler.Gambling();
 					break;
 				case 18:
-					CouponNumber.CheckCoupon();
+					CouponNumbers.CouponGenerator();
 					break;
 				case 19:
 					VendingMechine.CountingMachine();

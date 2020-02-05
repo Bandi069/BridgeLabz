@@ -1,25 +1,38 @@
-﻿using System;
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="VendingMachine.cs" company="Bridgelabz">
+// Copyright © 2020  Company="BridgeLabz"
+// </copyright>
+// <creator name="Bandi Venu"/>
+// --------------------------------------------------------------------------------------------------------------------
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace FunctionalPrograms
 {
-    class VendingMechine
+	/// <summary>
+	/// Veninding Machine Class
+	/// </summary>
+	class VendingMechine
     {
-        public static void CountingMachine()
+		/// <summary>
+		/// Countings the machine.
+		/// </summary>
+		public static void CountingMachine()
         {	
-			Console.WriteLine("ENter No of Notes");
+			Console.WriteLine("Enter No of Notes");
 			int n = Util.userinputs();
 			Console.WriteLine("Enter Amounts");
 			int[] notes = new int[n];// {2000,1000,,500,100,50,1,2,}
 			
 			for(int i=0;i<notes.Length;i++)
 			{
-				notes[i] = (Util.userinputs());
+				notes[i] = (Util.userinputs()); //// Notes array
 			}
 			Console.WriteLine("Enter Amount");
 			int amount = Util.userinputs();
-				int[] noteCounter = new int[n];
+				int[] noteCounter = new int[n]; //// Note Counter array
 				for (int i = 0; i < notes.Length; i++)
 				{
 					if (amount >= notes[i])
@@ -29,7 +42,7 @@ namespace FunctionalPrograms
 					}
 				}
 
-				// Printing number of notes 
+				// Printing number of notes
 				Console.WriteLine("Notes Demonistation Count ");
 				for (int i = 0; i < n ; i++)
 				{

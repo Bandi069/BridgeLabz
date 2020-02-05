@@ -1,11 +1,25 @@
-﻿using System;
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="DayofWeek.cs" company="Bridgelabz">
+// Copyright © 2020  Company="BridgeLabz"
+// </copyright>
+// <creator name="Bandi Venu"/>
+// --------------------------------------------------------------------------------------------------------------------
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace FunctionalPrograms
 {
+    /// <summary>
+    /// Class for Day of the week
+    /// </summary>
     class DayofWeek
     {
+        /// <summary>
+        /// Method for Weeks the day.
+        /// By taking inputs as month day year givess the day.
+        /// </summary>
         public static void WeekDay()
         {
             Console.WriteLine("Enter Date");
@@ -14,12 +28,12 @@ namespace FunctionalPrograms
             int m = Util.userinputs();
             Console.WriteLine("Enter Year");
             int y = Util.userinputs();
-           int y0 = y - ( 14 - m) / 12;
+            int y0 = y - (14 - m) / 12;
             int x = y0 + y0 / 4 - y0 / 100 + y0 / 400;
-           int    m0 = m + 12 *((14 - m ) / 12) - 2;
-            int   d0 = (d + x + 31*m0/ 12) % 7;
+            int m0 = m + 12 * ((14 - m) / 12) - 2;
+            int d0 = (d + x + 31 * m0 / 12) % 7;
             int Day = d0;
-            switch(Day)
+            switch (Day)
             {
                 case 0:
                     Console.WriteLine("sunday");

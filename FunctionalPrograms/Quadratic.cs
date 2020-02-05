@@ -1,11 +1,24 @@
-﻿using System;
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="Quadratic.cs" company="Bridgelabz">
+// Copyright © 2020  Company="BridgeLabz"
+// </copyright>
+// <creator name="Bandi Venu"/>
+// --------------------------------------------------------------------------------------------------------------------
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace FunctionalPrograms
 {
+    /// <summary>
+    /// Class for Quadratic Equations Roots Finding
+    /// </summary>
     class Quadratic
     {
+        /// <summary>
+        /// Finds the roots of Quadratic Equation.
+        /// </summary>
         public static void FindRoots()
         {
             Console.WriteLine("Enter Quotiesnts of quadratic equation");
