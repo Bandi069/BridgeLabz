@@ -18,7 +18,22 @@ namespace OOPS
         public int Zipcode { get; set; }
         public int PhoneNumber { get; set; }
 
-
     }
+    public class AddressBookList
+    {
+        internal List<AddressDetails> AddressBook { get; set; }
+        private List<AddressDetails> addressBook { get; set; }
+
+      /*  public List<AddressDetails> GetAddressBook()
+        {
+            return addressBook;
+        }
+
+        public void SetAddressBook(List<AddressDetails> value)
+        {
+            addressBook = value;
+        }*/
+    }
+    
 }
 

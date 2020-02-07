@@ -1,0 +1,48 @@
+{
+  "Rice": [
+    {
+      "Name": "Basmati",
+      "Weight": 10,
+      "Price": 700
+    },
+    {
+      "Name": "Sriram",
+      "Weight": 15,
+      "Price": 500
+    },
+    {
+      "Name": "srirrmsm",
+      "Price": 123,
+      "Weight": 22
+    }
+  ],
+  "Pulses": [
+    {
+      "Name": "Green Gram",
+      "Weight": 10,
+      "Price": 140
+    },
+    {
+      "Name": "Red Gram",
+      "Weight": 15,
+      "Price": 91
+    },
+    {
+      "Name": "black gram",
+      "Price": 111,
+      "Weight": 100
+    },
+    {
+      "Name": "pulse",
+      "Price": 111,
+      "Weight": 12
+    }
+  ],
+  "Wheat": [
+    {
+      "Name": "Durum",
+      "Weight": 10,
+      "Price": 450
+    }
+  ]
+}

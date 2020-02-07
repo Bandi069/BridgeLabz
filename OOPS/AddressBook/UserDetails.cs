@@ -1,4 +1,11 @@
-﻿using System;
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="UserDetails.cs" company="Bridgelabz">
+// Copyright © 2020  Company="BridgeLabz"
+// </copyright>
+// <creator name="Bandi Venu"/>
+// --------------------------------------------------------------------------------------------------------------------
+
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
@@ -55,12 +62,29 @@ namespace OOPS.AddressBook
             var Zipcode = Console.ReadLine();
             Console.WriteLine("Enter Phone Number");
             var PhoneNumber = Console.ReadLine();
-            var NewUser = "{ 'FirstName': '" + FirstName + "','lastName':'" + LastName + "','Village':'" + Village + "','city':'" + City + "','state':'" + State + "','phoneNumber':" + PhoneNumber + ",'Zipcode':" + Zipcode + "}";
+            var NewUser = "{ 'FirstName': '" + FirstName + "','LastName':'" + LastName + "','Village':'" + Village + "','State':'" + State + "','City':'" + City + "','PhoneNumber':" + PhoneNumber + ",'Zipcode':" + Zipcode + "}";
             var NewjasonFile = File.ReadAllText(this.jsonfile);
             var JsonObj = JObject.Parse(NewjasonFile);
             var userArrary = JsonObj.GetValue("AddressBook") as JArray;
             var newItemObj = JObject.Parse(NewUser);
-
+            Console.WriteLine("NewUSer " + newItemObj);
+            userArrary.Add(newItemObj);
+            JsonObj["AddressBook"] = userArrary;
+            string newJsonResult = JsonConvert.SerializeObject(JsonObj, Formatting.Indented);
+            File.WriteAllText(this.jsonfile, newJsonResult);
+            Console.WriteLine("New User Added to Json File");
+        }
+        public void UpdateFile()
+        {
+            string json = File.ReadAllText(jsonfile);
+            try
+            {
+               
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine("Exception Occur" + e.Message);
+            }
 
         }
     }
