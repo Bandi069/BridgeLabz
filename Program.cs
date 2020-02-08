@@ -23,6 +23,7 @@ namespace OOPS
         {
             Console.WriteLine("1.Address Book");
             Console.WriteLine("2.Inventory Management");
+            Console.WriteLine("3.Deck of Cards");
             Console.WriteLine("Enter a number to run the required program");
             int Choice = int.Parse(Console.ReadLine());
             switch (Choice)
@@ -35,6 +36,10 @@ namespace OOPS
                     case 2:
                     InventoryData inventoryobj = new InventoryData();
                     inventoryobj.Inventoryoperation();
+                    break;
+                case 3:
+                    DeckOfCards DeckObj = new DeckOfCards();
+                    DeckObj.Shuffle();
                     break;
                 default:
                     Console.WriteLine("Invalid Choice");
