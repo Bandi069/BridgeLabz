@@ -1,4 +1,11 @@
-﻿using System;
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="DeckofCards.cs" company="Bridgelabz">
+// Copyright © 2020  Company="BridgeLabz"
+// </copyright>
+// <creator name="Bandi Venu"/>
+// --------------------------------------------------------------------------------------------------------------------
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.IO;
@@ -6,10 +13,17 @@ using OOPS.DeckCards;
 
 namespace OOPS
 {
+    /// <summary>
+    /// Class for Deck of Cards
+    /// </summary>
     class DeckOfCards
     {
+        /// <summary>
+        /// Method for Shuffling of Cards
+        /// </summary>
         public void Shuffle()
         {
+            //// Crreating Cardsplay Object
             CardsPlay DeckObj = new CardsPlay();
             string[] Deck = new string[52];
             string[] Suits = { "Spade", "Heart", "Diamond", "Club" };
@@ -23,6 +37,7 @@ namespace OOPS
                     Count++;
                 }
             }
+            //// Calling PlayGame Method through DeckObject(Cardsplay Method)
             DeckObj.PlayGame(Deck);
            
         }

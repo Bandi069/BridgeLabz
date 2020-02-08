@@ -1,13 +1,28 @@
-﻿using System;
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="CardsPlay.cs" company="Bridgelabz">
+// Copyright © 2020  Company="BridgeLabz"
+// </copyright>
+// <creator name="Bandi Venu"/>
+// --------------------------------------------------------------------------------------------------------------------
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace OOPS.DeckCards
-{
+{/// <summary>
+/// Class for finding Deck of Shuffle cards
+/// </summary>
     class CardsPlay
     {
+        /// <summary>
+        /// Method for Playing deckof Crads
+        /// Printing Deck of Cards 
+        /// </summary>
+        /// <param name="Deck"></param>
         public  void PlayGame(string[] Deck)
         {
+            
             int Players = 4;
             int TotalCards = Deck.Length;
             int PlayerCards = TotalCards / Players;
