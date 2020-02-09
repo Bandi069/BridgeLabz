@@ -1,4 +1,10 @@
-﻿using System;
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="Program.cs.cs" company="Bridgelabz">
+// Copyright © 2019  Company="BridgeLabz"
+// </copyright>
+// <creator name="Bandi Venu"/>
+// --------------------------------------------------------------------------------------------------------------------
+using System;
 
 namespace DataStructures
 {
@@ -19,7 +25,9 @@ namespace DataStructures
             Console.WriteLine("4. Banking Counter ");
             Console.WriteLine("5. Palindromic Checker using Dequeue");
             Console.WriteLine("6. Print Calender Program");
-            Console.WriteLine("7. Print Prime Range Program");
+            Console.WriteLine("7. Binary Search Tree Program");
+            Console.WriteLine("8. Print Prime Range Program");
+            Console.WriteLine("9. Hashing Function Program");
             Console.WriteLine("\n*********************");
 
             //// User Input value taken from utility class by calling 
@@ -54,8 +62,16 @@ namespace DataStructures
                     calobj.calender();
                     break;
                 case 7:
+                    BinarySearchTree BinaryObj = new BinarySearchTree();
+                    BinaryObj.Tree();
+                    break;
+                case 8:
                     PrimeRange PrimeObj = new PrimeRange();
                     PrimeObj.printprimerange();
+                    break;
+                case 9:
+                    HashingFunction HashObj = new HashingFunction();
+                    HashObj.HashTable();
                     break;
                 default:
                     Console.WriteLine("Invalid Choice");
