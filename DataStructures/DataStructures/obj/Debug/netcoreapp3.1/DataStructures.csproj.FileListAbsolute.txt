@@ -9,3 +9,14 @@ C:\Users\Bridge Labs\source\repos\DataStructures\DataStructures\obj\Debug\netcor
 C:\Users\Bridge Labs\source\repos\DataStructures\DataStructures\obj\Debug\netcoreapp3.1\DataStructures.AssemblyInfo.cs
 C:\Users\Bridge Labs\source\repos\DataStructures\DataStructures\obj\Debug\netcoreapp3.1\DataStructures.dll
 C:\Users\Bridge Labs\source\repos\DataStructures\DataStructures\obj\Debug\netcoreapp3.1\DataStructures.pdb
+C:\Users\tree\Documents\GitHub\BridgeLabz\DataStructures\DataStructures\bin\Debug\netcoreapp3.1\DataStructures.exe
+C:\Users\tree\Documents\GitHub\BridgeLabz\DataStructures\DataStructures\bin\Debug\netcoreapp3.1\DataStructures.deps.json
+C:\Users\tree\Documents\GitHub\BridgeLabz\DataStructures\DataStructures\bin\Debug\netcoreapp3.1\DataStructures.runtimeconfig.json
+C:\Users\tree\Documents\GitHub\BridgeLabz\DataStructures\DataStructures\bin\Debug\netcoreapp3.1\DataStructures.runtimeconfig.dev.json
+C:\Users\tree\Documents\GitHub\BridgeLabz\DataStructures\DataStructures\bin\Debug\netcoreapp3.1\DataStructures.dll
+C:\Users\tree\Documents\GitHub\BridgeLabz\DataStructures\DataStructures\bin\Debug\netcoreapp3.1\DataStructures.pdb
+C:\Users\tree\Documents\GitHub\BridgeLabz\DataStructures\DataStructures\obj\Debug\netcoreapp3.1\DataStructures.csprojAssemblyReference.cache
+C:\Users\tree\Documents\GitHub\BridgeLabz\DataStructures\DataStructures\obj\Debug\netcoreapp3.1\DataStructures.AssemblyInfoInputs.cache
+C:\Users\tree\Documents\GitHub\BridgeLabz\DataStructures\DataStructures\obj\Debug\netcoreapp3.1\DataStructures.AssemblyInfo.cs
+C:\Users\tree\Documents\GitHub\BridgeLabz\DataStructures\DataStructures\obj\Debug\netcoreapp3.1\DataStructures.dll
+C:\Users\tree\Documents\GitHub\BridgeLabz\DataStructures\DataStructures\obj\Debug\netcoreapp3.1\DataStructures.pdb

@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="Program.cs.cs" company="Bridgelabz">
+// <copyright file="Program.cs" company="Bridgelabz">
 // Copyright © 2019  Company="BridgeLabz"
 // </copyright>
 // <creator name="Bandi Venu"/>

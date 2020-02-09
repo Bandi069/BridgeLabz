@@ -1,4 +1,10 @@
-﻿using System;
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="DeQueue.cs" company="Bridgelabz">
+// Copyright © 2019  Company="BridgeLabz"
+// </copyright>
+// <creator name="Bandi Venu"/>
+// --------------------------------------------------------------------------------------------------------------------
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -16,6 +22,11 @@ namespace DataStructures
         public Node<T> current = null;
         int size = 0;
         string str = " ";
+        /// <summary>
+        /// Adds the rear.
+        /// Adding character at Rear
+        /// </summary>
+        /// <param name="Character">The character.</param>
         public void AddRear(T Character)
         {
             Node<T> newNode = new Node<T>(Character);
@@ -32,6 +43,11 @@ namespace DataStructures
             Display();
             size++;
         }
+        /// <summary>
+        /// Adds the front.
+        /// adding character at front
+        /// </summary>
+        /// <param name="Character">The character.</param>
         public void addFront(T Character)
         {
             Node<T> Prev = null; ;
@@ -47,6 +63,10 @@ namespace DataStructures
                 front = newnode;
             }
         }
+        /// <summary>
+        /// Displays this instance.
+        /// Method for Display the Queue
+        /// </summary>
         public void Display()
         {
             Node<T> CurrentNode = head;
@@ -64,6 +84,10 @@ namespace DataStructures
             }
 
         }
+        /// <summary>
+        /// Removes the front.
+        /// </summary>
+        /// <returns></returns>
         public string RemoveFront()
         {
             Node<T> prev;
@@ -81,6 +105,10 @@ namespace DataStructures
             }
             return null;
         }
+        /// <summary>
+        /// Removes the rear.
+        /// </summary>
+       
         public string RemoveRear()
         {
             Node<T> Prevnode;
@@ -98,6 +126,10 @@ namespace DataStructures
             }
             return null;
         }
+        /// <summary>
+        /// Prints the polindrime.
+        /// </summary>
+        /// <returns ></returns>
         public bool printPolindrime()
         {
             string str1 = "radar";

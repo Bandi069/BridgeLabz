@@ -1,11 +1,25 @@
-﻿using System;
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="PrimRange.cs" company="Bridgelabz">
+// Copyright © 2019  Company="BridgeLabz"
+// </copyright>
+// <creator name="Bandi Venu"/>
+// --------------------------------------------------------------------------------------------------------------------
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace DataStructures
 {
+    /// <summary>
+    /// class for finding prime range
+    /// </summary>
     class PrimeRange
     {
+        /// <summary>
+        /// Printprimeranges this instance.
+        /// Method for printing prime Range
+        /// </summary>
         public void printprimerange()
         {
             int[,] array = new int[0, 1000];
@@ -41,7 +55,13 @@ namespace DataStructures
             }
 
         }
-
+        /// <summary>
+        /// Determines whether the specified number is prime.
+        /// </summary>
+        /// <param name="number">The number.</param>
+        /// <returns>
+        ///   <c>true</c> if the specified number is prime; otherwise, <c>false</c>.
+        /// </returns>
         public bool isPrime(int number)
         {
             int count = 0;

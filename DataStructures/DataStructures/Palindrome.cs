@@ -1,4 +1,10 @@
-﻿using System;
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="Palindrome.cs" company="Bridgelabz">
+// Copyright © 2019  Company="BridgeLabz"
+// </copyright>
+// <creator name="Bandi Venu"/>
+// --------------------------------------------------------------------------------------------------------------------
+using System;
 using System.Collections.Generic;
 using System.Text;
 

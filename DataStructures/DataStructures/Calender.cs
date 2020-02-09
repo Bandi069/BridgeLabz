@@ -1,11 +1,24 @@
-﻿using System;
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="Calender.cs" company="Bridgelabz">
+// Copyright © 2019  Company="BridgeLabz"
+// </copyright>
+// <creator name="Bandi Venu"/>
+// --------------------------------------------------------------------------------------------------------------------
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace DataStructures
 {
+    /// <summary>
+    /// Calender Class to print Calender
+    /// </summary>
     class Calender
-    { 
+    {
+        /// <summary>
+        /// Calenders this instance.
+        /// </summary>
         public void calender()
         {
             Console.WriteLine("Enter year ");
@@ -20,7 +33,6 @@ namespace DataStructures
             {
                 Days[2] = 29;
             }
-            
             Console.WriteLine(months[month] + "-" + year);
             Console.WriteLine("Sun  Mon Tues  Weds Thurs  Fri  Sat");
             int d = day(month, 1, year);
@@ -39,6 +51,11 @@ namespace DataStructures
             }
 
         }
+        /// <summary>
+        /// Leaps the year.
+        /// </summary>
+        /// <param name="year">The year.</param>
+        /// <returns value="LeapYear"></returns>
         public bool LeapYear(int year)
         {
             bool leapyear = false;
@@ -52,6 +69,13 @@ namespace DataStructures
             }
             return leapyear;
         }
+        /// <summary>
+        /// Days the specified month.
+        /// </summary>
+        /// <param name="month">The month.</param>
+        /// <param name="day">The day.</param>
+        /// <param name="year">The year.</param>
+        /// <returns value="d"></returns>
         public int day(int month, int day, int year)
         {
             int y = year - (14 - month) / 12;

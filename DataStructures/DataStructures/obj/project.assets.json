@@ -8,19 +8,19 @@
     ".NETCoreApp,Version=v3.1": []
   },
   "packageFolders": {
-    "C:\\Users\\Bridge Labs\\.nuget\\packages\\": {}
+    "C:\\Users\\tree\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Bridge Labs\\source\\repos\\DataStructures\\DataStructures\\DataStructures.csproj",
+      "projectUniqueName": "C:\\Users\\tree\\Documents\\GitHub\\BridgeLabz\\DataStructures\\DataStructures\\DataStructures.csproj",
       "projectName": "DataStructures",
-      "projectPath": "C:\\Users\\Bridge Labs\\source\\repos\\DataStructures\\DataStructures\\DataStructures.csproj",
-      "packagesPath": "C:\\Users\\Bridge Labs\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Bridge Labs\\source\\repos\\DataStructures\\DataStructures\\obj\\",
+      "projectPath": "C:\\Users\\tree\\Documents\\GitHub\\BridgeLabz\\DataStructures\\DataStructures\\DataStructures.csproj",
+      "packagesPath": "C:\\Users\\tree\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\tree\\Documents\\GitHub\\BridgeLabz\\DataStructures\\DataStructures\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Bridge Labs\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\tree\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -58,7 +58,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
       }
     }
   }
