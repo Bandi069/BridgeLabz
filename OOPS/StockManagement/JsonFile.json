@@ -1,0 +1,14 @@
+{
+  [
+    {
+      "NameOfShare": "BridgeLabz",
+      "NumberOfShare": 100,
+      "SharePrice": 1000
+    },
+    {
+      "NameOfShare": "Bridge",
+      "NumberOfShare": 201,
+      "SharePrice": 2020
+    }
+  ]
+}

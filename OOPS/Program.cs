@@ -7,6 +7,7 @@
 using OOPS.AddressBook;
 using System;
 using Oops.InventaoryManagement;
+using OOPS.StockManagement;
 
 namespace OOPS
 {
@@ -19,11 +20,15 @@ namespace OOPS
         /// Main Method
         /// </summary>
         /// <param name="args"></param>
-       static void Main(string[] args)
+        static void Main(string[] args)
         {
+            //// Lsit of Programs
             Console.WriteLine("1.Address Book");
             Console.WriteLine("2.Inventory Management");
             Console.WriteLine("3.Deck of Cards");
+            Console.WriteLine("4.Stock Management");
+            Console.WriteLine("*************************\n");
+
             Console.WriteLine("Enter a number to run the required program");
             int Choice = int.Parse(Console.ReadLine());
             switch (Choice)
@@ -31,9 +36,8 @@ namespace OOPS
                 case 1:
                     AddressBookOperations operationObj = new AddressBookOperations();
                     operationObj.AddressOperations();
-                  
                     break;
-                    case 2:
+                case 2:
                     InventoryData inventoryobj = new InventoryData();
                     inventoryobj.Inventoryoperation();
                     break;
@@ -41,12 +45,15 @@ namespace OOPS
                     DeckOfCards DeckObj = new DeckOfCards();
                     DeckObj.Shuffle();
                     break;
+                case 4:
+                    StockPortfolio StockObj = new StockPortfolio();
+                    StockObj.Stock();
+                    break;
                 default:
-                    Console.WriteLine("Invalid Choice");
+                    Console.WriteLine("Invalid Choice...");
                     break;
 
             }
-
         }
     }
 }

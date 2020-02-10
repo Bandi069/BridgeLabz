@@ -1,4 +1,4 @@
-﻿/*// --------------------------------------------------------------------------------------------------------------------
+﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="InventoryReport.cs" company="Bridgelabz">
 // Copyright © 2020  Company="BridgeLabz"
 // </copyright>
@@ -18,14 +18,14 @@ namespace OOPS.InventaoryManagement
 
         public void InventoryManagementReport()
         {
-            
+/*
             double totalRicePrice = 0.0;
             double totalWheatsPrice = 0.0;
-            double totalPulsesPrice = 0.0;
+            double totalPulsesPrice = 0.0;*/
             string FilePath = @"C:\Users\Bridge Labs\source\repos\OOPS\OOPS\InventaoryManagement\JsonFile.json";
             var Json = File.ReadAllText(FilePath);
             InventoryReport utility = (InventoryReport)JsonConvert.DeserializeObject(Json, typeof(InventoryReport));
-            foreach (var objRice in utility.Rice)
+          /*  foreach (var objRice in utility.Rice)
             {
                 string name = objRice.Name;
                 double price = objRice.Price;
@@ -34,8 +34,7 @@ namespace OOPS.InventaoryManagement
                 Console.WriteLine("Name Of Rice :" + name);
                 Console.WriteLine("Price :" + price);
                 Console.WriteLine("Weight :" + weight);
-            }
+            }*/
         }
     }
 }
-*/
