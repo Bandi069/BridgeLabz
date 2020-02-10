@@ -1,4 +1,10 @@
-﻿using System;
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="StockReport.cs" company="Bridgelabz">
+// Copyright © 2020  Company="BridgeLabz"
+// </copyright>
+// <creator name="Bandi Venu"/>
+// --------------------------------------------------------------------------------------------------------------------
+using System;
 using System.Collections.Generic;
 using System.Text;
 
