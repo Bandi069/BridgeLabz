@@ -20,7 +20,7 @@ namespace OOPS.StockManagement
             }
             catch (Exception e)
             {
-                Console.WriteLine("Exception Occurs" + e.Message);
+                Console.WriteLine("Exception Occurs.." + e.Message);
             }
         }
     }

@@ -8,27 +8,32 @@ namespace OOPS.StockManagement
 {
     class StockPortfolio
     {
-        public string FilePath = @"C:\Users\Bridge Labs\source\repos\OOPS\OOPS\StockManagement\JsonFile.json";
+         string FilePath = @"C:\Users\Bridge Labs\source\repos\OOPS\OOPS\StockManagement\JsonFile.json";
         public void Stock()
         {
+            try
+            {
+                PropertyClass PropertyObj = new PropertyClass();
+                var readjson = File.ReadAllText(FilePath);
+                List<StockPortfolio> stockList
+                    = JsonConvert.DeserializeObject<List<StockPortfolio>>(readjson);
+                double totalSharePrice = 0.0;
+              
+                foreach(var Property in stockList)
+                {
+                    totalSharePrice = PropertyObj.SharePrice * PropertyObj.NumberOfShare;
+                    Console.WriteLine("Name Of Stock : " + PropertyObj.NameOfShare);
+                    Console.WriteLine("Total Share : " + PropertyObj.NumberOfShare);
+                    Console.WriteLine("Each Share Price :" + PropertyObj.SharePrice);
+                    Console.WriteLine("Total Share Price: " + totalSharePrice);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
 
-            var readjson = File.ReadAllText(FilePath);
-            List<StockPortfolio> stockList = JsonConvert.DeserializeObject<List<StockPortfolio>>(readjson);
-            double totalSharePrice = 0.0;
-            /* foreach (StockReport objStock in stockList)
-             {
-                 totalSharePrice = objStock.SharePrice * objStock.numberOfShare;
-                 Console.WriteLine("Name Of Stock : " + objStock.nameOfShare);
-                 Console.WriteLine("Total Share : " + objStock.numberOfShare);
-                 Console.WriteLine("Each Share Price " + objStock.sharePrice);
-                 Console.WriteLine("Total Share Price of Stock " + totalSharePrice);
-             }*/
-            /* foreach(var stocklist in stockList)
-             {
-                 totalSharePrice=totalSharePrice*
-
-             }
-         }*/
         }
     }
 }
+
