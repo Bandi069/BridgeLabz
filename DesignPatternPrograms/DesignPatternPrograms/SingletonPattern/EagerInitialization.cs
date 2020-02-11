@@ -6,5 +6,9 @@ namespace DesignPatternPrograms.SingletonPattern
 {
     class EagerInitialization
     {
+        public void Eagerinitiliaze()
+        {
+
+        }
     }
 }
