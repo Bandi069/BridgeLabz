@@ -5,14 +5,20 @@ using System.Text;
 namespace DesignPatternPrograms.SingletonPattern
 {
     /// <summary>
-    /// 
+    /// Class for the Eager Initialization of Design Pattern of Singleton
     /// </summary>
     class EagerInitialization
     {
+        /// <summary>
+        /// Initializing Count value as Private static integer  
+        /// </summary>
         private static int Count = 0;
+        /// <summary>
+        /// NewObject is created for EagerInitialization
+        /// </summary>
         private static readonly EagerInitialization NewObject = new EagerInitialization();
         /// <summary>
-        /// 
+        /// Constructor for for EagerInitialization class
         /// </summary>
         private EagerInitialization()
         {
@@ -20,7 +26,7 @@ namespace DesignPatternPrograms.SingletonPattern
             Console.WriteLine("Counter Value is : " + Count);
         }
         /// <summary>
-        /// 
+        ///  
         /// </summary>
         public static EagerInitialization GetSingleton
         {
