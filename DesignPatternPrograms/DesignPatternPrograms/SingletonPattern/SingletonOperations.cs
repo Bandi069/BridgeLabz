@@ -8,18 +8,34 @@ namespace DesignPatternPrograms.SingletonPattern
     {
         public void OperationsOfSingleton()
         {
-            //// Opeartions of Singleton
-            Console.WriteLine("1. Eager Initilalization Operation");
-            Console.WriteLine("************************\n");
-            Console.WriteLine("Enter a require Oepration to be Perform");
-            int OperationNumber = int.Parse(Console.ReadLine());
-            switch (OperationNumber)
+            try
             {
-                case 1:
-                    EagerInitialization EagerObj = new EagerInitialization();
-                    EagerObj.Eagerinitiliaze();
-                    break;
+
+                //// Opeartions List of Singleton
+                Console.WriteLine("1. Eager Initilalization singleton Operation");
+                Console.WriteLine("2. Thread-Safe Singleton Operation");
+                Console.WriteLine("************************\n");
+                Console.WriteLine("Enter a require Oepration to be Perform");
+                int OperationNumber = int.Parse(Console.ReadLine());
+                switch (OperationNumber)
+                {
+                    case 1:
+                        /* EagerInitialization EagerObj=EagerInitialization.GetSingleton();
+                         EagerObj.Message();*/
+
+                        break;
+                    case 2:
+                        //  ThreadSafeSingleton threadSafeObj = ThreadSafeSingleton();
+                        //threadSafeObj.ThreadSafeSingleton();
+
+                        break;
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Exception occurs" + e.Message);
             }
         }
+
     }
 }
