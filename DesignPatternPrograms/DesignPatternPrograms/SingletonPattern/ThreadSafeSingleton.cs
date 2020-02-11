@@ -7,11 +7,11 @@ namespace DesignPatternPrograms.SingletonPattern
     class ThreadSafeSingleton
     {
         private static int Counter = 0;
-        private static readonly object instancelock = new object();
+        private static readonly ThreadSafeSingleton instancelock = new ThreadSafeSingleton();
         private ThreadSafeSingleton()
         {
             Counter++;
-            Console.WriteLine("CounterVAlue is:"+Counter);
+            Console.WriteLine("Counter Value is : "+Counter);
         }
     }
 }

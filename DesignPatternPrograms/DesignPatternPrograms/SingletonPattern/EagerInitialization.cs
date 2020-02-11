@@ -26,7 +26,7 @@ namespace DesignPatternPrograms.SingletonPattern
             Console.WriteLine("Counter Value is : " + Count);
         }
         /// <summary>
-        ///  
+        ///  Static get method 
         /// </summary>
         public static EagerInitialization GetSingleton
         {
