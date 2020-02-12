@@ -14,7 +14,7 @@ namespace DesignPatternPrograms.SingletonPattern
         /// </summary>
         private static int Count = 0;
         /// <summary>
-        /// NewObject is created for EagerInitialization
+        /// Instance (NewObject) is created for EagerInitialization
         /// </summary>
         private static readonly EagerInitialization NewObject = new EagerInitialization();
         /// <summary>
