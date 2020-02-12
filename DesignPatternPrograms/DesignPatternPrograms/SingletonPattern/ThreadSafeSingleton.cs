@@ -23,16 +23,26 @@ namespace DesignPatternPrograms.SingletonPattern
             Counter++;
             Console.WriteLine("Counter Value is : " + Counter);
         }
+        /// <summary>
+        /// 
+        /// </summary>
         public static ThreadSafeSingleton GetSingleton
         {
             get
             {
                 if(SingletonObj == null)
                 {
-                    lock(SingletonObj)
+                    lock(ObjectLock)
+                    {
+
+                    }
                 }
             }
             return SingletonObj;
+        }
+        public void Message(string message)
+        {
+            Console.WriteLine(message);
         }
     }
 }
