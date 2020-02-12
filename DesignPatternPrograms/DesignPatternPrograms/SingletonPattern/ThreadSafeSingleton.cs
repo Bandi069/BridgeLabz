@@ -8,7 +8,7 @@ namespace DesignPatternPrograms.SingletonPattern
     {
         private static int Counter = 0;
         private static readonly ThreadSafeSingleton instancelock = new ThreadSafeSingleton();
-        private ThreadSafeSingleton()
+        public ThreadSafeSingleton()
         {
             Counter++;
             Console.WriteLine("Counter Value is : "+Counter);
