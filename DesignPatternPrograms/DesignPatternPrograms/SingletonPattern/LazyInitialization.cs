@@ -20,6 +20,16 @@ namespace DesignPatternPrograms.SingletonPattern
         /// </summary>
         private static readonly Lazy<LazyInitialization> SingletonObj = 
             new Lazy<LazyInitialization>(() => new LazyInitialization());
+        /// <summary>
+        /// Created integer Variable
+        /// </summary>
+        private static int Count = 0;
+        /// <summary>
+        /// Creating constructor for the lazyinitialization Class
+        /// </summary>
+        private LazyInitialization()
+        {
 
+        }
     }
 }
