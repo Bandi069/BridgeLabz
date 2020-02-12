@@ -7,11 +7,32 @@ namespace DesignPatternPrograms.SingletonPattern
     class ThreadSafeSingleton
     {
         private static int Counter = 0;
-        private static readonly ThreadSafeSingleton instancelock = new ThreadSafeSingleton();
+        /// <summary>
+        /// Instance is created for Threadsafe Singleton
+        /// </summary>
+        private static  ThreadSafeSingleton SingletonObj= null;
+        /// <summary>
+        /// create single object with read only keyword
+        /// </summary>
+        private static readonly object ObjectLock = new object();
+        /// <summary>
+        /// Constructor is Created for Threadsafe Singleton
+        /// </summary>
         public ThreadSafeSingleton()
         {
             Counter++;
-            Console.WriteLine("Counter Value is : "+Counter);
+            Console.WriteLine("Counter Value is : " + Counter);
+        }
+        public static ThreadSafeSingleton GetSingleton
+        {
+            get
+            {
+                if(SingletonObj == null)
+                {
+                    lock(SingletonObj)
+                }
+            }
+            return SingletonObj;
         }
     }
 }
