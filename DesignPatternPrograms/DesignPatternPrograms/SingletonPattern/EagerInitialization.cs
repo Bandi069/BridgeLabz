@@ -20,7 +20,7 @@ namespace DesignPatternPrograms.SingletonPattern
         /// <summary>
         /// Constructor for for EagerInitialization class
         /// </summary>
-        private EagerInitialization()
+        public EagerInitialization()
         {
             Count++;
             Console.WriteLine("Counter Value is : " + Count);
