@@ -20,13 +20,14 @@ namespace DesignPatternPrograms.SingletonPattern
                 switch (OperationNumber)
                 {
                     case 1:
-                        /* EagerInitialization EagerObj=EagerInitialization.GetSingleton();
-                         EagerObj.Message();*/
+                        EagerInitialization EagerObj = new EagerInitialization();
+                        EagerObj.Message("Hi,This is Eager");
+                        
 
                         break;
                     case 2:
-                        //  ThreadSafeSingleton threadSafeObj = ThreadSafeSingleton();
-                        //threadSafeObj.ThreadSafeSingleton();
+                         ThreadSafeSingleton threadSafeObj = new ThreadSafeSingleton();
+                        threadSafeObj.Message("Hi,This is Threadsafe Singleton");
 
                         break;
                 }
@@ -35,6 +36,11 @@ namespace DesignPatternPrograms.SingletonPattern
             {
                 Console.WriteLine("Exception occurs" + e.Message);
             }
+        }
+        public static void EagerSingleton()
+        {
+            EagerInitialization singletonObject = EagerInitialization.GetSingleton;
+            singletonObject.Message("Message from Eager Singletone");
         }
 
     }
