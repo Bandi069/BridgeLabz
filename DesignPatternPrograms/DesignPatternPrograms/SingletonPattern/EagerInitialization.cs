@@ -1,4 +1,11 @@
-﻿using System;
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="EagerInitialization.cs" company="Bridgelabz">
+// Copyright © 2020  Company="BridgeLabz"
+// </copyright>
+// <creator name="Bandi Venu"/>
+// --------------------------------------------------------------------------------------------------------------------
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -7,7 +14,7 @@ namespace DesignPatternPrograms.SingletonPattern
     /// <summary>
     /// Class for the Eager Initialization of Design Pattern of Singleton
     /// </summary>
-    class EagerInitialization
+    public class EagerInitialization
     {
         /// <summary>
         /// Initializing Count value as Private static integer  
@@ -20,7 +27,7 @@ namespace DesignPatternPrograms.SingletonPattern
         /// <summary>
         /// Constructor for for EagerInitialization class
         /// </summary>
-        public EagerInitialization()
+        private EagerInitialization()
         {
             Count++;
             Console.WriteLine("Counter Value is : " + Count);
@@ -30,6 +37,7 @@ namespace DesignPatternPrograms.SingletonPattern
         /// </summary>
         public static EagerInitialization GetSingleton
         {
+
             get
             {
                 return NewObject;
