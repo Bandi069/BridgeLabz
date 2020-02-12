@@ -29,13 +29,14 @@ namespace DesignPatternPrograms.SingletonPattern
         /// </summary>
         public static LazyInitialization GetSingletonLazy
         {
+            //// returing the value 
             get
             {
                 return LazySingletonObj.Value;
             }
         }
         /// <summary>
-        /// Creating constructor for the lazyinitialization Class
+        /// Creating constructor for the lazy initialization Class
         /// </summary>
         private LazyInitialization()
         {
