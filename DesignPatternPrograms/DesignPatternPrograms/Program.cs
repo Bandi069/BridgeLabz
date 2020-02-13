@@ -34,6 +34,7 @@ namespace DesignPatternPrograms
                     SingletonOperations SingtonObj = new SingletonOperations();
                     SingtonObj.OperationsOfSingleton();
                     break;
+                    //// Case 2 for Factory Design Pattern Program
                 case 2:
                     MainFactory FactoryObj = new MainFactory();
                     FactoryObj.FactoryProduction();

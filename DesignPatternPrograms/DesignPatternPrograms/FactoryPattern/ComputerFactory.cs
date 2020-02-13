@@ -4,10 +4,13 @@ using System.Text;
 
 namespace DesignPatternPrograms.FactoryPattern
 {
-    public abstract class ComputerFactory
+    /// <summary>
+    /// Computer Factory Class
+    /// </summary>
+    public class ComputerFactory
     {
         /// <summary>
-        /// 
+        /// Abstract class for Computer
         /// </summary>
         public abstract class Computer
         {
@@ -17,5 +20,7 @@ namespace DesignPatternPrograms.FactoryPattern
             /// <returns></returns>
             public abstract Computer GetComputer();
         }
+
+       
     }
 }

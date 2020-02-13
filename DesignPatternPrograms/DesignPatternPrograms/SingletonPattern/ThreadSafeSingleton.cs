@@ -1,4 +1,11 @@
-﻿using System;
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="Threadsafe.cs" company="Bridgelabz">
+// Copyright © 2020  Company="BridgeLabz"
+// </copyright>
+// <creator name="Bandi Venu"/>
+// --------------------------------------------------------------------------------------------------------------------
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -10,7 +17,7 @@ namespace DesignPatternPrograms.SingletonPattern
         /// <summary>
         /// Instance is created for Threadsafe Singleton
         /// </summary>
-        private static  ThreadSafeSingleton SingletonObj= null;
+        private static ThreadSafeSingleton SingletonObj = null;
         /// <summary>
         /// create single object with read only keyword
         /// </summary>
@@ -18,7 +25,7 @@ namespace DesignPatternPrograms.SingletonPattern
         /// <summary>
         /// Constructor is Created for Threadsafe Singleton
         /// </summary>
-        public ThreadSafeSingleton()
+        private ThreadSafeSingleton()
         {
             Counter++;
             Console.WriteLine("Counter Value is : " + Counter);
@@ -26,19 +33,20 @@ namespace DesignPatternPrograms.SingletonPattern
         /// <summary>
         /// 
         /// </summary>
-        public static ThreadSafeSingleton GetSingleton
+        public static ThreadSafeSingleton GetThreadSingleton
         {
             get
             {
-                if(SingletonObj == null)
+                /*if (SingletonObj == null)
                 {
-                    lock(ObjectLock)
+                    lock (ObjectLock)
                     {
 
                     }
-                }
+                }*/
+                return SingletonObj;
             }
-            return SingletonObj;
+            
         }
         public void Message(string message)
         {

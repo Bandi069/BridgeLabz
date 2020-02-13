@@ -1,6 +1,6 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="LazyInitialization.cs" company="Bridgelabz">
-// Copyright © 2019  Company="BridgeLabz"
+// Copyright © 2020  Company="BridgeLabz"
 // </copyright>
 // <creator name="Bandi Venu"/>
 // --------------------------------------------------------------------------------------------------------------------
@@ -29,7 +29,7 @@ namespace DesignPatternPrograms.SingletonPattern
         /// </summary>
         public static LazyInitialization GetSingletonLazy
         {
-            //// returing the value 
+            //// returning the value 
             get
             {
                 return LazySingletonObj.Value;
