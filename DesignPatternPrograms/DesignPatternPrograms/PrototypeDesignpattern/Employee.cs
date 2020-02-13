@@ -4,17 +4,18 @@ using System.Text;
 
 namespace DesignPatternPrograms.PrototypeDesignpattern
 {
-    public interface Employee
+   public interface Employee
     {
         Employee Clone();
 
         void GetDetails();
-    }
+   }
     public class ProtoType { }
 
-    class EmployeeProp
+    public class EmployeeProp : Employee
     {
         public string EmployeeName { get; set; }
         public string EmployeeDepartment { get; set; }
+        public int EmployeeID { get; set; }
     }
 }

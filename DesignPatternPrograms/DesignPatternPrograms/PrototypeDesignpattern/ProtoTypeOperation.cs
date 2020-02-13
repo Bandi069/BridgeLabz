@@ -8,7 +8,7 @@ namespace DesignPatternPrograms.PrototypeDesignpattern
     {
         public void CloneOperation()
         {
-            Employee EmployeeObj = new Employee();
+            EmployeeProp EmployeeObj = new EmployeeProp();
             Console.WriteLine("Enter Employee ID ");
             int EmployeeID = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Enter a Employee Name");
@@ -16,7 +16,7 @@ namespace DesignPatternPrograms.PrototypeDesignpattern
             Console.WriteLine("Enter employee Department");
             string EmployeeDepartment = Console.ReadLine();
             EmployeeObj.EmployeeName = EmployeeName;
-            EmployeeObj.Department = EmployeeDepartment;
+            EmployeeObj.EmployeeDepartment = EmployeeDepartment;
             EmployeeObj.EmployeeID = EmployeeID;
         }
 

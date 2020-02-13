@@ -38,9 +38,9 @@ namespace DesignPatternPrograms
                     break;
                     //// Case 2 for Factory Design Pattern Program
                 case 2:
-                    MainFactory FactoryObj = new MainFactory();
+                  /* MainFactory FactoryObj = new MainFactory();
                     FactoryObj.FactoryProduction();
-                    break;
+                  */  break;
                     //// ProtoType Design Pattern
                 case 3:
                     ProtoTypeOperation ProtoObj = new ProtoTypeOperation();

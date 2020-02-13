@@ -1,4 +1,4 @@
-﻿using System;
+﻿/*using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -13,9 +13,18 @@ namespace DesignPatternPrograms.FactoryPattern
 
         public PC(string ram, string hdd, string cpu)
         {
-            RAM = ram;
-            HDD = hdd;
-            CPU = cpu;
+            Ram = ram;
+            Hdd = hdd;
+            Cpu = cpu;
         }
+        public string Ram { get; set; }
+        public string Hdd { get; set; }
+        public string Cpu { get; set; }
+
+    }
+    public override Computer GetComputer()
+    {
+        return new PC(RAM, HDD, CPU);
     }
 }
+*/
