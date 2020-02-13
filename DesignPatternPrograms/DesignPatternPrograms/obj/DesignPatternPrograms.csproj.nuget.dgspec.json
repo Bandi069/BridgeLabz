@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Bridge Labs\\source\\repos\\DesignPatternPrograms\\DesignPatternPrograms\\DesignPatternPrograms.csproj": {}
+    "C:\\Users\\tree\\Documents\\GitHub\\BridgeLabz\\DesignPatternPrograms\\DesignPatternPrograms\\DesignPatternPrograms.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Bridge Labs\\source\\repos\\DesignPatternPrograms\\DesignPatternPrograms\\DesignPatternPrograms.csproj": {
+    "C:\\Users\\tree\\Documents\\GitHub\\BridgeLabz\\DesignPatternPrograms\\DesignPatternPrograms\\DesignPatternPrograms.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Bridge Labs\\source\\repos\\DesignPatternPrograms\\DesignPatternPrograms\\DesignPatternPrograms.csproj",
+        "projectUniqueName": "C:\\Users\\tree\\Documents\\GitHub\\BridgeLabz\\DesignPatternPrograms\\DesignPatternPrograms\\DesignPatternPrograms.csproj",
         "projectName": "DesignPatternPrograms",
-        "projectPath": "C:\\Users\\Bridge Labs\\source\\repos\\DesignPatternPrograms\\DesignPatternPrograms\\DesignPatternPrograms.csproj",
-        "packagesPath": "C:\\Users\\Bridge Labs\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Bridge Labs\\source\\repos\\DesignPatternPrograms\\DesignPatternPrograms\\obj\\",
+        "projectPath": "C:\\Users\\tree\\Documents\\GitHub\\BridgeLabz\\DesignPatternPrograms\\DesignPatternPrograms\\DesignPatternPrograms.csproj",
+        "packagesPath": "C:\\Users\\tree\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\tree\\Documents\\GitHub\\BridgeLabz\\DesignPatternPrograms\\DesignPatternPrograms\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Bridge Labs\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\tree\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -52,7 +52,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
         }
       }
     }
