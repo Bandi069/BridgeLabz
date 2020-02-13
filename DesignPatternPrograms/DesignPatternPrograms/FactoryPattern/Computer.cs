@@ -4,7 +4,8 @@ using System.Text;
 
 namespace DesignPatternPrograms.FactoryPattern
 {
-    class Computer
+    public class Computer 
     {
+      
     }
 }
