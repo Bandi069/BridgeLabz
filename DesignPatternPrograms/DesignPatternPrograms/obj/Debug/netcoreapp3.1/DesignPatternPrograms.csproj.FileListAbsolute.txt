@@ -9,3 +9,8 @@ C:\Users\Bridge Labs\source\repos\DesignPatternPrograms\DesignPatternPrograms\ob
 C:\Users\Bridge Labs\source\repos\DesignPatternPrograms\DesignPatternPrograms\obj\Debug\netcoreapp3.1\DesignPatternPrograms.AssemblyInfo.cs
 C:\Users\Bridge Labs\source\repos\DesignPatternPrograms\DesignPatternPrograms\obj\Debug\netcoreapp3.1\DesignPatternPrograms.dll
 C:\Users\Bridge Labs\source\repos\DesignPatternPrograms\DesignPatternPrograms\obj\Debug\netcoreapp3.1\DesignPatternPrograms.pdb
+C:\Users\Bridge Labs\Documents\GitHub\BridgeLabz\BridgeLabz\DesignPatternPrograms\DesignPatternPrograms\obj\Debug\netcoreapp3.1\DesignPatternPrograms.csprojAssemblyReference.cache
+C:\Users\Bridge Labs\Documents\GitHub\BridgeLabz\BridgeLabz\DesignPatternPrograms\DesignPatternPrograms\obj\Debug\netcoreapp3.1\DesignPatternPrograms.AssemblyInfoInputs.cache
+C:\Users\Bridge Labs\Documents\GitHub\BridgeLabz\BridgeLabz\DesignPatternPrograms\DesignPatternPrograms\obj\Debug\netcoreapp3.1\DesignPatternPrograms.AssemblyInfo.cs
+C:\Users\Bridge Labs\Documents\GitHub\BridgeLabz\BridgeLabz\DesignPatternPrograms\DesignPatternPrograms\obj\Debug\netcoreapp3.1\DesignPatternPrograms.dll
+C:\Users\Bridge Labs\Documents\GitHub\BridgeLabz\BridgeLabz\DesignPatternPrograms\DesignPatternPrograms\obj\Debug\netcoreapp3.1\DesignPatternPrograms.pdb

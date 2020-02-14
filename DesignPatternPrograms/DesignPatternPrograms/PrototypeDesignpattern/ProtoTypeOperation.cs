@@ -4,10 +4,17 @@ using System.Text;
 
 namespace DesignPatternPrograms.PrototypeDesignpattern
 {
-    class ProtoTypeOperation
+    /// <summary>
+    /// This is ProtoType Operations Class
+    /// </summary>
+    public class ProtoTypeOperation
     {
+        /// <summary>
+        /// Method for Cloning 
+        /// </summary>
         public void CloneOperation()
         {
+            ////object creation for the Employeeposition
             EmployeePosition EmployeeObj = new EmployeePosition();
             Console.WriteLine("Enter Employee ID ");
             int EmployeeID = Convert.ToInt32(Console.ReadLine());
@@ -19,8 +26,8 @@ namespace DesignPatternPrograms.PrototypeDesignpattern
             EmployeeObj.EmployeeDepartment = EmployeeDepartment;
             EmployeeObj.EmployeeID = EmployeeID;
 
-             EmployeeObj.GetDetails();
-            Employee EmployeeClone = (Employee)EmployeeObj.Clone();
+            EmployeeObj.GetDetails();
+            EmployeePosition EmployeeClone = (EmployeePosition)EmployeeObj.Clone();
 
         }
 

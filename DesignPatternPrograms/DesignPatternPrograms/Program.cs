@@ -43,8 +43,8 @@ namespace DesignPatternPrograms
                   */  break;
                     //// ProtoType Design Pattern
                 case 3:
-                    ProtoTypeOperation ProtoObj = new ProtoTypeOperation();
-                    ProtoObj.CloneOperation();
+                    //ProtoTypeOperation ProtoObj = new ProtoTypeOperation();
+                    //ProtoObj.CloneOperation();
                     break;
                     //// Default case for Invalid choice
                 default:

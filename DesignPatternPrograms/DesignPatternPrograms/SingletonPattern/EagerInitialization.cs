@@ -37,7 +37,6 @@ namespace DesignPatternPrograms.SingletonPattern
         /// </summary>
         public static EagerInitialization GetSingleton
         {
-
             get
             {
                 return NewObject;
