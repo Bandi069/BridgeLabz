@@ -9,6 +9,7 @@ using DesignPatternPrograms.SingletonPattern;
 using DesignPatternPrograms.FactoryPattern;
 //using DesignPatternPrograms.PrototypeDesignpattern;
 using DesignPatternPrograms.AdapterDesignPattern;
+using DesignPatternPrograms.StructuralDesignPaytterns.FacadeProductDesign;
 using System;
 
 
@@ -27,6 +28,7 @@ namespace DesignPatternPrograms
             Console.WriteLine("2. Factory Design Pattern");
             Console.WriteLine("3. Proto type Design Pattern");
             Console.WriteLine("4. Adapter Design Pattern");
+            Console.WriteLine("5. Facade Design Pattern");
             
             Console.WriteLine("\n**************************");
             Console.WriteLine("Enter a choice for required program to run");
@@ -40,7 +42,7 @@ namespace DesignPatternPrograms
                     break;
                     //// Case 2 for Factory Design Pattern Program
                 case 2:
-                   MainFactory FactoryObj = new MainFactory();
+                 MainFactory FactoryObj = new MainFactory();
                     FactoryObj.FactoryProduction();
                     break;
                     //// ProtoType Design Pattern
@@ -52,6 +54,11 @@ namespace DesignPatternPrograms
                 case 4:
                     Adaptee Adaptrobj = new Adaptee();
                     Adaptrobj.GetList();
+                    break;
+                    //// This is Case for Facade Design Pattern 
+                case 5:
+                    FacadeAddressBook FacadeObj = new FacadeAddressBook();
+                    FacadeObj.FirstName();
                     break;
                     //// Default case for Invalid choice
                 default:
