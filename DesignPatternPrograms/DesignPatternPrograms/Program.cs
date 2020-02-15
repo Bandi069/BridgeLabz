@@ -11,7 +11,7 @@ using DesignPatternPrograms.FactoryPattern;
 using DesignPatternPrograms.AdapterDesignPattern;
 using DesignPatternPrograms.StructuralDesignPaytterns.FacadeProductDesign;
 using System;
-
+using DesignPatternPrograms.StructuralDesignPaytterns.CarFacadeDesignPattern;
 
 namespace DesignPatternPrograms
 {
@@ -29,6 +29,7 @@ namespace DesignPatternPrograms
             Console.WriteLine("3. Proto type Design Pattern");
             Console.WriteLine("4. Adapter Design Pattern");
             Console.WriteLine("5. Facade Design Pattern");
+            Console.WriteLine("6. Car sFacade Design Pattern");
             
             Console.WriteLine("\n**************************");
             Console.WriteLine("Enter a choice for required program to run");
@@ -42,13 +43,13 @@ namespace DesignPatternPrograms
                     break;
                     //// Case 2 for Factory Design Pattern Program
                 case 2:
-                 MainFactory FactoryObj = new MainFactory();
-                    FactoryObj.FactoryProduction();
+                 //MainFactory FactoryObj = new MainFactory();
+                 //   FactoryObj.FactoryProduction();
                     break;
                     //// ProtoType Design Pattern
                 case 3:
-                   ProtoTypeOperation ProtoObj = new ProtoTypeOperation();
-                    ProtoObj.CloneOperation();
+                   //ProtoTypeOperation ProtoObj = new ProtoTypeOperation();
+                   // ProtoObj.CloneOperation();
                     break;
                     //// Adapter Design Pattern 
                 case 4:
@@ -59,6 +60,11 @@ namespace DesignPatternPrograms
                 case 5:
                     FacadeAddressBook FacadeObj = new FacadeAddressBook();
                     FacadeObj.FirstName();
+                    break;
+                    //// This is Switch Case for Car Facade Design Pattern
+                case 6:
+                    CarFacade carObj = new CarFacade();
+                    carObj.carfade();
                     break;
                     //// Default case for Invalid choice
                 default:
