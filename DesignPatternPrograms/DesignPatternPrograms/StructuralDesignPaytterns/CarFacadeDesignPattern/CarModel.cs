@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DesignPatternPrograms.StructuralDesignPaytterns.ProductFacadeDesignPattern
 {
-    class CarModel
+   public class CarModel
     {
         public void Model()
         {
