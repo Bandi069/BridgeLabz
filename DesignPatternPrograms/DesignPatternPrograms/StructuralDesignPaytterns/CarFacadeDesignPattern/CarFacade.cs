@@ -26,7 +26,7 @@ namespace DesignPatternPrograms.StructuralDesignPaytterns.CarFacadeDesignPattern
        /// <summary>
        /// This is method for Facade of car
        /// </summary>
-        public void carfade()
+        public void carfacade()
         {
             Console.WriteLine("Hi,\nHere the Accesries of car");
             ModelObj.Model();////Calling model through its object

@@ -4,7 +4,10 @@ using System.Text;
 
 namespace DesignPatternPrograms.StructuralDesignPaytterns.FacadeProductDesign
 {
-    public class FacadeAddressBook 
+    /// <summary>
+    /// 
+    /// </summary>
+    public class FacadeAddressBook : FacadeAddressBookDetails
     {
         public string FirstName()
         {

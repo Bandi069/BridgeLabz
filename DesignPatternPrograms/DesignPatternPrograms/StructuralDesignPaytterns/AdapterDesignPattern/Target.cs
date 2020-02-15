@@ -20,6 +20,6 @@ namespace DesignPatternPrograms.AdapterDesignPattern
         /// Get method
         /// </summary>
         /// <returns></returns>
-        public List<string> GetProducts();
+        public List<string> GetList();
     }
 }
