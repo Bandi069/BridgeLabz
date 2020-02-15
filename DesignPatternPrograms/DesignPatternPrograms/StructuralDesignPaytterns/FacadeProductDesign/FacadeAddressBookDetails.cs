@@ -7,6 +7,7 @@ namespace DesignPatternPrograms.StructuralDesignPaytterns.FacadeProductDesign
     public interface  FacadeAddressBookDetails
     {
         public string FirstName();
-
+        public string LastNAme();
+        public string Village();
     }
 }
