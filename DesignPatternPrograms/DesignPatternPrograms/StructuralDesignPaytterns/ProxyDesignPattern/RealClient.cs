@@ -13,6 +13,8 @@ namespace DesignPatternPrograms.StructuralDesignPaytterns.ProxyDesignPattern
         }
         public string GetData()
         {
+            Console.WriteLine("Enter a String");
+            Data = Console.ReadLine();
             return Data;
         }
     }
