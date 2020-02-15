@@ -9,7 +9,11 @@ namespace DesignPatternPrograms.StructuralDesignPaytterns.ProxyDesignPattern
         string Data;
         public RealClient()
         {
-            Console.WriteLine("it is Real Client");
+            Console.WriteLine("It is Real Client");
+        }
+        public string GetData()
+        {
+            return Data;
         }
     }
 }
