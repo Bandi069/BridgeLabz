@@ -25,15 +25,15 @@ namespace DesignPatternPrograms.AdapterDesignPattern
             }
             return AdapterList;
         }
-        public override class Adapter : Target
+        public class Adapter : Target
         {
             public List<string> GetList()
             {
                 Adapter Adaptee = new Adapter();
                 return Adaptee.GetList();
             }
-            
+
         }
-    
+
     }
 }
