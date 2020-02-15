@@ -4,8 +4,14 @@ using System.Text;
 
 namespace DesignPatternPrograms.StructuralDesignPaytterns.FacadeProductDesign
 {
-    class AddressBookOperations
+    public interface AddressBookOperations
     {
+        public void UserDetails();
+
+        public void AddUser();
+
+        public void UpdateUSer();
+
 
     }
 }
