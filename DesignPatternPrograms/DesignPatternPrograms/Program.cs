@@ -7,7 +7,8 @@
 
 using DesignPatternPrograms.SingletonPattern;
 using DesignPatternPrograms.FactoryPattern;
-using DesignPatternPrograms.PrototypeDesignpattern;
+//using DesignPatternPrograms.PrototypeDesignpattern;
+using DesignPatternPrograms.AdapterDesignPattern;
 using System;
 
 
@@ -25,6 +26,7 @@ namespace DesignPatternPrograms
             Console.WriteLine("1. Singleton Design Pattern");
             Console.WriteLine("2. Factory Design Pattern");
             Console.WriteLine("3. Proto type Design Pattern");
+            Console.WriteLine("4. Adapter Design Pattern");
             
             Console.WriteLine("\n**************************");
             Console.WriteLine("Enter a choice for required program to run");
@@ -38,13 +40,18 @@ namespace DesignPatternPrograms
                     break;
                     //// Case 2 for Factory Design Pattern Program
                 case 2:
-                  /* MainFactory FactoryObj = new MainFactory();
+                   MainFactory FactoryObj = new MainFactory();
                     FactoryObj.FactoryProduction();
-                  */  break;
+                    break;
                     //// ProtoType Design Pattern
                 case 3:
-                    //ProtoTypeOperation ProtoObj = new ProtoTypeOperation();
-                    //ProtoObj.CloneOperation();
+                   ProtoTypeOperation ProtoObj = new ProtoTypeOperation();
+                    ProtoObj.CloneOperation();
+                    break;
+                    //// Adapter Design Pattern 
+                case 4:
+                    Adaptee Adaptrobj = new Adaptee();
+                    Adaptrobj.GetList();
                     break;
                     //// Default case for Invalid choice
                 default:
