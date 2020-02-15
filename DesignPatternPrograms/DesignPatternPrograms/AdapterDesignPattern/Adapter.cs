@@ -15,15 +15,15 @@ namespace DesignPatternPrograms.AdapterDesignPattern
         /// <returns></returns>
         public  List<string> GetList()
         {
-          
                 List<string> AdapterList = new List<string>();
                 Console.WriteLine("Enter Number of adapts");
                 int Number = int.Parse(Console.ReadLine());
                 for (int i = 0; i < Number; i++)
                 {
-                    string Alist = Console.ReadLine();
+                    string Adaptee= Console.ReadLine();
+                AdapterList.Add(Adaptee);
                 }
-           
+            return AdapterList;
         }
     }
 }
