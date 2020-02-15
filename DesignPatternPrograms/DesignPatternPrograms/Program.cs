@@ -43,13 +43,13 @@ namespace DesignPatternPrograms
                     break;
                     //// Case 2 for Factory Design Pattern Program
                 case 2:
-                 //MainFactory FactoryObj = new MainFactory();
-                 //   FactoryObj.FactoryProduction();
+                 MainFactory FactoryObj = new MainFactory();
+                    FactoryObj.FactoryProduction();
                     break;
                     //// ProtoType Design Pattern
                 case 3:
-                   //ProtoTypeOperation ProtoObj = new ProtoTypeOperation();
-                   // ProtoObj.CloneOperation();
+                 ProtoTypeOperation ProtoObj = new ProtoTypeOperation();
+                    ProtoObj.CloneOperation();
                     break;
                     //// Adapter Design Pattern 
                 case 4:
@@ -64,7 +64,7 @@ namespace DesignPatternPrograms
                     //// This is Switch Case for Car Facade Design Pattern
                 case 6:
                     CarFacade carObj = new CarFacade();
-                    carObj.carfade();
+                    carObj.carfacade();
                     break;
                     //// Default case for Invalid choice
                 default:
