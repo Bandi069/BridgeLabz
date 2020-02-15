@@ -9,5 +9,8 @@ namespace DesignPatternPrograms.StructuralDesignPaytterns.FacadeProductDesign
         public string FirstName();
         public string LastNAme();
         public string Village();
+        public string City();
+        public string State();
+
     }
 }
