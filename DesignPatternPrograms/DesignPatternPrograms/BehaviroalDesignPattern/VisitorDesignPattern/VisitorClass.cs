@@ -15,28 +15,22 @@ namespace DesignPatternPrograms.BehaviroalDesignPattern.VisitorDesignPattern
             }
             else
             {
-
+                cost = book.GetPrice();
             }
+            Console.WriteLine("Book cost is :" + cost);
             return cost;
         }
-        public int Visit(Fruit fruit);
+        public int Visit(Fruit fruit)
+        {
+            int cost = fruit.GetPrice();
+            return cost;
+        }
     }
     public interface IitemElement
     {
         public int Accept(IVisitor visitor);
     }
-    public class ShoppingVisit : IVisitor
-    {
-        public int Visit(Book book)
-        {
-
-        }
-
-        public int Visit(Fruit fruit)
-        {
-            throw new NotImplementedException();
-        }
-    }
+   
 
 
 
