@@ -18,10 +18,10 @@ namespace OOPS.InventaoryManagement
 
         public void InventoryManagementReport()
         {
-/*
+
             double totalRicePrice = 0.0;
             double totalWheatsPrice = 0.0;
-            double totalPulsesPrice = 0.0;*/
+            double totalPulsesPrice = 0.0;
             string FilePath = @"C:\Users\Bridge Labs\source\repos\OOPS\OOPS\InventaoryManagement\JsonFile.json";
             var Json = File.ReadAllText(FilePath);
             InventoryReport utility = (InventoryReport)JsonConvert.DeserializeObject(Json, typeof(InventoryReport));

@@ -19,7 +19,7 @@ namespace OOPS.AddressBook
 
         public void userdetails()
         {
-            var jsonfile = File.ReadAllText(@"C:\Users\Bridge Labs\source\repos\OOPS\OOPS\AddressBook\JsonFile.json");
+            var jsonfile = File.ReadAllText(@"C:\Users\Bridge Labs\Documents\GitHub\BridgeLabz\BridgeLabz\OOPS\AddressBook\JsonFile.json");
             try
             {
                 var JsonObject = JObject.Parse(jsonfile);
@@ -65,11 +65,11 @@ namespace OOPS.AddressBook
             var NewUser = "{ 'FirstName': '" + FirstName + "','LastName':'" + LastName + "','Village':'" + Village + "','State':'" + State + "','City':'" + City + "','PhoneNumber':" + PhoneNumber + ",'Zipcode':" + Zipcode + "}";
             var NewjasonFile = File.ReadAllText(this.jsonfile);
             var JsonObj = JObject.Parse(NewjasonFile);
-            var userArrary = JsonObj.GetValue("AddressBook") as JArray;
+            var userArray = JsonObj.GetValue("AddressBook") as JArray;
             var newItemObj = JObject.Parse(NewUser);
             Console.WriteLine("NewUSer " + newItemObj);
-            userArrary.Add(newItemObj);
-            JsonObj["AddressBook"] = userArrary;
+            userArray.Add(newItemObj);
+            JsonObj["AddressBook"] = userArray;
             string newJsonResult = JsonConvert.SerializeObject(JsonObj, Formatting.Indented);
             File.WriteAllText(this.jsonfile, newJsonResult);
             Console.WriteLine("New User Added to Json File");

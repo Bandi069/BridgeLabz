@@ -11,3 +11,16 @@ C:\Users\Bridge Labs\source\repos\OOPS\OOPS\bin\Debug\netcoreapp3.1\Newtonsoft.J
 C:\Users\Bridge Labs\source\repos\OOPS\OOPS\obj\Debug\netcoreapp3.1\OOPS.csproj.CopyComplete
 C:\Users\Bridge Labs\source\repos\OOPS\OOPS\obj\Debug\netcoreapp3.1\OOPS.dll
 C:\Users\Bridge Labs\source\repos\OOPS\OOPS\obj\Debug\netcoreapp3.1\OOPS.pdb
+C:\Users\Bridge Labs\Documents\GitHub\BridgeLabz\BridgeLabz\OOPS\bin\Debug\netcoreapp3.1\OOPS.exe
+C:\Users\Bridge Labs\Documents\GitHub\BridgeLabz\BridgeLabz\OOPS\bin\Debug\netcoreapp3.1\OOPS.deps.json
+C:\Users\Bridge Labs\Documents\GitHub\BridgeLabz\BridgeLabz\OOPS\bin\Debug\netcoreapp3.1\OOPS.runtimeconfig.json
+C:\Users\Bridge Labs\Documents\GitHub\BridgeLabz\BridgeLabz\OOPS\bin\Debug\netcoreapp3.1\OOPS.runtimeconfig.dev.json
+C:\Users\Bridge Labs\Documents\GitHub\BridgeLabz\BridgeLabz\OOPS\bin\Debug\netcoreapp3.1\OOPS.dll
+C:\Users\Bridge Labs\Documents\GitHub\BridgeLabz\BridgeLabz\OOPS\bin\Debug\netcoreapp3.1\OOPS.pdb
+C:\Users\Bridge Labs\Documents\GitHub\BridgeLabz\BridgeLabz\OOPS\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\Bridge Labs\Documents\GitHub\BridgeLabz\BridgeLabz\OOPS\obj\Debug\netcoreapp3.1\OOPS.csprojAssemblyReference.cache
+C:\Users\Bridge Labs\Documents\GitHub\BridgeLabz\BridgeLabz\OOPS\obj\Debug\netcoreapp3.1\OOPS.AssemblyInfoInputs.cache
+C:\Users\Bridge Labs\Documents\GitHub\BridgeLabz\BridgeLabz\OOPS\obj\Debug\netcoreapp3.1\OOPS.AssemblyInfo.cs
+C:\Users\Bridge Labs\Documents\GitHub\BridgeLabz\BridgeLabz\OOPS\obj\Debug\netcoreapp3.1\OOPS.csproj.CopyComplete
+C:\Users\Bridge Labs\Documents\GitHub\BridgeLabz\BridgeLabz\OOPS\obj\Debug\netcoreapp3.1\OOPS.dll
+C:\Users\Bridge Labs\Documents\GitHub\BridgeLabz\BridgeLabz\OOPS\obj\Debug\netcoreapp3.1\OOPS.pdb

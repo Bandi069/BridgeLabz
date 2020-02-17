@@ -57,11 +57,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Bridge Labs\\source\\repos\\OOPS\\OOPS\\OOPS.csproj",
+      "projectUniqueName": "C:\\Users\\Bridge Labs\\Documents\\GitHub\\BridgeLabz\\BridgeLabz\\OOPS\\OOPS.csproj",
       "projectName": "OOPS",
-      "projectPath": "C:\\Users\\Bridge Labs\\source\\repos\\OOPS\\OOPS\\OOPS.csproj",
+      "projectPath": "C:\\Users\\Bridge Labs\\Documents\\GitHub\\BridgeLabz\\BridgeLabz\\OOPS\\OOPS.csproj",
       "packagesPath": "C:\\Users\\Bridge Labs\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Bridge Labs\\source\\repos\\OOPS\\OOPS\\obj\\",
+      "outputPath": "C:\\Users\\Bridge Labs\\Documents\\GitHub\\BridgeLabz\\BridgeLabz\\OOPS\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Bridge Labs\\AppData\\Roaming\\NuGet\\NuGet.Config",
