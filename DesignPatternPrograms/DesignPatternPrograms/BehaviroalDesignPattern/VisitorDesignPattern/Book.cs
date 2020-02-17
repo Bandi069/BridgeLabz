@@ -32,14 +32,28 @@ namespace DesignPatternPrograms.BehaviroalDesignPattern.VisitorDesignPattern
 
         private int weight;
         private string FruitName;
-        public Fruit(int PricepeKg,int Weight,string FruitName)
+        public Fruit(int Price,int weight,string Name)
         {
-
+            this.PriceperKg = Price;
+            this.weight = weight;
+            this.FruitName = Name;
+        }
+        public int GetPrice()
+        {
+            return PriceperKg;
+        }
+        public int GetWeight()
+        {
+            return weight;
+        }
+        public string GetName()
+        {
+            return FruitName;
         }
 
         public int Accept(IVisitor visitor)
         {
-            return Getprice(this);
+            return GetPrice();
         }
     }
 }
