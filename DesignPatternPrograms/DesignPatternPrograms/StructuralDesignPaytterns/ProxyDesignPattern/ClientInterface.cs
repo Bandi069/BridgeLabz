@@ -12,7 +12,7 @@ namespace DesignPatternPrograms.StructuralDesignPaytterns.ProxyDesignPattern
         /// <summary>
         /// this is for getting string data 
         /// </summary>
-        /// <returns></returns>
+        /// <returns value="GetData"></returns>
        public string GetData();
     }
     
