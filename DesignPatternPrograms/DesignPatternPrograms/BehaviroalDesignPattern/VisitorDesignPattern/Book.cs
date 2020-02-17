@@ -4,11 +4,11 @@ using System.Text;
 
 namespace DesignPatternPrograms.BehaviroalDesignPattern.VisitorDesignPattern
 {
-   public class Book : IitemElement
+    public class Book : IitemElement
     {
         private int Price;
         private string isbnNumber;
-        public Book(int cost,string isbnNumber)
+        public Book(int cost, string isbnNumber)
         {
             this.Price = cost;
             this.isbnNumber = isbnNumber;
@@ -25,5 +25,9 @@ namespace DesignPatternPrograms.BehaviroalDesignPattern.VisitorDesignPattern
         {
             return visitor.Visit(this);
         }
+    }
+    public class Fruit : IitemElement
+    {
+
     }
 }
