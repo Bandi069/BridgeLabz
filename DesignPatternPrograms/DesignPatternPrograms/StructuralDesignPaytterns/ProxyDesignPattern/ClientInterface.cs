@@ -4,9 +4,16 @@ using System.Text;
 
 namespace DesignPatternPrograms.StructuralDesignPaytterns.ProxyDesignPattern
 {
+    /// <summary>
+    /// This is client interface Class
+    /// </summary>
     public interface Client
     {
-        string GetData();
+        /// <summary>
+        /// this is for getting string data 
+        /// </summary>
+        /// <returns></returns>
+       public string GetData();
     }
     
 }
