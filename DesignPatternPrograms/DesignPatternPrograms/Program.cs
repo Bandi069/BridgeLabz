@@ -4,7 +4,6 @@
 // </copyright>
 // <creator name="Bandi Venu"/>
 // --------------------------------------------------------------------------------------------------------------------
-
 using DesignPatternPrograms.SingletonPattern;
 using DesignPatternPrograms.FactoryPattern;
 //using DesignPatternPrograms.PrototypeDesignpattern;
@@ -12,6 +11,7 @@ using DesignPatternPrograms.AdapterDesignPattern;
 using DesignPatternPrograms.StructuralDesignPaytterns.FacadeProductDesign;
 using System;
 using DesignPatternPrograms.StructuralDesignPaytterns.CarFacadeDesignPattern;
+using DesignPatternPrograms.BehaviroalDesignPattern.VisitorDesignPattern;
 
 namespace DesignPatternPrograms
 {
@@ -29,7 +29,9 @@ namespace DesignPatternPrograms
             Console.WriteLine("3. Proto type Design Pattern");
             Console.WriteLine("4. Adapter Design Pattern");
             Console.WriteLine("5. Facade Design Pattern");
-            Console.WriteLine("6. Car sFacade Design Pattern");
+            Console.WriteLine("6. Car Facade Design Pattern");
+            Console.WriteLine("7. Visitor Design Pattern");
+
 
             Console.WriteLine("\n**************************");
             Console.WriteLine("Enter a choice for required program to run");
@@ -58,15 +60,20 @@ namespace DesignPatternPrograms
                     break;
                 //// This is Case for Facade Design Pattern 
                 case 5:
-                    FacadeAddressBook FacadeObj = new FacadeAddressBook();
-                    FacadeObj.FirstName();
+                    AddressbookClass FacadeObj = new AddressbookClass();
+                    FacadeObj.AddressObject();
                     break;
                 //// This is Switch Case for Car Facade Design Pattern
                 case 6:
                     CarFacade carObj = new CarFacade();
                     carObj.carfacade();
                     break;
+                //// This is switch case for  Visitor Design Pattern 
                 case 7:
+                    Shopping ObjShopping = new Shopping();
+                    ObjShopping.MethodShopping();
+                    break;
+                case 8:
                     break;
                 //// Default case for Invalid choice
                 default:
@@ -76,5 +83,7 @@ namespace DesignPatternPrograms
             }
 
         }
+
+
     }
 }
