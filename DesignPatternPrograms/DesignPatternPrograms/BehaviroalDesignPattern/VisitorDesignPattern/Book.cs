@@ -28,6 +28,18 @@ namespace DesignPatternPrograms.BehaviroalDesignPattern.VisitorDesignPattern
     }
     public class Fruit : IitemElement
     {
+        private int PriceperKg;
 
+        private int weight;
+        private string FruitName;
+        public Fruit(int PricepeKg,int Weight,string FruitName)
+        {
+
+        }
+
+        public int Accept(IVisitor visitor)
+        {
+            return Getprice(this);
+        }
     }
 }
