@@ -26,6 +26,7 @@ namespace DesignPatternPrograms.StructuralDesignPaytterns.ProxyDesignPattern
         /// <returns></returns>
         public string GetData()
         {
+            //// Retruning GetData value
             return RealClientObj.GetData();
         }
     }
