@@ -20,7 +20,11 @@ namespace Oops.InventaoryManagement
     class InventoryManagement
     {
        //// Taking String thorugh Json file path
+<<<<<<< HEAD
       public string JsonFile = @"C:\Users\Bridge Labs\source\repos\OOPS\OOPS\InventaoryManagement\JsonFile.json";
+=======
+        private string JsonFile = @"C:\Users\Bridge Labs\source\repos\OOPS\OOPS\InventaoryManagement\JsonFile.json";
+>>>>>>> 0719d6bd675447eb14e05ecd50c0f34251333d15
         /// <summary>
         /// Method for getting user Details
         /// </summary>

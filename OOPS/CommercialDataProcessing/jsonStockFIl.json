@@ -1,0 +1,29 @@
+{
+    "stockReport": [
+        {
+            "stockName": "Ts",
+            "noOfShare": 211,
+            "sharePrice": 22.0
+        },
+        {
+            "stockName": "Bridgelabz",
+            "noOfShare": 340,
+            "sharePrice": 21.0
+        },
+        {
+            "stockName": "Bridgelabz",
+            "noOfShare": 400,
+            "sharePrice": 12.0
+        },
+        {
+            "stockName": "Google",
+            "noOfShare": 2000,
+            "sharePrice": 30.0
+        },
+        {
+            "stockName": "Oppo",
+            "noOfShare": 250,
+            "sharePrice": 25.0
+        }
+    ]
+}

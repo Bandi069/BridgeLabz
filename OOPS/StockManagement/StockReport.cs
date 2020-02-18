@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="StockReport.cs" company="Bridgelabz">
 // Copyright © 2020  Company="BridgeLabz"
@@ -5,6 +6,9 @@
 // <creator name="Bandi Venu"/>
 // --------------------------------------------------------------------------------------------------------------------
 using System;
+=======
+﻿using System;
+>>>>>>> 0719d6bd675447eb14e05ecd50c0f34251333d15
 using System.Collections.Generic;
 using System.Text;
 
@@ -12,6 +16,13 @@ namespace OOPS.StockManagement
 {
     class StockReport
     {
+<<<<<<< HEAD
+=======
+        public int NameOfShare { get;  set; }
+        public string SharePrice { get; set; }
+        public string NumberOfShare { get;  set; }
+
+>>>>>>> 0719d6bd675447eb14e05ecd50c0f34251333d15
         public void InputStock()
         {
             PropertyClass PropertyObj = new PropertyClass();
@@ -26,8 +37,21 @@ namespace OOPS.StockManagement
             }
             catch (Exception e)
             {
+<<<<<<< HEAD
                 Console.WriteLine("Exception Occurs.." + e.Message);
             }
+=======
+                Console.WriteLine("Exception Occurs" + e.Message);
+            }
+
+        }
+        public  void MethodsCalling()
+        {
+            StockPortfolio Stockobj = new StockPortfolio();
+            Stockobj.Stock();
+            Stockobj.AddStock();
+
+>>>>>>> 0719d6bd675447eb14e05ecd50c0f34251333d15
         }
     }
 }

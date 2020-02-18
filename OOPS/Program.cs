@@ -20,6 +20,7 @@ namespace OOPS
         /// Main Method
         /// </summary>
         /// <param name="args"></param>
+<<<<<<< HEAD
         static void Main(string[] args)
         {
             //// Lsit of Programs
@@ -29,6 +30,14 @@ namespace OOPS
             Console.WriteLine("4.Stock Management");
             Console.WriteLine("*************************\n");
 
+=======
+       static void Main(string[] args)
+        {
+            Console.WriteLine("1.Address Book");
+            Console.WriteLine("2.Inventory Management");
+            Console.WriteLine("3.Deck of Cards");
+            Console.WriteLine("4.Stock Management Program");
+>>>>>>> 0719d6bd675447eb14e05ecd50c0f34251333d15
             Console.WriteLine("Enter a number to run the required program");
             int Choice = int.Parse(Console.ReadLine());
             switch (Choice)
@@ -36,8 +45,14 @@ namespace OOPS
                 case 1:
                     AddressBookOperations operationObj = new AddressBookOperations();
                     operationObj.AddressOperations();
+<<<<<<< HEAD
                     break;
                 case 2:
+=======
+                  
+                    break;
+                    case 2:
+>>>>>>> 0719d6bd675447eb14e05ecd50c0f34251333d15
                     InventoryData inventoryobj = new InventoryData();
                     inventoryobj.Inventoryoperation();
                     break;
@@ -46,6 +61,7 @@ namespace OOPS
                     DeckObj.Shuffle();
                     break;
                 case 4:
+<<<<<<< HEAD
                     StockPortfolio StockObj = new StockPortfolio();
                     StockObj.Stock();
                     break;
@@ -54,6 +70,17 @@ namespace OOPS
                     break;
 
             }
+=======
+                    StockReport StockObj = new StockReport();
+                    StockObj.MethodsCalling();
+                    break;
+                default:
+                    Console.WriteLine("Invalid Choice");
+                    break;
+
+            }
+
+>>>>>>> 0719d6bd675447eb14e05ecd50c0f34251333d15
         }
     }
 }

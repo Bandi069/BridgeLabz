@@ -43,5 +43,22 @@ namespace Oops.InventaoryManagement
         {
             return Console.ReadLine();
         }
+<<<<<<< HEAD
+=======
+        /// <summary>
+        /// it create list of Rice class to stored multiple object.
+        /// </summary>
+        public IList<Rice> Rice { get; set; }
+
+        /// <summary>
+        /// it create list of Wheats class to stored multiple object.
+        /// </summary>
+        public IList<Wheat> Wheats { get; set; }
+
+        /// <summary>
+        /// it create list of Pulses class to stored multiple object.
+        /// </summary>
+        public IList<Pulses> Pulses { get; set; }
+>>>>>>> 0719d6bd675447eb14e05ecd50c0f34251333d15
     }
 }

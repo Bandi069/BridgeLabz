@@ -33,8 +33,12 @@ namespace OOPS.DeckCards
             {
                 j = j % Players;
                 PlayersCards[j, k] = Deck[i];
+<<<<<<< HEAD
                 j+=j; 
                 i+=i;
+=======
+                ++j; ++i;
+>>>>>>> 0719d6bd675447eb14e05ecd50c0f34251333d15
                 if (j == Players)
                 {
                     ++k;
