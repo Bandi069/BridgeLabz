@@ -8,6 +8,7 @@ namespace DesignPatternPrograms.BehaviroalDesignPattern.MediatorDesignPattern
     {
         public void Chat()
         {
+            ChatMediator MediatorObj = new ChatMediatorImpl();
 
         }
     }
