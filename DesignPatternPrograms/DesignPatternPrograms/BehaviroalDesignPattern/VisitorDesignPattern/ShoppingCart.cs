@@ -21,7 +21,7 @@ namespace DesignPatternPrograms.BehaviroalDesignPattern.VisitorDesignPattern
         /// </summary>
         public ShoppingCart()
         {
-            Console.WriteLine("Shopping Cart");
+            Console.WriteLine("This is Shopping Cart");
         }
         /// <summary>
         /// This is Visit Method for Book
@@ -31,7 +31,7 @@ namespace DesignPatternPrograms.BehaviroalDesignPattern.VisitorDesignPattern
         public int Visit(Book book)
         {
             Visit visitObj = new Visit();
-            int cost = 0;
+            int cost ;
             if (book.GetPrice() > 50)
             {
                 cost = book.GetPrice() - 10;
@@ -55,5 +55,10 @@ namespace DesignPatternPrograms.BehaviroalDesignPattern.VisitorDesignPattern
             return cost;
         }
 
+    }
+
+    public class Visit
+    {
+       
     }
 }
