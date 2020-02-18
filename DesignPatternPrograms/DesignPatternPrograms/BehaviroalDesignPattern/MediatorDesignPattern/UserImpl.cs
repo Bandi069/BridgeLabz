@@ -19,7 +19,7 @@ namespace DesignPatternPrograms.BehaviroalDesignPattern.MediatorDesignPattern
        override
         public void Send(string msg)
         {
-            Console.WriteLine(this.name +"Messge sending "+msg);
+            Console.WriteLine(this.name +"Messge sending :"+msg);
         }
         override
         public void Receive(string msg)

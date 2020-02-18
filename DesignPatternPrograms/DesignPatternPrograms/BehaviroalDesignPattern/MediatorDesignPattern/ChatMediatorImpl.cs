@@ -19,9 +19,12 @@ namespace DesignPatternPrograms.BehaviroalDesignPattern.MediatorDesignPattern
         /// This is users List
         /// </summary>
         public List<UserMediator> users;
+        /// <summary>
+        /// This is ChatMediatorImpl Constructor 
+        /// </summary>
         public ChatMediatorImpl()
         {
-            this.users = new ArrayList<>();
+            this.users = new List<UserMediator>();
 
         }
         /// <summary>
