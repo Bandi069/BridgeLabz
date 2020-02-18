@@ -12,6 +12,7 @@ using DesignPatternPrograms.StructuralDesignPaytterns.FacadeProductDesign;
 using System;
 using DesignPatternPrograms.StructuralDesignPaytterns.CarFacadeDesignPattern;
 using DesignPatternPrograms.BehaviroalDesignPattern.VisitorDesignPattern;
+using DesignPatternPrograms.BehaviroalDesignPattern.MediatorDesignPattern;
 
 namespace DesignPatternPrograms
 {
@@ -74,6 +75,8 @@ namespace DesignPatternPrograms
                     ObjShopping.MethodShopping();
                     break;
                 case 8:
+                    ChatClient ChatObj = new ChatClient();
+                    ChatObj.Chat();
                     break;
                 //// Default case for Invalid choice
                 default:
