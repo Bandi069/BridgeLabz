@@ -14,7 +14,7 @@ namespace EmployeeManagement.Models
 
     public class EmployeeModel
     {
-      // ConnectionString ConnectionObj = new ConnectionString();
+        // ConnectionString ConnectionObj = new ConnectionString();
         string connectionstring = ConnectionString.Connect();
 
         public IEnumerable<ModelClass> GetAllEmloyees()
@@ -42,12 +42,22 @@ namespace EmployeeManagement.Models
         }
         public void AddEmployee(EmployeeModel employee)
         {
-            using(SqlConnection Connect=new SqlConnection(connectionstring))
+            using (SqlConnection Connect = new SqlConnection(connectionstring))
             {
-                SqlCommand Cmd = new SqlCommand();
+                ModelClass ModelObj = new ModelClass();
+                SqlCommand Cmd = new SqlCommand("AddEmployee");
+                Cmd.CommandType = CommandType.StoredProcedure;
+                Cmd.Parameters.AddWithValue("@EmployeeID", ModelObj.EmployeeID);
+                Cmd.Parameters.AddWithValue("@FirstName", ModelObj.FirstName);
+                Cmd.Parameters.AddWithValue("@LastName", ModelObj.LastName);
+                Cmd.Parameters.AddWithValue("@EmailID", ModelObj.EmailID);
+                Cmd.Parameters.AddWithValue("@PhoneNumber", ModelObj.PhoneNumber);
+                Connect.Open();
+                Cmd.ExecuteNonQuery();
+                Connect.Close();
 
             }
-          //  return;
+           
         }
     }
 }
