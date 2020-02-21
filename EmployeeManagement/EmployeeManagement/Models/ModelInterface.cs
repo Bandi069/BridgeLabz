@@ -63,7 +63,17 @@ namespace EmployeeManagement.Models
         {
             using(SqlConnection Connect=new SqlConnection(connectionstring))
             {
-
+                ModelClass Modelobj = new ModelClass();
+                SqlCommand Command = new SqlCommand("Update Employee",Connect);
+                Command.CommandType = CommandType.StoredProcedure;
+                Command.Parameters.AddWithValue("@EmployeeId",Modelobj.EmployeeID);
+                Command.Parameters.AddWithValue("@FirstName", Modelobj.FirstName);
+                Command.Parameters.AddWithValue("@LastName", Modelobj.LastName);
+                Command.Parameters.AddWithValue("@EmailID", Modelobj.EmailID);
+                Command.Parameters.AddWithValue("@PhoneNumber", Modelobj.PhoneNumber);
+                Connect.Open();
+                Command.ExecuteNonQuery();
+                Connect.Close();
             }
         }
 
