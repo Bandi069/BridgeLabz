@@ -14,10 +14,10 @@ namespace EmployeeManagement.Models
 
     public class EmployeeModel
     {
-
         //ConnectionString ConnectionObj = new ConnectionString();
         string connectionstring = ConnectionString.ConnectionName();
-        public IEnumerable<ModelClass> GetyllEmployees()
+
+        public IEnumerable<ModelClass> ViewEmployees()
         {
             List<ModelClass> listEmployee = new List<ModelClass>();
             using (SqlConnection connect = new SqlConnection(connectionstring))
@@ -29,7 +29,12 @@ namespace EmployeeManagement.Models
                 while (reader.Read())
                 {
                     ModelClass ModelObj = new ModelClass();
-
+                    ModelObj.EmployeeID= Convert.ToInt32(reader["EmployeeID"]);
+                    ModelObj.FirstName = reader["FirstName"].ToString();
+                    ModelObj.LastName = reader["LastName"].ToString();
+                    ModelObj.EmailID = reader["EmailID"].ToString();
+                    ModelObj.PhoneNumber = reader["Phone Number"].ToString();
+                    listEmployee.Add(ModelObj);
                 }
             }
 
