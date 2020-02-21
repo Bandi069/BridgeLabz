@@ -40,6 +40,15 @@ namespace EmployeeManagement.Models
             }
             return listEmployee;
         }
+        public void AddEmployee(EmployeeModel employee)
+        {
+            using(SqlConnection Connect=new SqlConnection(connectionstring))
+            {
+                SqlCommand Cmd = new SqlCommand();
+
+            }
+          //  return;
+        }
     }
 }
 
