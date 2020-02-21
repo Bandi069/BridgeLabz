@@ -76,6 +76,14 @@ namespace EmployeeManagement.Models
                 Connect.Close();
             }
         }
+        public void DeleteEmployee(int EmployeeID)
+        {
+            using(SqlConnection connect=new SqlConnection(connectionstring))
+            {
+
+            }
+
+        }
 
     }
 }
