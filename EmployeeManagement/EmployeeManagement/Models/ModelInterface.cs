@@ -15,7 +15,7 @@ namespace EmployeeManagement.Models
     public class EmployeeModel
     {
         // ConnectionString ConnectionObj = new ConnectionString();
-       public string connectionstring = ConnectionString.Connect();
+        public string connectionstring = ConnectionString.Connect();
 
         public IEnumerable<ModelClass> GetAllEmloyees()
         {
@@ -45,7 +45,7 @@ namespace EmployeeManagement.Models
             using (SqlConnection Connect = new SqlConnection(connectionstring))
             {
                 ModelClass ModelObj = new ModelClass();
-                SqlCommand Cmd = new SqlCommand("AddEmployee",Connect);
+                SqlCommand Cmd = new SqlCommand("AddEmployee", Connect);
                 Cmd.CommandType = CommandType.StoredProcedure;
                 Cmd.Parameters.AddWithValue("@EmployeeID", ModelObj.EmployeeID);
                 Cmd.Parameters.AddWithValue("@FirstName", ModelObj.FirstName);
@@ -57,16 +57,16 @@ namespace EmployeeManagement.Models
                 Connect.Close();
 
             }
-           
+
         }
         public void UpdateEmployee(EmployeeModel employee)
         {
-            using(SqlConnection Connect=new SqlConnection(connectionstring))
+            using (SqlConnection Connect = new SqlConnection(connectionstring))
             {
                 ModelClass Modelobj = new ModelClass();
-                SqlCommand Command = new SqlCommand("Update Employee",Connect);
+                SqlCommand Command = new SqlCommand("Update Employee", Connect);
                 Command.CommandType = CommandType.StoredProcedure;
-                Command.Parameters.AddWithValue("@EmployeeId",Modelobj.EmployeeID);
+                Command.Parameters.AddWithValue("@EmployeeId", Modelobj.EmployeeID);
                 Command.Parameters.AddWithValue("@FirstName", Modelobj.FirstName);
                 Command.Parameters.AddWithValue("@LastName", Modelobj.LastName);
                 Command.Parameters.AddWithValue("@EmailID", Modelobj.EmailID);
@@ -78,8 +78,15 @@ namespace EmployeeManagement.Models
         }
         public void DeleteEmployee(int EmployeeID)
         {
-            using(SqlConnection connect=new SqlConnection(connectionstring))
+            using (SqlConnection connect = new SqlConnection(connectionstring))
             {
+                ModelClass modelobj = new ModelClass();
+                SqlCommand DeleteCommand = new SqlCommand("Delete Employee", connect);
+                DeleteCommand.CommandType = CommandType.StoredProcedure;
+                DeleteCommand.Parameters.AddWithValue("@EmployeeId", modelobj.EmployeeID);
+                connect.Open();
+                DeleteCommand.ExecuteNonQuery();
+                connect.Close();
 
             }
 
