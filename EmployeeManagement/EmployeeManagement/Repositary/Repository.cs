@@ -15,22 +15,30 @@ namespace EmployeeManagement.Repositary
     /// </summary>
     public class Repository : RepositoryInterface
     {
+        /// <summary>
+        /// This is model class object
+        /// </summary>
         ModelClass ModelObj = new ModelClass();
         // ConnectionString ConnectionObj = new ConnectionString();
         public string connectionstring = ConnectionString.Connect();
-
+        /// <summary>
+        /// This is enumerable Model Class for getting all empoyees data
+        /// </summary>
+        /// <returns></returns>
         public IEnumerable<ModelClass> GetAllEmloyees()
         {
+            //// This is list of Employees
             List<ModelClass> listEmployee = new List<ModelClass>();
+            ///This is for Sql Connection
             using (SqlConnection connect = new SqlConnection(connectionstring))
             {
                 SqlCommand cmd = new SqlCommand("ViewEmployees", connect);
                 cmd.CommandType = CommandType.StoredProcedure;
-                connect.Open();
-                SqlDataReader reader = cmd.ExecuteReader();
+                connect.Open(); //// To open the Connection
+                SqlDataReader reader = cmd.ExecuteReader();//// To Read the Excutable file
                 while (reader.Read())
                 {
-                    ModelClass ModelObj = new ModelClass();
+
                     ModelObj.EmployeeID = Convert.ToInt32(reader["EmployeeID"]);
                     ModelObj.FirstName = reader["FirstName"].ToString();
                     ModelObj.LastName = reader["LastName"].ToString();
@@ -38,12 +46,17 @@ namespace EmployeeManagement.Repositary
                     ModelObj.PhoneNumber = reader["Phone Number"].ToString();
                     listEmployee.Add(ModelObj);
                 }
-                connect.Close();
+                connect.Close(); //// Closinng Connection
             }
             return listEmployee;
         }
+        /// <summary>
+        /// This is method for Add Employee
+        /// </summary>
+        /// <param name="ModelObj"></param>
         public void AddEmployee(ModelClass ModelObj)
         {
+            //// Sql Connection
             using (SqlConnection Connect = new SqlConnection(connectionstring))
             {
                 SqlCommand Cmd = new SqlCommand("AddEmployee", Connect);
@@ -60,6 +73,10 @@ namespace EmployeeManagement.Repositary
             }
 
         }
+        /// <summary>
+        /// This is method for Update Employee
+        /// </summary>
+        /// <param name="ModelObj"></param>
         public void UpdateEmployee(ModelClass ModelObj)
         {
             using (SqlConnection Connect = new SqlConnection(connectionstring))
@@ -76,6 +93,10 @@ namespace EmployeeManagement.Repositary
                 Connect.Close();
             }
         }
+        /// <summary>
+        /// This is Method for delete the employee from Database
+        /// </summary>
+        /// <param name="EmployeeID"></param>
         public void DeleteEmployee(int EmployeeID)
         {
             using (SqlConnection connect = new SqlConnection(connectionstring))
@@ -90,8 +111,13 @@ namespace EmployeeManagement.Repositary
             }
 
         }
+        /// <summary>
+        /// This is Method for Get Employee Data
+        /// </summary>
+        /// <param name="EmployeeID"></param>
         public void GetEmployeeData(int EmployeeID)
         {
+            //// This is for Sql Connection
             using (SqlConnection connect = new SqlConnection(connectionstring))
             {
                 string sqlQuery = "SELECT * FROM Employee WHERE EmployeeID= " + EmployeeID;
