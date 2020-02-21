@@ -91,8 +91,23 @@ namespace EmployeeManagement.Models
         }
         public void GetEmployeeData(int EmployeeID)
         {
+            using (SqlConnection connect = new SqlConnection(connectionstring))
+            {
+                string sqlQuery = "SELECT * FROM Employee WHERE EmployeeID= " + EmployeeID;
+                SqlCommand command = new SqlCommand(sqlQuery, connect);
+                connect.Open();
+                SqlDataReader Reader = command.ExecuteReader();
+                while(Reader.Read())
+                {
+                    ModelObj.EmployeeID = Convert.ToInt32(Reader["EmployeeId"]);
+                    ModelObj.FirstName = Reader["FirstName"].ToString();
+                    ModelObj.LastName = Reader["LastName"].ToString();
+                    ModelObj.EmailID = Reader["EmailID"].ToString();
+                    ModelObj.PhoneNumber = Reader["PhoneNumber"].ToString();
+                    
+                }
+            }
             
-
         }
     }
 }
