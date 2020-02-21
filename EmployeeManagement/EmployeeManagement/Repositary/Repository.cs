@@ -1,18 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Threading.Tasks;
+﻿
 
-namespace EmployeeManagement.Models
+namespace EmployeeManagement.Repositary
 {
-    public interface ModelInterface
-    {
-
-    }
-
-    public class EmployeeModel
+    using EmployeeManagement.Models;
+    using System;
+    using System.Collections.Generic;
+    using System.Data;
+    using System.Data.SqlClient;
+    using System.Linq;
+    using System.Threading.Tasks;
+    /// <summary>
+    /// This is Repository Class 
+    /// All CRUD Operations done in this class
+    /// </summary>
+    public class Repository : RepositoryInterface
     {
         ModelClass ModelObj = new ModelClass();
         // ConnectionString ConnectionObj = new ConnectionString();
@@ -41,7 +42,7 @@ namespace EmployeeManagement.Models
             }
             return listEmployee;
         }
-        public void AddEmployee(EmployeeModel employee)
+        public void AddEmployee(ModelClass ModelObj)
         {
             using (SqlConnection Connect = new SqlConnection(connectionstring))
             {
@@ -59,7 +60,7 @@ namespace EmployeeManagement.Models
             }
 
         }
-        public void UpdateEmployee(EmployeeModel employee)
+        public void UpdateEmployee(ModelClass ModelObj)
         {
             using (SqlConnection Connect = new SqlConnection(connectionstring))
             {
@@ -97,20 +98,17 @@ namespace EmployeeManagement.Models
                 SqlCommand command = new SqlCommand(sqlQuery, connect);
                 connect.Open();
                 SqlDataReader Reader = command.ExecuteReader();
-                while(Reader.Read())
+                while (Reader.Read())
                 {
                     ModelObj.EmployeeID = Convert.ToInt32(Reader["EmployeeId"]);
                     ModelObj.FirstName = Reader["FirstName"].ToString();
                     ModelObj.LastName = Reader["LastName"].ToString();
                     ModelObj.EmailID = Reader["EmailID"].ToString();
                     ModelObj.PhoneNumber = Reader["PhoneNumber"].ToString();
-                    
+
                 }
             }
-            
         }
+
     }
 }
-
-
-

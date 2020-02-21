@@ -6,18 +6,18 @@ using System.Threading.Tasks;
 
 namespace EmployeeManagement.Models
 {
-    public class ModelClass : ModelInterface
+    public class ModelClass 
     {
-        public int EmpplyeeID { get; set; }
-        [Required]
+        [Required(ErrorMessage = "*EmployeeID Required")]
+        public int EmployeeID { get; set; }
+        [Required (ErrorMessage = "*FirstName Required")]
         public string FirstName { get; set; }
-        [Required]
+        [Required(ErrorMessage = "*LastName Required")]
         public string LastName { get; set; }
-        [Required]
-        public string EmaidlID { get; set; }
-        [Required]
+        [Required(ErrorMessage = "*Email ID Required")]
+        public string EmailID { get; set; }
+        [Required(ErrorMessage = "*PhoneNumber Required")]
         public string PhoneNumber { get; set; }
-        [Required]
-        public string EmployeeAddress { get; set; }
+        
     }
 }

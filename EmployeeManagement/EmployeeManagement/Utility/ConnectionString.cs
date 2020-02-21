@@ -9,12 +9,12 @@ using Microsoft.IdentityModel.Protocols;
 
 namespace EmployeeManagement
 {
-    public class Utility    
+    public class ConnectionString
     {
         public static void Connection()
         {
-           // string ConnectionName = ConfigurationManager.ConnectionStrings[0].ConnectionString;
-           string ConnectionName = "database=.;databse=EmployeeManagement;integrated Security=SSPI";
+            // string ConnectionName = ConfigurationManager.ConnectionStrings[0].ConnectionString;
+            string ConnectionName = "database=.;databse=EmployeeManagement;integrated Security=SSPI";
             SqlConnection connect = new SqlConnection(ConnectionName);
             try
             {
@@ -31,5 +31,12 @@ namespace EmployeeManagement
                 connect.Close();
             }
         }
+
+        internal static string Connect()
+        {
+            throw new NotImplementedException();
+        }
+
     }
 }
+
