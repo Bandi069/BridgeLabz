@@ -1,29 +1,65 @@
 ﻿body {
+    background-attachment:fixed;
     background: center;
     background-size: cover;
-    /*background-image: url(Images/EmpImage.jpg);*/
-    text-emphasis-color: blue
+    background-image: url(Images/pic.jpg);
+    text-emphasis-color: blue;
+    
+}
+.Registration {
+    text-align: center;
+    color: red;
+    width: 400px;
+    
+        padding: 1px
 }
 
 h1 {
     text-align: center;
     color: blueviolet;
     background: border-box;
-    background-color:lavender;
+    background-color: lavender;
     padding: inherit;
+    width:auto;
 }
-.button {
-    background-color: palevioletred;
-   
-    color: cadetblue;
+
+#Button {
+    background-color: gray;
+    color: maroon;
     text-align: center;
-    text-decoration:solid;
-    font-weight:bold;
+    text-decoration: solid;
+    font-weight: bold;
+}
+
+
+#small {
+    color: blueviolet;
+}
+#loginform{
+    background:center;
    
-}
-.Employee Registration{
-    background:content-box;
-    background-position-x:bottom;
+    align-content:center;
 }
 
+.DetailsButton {
+    color: red;
+    background-color: antiquewhite;
+    font-weight: bold;
+}
 
+h3 {
+    text-align: left;
+    color:brown;
+    background: border-box;
+    background-color: lavender;
+    padding: inherit;
+    width:inherit;
+}
+h2 {
+    text-align: center;
+    color: darkred;
+    background: border-box;
+    background-color: lavender;
+    padding: inherit;
+    width: auto;
+}
