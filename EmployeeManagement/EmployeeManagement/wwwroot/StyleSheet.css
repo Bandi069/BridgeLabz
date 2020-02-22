@@ -31,11 +31,6 @@ h1 {
     font-weight: bold;
 }
 
-
-#small {
-    color: blueviolet;
-}
-
 #loginform {
     background: center;
     align-content: center;
@@ -66,6 +61,13 @@ h2 {
     width: 140px;
     text-decoration-style: solid;
 }
+.GetDetails{
+    text-decoration:none;
+    color:wheat;
+}
+#small {
+    color:blue;
+}
 
 .Update {
     text-align: center;
@@ -75,5 +77,40 @@ h2 {
 }
 #lineclass
 {
-  text-align:justify;
+  align-items:start;
+  color:red;
+}
+#homeclass{
+    color:yellow;
+    text-decoration:none;
+    background:none;
+  
+}
+li {
+    float:right;
+    text-decoration: none;
+    padding: 5px;
+    list-style-type: none
+}
+.Para
+{
+    color:deeppink;
+    
+}
+#main {
+    
+    width: 50%;
+    max-width: 600px;
+}
+#main1{
+    color:aqua;
+    width:100%;
+    padding-left:inherit;
+}
+div {
+    display: inline-block;
+
+}
+.forright {
+    float: right;
 }
