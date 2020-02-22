@@ -1,5 +1,29 @@
 ﻿body {
-    background:center;
-    background-color:pink;
-    text-emphasis-color:aqua
+    background: center;
+    background-size: cover;
+    /*background-image: url(Images/EmpImage.jpg);*/
+    text-emphasis-color: blue
 }
+
+h1 {
+    text-align: center;
+    color: blueviolet;
+    background: border-box;
+    background-color:lavender;
+    padding: inherit;
+}
+.button {
+    background-color: palevioletred;
+   
+    color: cadetblue;
+    text-align: center;
+    text-decoration:solid;
+    font-weight:bold;
+   
+}
+.Employee Registration{
+    background:content-box;
+    background-position-x:bottom;
+}
+
+
