@@ -4,7 +4,6 @@
     background-size: cover;
     background-image: url(Images/pic.jpg);
     text-emphasis-color: blue;
-
 }
 
 .Registration {
@@ -21,7 +20,7 @@ h1 {
     background-color: lavender;
     padding: inherit;
     width: auto;
-    width:500px;
+    width: 500px;
 }
 
 #Button {
@@ -40,7 +39,7 @@ h1 {
 #loginform {
     background: center;
     align-content: center;
-    color:red;
+    color: red;
 }
 
 .DetailsButton {
@@ -65,5 +64,16 @@ h2 {
     background-color: lavender;
     padding: inherit;
     width: 140px;
-    text-decoration-style:solid;
+    text-decoration-style: solid;
+}
+
+.Update {
+    text-align: center;
+    color: red;
+    width: 400px;
+    padding: 1px
+}
+#lineclass
+{
+  text-align:justify;
 }
