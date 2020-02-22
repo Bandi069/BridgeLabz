@@ -1,17 +1,17 @@
 ﻿body {
-    background-attachment:fixed;
+    background-attachment: fixed;
     background: center;
     background-size: cover;
     background-image: url(Images/pic.jpg);
     text-emphasis-color: blue;
-    
+
 }
+
 .Registration {
     text-align: center;
     color: red;
     width: 400px;
-    
-        padding: 1px
+    padding: 1px
 }
 
 h1 {
@@ -20,7 +20,8 @@ h1 {
     background: border-box;
     background-color: lavender;
     padding: inherit;
-    width:auto;
+    width: auto;
+    width:500px;
 }
 
 #Button {
@@ -35,10 +36,11 @@ h1 {
 #small {
     color: blueviolet;
 }
-#loginform{
-    background:center;
-   
-    align-content:center;
+
+#loginform {
+    background: center;
+    align-content: center;
+    color:red;
 }
 
 .DetailsButton {
@@ -48,18 +50,20 @@ h1 {
 }
 
 h3 {
-    text-align: left;
-    color:brown;
+    text-align: center;
+    color: brown;
     background: border-box;
     background-color: lavender;
-    padding: inherit;
-    width:inherit;
+    padding: initial;
+    width: 150px;
 }
+
 h2 {
     text-align: center;
     color: darkred;
     background: border-box;
     background-color: lavender;
     padding: inherit;
-    width: auto;
+    width: 140px;
+    text-decoration-style:solid;
 }

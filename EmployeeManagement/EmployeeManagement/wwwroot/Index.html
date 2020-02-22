@@ -5,30 +5,73 @@
     <title>EmployeeManagement</title>
     <script>
         <link href="StyleSheet.css" rel="stylesheet" />
-    </script></head>
+    </script>
+</head>
 <body>
     <center>
-    <h1>Employee Management System</h1>
-    <link rel="stylesheet" type="text/css" href="StyleSheet.css" />
+        <h1>Employee Management System</h1>
+        <link rel="stylesheet" type="text/css" href="StyleSheet.css" />
 
-    <div class="EmployeeRegistration">
-        <h3>Register Here</h3>
-        <form class="Registration">
-            <label for="Customer ID">Employee ID <sup>*</sup></label>
-            <input type="text" name="" placeholder="Enter Employee ID" /> <br />
-            <label for="FirstName">First Name <sup>*</sup></label>
-            <input type="text" name="" placeholder="Enter FirstName" />
-            <br /><label for="LastName">Last Name <sup>*</sup></label>
-            <input type="text" name="" placeholder="Enter LastName" />
-            <br /> <label for="EmailID">EmailID <sup>*</sup></label>
-            <input type="text" name="" placeholder="Enter EmailID" />
-            <br /> <label for="PhoneNUmber">Phone Number <sup>*</sup></label>
-            <!--<br />   <input type="tel" id="phone" name="PhoneNumber" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}">-->
-             <input type="text" name="" placeholder="Enter PhoneNumber" size="30" required />
-        </form>
-        <br /><button id="Button">Click Here to Register</button>
-        <br /> <small id="small">Click here for </small><a href="Userlogin.html">Login</a>
-    </div>
+        <div class="EmployeeRegistration">
+            <h3>Register Here</h3>
+
+            <form class="Registration">
+                <table>
+                    <tr>
+                    <tr>
+                        <td> <label for="Customer ID">Employee ID <sup>*</sup></label></td>
+                        <td>:&nbsp;</td>
+                        <td><input type="text" name="" placeholder="Enter Employee ID" /></td>
+                        <br>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="FirstName">First Name <sup>*</sup></label>
+                        </td>
+                        <td>:&nbsp;</td>
+                        <td>
+                            <input type="text" name="" placeholder="Enter FirstName" /><br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="LastName">Last Name <sup>*</sup></label>
+                        </td>
+                        <td>:&nbsp;</td>
+                        <td>
+                            <input type="text" name="" placeholder="Enter LastName" /><br>
+                        </td>
+                    </tr>
+                 
+                    <tr>
+                        <td>
+                            <label for="EmailID">EmailID <sup>*</sup></label>
+                        </td>
+                        <td>:&nbsp;</td>
+                        <td>
+                            <input type="text" name="" placeholder="Enter EmailID" />  <br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="PhoneNUmber">Phone Number <sup>*</sup>&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                        </td>
+                        <td>:&nbsp;</td>
+                        <td>
+                            <input type="text" name="" placeholder="Enter PhoneNumber" />
+                        </td>
+                    </tr>
+
+                    </tr>
+                </table>
+
+            </form>
+            <br />
+            <button id="Button">Click Here to Register</button>
+            <br />
+            <small id="small">Click here for </small>
+            <a href="Userlogin.html">Login</a>
+        </div>
     </center>
 </body>
 
