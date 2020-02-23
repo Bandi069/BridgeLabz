@@ -111,6 +111,9 @@ div {
     display: inline-block;
 
 }
-.forright {
-    float: right;
+element {
+    display: inline-block;
+    text-align: right;
+    width: 50%;
+    padding: 0px 10%;
 }
