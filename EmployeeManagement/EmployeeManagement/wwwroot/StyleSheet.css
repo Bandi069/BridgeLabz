@@ -20,7 +20,7 @@ h1 {
     background-color: lavender;
     padding: inherit;
     width: auto;
-    width: 500px;
+    width: 450px;
 }
 
 #Button {
@@ -61,12 +61,14 @@ h2 {
     width: 140px;
     text-decoration-style: solid;
 }
-.GetDetails{
-    text-decoration:none;
-    color:wheat;
+
+.GetDetails {
+    text-decoration: none;
+    color: wheat;
 }
+
 #small {
-    color:blue;
+    color: blue;
 }
 
 .Update {
@@ -75,42 +77,44 @@ h2 {
     width: 400px;
     padding: 1px
 }
-#lineclass
-{
-  align-items:start;
-  color:red;
+
+#lineclass {
+    align-items: start;
+    color: red;
 }
-#homeclass{
-    color:yellow;
-    text-decoration:none;
-    background:none;
-  
+
+#homeclass {
+    color: yellow;
+    text-decoration: none;
+    background: none;
 }
+
 li {
-    float:right;
+    float: right;
     text-decoration: none;
     padding: 5px;
     list-style-type: none
 }
-.Para
-{
-    color:deeppink;
-    
+
+.Para {
+    color: deeppink;
 }
+
 #main {
-    
     width: 50%;
     max-width: 600px;
 }
-#main1{
-    color:aqua;
-    width:100%;
-    padding-left:inherit;
+
+#main1 {
+    color: aqua;
+    width: 100%;
+    padding-left: inherit;
 }
+
 div {
     display: inline-block;
-
 }
+
 element {
     display: inline-block;
     text-align: right;
