@@ -121,3 +121,14 @@ element {
     width: 50%;
     padding: 0px 10%;
 }
+.column {
+    float: left;
+    width: 25%;
+    padding: 5px;
+}
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}

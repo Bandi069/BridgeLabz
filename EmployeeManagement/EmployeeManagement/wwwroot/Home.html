@@ -5,11 +5,19 @@
     <title>Home</title>
 </head>
 <body>
-    <center>
-        <link rel="stylesheet" type="text/css" href="StyleSheet.css">
-        <h1> Employee Management System</h1>
-        <div>
-            <ul>
+    <div style="width: 100%; align-items: center; display: inline-flex; background-color: rgb(52, 128, 58); border-radius: 5px;">
+        <div style="width: 50%; text-align: right;">
+            <center>
+                <h1>Employee Management System</h1>
+                <link rel="stylesheet" type="text/css" href="StyleSheet.css" />
+            </center>
+        </div>
+
+        <div class="forright" style="display: inline-block; text-align: right; width: 50%; padding: 0px 10%;">
+            <ul id="main1">
+                <li>
+                    <a id="homeclass" href="UpdateEmployee.html"><h4>Update Employee</h4></a>
+                </li>
                 <li>
                     <a id="homeclass" href="Userlogin.html"><h4>Login</h4></a>
                 </li>
@@ -18,21 +26,33 @@
                 </li>
                 <li>
                     <a id="homeclass" href="Home.html"><h4>Home</h4></a>
+                </li>
 
-                </li></br>
             </ul>
-             </br>
-            </br>
+        </div>
+    </div>
+    <center>
+        <link rel="stylesheet" type="text/css" href="StyleSheet.css">
 
-            <p class="Para">
-                An employee management system consists of crucial
-                work-related and important personal information about an employee.
-                In a nutshell, it is an online inventory of all employees of an organization.
-                Employees are the strength of any organization, and it is more so in case of a growing business.
-            </p>
-
+        <p class="Para" color:blue>
+            An employee management system consists of crucial
+            work-related and important personal information about an employee.
+            In a nutshell, it is an online inventory of all employees of an organization.
+            Employees are the strength of any organization, and it is more so in case of a growing business.
+        </p>
         </div>
     </center>
-  
+    <div class="row">
+        <div class="column">
+            <img src="Images/EmpImage.jpg" alt="Snow" style="width:100%">
+        </div>
+        <div class="column">
+            <img src="Images/iii.jpg" alt="Forest" style="width:100%">
+        </div>
+        <div class="column">
+            <img src="Images/pic.jpg" alt="Mountains" style="width:100%">
+        </div>
+    </div>
+   
 </body>
 </html>

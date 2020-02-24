@@ -19,6 +19,9 @@
         <div class="forright" style="display: inline-block; text-align: right; width: 50%; padding: 0px 10%;">
             <ul id="main1">
                 <li>
+                    <a id="homeclass" href="UpdateEmployee.html"><h4>Update Employee</h4></a>
+                </li>
+                <li>
                     <a id="homeclass" href="Userlogin.html"><h4>Login</h4></a>
                 </li>
                 <li>
@@ -34,7 +37,7 @@
         <div class="EmployeeRegistration">
             <h3> Register Here</h3>
             <table align="center">
-                <form class="Registration" onsubmit="return validate()">
+                <form class="Registration">
                     <tr>
                         <td> <label for="Customer ID" id="lineclass">Employee ID <sup> *</sup> </label> </td>
                         <td id="lineclass"> :&nbsp;</td>
@@ -69,6 +72,7 @@
                             <input type="text" name="" placeholder="Enter EmailID" /> <br>
                         </td>
                     </tr>
+
                     <tr>
                         <td>
                             <label for="PhoneNUmber" id="lineclass">Phone Number <sup> *</sup> &nbsp;&nbsp;&nbsp;&nbsp;</label>
@@ -78,16 +82,16 @@
                             <input type="text" name="" placeholder="Enter PhoneNumber" />
                         </td>
                     </tr>
-
                 </form>
+
             </table>
             <br />
             <form action="Userlogin.html">
                 <button onclick="Clickfunction()" id="Button"> Click Here to Register</button>
             </form>
-                <br /> <small id="small"> Click here for </small>
-                <a class="GetDetails" href="Userlogin.html"> GetDetails</a>
-            
+            <br /> <small id="small"> Click here for </small>
+            <a class="GetDetails" href="Userlogin.html"> GetDetails</a>
+
         </div>
     </center>
 </body>
