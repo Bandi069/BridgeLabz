@@ -1,4 +1,10 @@
 ﻿
+// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="Repository.cs" company="Bridgelabz">
+//   Copyright © 2020 Company="BridgeLabz"
+// </copyright>
+// <creator name="Bandi Venu"/>
+// --------------------------------------------------------------------------------------------------------------------
 
 namespace EmployeeManagement.Repositary
 {
@@ -107,7 +113,6 @@ namespace EmployeeManagement.Repositary
                 connect.Open();
                 DeleteCommand.ExecuteNonQuery();
                 connect.Close();
-
             }
 
         }
@@ -122,7 +127,7 @@ namespace EmployeeManagement.Repositary
             {
                 string sqlQuery = "SELECT * FROM Employee WHERE EmployeeID= " + EmployeeID;
                 SqlCommand command = new SqlCommand(sqlQuery, connect);
-                connect.Open();
+                connect.Open();//// To open the Connection
                 SqlDataReader Reader = command.ExecuteReader();
                 while (Reader.Read())
                 {
@@ -131,8 +136,8 @@ namespace EmployeeManagement.Repositary
                     ModelObj.LastName = Reader["LastName"].ToString();
                     ModelObj.EmailID = Reader["EmailID"].ToString();
                     ModelObj.PhoneNumber = Reader["PhoneNumber"].ToString();
-
                 }
+                connect.Close();
             }
         }
 
