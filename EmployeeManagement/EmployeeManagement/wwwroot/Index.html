@@ -37,7 +37,7 @@
         <div class="EmployeeRegistration">
             <h3> Register Here</h3>
             <table align="center">
-                <form class="Registration">
+                <form name="FormValidation" class="Registration" 0nblur="registration(names)" onsubmit="return validateForm()">
                     <tr>
                         <td> <label for="Customer ID" id="lineclass">Employee ID <sup> *</sup> </label> </td>
                         <td id="lineclass"> :&nbsp;</td>
@@ -50,7 +50,7 @@
                         </td>
                         <td id="lineclass"> :&nbsp;</td>
                         <td>
-                            <input type="text" id="hello" name="" placeholder="Enter FirstName"  required /> <br>
+                            <input type="text" onblur="AllLetter(FirstName)" name="" placeholder="Enter FirstName"  required /> <br>
                         </td>
                     </tr>
                     <tr>
@@ -69,7 +69,7 @@
                         </td>
                         <td id="lineclass"> :&nbsp;</td>
                         <td>
-                            <input type="text" name="" placeholder="Enter EmailID" required  /> <br>
+                            <input type="text" onblur="EmailIdValidateion(this)" name="" placeholder="Enter EmailID" required  /> <br>
                         </td>
                     </tr>
 
@@ -79,7 +79,7 @@
                         </td>
                         <td id="lineclass"> :&nbsp;</td>
                         <td>
-                            <input type="text" name="" placeholder="Enter PhoneNumber" required  />
+                            <input type="text"   onblur="ValidatePhonenumber(this)" placeholder="Enter PhoneNumber" required  />
                         </td>
                     </tr>
                 </form>
