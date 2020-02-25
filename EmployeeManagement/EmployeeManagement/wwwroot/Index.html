@@ -37,7 +37,7 @@
         <div class="EmployeeRegistration">
             <h3> Register Here</h3>
             <table align="center">
-                <form name="FormValidation" class="Registration" 0nblur="registration(names)" onsubmit="return validateForm()">
+                <form name="validateForm()" class="Registration" 0nblur="registration(names)" onsubmit="return validateForm()">
                     <tr>
                         <td> <label for="Customer ID" id="lineclass">Employee ID <sup> *</sup> </label> </td>
                         <td id="lineclass"> :&nbsp;</td>
@@ -50,7 +50,7 @@
                         </td>
                         <td id="lineclass"> :&nbsp;</td>
                         <td>
-                            <input type="text" onblur="AllLetter(FirstName)" name="" placeholder="Enter FirstName"  required /> <br>
+                            <input type="text" onblur="" name="" placeholder="Enter FirstName"  required /> <br>
                         </td>
                     </tr>
                     <tr>
