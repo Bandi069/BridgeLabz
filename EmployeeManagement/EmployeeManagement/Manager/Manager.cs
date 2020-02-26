@@ -35,7 +35,7 @@ namespace EmployeeManagement.Manager
             }
             return "Employee not added to the list";
         }
-        
+
         public string UpdateEmp(Repository updateemployee)
         {
             if (Repository.UpdateEmployee(updateemployee))
@@ -43,6 +43,19 @@ namespace EmployeeManagement.Manager
                 return "In the list Employee Updated Successfully";
             }
             return "Employee Not Updated in the list";
+        }
+        public string Delete(int EmployeeId)
+        {
+            if (Repository.DeleteEmployee(EmployeeId))
+            {
+                return "In the list Employee Delete Successfully";
+            }
+            return "Employee Not Deleted in the list";
+        }
+        public List<ModelClass> Retrieve()
+        {
+            return Repository.GetEmployeeData();
+
         }
     }
 }
