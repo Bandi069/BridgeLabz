@@ -1,14 +1,28 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
 
 namespace DesignPatternPrograms.Annotations
 {
     class AnnotationClass
-    {
-        public void Annotation()
+    { 
+
+        private string Customername;
+        [Required (ErrorMessage ="Name Should not Null")]
+        [StringLength(20)]
+        [RegularExpression(@"[A-Z]{20}$")]
+        private string EmployeeName
         {
-            Console.WriteLine();
+            get
+            {
+                return Customername;
+            }
+            set
+            {
+                Customername = value;
+            }
         }
+
     }
 }
