@@ -13,6 +13,7 @@ using System;
 using DesignPatternPrograms.StructuralDesignPaytterns.CarFacadeDesignPattern;
 using DesignPatternPrograms.BehaviroalDesignPattern.VisitorDesignPattern;
 using DesignPatternPrograms.BehaviroalDesignPattern.MediatorDesignPattern;
+using DesignPatternPrograms.Annotations;
 
 namespace DesignPatternPrograms
 {
@@ -32,6 +33,8 @@ namespace DesignPatternPrograms
             Console.WriteLine("5. Facade Design Pattern");
             Console.WriteLine("6. Car Facade Design Pattern");
             Console.WriteLine("7. Visitor Design Pattern");
+            Console.WriteLine("8. Mediator Design Pattern");
+            Console.WriteLine("9. Annotations program");
 
 
             Console.WriteLine("\n**************************");
@@ -74,9 +77,15 @@ namespace DesignPatternPrograms
                     Shopping ObjShopping = new Shopping();
                     ObjShopping.MethodShopping();
                     break;
+                    //// This is for Mediator Design Pattern
                 case 8:
                     ChatClient ChatObj = new ChatClient();
                     ChatObj.Chat();
+                    break;
+                    //// This is for Annotations
+                case 9:
+                    EmployeeAnnotations AnnotationObject = new EmployeeAnnotations();
+                    AnnotationObject.Employee();
                     break;
                 //// Default case for Invalid choice
                 default:

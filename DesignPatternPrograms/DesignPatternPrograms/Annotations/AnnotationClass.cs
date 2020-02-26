@@ -9,9 +9,9 @@ namespace DesignPatternPrograms.Annotations
     { 
 
         private string Customername;
-        [Required (ErrorMessage ="Name Should not Null")]
-        [StringLength(20)]
-        [RegularExpression(@"^[A-Z]{1,20}[0-9]{1,5}$")]
+        [Required (ErrorMessage ="Name Should not Null"),MaxLength(20)]
+       
+        [RegularExpression(@"^[A-Z]{1,20}[0-9]{1,5}$",ErrorMessage ="Enter Uppercase Letters and Numbers Only")]
         public string EmployeeName
         {
             get
