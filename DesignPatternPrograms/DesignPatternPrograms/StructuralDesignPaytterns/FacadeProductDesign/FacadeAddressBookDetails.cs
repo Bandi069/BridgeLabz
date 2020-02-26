@@ -7,7 +7,7 @@ namespace DesignPatternPrograms.StructuralDesignPaytterns.FacadeProductDesign
     /// <summary>
     /// Interface for the Addressbook
     /// </summary>
-    public interface  FacadeAddressBookDetails
+    public interface FacadeAddressBookDetails
     {
         /// <summary>
         /// Method Instance of FirstName

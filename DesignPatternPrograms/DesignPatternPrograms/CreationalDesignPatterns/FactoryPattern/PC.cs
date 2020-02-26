@@ -1,4 +1,4 @@
-﻿/*// --------------------------------------------------------------------------------------------------------------------
+﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="PC.cs" company="Bridgelabz">
 // Copyright © 2020  Company="BridgeLabz"
 // </copyright>
@@ -54,4 +54,3 @@ namespace DesignPatternPrograms.FactoryPattern
         return new PC(RAM, HDD, CPU);
     }
 }
-*/

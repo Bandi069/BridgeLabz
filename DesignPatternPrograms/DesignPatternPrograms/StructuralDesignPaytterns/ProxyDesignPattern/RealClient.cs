@@ -7,7 +7,7 @@ namespace DesignPatternPrograms.StructuralDesignPaytterns.ProxyDesignPattern
     /// <summary>
     /// This is Real Client Class 
     /// </summary>
-   public class RealClient : Client
+    public class RealClient : Client
     {
         /// <summary>
         /// This is Data object giving as Public String 

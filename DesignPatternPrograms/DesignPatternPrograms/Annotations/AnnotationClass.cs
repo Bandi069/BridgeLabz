@@ -5,13 +5,16 @@ using System.Text;
 
 namespace DesignPatternPrograms.Annotations
 {
-    class AnnotationClass
-    { 
-
+    /// <summary>
+    /// This is Annotation Class
+    /// </summary>
+    public class AnnotationClass
+    {
         private string Customername;
-        [Required (ErrorMessage ="Name Should not Null"),MaxLength(20)]
-       
-        [RegularExpression(@"^[A-Z]{1,20}[0-9]{1,5}$",ErrorMessage ="Enter Uppercase Letters and Numbers Only")]
+
+        [Required(ErrorMessage = "Name Should not Null"), MaxLength(20)]
+        [RegularExpression(@"^[A-Z]{1,20}[0-9]{1,5}$", ErrorMessage = "Enter Uppercase Letters and Numbers Only")]
+        //// Employee Name Property
         public string EmployeeName
         {
             get
@@ -22,7 +25,7 @@ namespace DesignPatternPrograms.Annotations
             {
                 Customername = value;
             }
-            
+
         }
 
     }

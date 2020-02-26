@@ -49,13 +49,13 @@ namespace DesignPatternPrograms
                     break;
                 //// Case 2 for Factory Design Pattern Program
                 case 2:
-                    //MainFactory FactoryObj = new MainFactory();
-                    //   FactoryObj.FactoryProduction();
+                    MainFactory FactoryObj = new MainFactory();
+                    FactoryObj.FactoryProduction();
                     break;
                 //// ProtoType Design Pattern
                 case 3:
-                    //ProtoTypeOperation ProtoObj = new ProtoTypeOperation();
-                    //   ProtoObj.CloneOperation();
+                    ProtoTypeOperation ProtoObj = new ProtoTypeOperation();
+                    ProtoObj.CloneOperation();
                     break;
                 //// Adapter Design Pattern 
                 case 4:
@@ -77,12 +77,12 @@ namespace DesignPatternPrograms
                     Shopping ObjShopping = new Shopping();
                     ObjShopping.MethodShopping();
                     break;
-                    //// This is for Mediator Design Pattern
+                //// This is for Mediator Design Pattern
                 case 8:
                     ChatClient ChatObj = new ChatClient();
                     ChatObj.Chat();
                     break;
-                    //// This is for Annotations
+                //// This is for Annotations
                 case 9:
                     EmployeeAnnotations AnnotationObject = new EmployeeAnnotations();
                     AnnotationObject.Employee();
@@ -95,7 +95,5 @@ namespace DesignPatternPrograms
             }
 
         }
-
-
     }
 }

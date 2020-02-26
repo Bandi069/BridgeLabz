@@ -41,7 +41,7 @@ namespace DesignPatternPrograms.SingletonPattern
         private LazyInitialization()
         {
             Count++;
-            Console.WriteLine("Counter Value : "+Count);
+            Console.WriteLine("Counter Value : " + Count);
         }
         /// <summary>
         /// Method for Displaying the message 

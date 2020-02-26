@@ -1,4 +1,4 @@
-﻿/*// --------------------------------------------------------------------------------------------------------------------
+﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="PCFactory.cs" company="Bridgelabz">
 // Copyright © 2020  Company="BridgeLabz"
 // </copyright>
@@ -20,7 +20,7 @@ namespace DesignPatternPrograms.FactoryPattern
         ///  Private String declaration of Ram,Hdd,Cpu
         /// </summary>
         private string Ram, Hdd, Cpu;
-                
+
         /// <summary>
         /// Initializes a new instance
         /// </summary>
@@ -56,4 +56,3 @@ namespace DesignPatternPrograms.FactoryPattern
         }
     }
 }
-*/

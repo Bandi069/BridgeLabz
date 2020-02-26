@@ -14,7 +14,7 @@ namespace DesignPatternPrograms.BehaviroalDesignPattern.VisitorDesignPattern
     /// <summary>
     /// This is Shopping Class 
     /// </summary>
-   public class Shopping : ShoppingCart
+    public class Shopping : ShoppingCart
     {
         /// <summary>
         /// Book variable is declaring as global
@@ -39,20 +39,20 @@ namespace DesignPatternPrograms.BehaviroalDesignPattern.VisitorDesignPattern
         /// </summary>
         /// <param name="items"></param>
         /// <returns></returns>
-        public  int CalculatePrice(IitemElement[] items)
+        public int CalculatePrice(IitemElement[] items)
         {
             int totalprice = 0;
             //// Creating Object for Shopping Cart
-            ShoppingCart  VisitObj = new ShoppingCart();
+            ShoppingCart VisitObj = new ShoppingCart();
             VisitObj.Visit(book);
-           
-            foreach(IitemElement item in items)
+
+            foreach (IitemElement item in items)
             {
                 totalprice = totalprice + item.Accept(VisitObj);
             }
             return totalprice;
         }
 
-       
+
     }
 }

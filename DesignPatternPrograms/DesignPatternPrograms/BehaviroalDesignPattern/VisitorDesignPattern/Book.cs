@@ -83,7 +83,7 @@ namespace DesignPatternPrograms.BehaviroalDesignPattern.VisitorDesignPattern
         /// <param name="Price"></param>
         /// <param name="weight"></param>
         /// <param name="Name"></param>
-        public Fruit(int Price,int weight,string Name)
+        public Fruit(int Price, int weight, string Name)
         {
 
             this.PriceperKg = Price;

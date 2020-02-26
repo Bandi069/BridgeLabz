@@ -30,8 +30,7 @@ namespace DesignPatternPrograms.BehaviroalDesignPattern.VisitorDesignPattern
         /// <returns value="cost"></returns>
         public int Visit(Book book)
         {
-            Visit visitObj = new Visit();
-            int cost ;
+            int cost;
             if (book.GetPrice() > 50)
             {
                 cost = book.GetPrice() - 10;
@@ -54,11 +53,5 @@ namespace DesignPatternPrograms.BehaviroalDesignPattern.VisitorDesignPattern
             Console.WriteLine("Fruit Name is :" + fruit.GetName() + "Cost is :" + cost);
             return cost;
         }
-
-    }
-
-    public class Visit
-    {
-       
     }
 }

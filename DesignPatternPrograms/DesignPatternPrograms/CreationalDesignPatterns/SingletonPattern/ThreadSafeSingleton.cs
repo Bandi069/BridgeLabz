@@ -46,7 +46,7 @@ namespace DesignPatternPrograms.SingletonPattern
                 }*/
                 return SingletonObj;
             }
-            
+
         }
         public void Message(string message)
         {

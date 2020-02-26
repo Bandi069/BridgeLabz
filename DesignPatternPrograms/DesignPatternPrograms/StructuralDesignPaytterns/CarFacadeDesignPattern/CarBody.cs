@@ -7,7 +7,7 @@ namespace DesignPatternPrograms.StructuralDesignPaytterns.ProductFacadeDesignPat
     /// <summary>
     /// This is Public class for Car Body
     /// </summary>
-   public class CarBody
+    public class CarBody
     {
         /// <summary>
         /// This is Body Method

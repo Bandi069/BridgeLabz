@@ -21,6 +21,6 @@ namespace DesignPatternPrograms.FactoryPattern
             public abstract Computer GetComputer();
         }
 
-      
+
     }
 }

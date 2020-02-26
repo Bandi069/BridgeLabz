@@ -11,7 +11,7 @@ namespace DesignPatternPrograms.Annotations
     public class EmployeeAnnotations
     {
         /// <summary>
-        /// This Method of Employee
+        /// This is Employee Method
         /// </summary>
         public void Employee()
         {

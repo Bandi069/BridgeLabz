@@ -21,9 +21,9 @@ namespace DesignPatternPrograms.BehaviroalDesignPattern
         /// </summary>
         /// <param name="fruit"></param>
         /// <returns></returns>
-      
+
         public int Visit(Fruit fruit);
-       
+
     }
     /// <summary>
     /// This is  interface for IitemElement
@@ -37,7 +37,7 @@ namespace DesignPatternPrograms.BehaviroalDesignPattern
         /// <returns></returns>
         public int Accept(IVisitor visitor);
     }
-    
-    
+
+
 
 }

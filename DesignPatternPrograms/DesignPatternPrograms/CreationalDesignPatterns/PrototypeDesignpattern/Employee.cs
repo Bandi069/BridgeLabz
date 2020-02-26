@@ -1,4 +1,4 @@
-﻿/*using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -24,9 +24,9 @@ namespace DesignPatternPrograms.PrototypeDesignpattern
     /// Prototype Class
     /// </summary>
     public class ProtoType { }
-   /// <summary>
-   /// Property Class 
-   /// </summary>
+    /// <summary>
+    /// Property Class 
+    /// </summary>
     public class EmployeePosition : Employee
     {
         public string EmployeeName { get; set; }
@@ -52,4 +52,3 @@ namespace DesignPatternPrograms.PrototypeDesignpattern
 
     }
 }
-*/
