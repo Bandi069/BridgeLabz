@@ -11,8 +11,8 @@ namespace DesignPatternPrograms.Annotations
         private string Customername;
         [Required (ErrorMessage ="Name Should not Null")]
         [StringLength(20)]
-        [RegularExpression(@"[A-Z]{20}$")]
-        private string EmployeeName
+        [RegularExpression(@"^[A-Z]{1,20}[0-9]{1,5}$")]
+        public string EmployeeName
         {
             get
             {
@@ -22,6 +22,7 @@ namespace DesignPatternPrograms.Annotations
             {
                 Customername = value;
             }
+            
         }
 
     }
