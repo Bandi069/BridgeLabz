@@ -7,6 +7,7 @@
 
 namespace EmployeeManagement.Manager
 {
+    using EmployeeManagement.Models;
     using EmployeeManagement.Repositary;
     using System;
     using System.Collections.Generic;
@@ -35,6 +36,13 @@ namespace EmployeeManagement.Manager
             return "Employee not added to the list";
         }
         
-
+        public string UpdateEmp(Repository updateemployee)
+        {
+            if (Repository.UpdateEmployee(updateemployee))
+            {
+                return "In the list Employee Updated Successfully";
+            }
+            return "Employee Not Updated in the list";
+        }
     }
 }
