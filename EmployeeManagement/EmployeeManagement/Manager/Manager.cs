@@ -24,7 +24,17 @@ namespace EmployeeManagement.Manager
         /// <param name="Repositary"></param>
         public Manager(RepositoryInterface Repositary)
         {
-
+            this.Repositary = Repositary;
         }
+        public string AddEmployee(Repository addemployee)
+        {
+            if (Repositary.AddEmployee(addemployee))
+            {
+                return "Employee added to the list Successfully";
+            }
+            return "Employee not added to the list";
+        }
+        
+
     }
 }
