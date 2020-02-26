@@ -4,7 +4,6 @@
 // </copyright>
 // <creator name="Bandi Venu"/>
 // --------------------------------------------------------------------------------------------------------------------
-
 namespace EmployeeManagement.Models
 {
     using System;

@@ -18,32 +18,46 @@ namespace EmployeeManagement.Manager
     /// </summary>
     public class Manager : IEmployeeManager
     {
-        private RepositoryInterface Repositary;
+        private RepositoryInterface EmployeeRepositary;
         /// <summary>
         /// This is Constructor of Manager
         /// </summary>
         /// <param name="Repositary"></param>
-        public Manager(RepositoryInterface Repositary)
+        public Manager(RepositoryInterface EmployeeRepositary)
         {
-            this.Repositary = Repositary;
+            this.EmployeeRepositary = EmployeeRepositary;
         }
-        public string AddEmployee(Repository addemployee)
+        /// <summary>
+        /// This is add employee manager method
+        /// </summary>
+        /// <param name="addemployee"></param>
+        /// <returns></returns>
+        public string AddEmployee(ModelClass addemployee)
         {
-            if (Repositary.AddEmployee(addemployee))
+            if (EmployeeRepositary.AddEmployee(addemployee))
             {
                 return "Employee added to the list Successfully";
             }
             return "Employee not added to the list";
         }
-
-        public string UpdateEmp(Repository updateemployee)
+        /// <summary>
+        /// This is Update Employee method
+        /// </summary>
+        /// <param name="updateemployee"></param>
+        /// <returns></returns>
+        public string UpdateEmp(EmployeeRepositary updateemployee)
         {
-            if (Repository.UpdateEmployee(updateemployee))
+            if (EmployeeRepositary.UpdateEmployee(updateemployee))
             {
                 return "In the list Employee Updated Successfully";
             }
             return "Employee Not Updated in the list";
         }
+        /// <summary>
+        /// This is Delete employee Method
+        /// </summary>
+        /// <param name="EmployeeId"></param>
+        /// <returns></returns>
         public string Delete(int EmployeeId)
         {
             if (Repository.DeleteEmployee(EmployeeId))
@@ -52,10 +66,16 @@ namespace EmployeeManagement.Manager
             }
             return "Employee Not Deleted in the list";
         }
+        /// <summary>
+        /// This is retrieve of lemployee ist
+        /// </summary>
+        /// <returns></returns>
         public List<ModelClass> Retrieve()
         {
             return Repository.GetEmployeeData();
 
         }
+
+       
     }
 }

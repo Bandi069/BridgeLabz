@@ -8,6 +8,7 @@
 
 namespace EmployeeManagement.Repositary
 {
+    using EmployeeManagement.Manager;
     using EmployeeManagement.Models;
     using System;
     using System.Collections.Generic;
@@ -38,6 +39,6 @@ namespace EmployeeManagement.Repositary
         /// </summary>
         /// <param name="EmployeeID"></param>
         void GetEmployeeData(int EmployeeID);
-
+       
     }
 }

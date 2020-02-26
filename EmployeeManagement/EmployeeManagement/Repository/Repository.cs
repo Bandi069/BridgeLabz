@@ -1,11 +1,9 @@
-﻿
-// --------------------------------------------------------------------------------------------------------------------
+﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="Repository.cs" company="Bridgelabz">
 //   Copyright © 2020 Company="BridgeLabz"
 // </copyright>
 // <creator name="Bandi Venu"/>
 // --------------------------------------------------------------------------------------------------------------------
-
 namespace EmployeeManagement.Repositary
 {
     using EmployeeManagement.Models;
@@ -56,6 +54,7 @@ namespace EmployeeManagement.Repositary
             }
             return listEmployee;
         }
+
         /// <summary>
         /// This is method for Add Employee
         /// </summary>
@@ -75,9 +74,7 @@ namespace EmployeeManagement.Repositary
                 Connect.Open();
                 Cmd.ExecuteNonQuery();
                 Connect.Close();
-
             }
-
         }
         /// <summary>
         /// This is method for Update Employee
@@ -114,7 +111,6 @@ namespace EmployeeManagement.Repositary
                 DeleteCommand.ExecuteNonQuery();
                 connect.Close();
             }
-
         }
         /// <summary>
         /// This is Method for Get Employee Data
