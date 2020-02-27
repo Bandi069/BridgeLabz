@@ -12,6 +12,7 @@ namespace EmployeeManagement.Controllers
     using System.Threading.Tasks;
     using EmployeeManagement.Manager;
     using EmployeeManagement.Models;
+    using EmployeeManagement.Repositary;
     using Microsoft.AspNetCore.Http;
     using Microsoft.AspNetCore.Mvc;
     [Route("api/[controller]")]
@@ -24,11 +25,13 @@ namespace EmployeeManagement.Controllers
         {
             this.EmpManager = EmpManager;
         }
-        public ActionResult AddEmployee(ModelClass Emp)
+        [HttpPost]
+        [Route("/Create")]
+        public ActionResult AddEmployee(Repository addemployee)
         {
             try
             {
-                var result = EmpManager.Addemployee(Emp);
+                var result = EmpManager.AddEmployee(addemployee);
                 return Ok(result);
             }
             catch (Exception e)
@@ -39,17 +42,46 @@ namespace EmployeeManagement.Controllers
         }
         [HttpPost]
         [Route("Update")]
-        public ActionResult Updateemployee(ModelClass Emp)
+        public ActionResult UpdateEmp(Repository updateemployee)
         {
             try
             {
-                var result = EmpManager.UpdateEmp(Emp);
+                var result = EmpManager.UpdateEmp(updateemployee);
+                return Ok(result);
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+        [HttpPost]
+        [Route("Delete")]
+        public ActionResult DeleteEmployee(int EmployeeID)
+        {
+            try
+            {
+                var result = EmpManager.Delete(EmployeeID);
                 return Ok(result);
             }
             catch(Exception e)
             {
                 return BadRequest(e.Message);
             }
+        }
+        [HttpPost]
+        [Route("Show")]
+        public ActionResult GetEmployeeData(int EmployeeID)
+        {
+            try
+            {
+                var result = EmpManager.Retrieve();
+              return Ok(result);
+            }
+            catch(Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+           
         }
     }
 }
