@@ -24,7 +24,7 @@ namespace EmployeeManagement
         /// <summary>
         /// This is method for connection
         /// </summary>
-        public static void Connection()
+        public void Connect()
         {
             // string ConnectionName = ConfigurationManager.ConnectionStrings[0].ConnectionString;
             string ConnectionName = "database=.;databse=EmployeeManagement;integrated Security=SSPI";
@@ -45,11 +45,7 @@ namespace EmployeeManagement
             }
         }
 
-        internal static string Connect()
-        {
-            throw new NotImplementedException();
-        }
-
+       
     }
 }
 

@@ -1,4 +1,5 @@
-﻿using EmployeeManagement.Repositary;
+﻿using EmployeeManagement.Models;
+using EmployeeManagement.Repositary;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,8 +12,9 @@ namespace EmployeeManagement.Manager
     /// </summary>
     public interface IEmployeeManager
     {
-        string AddEmployee(Repository addemployee);
-        string UpdateEmp(Repository updateemployee);
-        string Delete(int employeeid);
+        string AddEmployee(ModelClass Emp);
+        string UpdateEmployee(ModelClass Emp);
+        string DeleteEmployee(int EmployeeID);
+        List<ModelClass> Retrieve();
     }
 }

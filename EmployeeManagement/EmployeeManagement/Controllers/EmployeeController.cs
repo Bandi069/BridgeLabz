@@ -20,17 +20,25 @@ namespace EmployeeManagement.Controllers
     public class EmployeeController : ControllerBase
     {
         /// <summary>
-        /// 
+        /// Employee manager 
         /// </summary>
         private IEmployeeManager EmpManager;
-
+        /// <summary>
+        /// Constructor for Employee Controller
+        /// </summary>
+        /// <param name="EmpManager"></param>
         public EmployeeController(IEmployeeManager EmpManager)
         {
             this.EmpManager = EmpManager;
         }
+        /// <summary>
+        /// This is Action for Add employee
+        /// </summary>
+        /// <param name="addemployee"></param>
+        /// <returns></returns>
         [HttpPost]
         [Route("/Create")]
-        public ActionResult AddEmployee(Repository addemployee)
+        public IActionResult AddEmployee(ModelClass addemployee)
         {
             try
             {
@@ -43,13 +51,18 @@ namespace EmployeeManagement.Controllers
             }
 
         }
+        /// <summary>
+        /// This is update action of employee data
+        /// </summary>
+        /// <param name="updateemployee"></param>
+        /// <returns></returns>
         [HttpPost]
         [Route("Update")]
-        public ActionResult UpdateEmp(Repository updateemployee)
+        public ActionResult UpdateEmp(ModelClass updateemployee)
         {
             try
             {
-                var result = EmpManager.UpdateEmp(updateemployee);
+                var result = EmpManager.UpdateEmployee(updateemployee);
                 return Ok(result);
             }
             catch (Exception e)
@@ -57,20 +70,30 @@ namespace EmployeeManagement.Controllers
                 return BadRequest(e.Message);
             }
         }
+        /// <summary>
+        /// This is Delete action of employee data from the database
+        /// </summary>
+        /// <param name="EmployeeID"></param>
+        /// <returns></returns>
         [HttpPost]
         [Route("Delete")]
         public ActionResult DeleteEmployee(int EmployeeID)
         {
             try
             {
-                var result = EmpManager.Delete(EmployeeID);
+                var result = EmpManager.DeleteEmployee(EmployeeID);
                 return Ok(result);
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 return BadRequest(e.Message);
             }
         }
+        /// <summary>
+        /// This is Get employee data action 
+        /// </summary>
+        /// <param name="EmployeeID"></param>
+        /// <returns></returns>
         [HttpPost]
         [Route("Show")]
         public ActionResult GetEmployeeData(int EmployeeID)
@@ -78,13 +101,12 @@ namespace EmployeeManagement.Controllers
             try
             {
                 var result = EmpManager.Retrieve();
-              return Ok(result);
+                return Ok(result);
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 return BadRequest(e.Message);
             }
-           
         }
     }
 }

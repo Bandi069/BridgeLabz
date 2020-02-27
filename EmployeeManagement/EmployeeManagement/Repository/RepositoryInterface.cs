@@ -23,22 +23,23 @@ namespace EmployeeManagement.Repositary
         ///This is Add employee model interface 
         /// </summary>
         /// <param name="ModelObj"></param>
-        void AddEmployee(ModelClass ModelObj);
+     
+        bool AddEmployee(ModelClass ModelObj);
         /// <summary>
         /// This is update Employee
         /// </summary>
         /// <param name="ModelObj"></param>
-        void UpdateEmployee(ModelClass ModelObj);
+        bool UpdateEmployee(ModelClass ModelObj);
         /// <summary>
         /// This is Delete Employee
         /// </summary>
         /// <param name="EmployeeID"></param>
-        void DeleteEmployee(int EmployeeID);
+        bool DeleteEmployee(int EmployeeID);
         /// <summary>
         /// This is Get Employee Data
         /// </summary>
         /// <param name="EmployeeID"></param>
-        void GetEmployeeData(int EmployeeID);
-       
+        bool GetEmployeeData(int EmployeeID);
+        List<ModelClass> GetEmployeeData();
     }
 }

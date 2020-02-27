@@ -4,15 +4,16 @@
 // </copyright>
 // <creator name="Bandi Venu"/>
 // --------------------------------------------------------------------------------------------------------------------
+using EmployeeManagement.Models;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
+using System.Linq;
+using System.Threading.Tasks;
+
 namespace EmployeeManagement.Repositary
 {
-    using EmployeeManagement.Models;
-    using System;
-    using System.Collections.Generic;
-    using System.Data;
-    using System.Data.SqlClient;
-    using System.Linq;
-    using System.Threading.Tasks;
     /// <summary>
     /// This is Repository Class 
     /// All CRUD Operations done in this class
@@ -23,13 +24,13 @@ namespace EmployeeManagement.Repositary
         /// This is model class object
         /// </summary>
         ModelClass ModelObj = new ModelClass();
-        // ConnectionString ConnectionObj = new ConnectionString();
-        public string connectionstring = ConnectionString.Connect();
+        ConnectionString ConnectionObj = new ConnectionString();
+        public string connectionstring = ConnectionObj.Connect();
         /// <summary>
         /// This is enumerable Model Class for getting all empoyees data
         /// </summary>
         /// <returns></returns>
-        public IEnumerable<ModelClass> GetAllEmloyees()
+        public List<ModelClass> GetAllEmloyees()
         {
             //// This is list of Employees
             List<ModelClass> listEmployee = new List<ModelClass>();
@@ -59,7 +60,7 @@ namespace EmployeeManagement.Repositary
         /// This is method for Add Employee
         /// </summary>
         /// <param name="ModelObj"></param>
-        public void AddEmployee(ModelClass ModelObj)
+        public bool AddEmployee(ModelClass ModelObj)
         {
             //// Sql Connection
             using (SqlConnection Connect = new SqlConnection(connectionstring))
@@ -72,15 +73,23 @@ namespace EmployeeManagement.Repositary
                 Cmd.Parameters.AddWithValue("@EmailID", ModelObj.EmailID);
                 Cmd.Parameters.AddWithValue("@PhoneNumber", ModelObj.PhoneNumber);
                 Connect.Open();
-                Cmd.ExecuteNonQuery();
+                int v = Cmd.ExecuteNonQuery();
                 Connect.Close();
+                if (v >= 1)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
         }
         /// <summary>
         /// This is method for Update Employee
         /// </summary>
         /// <param name="ModelObj"></param>
-        public void UpdateEmployee(ModelClass ModelObj)
+        public bool UpdateEmployee(ModelClass ModelObj)
         {
             using (SqlConnection Connect = new SqlConnection(connectionstring))
             {
@@ -92,15 +101,23 @@ namespace EmployeeManagement.Repositary
                 Command.Parameters.AddWithValue("@EmailID", ModelObj.EmailID);
                 Command.Parameters.AddWithValue("@PhoneNumber", ModelObj.PhoneNumber);
                 Connect.Open();
-                Command.ExecuteNonQuery();
+                int v = Command.ExecuteNonQuery();
                 Connect.Close();
+                if (v >= 1)
+                {
+                    return true; ;
+                }
+                else
+                {
+                    return false;
+                }
             }
         }
         /// <summary>
         /// This is Method for delete the employee from Database
         /// </summary>
         /// <param name="EmployeeID"></param>
-        public void DeleteEmployee(int EmployeeID)
+        public bool DeleteEmployee(int EmployeeID)
         {
             using (SqlConnection connect = new SqlConnection(connectionstring))
             {
@@ -108,10 +125,19 @@ namespace EmployeeManagement.Repositary
                 DeleteCommand.CommandType = CommandType.StoredProcedure;
                 DeleteCommand.Parameters.AddWithValue("@EmployeeId", ModelObj.EmployeeID);
                 connect.Open();
-                DeleteCommand.ExecuteNonQuery();
+                int v = DeleteCommand.ExecuteNonQuery();
                 connect.Close();
+                if (v > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
         }
+
         /// <summary>
         /// This is Method for Get Employee Data
         /// </summary>
@@ -134,6 +160,7 @@ namespace EmployeeManagement.Repositary
                     ModelObj.PhoneNumber = Reader["PhoneNumber"].ToString();
                 }
                 connect.Close();
+                
             }
         }
 

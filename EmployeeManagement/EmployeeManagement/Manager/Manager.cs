@@ -4,7 +4,6 @@
 // </copyright>
 // <creator name="Bandi Venu"/>
 // --------------------------------------------------------------------------------------------------------------------
-
 namespace EmployeeManagement.Manager
 {
     using EmployeeManagement.Models;
@@ -27,27 +26,27 @@ namespace EmployeeManagement.Manager
         {
             this.EmployeeRepositary = EmployeeRepositary;
         }
-        /// <summary>
-        /// This is add employee manager method
-        /// </summary>
-        /// <param name="addemployee"></param>
-        /// <returns></returns>
-        public string AddEmployee(ModelClass addemployee)
+
+        public string AddEmployee(ModelClass Emp)
         {
-            if (EmployeeRepositary.AddEmployee(addemployee))
+            if (EmployeeRepositary.AddEmployee(Emp))
             {
                 return "Employee added to the list Successfully";
             }
-            return "Employee not added to the list";
+            else
+            {
+                return "Employee not added to the list";
+            }
         }
+
         /// <summary>
         /// This is Update Employee method
         /// </summary>
         /// <param name="updateemployee"></param>
         /// <returns></returns>
-        public string UpdateEmp(EmployeeRepositary updateemployee)
+        public string UpdateEmployee(ModelClass Emp)
         {
-            if (EmployeeRepositary.UpdateEmployee(updateemployee))
+            if (EmployeeRepositary.UpdateEmployee(Emp))
             {
                 return "In the list Employee Updated Successfully";
             }
@@ -58,9 +57,9 @@ namespace EmployeeManagement.Manager
         /// </summary>
         /// <param name="EmployeeId"></param>
         /// <returns></returns>
-        public string Delete(int EmployeeId)
+        public string DeleteEmployee(int EmployeeID)
         {
-            if (Repository.DeleteEmployee(EmployeeId))
+            if (EmployeeRepositary.DeleteEmployee(EmployeeID))
             {
                 return "In the list Employee Delete Successfully";
             }
@@ -72,10 +71,8 @@ namespace EmployeeManagement.Manager
         /// <returns></returns>
         public List<ModelClass> Retrieve()
         {
-            return Repository.GetEmployeeData();
-
+            return EmployeeRepositary.GetEmployeeData();
         }
 
-       
     }
 }
