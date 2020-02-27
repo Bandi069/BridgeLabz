@@ -10,13 +10,20 @@ namespace EmployeeManagement.Controllers
     using System.Collections.Generic;
     using System.Linq;
     using System.Threading.Tasks;
+    using EmployeeManagement.Manager;
     using Microsoft.AspNetCore.Http;
     using Microsoft.AspNetCore.Mvc;
     [Route("api/[controller]")]
     [ApiController]
-    public class EmployeeController : Controller
+    public class EmployeeController : ControllerBase
     {
-    
-        
+        private IEmployeeManager EmpManager;
+
+        public EmployeeController(IEmployeeManager EmpManager)
+        {
+            this.EmpManager = EmpManager;
+        }
+
+
     }
 }
