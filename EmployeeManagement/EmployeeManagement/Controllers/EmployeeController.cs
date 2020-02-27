@@ -19,6 +19,9 @@ namespace EmployeeManagement.Controllers
     [ApiController]
     public class EmployeeController : ControllerBase
     {
+        /// <summary>
+        /// 
+        /// </summary>
         private IEmployeeManager EmpManager;
 
         public EmployeeController(IEmployeeManager EmpManager)
