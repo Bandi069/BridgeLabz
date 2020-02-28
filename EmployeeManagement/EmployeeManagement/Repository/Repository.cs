@@ -20,97 +20,90 @@ namespace EmployeeManagement.Repositary
     /// </summary>
     public class Repository : RepositoryInterface
     {
-        /// <summary>
-        /// This is model class object
-        /// </summary>
+        private SqlConnection connect;
         ModelClass ModelObj = new ModelClass();
-        ConnectionString ConnectionObj = new ConnectionString();
-        public string connectionstring = ConnectionObj.Connect();
+        /// <summary>
+        /// This is method for connection
+        /// </summary>
+        public void Connect()
+        {
+            // string ConnectionName = ConfigurationManager.ConnectionStrings[0].ConnectionString;
+            string ConnectionName = "database=.;databse=EmployeeManagement;integrated Security=SSPI";
+            connect = new SqlConnection(ConnectionName);
+        }
         /// <summary>
         /// This is enumerable Model Class for getting all empoyees data
         /// </summary>
         /// <returns></returns>
         public List<ModelClass> GetAllEmloyees()
         {
+            Connect();
             //// This is list of Employees
             List<ModelClass> listEmployee = new List<ModelClass>();
-            ///This is for Sql Connection
-            using (SqlConnection connect = new SqlConnection(connectionstring))
+            //// This is for Sql Connection
+            SqlCommand cmd = new SqlCommand("ViewEmployees", connect);
+            cmd.CommandType = CommandType.StoredProcedure;
+            connect.Open(); //// To open the Connection
+            SqlDataReader reader = cmd.ExecuteReader();//// To Read the Excutable file
+            while (reader.Read())
             {
-                SqlCommand cmd = new SqlCommand("ViewEmployees", connect);
-                cmd.CommandType = CommandType.StoredProcedure;
-                connect.Open(); //// To open the Connection
-                SqlDataReader reader = cmd.ExecuteReader();//// To Read the Excutable file
-                while (reader.Read())
-                {
 
-                    ModelObj.EmployeeID = Convert.ToInt32(reader["EmployeeID"]);
-                    ModelObj.FirstName = reader["FirstName"].ToString();
-                    ModelObj.LastName = reader["LastName"].ToString();
-                    ModelObj.EmailID = reader["EmailID"].ToString();
-                    ModelObj.PhoneNumber = reader["Phone Number"].ToString();
-                    listEmployee.Add(ModelObj);
-                }
-                connect.Close(); //// Closinng Connection
+                ModelObj.EmployeeID = Convert.ToInt32(reader["EmployeeID"]);
+                ModelObj.FirstName = reader["FirstName"].ToString();
+                ModelObj.LastName = reader["LastName"].ToString();
+                ModelObj.EmailID = reader["EmailID"].ToString();
+                ModelObj.PhoneNumber = reader["Phone Number"].ToString();
+               
             }
+            connect.Close(); //// Closinng Connection
             return listEmployee;
         }
-
-        /// <summary>
-        /// This is method for Add Employee
-        /// </summary>
-        /// <param name="ModelObj"></param>
         public bool AddEmployee(ModelClass ModelObj)
         {
-            //// Sql Connection
-            using (SqlConnection Connect = new SqlConnection(connectionstring))
+            Connect();
+            SqlCommand Cmd = new SqlCommand("AddEmployee", connect);
+            Cmd.CommandType = CommandType.StoredProcedure;
+            Cmd.Parameters.AddWithValue("@EmployeeID", ModelObj.EmployeeID);
+            Cmd.Parameters.AddWithValue("@FirstName", ModelObj.FirstName);
+            Cmd.Parameters.AddWithValue("@LastName", ModelObj.LastName);
+            Cmd.Parameters.AddWithValue("@EmailID", ModelObj.EmailID);
+            Cmd.Parameters.AddWithValue("@PhoneNumber", ModelObj.PhoneNumber);
+            connect.Open();
+            int v = Cmd.ExecuteNonQuery();
+            connect.Close();
+            if (v >= 1)
             {
-                SqlCommand Cmd = new SqlCommand("AddEmployee", Connect);
-                Cmd.CommandType = CommandType.StoredProcedure;
-                Cmd.Parameters.AddWithValue("@EmployeeID", ModelObj.EmployeeID);
-                Cmd.Parameters.AddWithValue("@FirstName", ModelObj.FirstName);
-                Cmd.Parameters.AddWithValue("@LastName", ModelObj.LastName);
-                Cmd.Parameters.AddWithValue("@EmailID", ModelObj.EmailID);
-                Cmd.Parameters.AddWithValue("@PhoneNumber", ModelObj.PhoneNumber);
-                Connect.Open();
-                int v = Cmd.ExecuteNonQuery();
-                Connect.Close();
-                if (v >= 1)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
+                return true;
+            }
+            else
+            {
+                return false;
             }
         }
+
         /// <summary>
         /// This is method for Update Employee
         /// </summary>
         /// <param name="ModelObj"></param>
         public bool UpdateEmployee(ModelClass ModelObj)
         {
-            using (SqlConnection Connect = new SqlConnection(connectionstring))
+            SqlCommand Command = new SqlCommand("Update Employee", connect);
+            Command.CommandType = CommandType.StoredProcedure;
+            Command.Parameters.AddWithValue("@EmployeeId", ModelObj.EmployeeID);
+            Command.Parameters.AddWithValue("@FirstName", ModelObj.FirstName);
+            Command.Parameters.AddWithValue("@LastName", ModelObj.LastName);
+            Command.Parameters.AddWithValue("@EmailID", ModelObj.EmailID);
+            Command.Parameters.AddWithValue("@PhoneNumber", ModelObj.PhoneNumber);
+            connect.Open();
+            int v = Command.ExecuteNonQuery();
+            connect.Close();
+            if (v >= 1)
             {
-                SqlCommand Command = new SqlCommand("Update Employee", Connect);
-                Command.CommandType = CommandType.StoredProcedure;
-                Command.Parameters.AddWithValue("@EmployeeId", ModelObj.EmployeeID);
-                Command.Parameters.AddWithValue("@FirstName", ModelObj.FirstName);
-                Command.Parameters.AddWithValue("@LastName", ModelObj.LastName);
-                Command.Parameters.AddWithValue("@EmailID", ModelObj.EmailID);
-                Command.Parameters.AddWithValue("@PhoneNumber", ModelObj.PhoneNumber);
-                Connect.Open();
-                int v = Command.ExecuteNonQuery();
-                Connect.Close();
-                if (v >= 1)
-                {
-                    return true; ;
-                }
-                else
-                {
-                    return false;
-                }
+                return true; ;
+            }
+            else
+            {
+                return false;
             }
         }
         /// <summary>
@@ -119,50 +112,26 @@ namespace EmployeeManagement.Repositary
         /// <param name="EmployeeID"></param>
         public bool DeleteEmployee(int EmployeeID)
         {
-            using (SqlConnection connect = new SqlConnection(connectionstring))
-            {
-                SqlCommand DeleteCommand = new SqlCommand("Delete Employee", connect);
-                DeleteCommand.CommandType = CommandType.StoredProcedure;
-                DeleteCommand.Parameters.AddWithValue("@EmployeeId", ModelObj.EmployeeID);
-                connect.Open();
-                int v = DeleteCommand.ExecuteNonQuery();
-                connect.Close();
-                if (v > 0)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-        }
 
-        /// <summary>
-        /// This is Method for Get Employee Data
-        /// </summary>
-        /// <param name="EmployeeID"></param>
-        public void GetEmployeeData(int EmployeeID)
-        {
-            //// This is for Sql Connection
-            using (SqlConnection connect = new SqlConnection(connectionstring))
+            SqlCommand DeleteCommand = new SqlCommand("Delete Employee", connect);
+            DeleteCommand.CommandType = CommandType.StoredProcedure;
+            DeleteCommand.Parameters.AddWithValue("@EmployeeId",EmployeeID);
+            connect.Open();
+            int i = DeleteCommand.ExecuteNonQuery();
+            connect.Close();
+            if (i > 0)
             {
-                string sqlQuery = "SELECT * FROM Employee WHERE EmployeeID= " + EmployeeID;
-                SqlCommand command = new SqlCommand(sqlQuery, connect);
-                connect.Open();//// To open the Connection
-                SqlDataReader Reader = command.ExecuteReader();
-                while (Reader.Read())
-                {
-                    ModelObj.EmployeeID = Convert.ToInt32(Reader["EmployeeId"]);
-                    ModelObj.FirstName = Reader["FirstName"].ToString();
-                    ModelObj.LastName = Reader["LastName"].ToString();
-                    ModelObj.EmailID = Reader["EmailID"].ToString();
-                    ModelObj.PhoneNumber = Reader["PhoneNumber"].ToString();
-                }
-                connect.Close();
-                
+                return true;
             }
+            else
+            {
+                return false;
+            }
+
         }
+      
 
     }
 }
+
+

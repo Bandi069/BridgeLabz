@@ -71,7 +71,7 @@ namespace EmployeeManagement.Manager
         /// <returns></returns>
         public List<ModelClass> Retrieve()
         {
-            return EmployeeRepositary.GetEmployeeData();
+            return EmployeeRepositary.GetAllEmloyees();
         }
 
     }

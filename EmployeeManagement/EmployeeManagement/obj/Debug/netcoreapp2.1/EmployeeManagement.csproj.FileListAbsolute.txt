@@ -20,3 +20,11 @@ C:\Users\Bridge Labs\Documents\GitHub\BridgeLabz\BridgeLabz\EmployeeManagement\E
 C:\Users\Bridge Labs\Documents\GitHub\BridgeLabz\BridgeLabz\EmployeeManagement\EmployeeManagement\obj\Debug\netcoreapp2.1\EmployeeManagement.AssemblyInfo.cs
 C:\Users\Bridge Labs\Documents\GitHub\BridgeLabz\BridgeLabz\EmployeeManagement\EmployeeManagement\obj\Debug\netcoreapp2.1\EmployeeManagement.dll
 C:\Users\Bridge Labs\Documents\GitHub\BridgeLabz\BridgeLabz\EmployeeManagement\EmployeeManagement\obj\Debug\netcoreapp2.1\EmployeeManagement.pdb
+C:\Users\Bridge Labs\Documents\GitHub\BridgeLabz\BridgeLabz\EmployeeManagement\EmployeeManagement\bin\Debug\netcoreapp2.1\Properties\launchSettings.json
+C:\Users\Bridge Labs\Documents\GitHub\BridgeLabz\BridgeLabz\EmployeeManagement\EmployeeManagement\bin\Debug\netcoreapp2.1\web.config
+C:\Users\Bridge Labs\Documents\GitHub\BridgeLabz\BridgeLabz\EmployeeManagement\EmployeeManagement\bin\Debug\netcoreapp2.1\EmployeeManagement.deps.json
+C:\Users\Bridge Labs\Documents\GitHub\BridgeLabz\BridgeLabz\EmployeeManagement\EmployeeManagement\bin\Debug\netcoreapp2.1\EmployeeManagement.runtimeconfig.json
+C:\Users\Bridge Labs\Documents\GitHub\BridgeLabz\BridgeLabz\EmployeeManagement\EmployeeManagement\bin\Debug\netcoreapp2.1\EmployeeManagement.runtimeconfig.dev.json
+C:\Users\Bridge Labs\Documents\GitHub\BridgeLabz\BridgeLabz\EmployeeManagement\EmployeeManagement\bin\Debug\netcoreapp2.1\EmployeeManagement.dll
+C:\Users\Bridge Labs\Documents\GitHub\BridgeLabz\BridgeLabz\EmployeeManagement\EmployeeManagement\bin\Debug\netcoreapp2.1\EmployeeManagement.pdb
+C:\Users\Bridge Labs\Documents\GitHub\BridgeLabz\BridgeLabz\EmployeeManagement\EmployeeManagement\obj\Debug\netcoreapp2.1\EmployeeManagement.RazorTargetAssemblyInfo.cache

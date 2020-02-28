@@ -39,7 +39,7 @@ namespace EmployeeManagement.Repositary
         /// This is Get Employee Data
         /// </summary>
         /// <param name="EmployeeID"></param>
-        bool GetEmployeeData(int EmployeeID);
-        List<ModelClass> GetEmployeeData();
+        List<ModelClass> GetAllEmloyees();
+        
     }
 }
