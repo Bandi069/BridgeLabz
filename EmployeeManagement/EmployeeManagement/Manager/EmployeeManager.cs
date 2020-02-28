@@ -15,14 +15,14 @@ namespace EmployeeManagement.Manager
     /// <summary>
     /// This is Manager Class
     /// </summary>
-    public class Manager : IEmployeeManager
+    public class EmployeeManager : IEmployeeManager
     {
         private RepositoryInterface EmployeeRepositary;
         /// <summary>
         /// This is Constructor of Manager
         /// </summary>
         /// <param name="Repositary"></param>
-        public Manager(RepositoryInterface EmployeeRepositary)
+        public EmployeeManager(RepositoryInterface EmployeeRepositary)
         {
             this.EmployeeRepositary = EmployeeRepositary;
         }

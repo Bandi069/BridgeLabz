@@ -43,7 +43,7 @@ namespace EmployeeManagement.Controllers
             try
             {
                 var result = EmpManager.AddEmployee(addemployee);
-                return Ok(result);
+                return Ok(new { result });
             }
             catch (Exception e)
             {
