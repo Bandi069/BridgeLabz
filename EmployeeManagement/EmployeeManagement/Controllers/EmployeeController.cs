@@ -37,8 +37,8 @@ namespace EmployeeManagement.Controllers
         /// <param name="addemployee"></param>
         /// <returns></returns>
         [HttpPost]
-        [Route("/Create")]
-        public IActionResult AddEmployee(ModelClass addemployee)
+        [Route("api/Create")]
+        public IActionResult AddEmployee([FromBody]ModelClass addemployee)
         {
             try
             {

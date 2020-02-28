@@ -1,10 +1,4 @@
-﻿//// This is Click alert function.
-//// This gives an alert message.
-//// When we click on the button the button calls this Clickfunction()
-function Clickfunction() {
-    alert("Registered Succesfully");
-}
-//// This is Form Validation
+﻿//// This is Form Validation
 function validateForm() {
     var x = document.forms["FormValidation"]["FirstName"];
     if (x.value == "") {
@@ -12,9 +6,8 @@ function validateForm() {
         return false;
     }
 }
-
 function FirstNamevalidate(Firstname) {
-    var Firstname = document.getElementsByName("lineclass");
+    var Firstname = document.getElementsByName["lineclass"];
     if (Firstname == "") {
         alert("First Name Empty Not allowed");
         return false;
@@ -31,8 +24,9 @@ function ValidatePhonenumber(Phonenumber) {
         alert("Invalid Phone NUmber");
         return false;
     }
-    return true;
+
 }
+
 //// This is Validation of EMail ID
 function EmailIdValidateion(emailField) {
     var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
@@ -40,6 +34,32 @@ function EmailIdValidateion(emailField) {
         alert('Invalid Email Address');
         return false;
     }
-
-    return true;
+    else {
+        return true;
+    }
+    $(document).ready(function (e) {
+        $('#lineclass').click(function () {
+            var email = $('#text').val();
+            if ($.trim(email).length == 0) {
+                alert('Please Enter Valid Email Address');
+                return false;
+            }
+            if (validateEmail(email)) {
+                alert('Valid Email Address');
+                return false;
+            }
+            else {
+                alert('Invalid Email Address');
+                return false;
+            }
+        });
+    });
 }
+
+//// This is Click alert function.
+//// Gives an alert message.
+//// When we click on the button the button calls this Clickfunction()
+function Clickfunction() {
+    alert("Registered Succesfully");
+}
+
