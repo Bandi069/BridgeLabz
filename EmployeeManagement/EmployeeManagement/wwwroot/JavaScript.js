@@ -56,10 +56,49 @@ function EmailIdValidateion(emailField) {
     });
 }
 
-//// This is Click alert function.
-//// Gives an alert message.
-//// When we click on the button the button calls this Clickfunction()
+
 function Clickfunction() {
-    alert("Registered Succesfully");
+    $(document).ready(function () {
+        var formData = new FormData;
+        formData.append("EmployeeID", $("#EmployeeID").val());
+        formData.append("Firstame", $("#FirstName").val());
+        formData.append("LastName", $("#LastName").val());
+        formData.append("PhoneNumber", $("#PhoneNumber").val());
+        formData.append("EmailID", $("#EmailID").val());
+        $.ajax({
+            url: "Create",
+            type: 'POST',
+            cache: false,
+            contentType: false,
+            processData: false,
+            data: formData,
+            success: function (response) {
+                if (response == "Added Successfully") {
+                    alert(response);
+                }
+                else {
+                    var teHtml;
+                    if (response == "") {
+                        alert("EmployeeID required");
+                    }
+                    if (response == "") {
+                        alert("First Name required");
+                    }
+                    if (response == "") {
+                        alert("Last Name required");
+                    }
+                    if (response == "") {
+                        alert("Email ID is invalid");
+                    }
+                    if (response == "") {
+                        alert("Mobile Number Invalid");
+                    }
+                }
+            },
+            error: function (response) {
+                alert(response);
+            }
+        });
+    });
 }
 

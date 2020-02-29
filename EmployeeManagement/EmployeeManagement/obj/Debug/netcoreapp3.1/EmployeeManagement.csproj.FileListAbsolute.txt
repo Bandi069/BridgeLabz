@@ -1,0 +1,4 @@
+C:\Users\Bridge Labs\Documents\GitHub\BridgeLabz\BridgeLabz\EmployeeManagement\EmployeeManagement\obj\Debug\netcoreapp3.1\EmployeeManagement.csprojAssemblyReference.cache
+C:\Users\Bridge Labs\Documents\GitHub\BridgeLabz\BridgeLabz\EmployeeManagement\EmployeeManagement\obj\Debug\netcoreapp3.1\EmployeeManagement.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Bridge Labs\Documents\GitHub\BridgeLabz\BridgeLabz\EmployeeManagement\EmployeeManagement\obj\Debug\netcoreapp3.1\EmployeeManagement.AssemblyInfoInputs.cache
+C:\Users\Bridge Labs\Documents\GitHub\BridgeLabz\BridgeLabz\EmployeeManagement\EmployeeManagement\obj\Debug\netcoreapp3.1\EmployeeManagement.AssemblyInfo.cs

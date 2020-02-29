@@ -37,8 +37,8 @@ namespace EmployeeManagement.Controllers
         /// <param name="addemployee"></param>
         /// <returns></returns>
         [HttpPost]
-        [Route("api/Create")]
-        public IActionResult AddEmployee([FromBody]ModelClass addemployee)
+        [Route("Create")]
+        public ActionResult AddEmp([FromBody]ModelClass addemployee)
         {
             try
             {
@@ -49,7 +49,6 @@ namespace EmployeeManagement.Controllers
             {
                 return BadRequest(e.Message);
             }
-
         }
         /// <summary>
         /// This is update action of employee data
@@ -58,7 +57,7 @@ namespace EmployeeManagement.Controllers
         /// <returns></returns>
         [HttpPost]
         [Route("Update")]
-        public ActionResult UpdateEmp(ModelClass updateemployee)
+        public ActionResult UpdateEmployee(ModelClass updateemployee)
         {
             try
             {
@@ -75,9 +74,9 @@ namespace EmployeeManagement.Controllers
         /// </summary>
         /// <param name="EmployeeID"></param>
         /// <returns></returns>
-        [HttpPost]
+        [HttpDelete]
         [Route("Delete")]
-        public ActionResult DeleteEmployee(int EmployeeID)
+        public ActionResult DeleteEmp(int EmployeeID)
         {
             try
             {

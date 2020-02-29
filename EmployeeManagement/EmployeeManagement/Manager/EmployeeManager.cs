@@ -26,7 +26,11 @@ namespace EmployeeManagement.Manager
         {
             this.EmployeeRepositary = EmployeeRepositary;
         }
-
+        /// <summary>
+        /// This is Add Employee Method
+        /// </summary>
+        /// <param name="Emp"></param>
+        /// <returns></returns>
         public string AddEmployee(ModelClass Emp)
         {
             if (EmployeeRepositary.AddEmployee(Emp))
