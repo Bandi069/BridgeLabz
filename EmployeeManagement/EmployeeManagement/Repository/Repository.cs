@@ -38,25 +38,28 @@ namespace EmployeeManagement.Repositary
         public List<ModelClass> GetAllEmloyees()
         {
             Connect();
-            //// This is list of Employees
-            List<ModelClass> listEmployee = new List<ModelClass>();
-            //// This is for Sql Connection
-            SqlCommand cmd = new SqlCommand("ViewEmployees", connect);
-            cmd.CommandType = CommandType.StoredProcedure;
-            connect.Open(); //// To open the Connection
-            SqlDataReader reader = cmd.ExecuteReader();//// To Read the Excutable file
-            while (reader.Read())
-            {
+            List<ModelClass> employeeslist = new List<ModelClass>();
+            SqlCommand command = new SqlCommand("ViewEmployees", connect);
+            command.CommandType = CommandType.StoredProcedure;
+            SqlDataAdapter adapter = new SqlDataAdapter(command);
+            DataTable dataTable = new DataTable();
+            connect.Open();
+            adapter.Fill(dataTable);
+            connect.Close();
 
-                Modelobj.EmployeeID = Convert.ToInt32(reader["EmployeeID"]);
-                Modelobj.FirstName = reader["FirstName"].ToString();
-                Modelobj.LastName = reader["LastName"].ToString();
-                Modelobj.EmailID = reader["EmailID"].ToString();
-                Modelobj.PhoneNumber = reader["Phone Number"].ToString();
+            employeeslist = (from DataRow data in dataTable.Rows
 
-            }
-            connect.Close(); //// Closinng Connection
-            return listEmployee;
+                         select new ModelClass()
+                         {
+                             EmployeeID = Convert.ToInt32(data["EmployeeID"]),
+                             FirstName = Convert.ToString(data["FirstName"]),
+                             LastName = Convert.ToString(data["LastName"]),
+                             PhoneNumber = Convert.ToString(data["PhoneNumber"]),
+                             EmailID = Convert.ToString(data["EmailID"]),
+                            
+                         }).ToList();
+
+            return employeeslist;
         }
         /// <summary>
         /// THis is Add Employee Method in Repository  Class

@@ -93,9 +93,9 @@ namespace EmployeeManagement.Controllers
         /// </summary>
         /// <param name="EmployeeID"></param>
         /// <returns></returns>
-        [HttpPost]
+        [HttpGet]
         [Route("Show")]
-        public ActionResult GetEmployeeData(int EmployeeID)
+        public ActionResult GetEmployeeData()
         {
             try
             {
