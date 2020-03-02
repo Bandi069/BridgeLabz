@@ -1,7 +1,7 @@
 ﻿
 //// This is Form Validation
 function validateForm() {
-    var varform= document.forms["FormValidation"]["FirstName"];
+    var varform = document.forms["FormValidation"]["FirstName"];
     if (varform.value == "") {
         alert("Name must be fill");
         return false;
@@ -9,9 +9,9 @@ function validateForm() {
 }
 
 //// Name validation function
-function FirstNamevalidate(Firstname) {
-    var Firstname = document.getElementsByName["lineclass"];
-    if (Firstname == "") {
+function FirstNamevalidate(FirstName) {
+    var FirstName = document.getElementsByName["lineclass"];
+    if (FirstName == "") {
         alert("First Name Empty Not allowed");
         return false;
     }
@@ -19,7 +19,6 @@ function FirstNamevalidate(Firstname) {
         return true;
     }
 }
-
 
 //// This is Validation of Phone Number
 function ValidatePhonenumber(Phonenumber) {
@@ -31,7 +30,6 @@ function ValidatePhonenumber(Phonenumber) {
     }
 
 }
-
 
 //// This is Validation of EMail ID
 function EmailIdValidateion(emailField) {
@@ -45,47 +43,72 @@ function EmailIdValidateion(emailField) {
     }
 }
 
-
 function Clickfunction() {
     $(document).ready(function () {
         var formData = new FormData;
-        formData.append("EmployeeID", $("#EmployeeID").val());
-        formData.append("Firstame", $("#FirstName").val());
-        formData.append("LastName", $("#LastName").val());
-        formData.append("PhoneNumber", $("#PhoneNumber").val());
-        formData.append("EmailID", $("#EmailID").val());
+        formData.append("FirstName", $("#firstNameId").val());
+        formData.append("LastName", $("#lastNameId").val());
+        formData.append("EmailID", $("#emailId").val());
+        formData.append("PhoneNumber", $("#phoneNumId").val());
         $.ajax({
-            url: "api/Create",
+            url: "api/create",
             type: 'POST',
             cache: false,
-            contentType: "application/json",
+            contentType: "application/json; charset=utf - 8",
+            dataType: "json",
             processData: false,
             data: formData,
+
             success: function (response) {
-                if (response == "Added Successfully") {
-                    alert(response);
-                }
-                /*else {
-                    var Html;
-                    if (response == "") {
-                        alert("EmployeeID required");
-                    }
-                    if (response == "") {
-                        alert("First Name required");
-                    }
-                    if (response == "") {
-                        alert("Last Name required");
-                    }
-                    if (response == "") {
-                        alert("Email ID is invalid");
-                    }
-                    if (response == "") {
-                        alert("Mobile Number Invalid");
-                    }*/
-                }
-            },
-            error: function (response) {
-                alert(response);
+                $("#EmployeeRegistration").show();
+                window.location.href = 'https://localhost:44348/Index.html'
+                alert("Employee Added Sucessfully")
+            }
+        });
+    });
+}
+function Clickfunction() {
+    $(document).ready(function () {
+        var formData = new FormData;
+        formData.append("FirstName", $("#firstNameId").val());
+        formData.append("LastName", $("#lastNameId").val());
+        formData.append("EmailID", $("#emailId").val());
+        formData.append("PhoneNumber", $("#phoneNumId").val());
+        $.ajax({
+            url: "api/update",
+            type: 'POST',
+            cache: false,
+            contentType: "application/json; charset=utf - 8",
+            dataType: "json",
+            processData: false,
+            data: formData,
+
+            success: function (response) {
+                window.location.href = 'https://localhost:44348/UpdateEmployee.html'
+                alert("Employee Updated Sucessfully")
+            }
+        });
+    });
+}
+function Clickfunction() {
+    $(document).ready(function () {
+        var formData = new FormData;
+     
+        formData.append("EmployeeID", $("#employeeID").val());
+       
+        $.ajax({
+            url: "api/delete",
+            type: 'Delete',
+            cache: false,
+            contentType: "application/json; charset=utf - 8",
+            dataType: "json",
+            processData: false,
+            data: formData,
+
+            success: function (response) {
+                $("#EmployeeRegistration").show();
+                window.location.href = 'https://localhost:44348/Index.html'
+                alert("Employee Deleted Sucessfully")
             }
         });
     });

@@ -71,7 +71,6 @@ namespace EmployeeManagement.Repositary
             Connect();
             SqlCommand Cmd = new SqlCommand("AddNewEmpDetails", connect);
             Cmd.CommandType = CommandType.StoredProcedure;
-            Cmd.Parameters.AddWithValue("@EmployeeID", Modelobj.EmployeeID);
             Cmd.Parameters.AddWithValue("@FirstName", Modelobj.FirstName);
             Cmd.Parameters.AddWithValue("@LastName", Modelobj.LastName);
             Cmd.Parameters.AddWithValue("@EmailID", Modelobj.EmailID);

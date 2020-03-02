@@ -3,13 +3,24 @@
 
 <head>
     <meta charset="utf-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <title> EmployeeManagement</title>
     <link rel="stylesheet" type="text/css" href="StyleSheet.css">
     <script type="text/javascript" src="JavaScript.js">
-
+        function handleFirstName(event) {
+            document.getElementById("firstNameId").value = event.target.value;
+        }
+        function handlelastName(event) {
+            document.getElementById("lastNameId").value = event.target.value;
+        }
+        function handleemailid(event) {
+            document.getElementById("emailId").value = event.target.value;
+        }
+        function handlephonenumber(event) {
+            document.getElementById("phoneNumId").value = event.target.value;
+        }
     </script>
 </head>
-
 <body>
 
     <div style="width: 100%; align-items: center; display: inline-flex; background-color: rgb(52, 128, 58); border-radius: 5px;">
@@ -36,22 +47,16 @@
     <center>
         <div class="EmployeeRegistration">
             <h3> Register Here</h3>
-            <form name="validateForm()" class="Registration" onblur="registration(names)" onsubmit="return" method="post">
+            <form name="validateForm()" class="Registration" onblur="registration(names)">
 
                 <table align="center">
-                    <tr>
-                        <td> <label for="Customer ID" id="lineclass">Employee ID <sup> *</sup> </label> </td>
-                        <td id="lineclass"> :&nbsp;</td>
-                        <td> <input type="text" name="" placeholder="Enter Employee ID" required /> </td>
-                        </br>
-                    </tr>
                     <tr>
                         <td>
                             <label for="FirstName" id="lineclass">First Name <sup> *</sup> </label>
                         </td>
                         <td id="lineclass"> :&nbsp;</td>
                         <td>
-                            <input type="text" onblur="FirstNamevalidate(this)" name="" placeholder="Enter FirstName" required /> <br>
+                            <input id="firstNameId" type="text" onblur="FirstNamevalidate(this)" name="" placeholder="Enter FirstName" onchange="handleFirstNameid(event)" required /> <br>
                         </td>
                     </tr>
                     <tr>
@@ -60,7 +65,7 @@
                         </td>
                         <td id="lineclass"> :&nbsp;</td>
                         <td>
-                            <input type="text" name="" placeholder="Enter LastName" required /> <br>
+                            <input id="lastNameId" type="text" name="" placeholder="Enter LastName" onchange="handlelastNameid(event)" required /> <br>
                         </td>
                     </tr>
 
@@ -70,7 +75,7 @@
                         </td>
                         <td id="lineclass"> :&nbsp;</td>
                         <td>
-                            <input type="text" onblur="EmailIdValidateion(this)" name="" placeholder="Enter EmailID" required /> <br>
+                            <input id="emailId" type="text" onblur="EmailIdValidateion(this)" name="" placeholder="Enter EmailID" onchange="handleemailid(event)" required /> <br>
                         </td>
                     </tr>
 
@@ -80,15 +85,17 @@
                         </td>
                         <td id="lineclass"> :&nbsp;</td>
                         <td>
-                            <input type="text" onblur="ValidatePhonenumber(this)" placeholder="Enter PhoneNumber" required />
+                            <input id="phoneNumId" type="text" onblur="ValidatePhonenumber(this)" placeholder="Enter PhoneNumber" onchange="handlephonenumber(event)" required />
                         </td>
                     </tr>
+
+                    <tr><td><button onclick="Clickfunction()" id="Button"> Click Here to Register</button></td></tr>
                 </table>
             </form>
             <br />
-            <form action="Userlogin.html">
+            <!--<form action="Userlogin.html">
                 <button onclick="Clickfunction()" id="Button"> Click Here to Register</button>
-            </form>
+            </form>-->
             <br /> <small id="small"> Click here for </small>
             <a class="GetDetails" href="Userlogin.html"> GetDetails</a>
 
