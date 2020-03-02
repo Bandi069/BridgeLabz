@@ -44,14 +44,17 @@ function EmailIdValidateion(emailField) {
 }
 
 function AddClickfunction() {
-    $(document).ready(function () {
+    //$(document).ready(function () {
+    event.preventDefault();
         $("#Button").click(function () {
+            console.log("in");
             var formData = new FormData();
             formData.append("EmployeeID", $("#employeeid").val());
             formData.append("FirstName", $("#firstnameid").val());
             formData.append("LastName", $("#lastnameid").val());
             formData.append("EmailID", $("#emailId").val());
             formData.append("PhoneNumber", $("#phonenumid").val());
+            console.log("FormData", formData);
             $.ajax({
                 url: "api/create",
                 type: 'POST',
@@ -62,12 +65,12 @@ function AddClickfunction() {
                 success: function (response) {
 
                     window.location.href = 'https://localhost:44348/UpdateEmployee.html'
-                    alert("Employee Added Sucessfully")
+                    console.log(response)
                 },
                 error: function () {
-                    alert("Errors Occur");
+                    console.log("Error");
                 }
             });
         });
-    });
+    //});
 }
