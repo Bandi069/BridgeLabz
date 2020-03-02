@@ -1,12 +1,17 @@
-﻿using EmployeeManagement.Models;
-using EmployeeManagement.Repositary;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="EmployeeManagement.cs" company="Bridgelabz">
+//   Copyright © 2020 Company="BridgeLabz"
+// </copyright>
+// <creator name="Bandi Venu"/>
+// --------------------------------------------------------------------------------------------------------------------
 namespace EmployeeManagement.Manager
 {
+    using EmployeeManagement.Models;
+    using EmployeeManagement.Repositary;
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Threading.Tasks;
     /// <summary>
     /// This is interface of Employee Manager
     /// </summary>

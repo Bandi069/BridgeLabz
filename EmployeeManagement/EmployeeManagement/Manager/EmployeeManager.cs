@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="Manager.cs" company="Bridgelabz">
+// <copyright file="EmployeeManager.cs" company="Bridgelabz">
 //   Copyright © 2020 Company="BridgeLabz"
 // </copyright>
 // <creator name="Bandi Venu"/>
@@ -17,6 +17,9 @@ namespace EmployeeManagement.Manager
     /// </summary>
     public class EmployeeManager : IEmployeeManager
     {
+        /// <summary>
+        /// Employee repository
+        /// </summary>
         private RepositoryInterface EmployeeRepositary;
         /// <summary>
         /// This is Constructor of Manager

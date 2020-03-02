@@ -1,4 +1,10 @@
-﻿
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="Startup.cs" company="Bridgelabz">
+//   Copyright © 2020 Company="BridgeLabz"
+// </copyright>
+// <creator name="Bandi Venu"/>
+// --------------------------------------------------------------------------------------------------------------------
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,9 +19,19 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace EmployeeManagement
 {
+    /// <summary>
+    /// This is Startup class 
+    /// </summary>
     public class Startup
     {
+        /// <summary>
+        /// This is configuaration get value
+        /// </summary>
         private IConfiguration Configuration { get; }
+        /// <summary>
+        /// This is Startup Constructor
+        /// </summary>
+        /// <param name="configuration"></param>
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;

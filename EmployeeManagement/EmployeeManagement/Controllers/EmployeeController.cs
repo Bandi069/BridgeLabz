@@ -37,7 +37,7 @@ namespace EmployeeManagement.Controllers
         /// <param name="addemployee"></param>
         /// <returns></returns>
         [HttpPost]
-        [Route("create")]
+        [Route("api/create")]
         public ActionResult AddEmp(ModelClass addemployee)
         {
             try

@@ -4,23 +4,29 @@
 // </copyright>
 // <creator name="Bandi Venu"/>
 // --------------------------------------------------------------------------------------------------------------------
-using EmployeeManagement.Models;
-using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace EmployeeManagement.Repositary
 {
+    using EmployeeManagement.Models;
+    using System;
+    using System.Collections.Generic;
+    using System.Data;
+    using System.Data.SqlClient;
+    using System.Linq;
+    using System.Threading.Tasks;
     /// <summary>
     /// This is Repository Class 
     /// All CRUD Operations done in this class
     /// </summary>
     public class Repository : RepositoryInterface
     {
+        /// <summary>
+        /// THis is Sql Connection 
+        /// </summary>
         private SqlConnection connect;
+        /// <summary>
+        /// Model class Object
+        /// </summary>
         ModelClass Modelobj = new ModelClass();
         /// <summary>
         /// This is method for connection
@@ -37,30 +43,30 @@ namespace EmployeeManagement.Repositary
         /// <returns></returns>
         public List<ModelClass> GetAllEmloyees()
         {
-            Connect();
+            Connect(); //// Calling Sql connection by Connect method
             List<ModelClass> employeeslist = new List<ModelClass>();
-            SqlCommand command = new SqlCommand("ViewEmployees", connect);
+            SqlCommand command = new SqlCommand("ViewEmployees", connect);//// Sql Stored Procedure
             command.CommandType = CommandType.StoredProcedure;
             SqlDataAdapter adapter = new SqlDataAdapter(command);
             DataTable dataTable = new DataTable();
-            connect.Open();
+            connect.Open(); //// For Open the Connection
             adapter.Fill(dataTable);
-            connect.Close();
-
+            connect.Close(); //// For Open the Connection
+            //// Employee list to get all the data
             employeeslist = (from DataRow data in dataTable.Rows
+                             select new ModelClass()
+                             {
+                                 EmployeeID = Convert.ToInt32(data["EmployeeID"]),
+                                 FirstName = Convert.ToString(data["FirstName"]),
+                                 LastName = Convert.ToString(data["LastName"]),
+                                 PhoneNumber = Convert.ToString(data["PhoneNumber"]),
+                                 EmailID = Convert.ToString(data["EmailID"]),
 
-                         select new ModelClass()
-                         {
-                             EmployeeID = Convert.ToInt32(data["EmployeeID"]),
-                             FirstName = Convert.ToString(data["FirstName"]),
-                             LastName = Convert.ToString(data["LastName"]),
-                             PhoneNumber = Convert.ToString(data["PhoneNumber"]),
-                             EmailID = Convert.ToString(data["EmailID"]),
-                            
-                         }).ToList();
-
+                             }).ToList();
+            //// ruturning the employee list from sql database
             return employeeslist;
         }
+
         /// <summary>
         /// THis is Add Employee Method in Repository  Class
         /// </summary>
@@ -71,6 +77,7 @@ namespace EmployeeManagement.Repositary
             Connect();
             SqlCommand Cmd = new SqlCommand("AddNewEmpDetails", connect);
             Cmd.CommandType = CommandType.StoredProcedure;
+            Cmd.Parameters.AddWithValue("@EmployeeID", Modelobj.EmployeeID);
             Cmd.Parameters.AddWithValue("@FirstName", Modelobj.FirstName);
             Cmd.Parameters.AddWithValue("@LastName", Modelobj.LastName);
             Cmd.Parameters.AddWithValue("@EmailID", Modelobj.EmailID);
@@ -87,6 +94,7 @@ namespace EmployeeManagement.Repositary
                 return false;
             }
         }
+
         /// <summary>
         /// This is method for Update Employee
         /// </summary>

@@ -43,74 +43,31 @@ function EmailIdValidateion(emailField) {
     }
 }
 
-function Clickfunction() {
+function AddClickfunction() {
     $(document).ready(function () {
-        var formData = new FormData;
-        formData.append("FirstName", $("#firstNameId").val());
-        formData.append("LastName", $("#lastNameId").val());
-        formData.append("EmailID", $("#emailId").val());
-        formData.append("PhoneNumber", $("#phoneNumId").val());
-        $.ajax({
-            url: "api/create",
-            type: 'POST',
-            cache: false,
-            contentType: "application/json; charset=utf - 8",
-            dataType: "json",
-            processData: false,
-            data: formData,
+        $("#Button").click(function () {
+            var formData = new FormData();
+            formData.append("EmployeeID", $("#employeeid").val());
+            formData.append("FirstName", $("#firstnameid").val());
+            formData.append("LastName", $("#lastnameid").val());
+            formData.append("EmailID", $("#emailId").val());
+            formData.append("PhoneNumber", $("#phonenumid").val());
+            $.ajax({
+                url: "api/create",
+                type: 'POST',
+                cache: false,
+                contentType: "application / json",
+                processData: false,
+                data: FormData,
+                success: function (response) {
 
-            success: function (response) {
-                $("#EmployeeRegistration").show();
-                window.location.href = 'https://localhost:44348/Index.html'
-                alert("Employee Added Sucessfully")
-            }
+                    window.location.href = 'https://localhost:44348/UpdateEmployee.html'
+                    alert("Employee Added Sucessfully")
+                },
+                error: function () {
+                    alert("Errors Occur");
+                }
+            });
         });
     });
 }
-function Clickfunction() {
-    $(document).ready(function () {
-        var formData = new FormData;
-        formData.append("FirstName", $("#firstNameId").val());
-        formData.append("LastName", $("#lastNameId").val());
-        formData.append("EmailID", $("#emailId").val());
-        formData.append("PhoneNumber", $("#phoneNumId").val());
-        $.ajax({
-            url: "api/update",
-            type: 'POST',
-            cache: false,
-            contentType: "application/json; charset=utf - 8",
-            dataType: "json",
-            processData: false,
-            data: formData,
-
-            success: function (response) {
-                window.location.href = 'https://localhost:44348/UpdateEmployee.html'
-                alert("Employee Updated Sucessfully")
-            }
-        });
-    });
-}
-function Clickfunction() {
-    $(document).ready(function () {
-        var formData = new FormData;
-     
-        formData.append("EmployeeID", $("#employeeID").val());
-       
-        $.ajax({
-            url: "api/delete",
-            type: 'Delete',
-            cache: false,
-            contentType: "application/json; charset=utf - 8",
-            dataType: "json",
-            processData: false,
-            data: formData,
-
-            success: function (response) {
-                $("#EmployeeRegistration").show();
-                window.location.href = 'https://localhost:44348/Index.html'
-                alert("Employee Deleted Sucessfully")
-            }
-        });
-    });
-}
-
