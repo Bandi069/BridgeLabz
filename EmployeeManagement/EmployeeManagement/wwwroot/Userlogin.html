@@ -34,21 +34,27 @@
             <form id="loginform">
                 <table>
                     <tr>
-                        <label for="Employee ID">Employee ID <sup>*</sup>:  </label>
-                    </tr>
-                    <tr>
-                        <input type="text" name="" placeholder="Enter Employee ID" />
+                        <td>
+                            <label for="EmployeeID" id="lineclass">Employee ID<sup> *</sup> </label>
+                        </td>
+                        <td id="lineclass"> :&nbsp;</td>
+                        <td>
+                            <input id="employeeid" type="text" name="" placeholder="Enter Employee ID" onchange="handleemployeeid(event)" required /> <br>
+                        </td>
                     </tr>
                     <br />
                     <tr>
-                        <label for="Phone Number">PhoneNumber<sup>*</sup> :&nbsp;</label>
-                    </tr>
-                    <tr>
-                        <input type="text" name="" placeholder="Enter Phone Number" onblur="ValidatePhonenumber(this)"/>
+                        <td>
+                            <label for="PhoneNumber" id="lineclass">Phone Number <sup> *</sup> &nbsp;&nbsp;&nbsp;&nbsp;</label>
+                        </td>
+                        <td id="lineclass"> :&nbsp;</td>
+                        <td>
+                            <input id="phonenumid" type="text" placeholder="Enter PhoneNumber" onchange="handlephonenumber(event)" required />
+                        </td>
                     </tr>
                 </table>
             </form>
-            <br /> <button class="DetailsButton">&nbsp;&nbsp;Get Details</button> <br />
+            <br /> <button id="LoginButton" onclick="LoginClickfunction()">&nbsp;&nbsp;Get Details</button> <br />
             <small id="small"> Click here to </small>
             <a class="Registration" href="Index.html"> Register</a>
         </div>

@@ -23,9 +23,17 @@ h1 {
     width: 450px;
 }
 
-#Button {
+#LoginButton {
     background-color: gray;
     color: maroon;
+    text-align: center;
+    text-decoration: solid;
+    font-weight: bold;
+}
+
+#updatebutton {
+    background-color: gray;
+    color: lightcoral;
     text-align: center;
     text-decoration: solid;
     font-weight: bold;

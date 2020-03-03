@@ -44,11 +44,12 @@ function EmailIdValidateion(emailField) {
 }
 
 function AddClickfunction() {
-    //$(document).ready(function () {
+    $(document).ready(function () {
     event.preventDefault();
-        $("#Button").click(function () {
+        $("#RegistrationButton").click(function () {
             console.log("in");
-            var formData = new FormData();
+            var formData = new FormData;
+
             formData.append("EmployeeID", $("#employeeid").val());
             formData.append("FirstName", $("#firstnameid").val());
             formData.append("LastName", $("#lastnameid").val());
@@ -59,7 +60,7 @@ function AddClickfunction() {
                 url: "api/create",
                 type: 'POST',
                 cache: false,
-                contentType: "application / json",
+                contentType: "application/json",
                 processData: false,
                 data: FormData,
                 success: function (response) {
@@ -72,5 +73,66 @@ function AddClickfunction() {
                 }
             });
         });
-    //});
+   });
+}
+function UpdateClickfunction() {
+    $(document).ready(function () {
+    event.preventDefault();
+        $("#updatebutton").click(function () {
+            console.log("in");
+            var formData = new FormData;
+
+            formData.append("EmployeeID", $("#employeeid").val());
+            formData.append("FirstName", $("#firstnameid").val());
+            formData.append("LastName", $("#lastnameid").val());
+            formData.append("EmailID", $("#emailId").val());
+            formData.append("PhoneNumber", $("#phonenumid").val());
+            console.log("FormData", formData);
+            $.ajax({
+                url: "api/update",
+                type: 'POST',
+                cache: false,
+                contentType: "application/json",
+                processData: false,
+                data: FormData,
+                success: function (response) {
+
+                    window.location.href = 'https://localhost:44348/Userlogin.html'
+                    console.log(response)
+                },
+                error: function () {
+                    console.log("Error");
+                }
+            });
+        });
+   });
+}
+function LoginClickfunction() {
+    $(document).ready(function () {
+    event.preventDefault();
+        $("#LoginButton").click(function () {
+            console.log("in");
+            var formData = new FormData;
+
+            formData.append("EmployeeID", $("#employeeid").val());
+            formData.append("PhoneNumber", $("#phonenumid").val());
+            console.log("FormData", formData);
+            $.ajax({
+                url: "api/show",
+                type: 'POST',
+                cache: false,
+                contentType: "application/json",
+                processData: false,
+                data: FormData,
+                success: function (response) {
+
+                    window.location.href = 'https://localhost:44348/Index.html'
+                    console.log(response)
+                },
+                error: function () {
+                    console.log("Error");
+                }
+            });
+        });
+   });
 }

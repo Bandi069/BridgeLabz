@@ -35,56 +35,57 @@
             <h3>Update Here</h3>
             <table>
                 <form class="Update">
-                    <tr>
-                    <tr>
-                        <td> <label for="Employee ID" id="lineclass">Employee ID <sup>*</sup></label></td>
-                        <td>:&nbsp;</td>
-                        <td><input type="text" name="" placeholder="Enter Employee ID" /></td>
-                        <br>
-                    </tr>
+                    
                     <tr>
                         <td>
-                            <label for="FirstName" id="lineclass">First Name <sup>*</sup></label>
+                            <label for="EmployeeID" id="lineclass">Employee ID<sup> *</sup> </label>
                         </td>
-                        <td>:&nbsp;</td>
+                        <td id="lineclass"> :&nbsp;</td>
                         <td>
-                            <input type="text" name="" placeholder="Enter FirstName" /><br>
+                            <input id="employeeid" type="text" name="" placeholder="Enter Employee ID" onchange="handleemployeeid(event)" required /> <br>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <label for="LastName" id="lineclass">Last Name <sup>*</sup></label>
+                            <label for="FirstName" id="lineclass">First Name <sup> *</sup> </label>
                         </td>
-                        <td>:&nbsp;</td>
+                        <td id="lineclass"> :&nbsp;</td>
                         <td>
-                            <input type="text" name="" placeholder="Enter LastName" /><br>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>
-                            <label for="EmailID" id="lineclass">EmailID <sup>*</sup></label>
-                        </td>
-                        <td>:&nbsp;</td>
-                        <td>
-                            <input type="text" name="" placeholder="Enter EmailID" />  <br>
+                            <input id="firstnameid" type="text" onblur="FirstNamevalidate(this)" name="" placeholder="Enter FirstName" onchange="handleFirstNameid(event)" required /> <br>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <label for="PhoneNUmber" id="lineclass">Phone Number <sup>*</sup></label>
+                            <label for="LastName" id="lineclass">Last Name <sup> *</sup> </label>
                         </td>
-                        <td>:&nbsp;</td>
+                        <td id="lineclass"> :&nbsp;</td>
                         <td>
-                            <input type="text" name="" placeholder="Enter PhoneNumber" />
+                            <input id="lastnameid" type="text" name="" placeholder="Enter LastName" onchange="handlelastNameid(event)" required /> <br>
                         </td>
                     </tr>
 
+                    <tr>
+                        <td>
+                            <label for="EmailID" id="lineclass">EmailID <sup> *</sup> </label>
+                        </td>
+                        <td id="lineclass"> :&nbsp;</td>
+                        <td>
+                            <input id="emailId" type="text" onblur="EmailIdValidateion(this)" name="" placeholder="Enter EmailID" onchange="handleemailid(event)" required /> <br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="PhoneNumber" id="lineclass">Phone Number <sup> *</sup> &nbsp;&nbsp;&nbsp;&nbsp;</label>
+                        </td>
+                        <td id="lineclass"> :&nbsp;</td>
+                        <td>
+                            <input id="phonenumid" type="text" placeholder="Enter PhoneNumber" onchange="handlephonenumber(event)" required />
+                        </td>
                     </tr>
 
                 </form>
             </table>
-            <br /><button onclick="updateClickfunction()" id="Button">Click Here to Update</button>
+            <br /><button onclick="UpdateClickfunction()" id="updatebutton" >Click Here to Update</button>
             <br /> <small id="small">Click here for </small><a href="Userlogin.html">Login</a>
         </div>
     </center>
