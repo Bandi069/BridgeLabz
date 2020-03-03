@@ -43,37 +43,66 @@ function EmailIdValidateion(emailField) {
     }
 }
 
-function AddClickfunction() {
+//function AddClickfunction() {
+//    $(document).ready(function () {
+//        $("#RegistrationButton").click(function () {
+//            console.log("inikj");
+//            var formData = new FormData;
+
+//            formData.append("EmployeeID", $("#employeeid").val());
+//            formData.append("FirstName", $("#firstnameid").val());
+//            formData.append("LastName", $("#lastnameid").val());
+//            formData.append("EmailID", $("#emailId").val());
+//            formData.append("PhoneNumber", $("#phonenumid").val());
+//            console.log("FormData", formData);
+//            $.ajax({
+//                url: "api/create",
+//                type: 'POST',
+//                cache: false,
+//                contentType: "application/json",
+//                processData: false,
+//                data: FormData,
+//                success: function (response) {
+
+//                    window.location.href = 'https://localhost:44348/UpdateEmployee.html'
+//                    console.log(response)
+//                },
+//                error: function () {
+//                    console.log("Error");
+//                }
+//            });
+//        });
+//   });
+//}
+function add() {
     $(document).ready(function () {
-    event.preventDefault();
-        $("#RegistrationButton").click(function () {
-            console.log("in");
-            var formData = new FormData;
-
-            formData.append("EmployeeID", $("#employeeid").val());
-            formData.append("FirstName", $("#firstnameid").val());
-            formData.append("LastName", $("#lastnameid").val());
-            formData.append("EmailID", $("#emailId").val());
-            formData.append("PhoneNumber", $("#phonenumid").val());
-            console.log("FormData", formData);
-            $.ajax({
-                url: "api/create",
-                type: 'POST',
-                cache: false,
-                contentType: "application/json",
-                processData: false,
-                data: FormData,
-                success: function (response) {
-
-                    window.location.href = 'https://localhost:44348/UpdateEmployee.html'
-                    console.log(response)
-                },
-                error: function () {
-                    console.log("Error");
-                }
-            });
+        var formData = new FormData;
+        formData.append("EmployeeID",$("#employeeid").val);
+        formData.append("FirstName",$("#firstnameid").val());
+        formData.append("LastName",$("#lastnameid").val());
+        formData.append("EmailID", $("#emailId").val());
+        formData.append("PhoneNumber", $("#phonenumid").val());
+        //formData.append("EmployeeID", 1234);//$("#employeeid").val());
+        //formData.append("FirstName","fghsdkjghdf");//$("#firstnameid").val());
+        //formData.append("LastName", "fghsdkjghdf");//$("#lastnameid").val());
+        //formData.append("EmailID", "fghsdkjghdf");//$("#emailId").val());
+        //formData.append("PhoneNumber", "fghsdkjghdf");//$("#phonenumid").val());
+        console.log(formData);
+        $.ajax({
+            url: "api/create",
+            type: 'POST',
+            cache: false,
+            contentType: false,
+            processData: false,
+            data: FormData,
+            success: function (response) {
+                alert("Ok");
+            },
+            error: function () {
+                alert("error");
+            }
         });
-   });
+    });
 }
 function UpdateClickfunction() {
     $(document).ready(function () {
@@ -101,7 +130,7 @@ function UpdateClickfunction() {
                     console.log(response)
                 },
                 error: function () {
-                    console.log("Error");
+                    console.log("Error Occur");
                 }
             });
         });

@@ -5,7 +5,7 @@
     <title> EmployeeManagement</title>
     <link rel="stylesheet" type="text/css" href="StyleSheet.css">
     <script src="JavaScript.js"></script>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script>
         function handleemployeeid(event) {
             document.getElementById("employeeid").value = event.target.value;
@@ -50,64 +50,64 @@
     <center>
         <div class="EmployeeRegistration">
             <h3> Register Here</h3>
-            <form name="validateForm()" class="Registration" onblur="registration(names)">
+            <!--<form name="validateForm()" class="Registration" onblur="registration(names)">-->
 
-                <table align="center">
-                    <tr>
-                        <td>
-                            <label for="EmployeeID" id="lineclass">Employee ID<sup> *</sup> </label>
-                        </td>
-                        <td id="lineclass"> :&nbsp;</td>
-                        <td>
-                            <input id="employeeid" type="text" name="" placeholder="Enter Employee ID" onchange="handleemployeeid(event)" required /> <br>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label for="FirstName" id="lineclass">First Name <sup> *</sup> </label>
-                        </td>
-                        <td id="lineclass"> :&nbsp;</td>
-                        <td>
-                            <input id="firstnameid" type="text" onblur="FirstNamevalidate(this)" name="" placeholder="Enter FirstName" onchange="handleFirstNameid(event)" required /> <br>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label for="LastName" id="lineclass">Last Name <sup> *</sup> </label>
-                        </td>
-                        <td id="lineclass"> :&nbsp;</td>
-                        <td>
-                            <input id="lastnameid" type="text" name="" placeholder="Enter LastName" onchange="handlelastNameid(event)" required /> <br>
-                        </td>
-                    </tr>
+            <table align="center">
+                <tr>
+                    <td>
+                        <label for="EmployeeID" id="lineclass">Employee ID<sup> *</sup> </label>
+                    </td>
+                    <td id="lineclass"> :&nbsp;</td>
+                    <td>
+                        <input id="employeeid" type="text" name="" placeholder="Enter Employee ID" onchange="handleemployeeid(event)" required /> <br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="FirstName" id="lineclass">First Name <sup> *</sup> </label>
+                    </td>
+                    <td id="lineclass"> :&nbsp;</td>
+                    <td>
+                        <input id="firstnameid" type="text" onblur="FirstNamevalidate(this)" name="" placeholder="Enter FirstName" onchange="handleFirstNameid(event)" required /> <br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="LastName" id="lineclass">Last Name <sup> *</sup> </label>
+                    </td>
+                    <td id="lineclass"> :&nbsp;</td>
+                    <td>
+                        <input id="lastnameid" type="text" name="" placeholder="Enter LastName" onchange="handlelastNameid(event)" required /> <br>
+                    </td>
+                </tr>
 
-                    <tr>
-                        <td>
-                            <label for="EmailID" id="lineclass">EmailID <sup> *</sup> </label>
-                        </td>
-                        <td id="lineclass"> :&nbsp;</td>
-                        <td>
-                            <input id="emailId" type="text" onblur="EmailIdValidateion(this)" name="" placeholder="Enter EmailID" onchange="handleemailid(event)" required /> <br>
-                        </td>
-                    </tr>
+                <tr>
+                    <td>
+                        <label for="EmailID" id="lineclass">EmailID <sup> *</sup> </label>
+                    </td>
+                    <td id="lineclass"> :&nbsp;</td>
+                    <td>
+                        <input id="emailId" type="text" onblur="EmailIdValidateion(this)" name="" placeholder="Enter EmailID" onchange="handleemailid(event)" required /> <br>
+                    </td>
+                </tr>
 
-                    <tr>
-                        <td>
-                            <label for="PhoneNumber" id="lineclass">Phone Number <sup> *</sup> &nbsp;&nbsp;&nbsp;&nbsp;</label>
-                        </td>
-                        <td id="lineclass"> :&nbsp;</td>
-                        <td>
-                            <input id="phonenumid" type="text" placeholder="Enter PhoneNumber" onchange="handlephonenumber(event)" required />
-                        </td>
-                    </tr>
+                <tr>
+                    <td>
+                        <label for="PhoneNumber" id="lineclass">Phone Number <sup> *</sup> &nbsp;&nbsp;&nbsp;&nbsp;</label>
+                    </td>
+                    <td id="lineclass"> :&nbsp;</td>
+                    <td>
+                        <input id="phonenumid" type="text" placeholder="Enter PhoneNumber" onchange="handlephonenumber(event)" required />
+                    </td>
+                </tr>
 
-                    <tr><td><button onclick="AddClickfunction()" id="RegistrationButton"> Click Here to Register</button></td></tr>
-                </table>
-            </form>
+                <tr><td><button onclick="add()" id="RegistrationButton"> Click Here to Register</button></td></tr>
+            </table>
+            <!--</form>-->
             <br />
             <!--<form action="Userlogin.html">
-                <button onclick="AddClickfunction()" id="Button"> Click Here to Register</button>
-            </form>-->
+        <button onclick="AddClickfunction()" id="Button"> Click Here to Register</button>
+    </form>-->
             <br /> <small id="small"> Click here for </small>
             <a class="GetDetails" href="Userlogin.html"> GetDetails</a>
 

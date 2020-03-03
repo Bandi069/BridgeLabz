@@ -3,6 +3,23 @@
 <head>
     <meta charset="utf-8" />
     <title>UpdateEmployee</title>
+    <script>
+        function handleemployeeid(event) {
+            document.getElementById("employeeid").value = event.target.value;
+        }
+        function handleFirstNameid(event) {
+            document.getElementById("firstnameid").value = event.target.value;
+        }
+        function handlelastNameid(event) {
+            document.getElementById("lastnameid").value = event.target.value;
+        }
+        function handleemailid(event) {
+            document.getElementById("emailId").value = event.target.value;
+        }
+        function handlephonenumber(event) {
+            document.getElementById("phonenumid").value = event.target.value;
+        }
+    </script>
 </head>
 <body>
     <div style="width: 100%; align-items: center; display: inline-flex; background-color: rgb(52, 128, 58); border-radius: 5px;">
@@ -85,7 +102,7 @@
 
                 </form>
             </table>
-            <br /><button onclick="UpdateClickfunction()" id="updatebutton" >Click Here to Update</button>
+            <br /><button onclick="UpdateClickfunction()" id="updatebutton">Click Here to Update</button>
             <br /> <small id="small">Click here for </small><a href="Userlogin.html">Login</a>
         </div>
     </center>

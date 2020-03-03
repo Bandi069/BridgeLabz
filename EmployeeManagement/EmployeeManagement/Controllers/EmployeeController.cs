@@ -15,14 +15,14 @@ namespace EmployeeManagement.Controllers
     using EmployeeManagement.Repositary;
     using Microsoft.AspNetCore.Http;
     using Microsoft.AspNetCore.Mvc;
-    [Route("api/[controller]")]
-    [ApiController]
+    //[Route("api/[controller]")]
+    //[ApiController]
     public class EmployeeController : ControllerBase
     {
         /// <summary>
         /// Employee manager 
         /// </summary>
-        private IEmployeeManager EmpManager;
+        private readonly IEmployeeManager EmpManager;
         /// <summary>
         /// Constructor for Employee Controller
         /// </summary>
@@ -38,18 +38,22 @@ namespace EmployeeManagement.Controllers
         /// <returns></returns>
         [HttpPost]
         [Route("api/create")]
-        public ActionResult AddEmp(ModelClass addemployee)
-        {
-            try
-            {
-                var result = EmpManager.AddEmployee(addemployee);
-                return Ok(new { result });
-            }
-            catch (Exception e)
-            {
-                return BadRequest(e.Message);
-            }
-        }
+        //public ActionResult AddEmp(ModelClass addemployee)
+        //{
+        //   try
+        //    {
+        //        var result = EmpManager.AddEmployee(addemployee);
+        //        if (result)
+        //        {
+        //            return Ok("Added Sucessfully");
+        //        }
+        //        return BadRequest("Not Added");
+        //   }
+        //   catch (Exception e)
+        //    {
+        //        throw new Exception(e.Message);
+        //    }
+        //}
         /// <summary>
         /// This is update action of employee data
         /// </summary>

@@ -22,7 +22,7 @@ namespace EmployeeManagement.Manager
         /// </summary>
         /// <param name="Emp"></param>
         /// <returns></returns>
-        string AddEmployee(ModelClass Emp);
+        bool AddEmployee(ModelClass Emp);
         /// <summary>
         /// This is update the employee data
         /// </summary>

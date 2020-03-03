@@ -28,13 +28,16 @@ namespace EmployeeManagement.Repositary
         /// Model class Object
         /// </summary>
         ModelClass Modelobj = new ModelClass();
+        public static string ConnectionName = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=EmployeeManagement;Integrated Security=True"
+;
+
         /// <summary>
         /// This is method for connection
         /// </summary>
         public void Connect()
         {
             // string ConnectionName = ConfigurationManager.ConnectionStrings[0].ConnectionString;
-            string ConnectionName = "Server=(Localdb)\\MSSQLLocaldb;Database=EmployeeManagement;integrated Security=SSPI";
+           // string ConnectionName = "Server=(Localdb)//MSSQLLocaldb;Database=EmployeeManagement;integrated Security=SSPI";
             connect = new SqlConnection(ConnectionName);
         }
         /// <summary>
@@ -74,24 +77,27 @@ namespace EmployeeManagement.Repositary
         /// <returns></returns>
         public bool AddEmployee(ModelClass Modelobj)
         {
-            Connect();
-            SqlCommand Cmd = new SqlCommand("AddNewEmpDetails", connect);
-            Cmd.CommandType = CommandType.StoredProcedure;
-            Cmd.Parameters.AddWithValue("@EmployeeID", Modelobj.EmployeeID);
-            Cmd.Parameters.AddWithValue("@FirstName", Modelobj.FirstName);
-            Cmd.Parameters.AddWithValue("@LastName", Modelobj.LastName);
-            Cmd.Parameters.AddWithValue("@EmailID", Modelobj.EmailID);
-            Cmd.Parameters.AddWithValue("@PhoneNumber", Modelobj.PhoneNumber);
-            connect.Open();
-            int v = Cmd.ExecuteNonQuery();
-            connect.Close();
-            if (v >= 1)
+            using (SqlConnection sqlConnection = new SqlConnection(ConnectionName))
             {
-                return true;
-            }
-            else
-            {
-                return false;
+                SqlCommand cal = new SqlCommand("AddNewEmpDetails", sqlConnection);
+                cal.CommandType = CommandType.StoredProcedure;
+                
+                cal.Parameters.AddWithValue("@EmployeeID", Modelobj.EmployeeID);
+                cal.Parameters.AddWithValue("@FirstName", Modelobj.FirstName);
+                cal.Parameters.AddWithValue("@LastName", Modelobj.LastName);
+                cal.Parameters.AddWithValue("@EmailID", Modelobj.EmailID);
+                cal.Parameters.AddWithValue("@PhoneNumber", Modelobj.PhoneNumber);
+                sqlConnection.Open();
+                var i=cal.ExecuteNonQuery();
+                sqlConnection.Close();
+                if (i >= 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
         }
 

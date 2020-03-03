@@ -20,7 +20,7 @@ namespace EmployeeManagement.Manager
         /// <summary>
         /// Employee repository
         /// </summary>
-        private RepositoryInterface EmployeeRepositary;
+        private readonly RepositoryInterface EmployeeRepositary;
         /// <summary>
         /// This is Constructor of Manager
         /// </summary>
@@ -34,16 +34,18 @@ namespace EmployeeManagement.Manager
         /// </summary>
         /// <param name="Emp"></param>
         /// <returns></returns>
-        public string AddEmployee(ModelClass Emp)
+        public bool AddEmployee(ModelClass Emp)
         {
-            if (EmployeeRepositary.AddEmployee(Emp))
-            {
-                return "Employee added to the list Successfully";
-            }
-            else
-            {
-                return "Employee not added to the list";
-            }
+            var result = this.EmployeeRepositary.AddEmployee(Emp);
+            return result;
+            //if (EmployeeRepositary.AddEmployee(Emp))
+            //{
+            //    return true; //// Added employee to the list
+            //}
+            //else
+            //{
+            //    return false;
+            //}
         }
 
         /// <summary>
