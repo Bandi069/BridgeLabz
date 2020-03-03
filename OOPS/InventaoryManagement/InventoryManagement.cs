@@ -19,12 +19,9 @@ namespace Oops.InventaoryManagement
     /// </summary>
     class InventoryManagement
     {
-       //// Taking String thorugh Json file path
-<<<<<<< HEAD
-      public string JsonFile = @"C:\Users\Bridge Labs\source\repos\OOPS\OOPS\InventaoryManagement\JsonFile.json";
-=======
+        //// Taking String thorugh Json file path
+
         private string JsonFile = @"C:\Users\Bridge Labs\source\repos\OOPS\OOPS\InventaoryManagement\JsonFile.json";
->>>>>>> 0719d6bd675447eb14e05ecd50c0f34251333d15
         /// <summary>
         /// Method for getting user Details
         /// </summary>
@@ -106,7 +103,7 @@ namespace Oops.InventaoryManagement
             itemArray.Add(newItemObj);
             Console.WriteLine("Name :" + itemArray);
             jsonObj[NewitemName] = itemArray;
-            
+
             string newJsonResult = JsonConvert.SerializeObject(jsonObj, Formatting.Indented);
             File.WriteAllText(this.JsonFile, newJsonResult);
 

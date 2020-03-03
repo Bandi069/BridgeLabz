@@ -1,29 +1,35 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="UserDetails.cs" company="Bridgelabz">
+//   Copyright © 2020 Company="BridgeLabz"
+// </copyright>
+// <creator name="Bandi Venu"/>
+// --------------------------------------------------------------------------------------------------------------------
 
 namespace OOPS.CommercialDataProcessing
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
     class UserDetils
     {
+        /// <summary>
+        /// This is string variable account Holder Name
+        /// </summary>
         public string accountHolderName;
 
         /// <summary>
-        /// this variable hold the total balance of account holder.
+        /// This is double variable  total Amount of account holder.
         /// </summary>
         public double totalAmountAccountHolder;
 
         /// <summary>
-        /// this variable hold the total share buy by user and initially it is zero.
+        /// This int variable  total share buy by user
         /// </summary>
         public int noOfShareBuyUser = 0;
 
         /// <summary>
-        /// this method take all user detail which required to create account.
+        /// This is Account Holder Name property
         /// </summary>
-        /// <value>
-        /// The name of the account holder.
-        /// </value>
         public string AccountHolderName
         {
             get
@@ -37,14 +43,14 @@ namespace OOPS.CommercialDataProcessing
         }
 
         /// <summary>
-        /// Uses the get input.
+        /// This is method of Useget input.
         /// </summary>
         public void UseGetInput()
         {
-            Console.WriteLine("Enter Account Holder UserName");
+            Console.WriteLine("Enter the UserName of Account Holder");
             accountHolderName = Console.ReadLine();
 
-            Console.WriteLine("How Many Doller Do You Have (Total Amount)");
+            Console.WriteLine("Total Amount");
             totalAmountAccountHolder = Convert.ToInt32(Console.ReadLine());
         }
     }

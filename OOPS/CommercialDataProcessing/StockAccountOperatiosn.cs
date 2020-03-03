@@ -1,31 +1,41 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="StockAccountOperatiosn.cs" company="Bridgelabz">
+//   Copyright © 2020 Company="BridgeLabz"
+// </copyright>
+// <creator name="Bandi Venu"/>
+// --------------------------------------------------------------------------------------------------------------------
 namespace OOPS.CommercialDataProcessing
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+    /// <summary>
+    /// This is Stock Account Operations Class
+    /// </summary>
     class StockAccountOperatiosn
     {
+        /// <summary>
+        /// This is Atock Account Choice Method
+        /// </summary>
         public static void StockAccountChoice()
         {
+            //// Creating object for stock Account
             StockAccount stockAccount = new StockAccount();
             string repeat;
             do
             {
-                ////here print list of operation which is goining to perform
-
-                Console.WriteLine("1. Create Account");
-                Console.WriteLine("2. Print Report");
+                Console.WriteLine("1. Create an Account");
+                Console.WriteLine("2. Print the Report");
                 Console.WriteLine("3. Buy Shares");
                 Console.WriteLine("4. Show My Account Details");
                 Console.WriteLine("5. Number Of Shares");
-                Console.WriteLine("6. Sell Shares");
+                Console.WriteLine("6. Shares Sell ");
 
-                ////take choice from user
+                //// User Choice
                 Console.WriteLine("Enter Choice To Run Operation ");
-                int choice = Convert.ToInt32(Console.ReadLine());
-
-                switch (choice)
+                int Choice = Convert.ToInt32(Console.ReadLine());
+                //// Switch Case for Choice (For Different Operations)
+                switch (Choice)
                 {
                     case 1:
                         stockAccount.StockAcountCreate();
@@ -50,10 +60,10 @@ namespace OOPS.CommercialDataProcessing
                         break;
                 }
 
-                Console.WriteLine("\nTo Continue the Press 'Yes' Or  To exit Press 'No' ");
+                Console.WriteLine("\nTo Continue the Press 'Y' Or exit-> 'N' ");
                 repeat = Console.ReadLine().ToLower();
             }
-            while (repeat == "yes");
+            while (repeat == "Y");
         }
     }
 }

@@ -5,14 +5,16 @@
 // <creator name="Bandi Venu"/>
 // --------------------------------------------------------------------------------------------------------------------
 
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 namespace OOPS.DeckCards
-{/// <summary>
-/// Class for finding Deck of Shuffle cards
-/// </summary>
+{
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+    /// <summary>
+    /// Class for finding Deck of Shuffle cards
+    /// </summary>
     class CardsPlay
     {
         /// <summary>
@@ -20,9 +22,9 @@ namespace OOPS.DeckCards
         /// Printing Deck of Cards 
         /// </summary>
         /// <param name="Deck"></param>
-        public  void PlayGame(string[] Deck)
+        public void PlayGame(string[] Deck)
         {
-            
+
             int Players = 4;
             int TotalCards = Deck.Length;
             int PlayerCards = TotalCards / Players;
@@ -33,23 +35,21 @@ namespace OOPS.DeckCards
             {
                 j = j % Players;
                 PlayersCards[j, k] = Deck[i];
-<<<<<<< HEAD
-                j+=j; 
-                i+=i;
-=======
+
+                j += j;
+                i += i;
                 ++j; ++i;
->>>>>>> 0719d6bd675447eb14e05ecd50c0f34251333d15
                 if (j == Players)
                 {
                     ++k;
                 }
             }
-            for ( i = 0; i < 4; i++)
+            for (i = 0; i < 4; i++)
             {
-                for ( j = 0; j < 9; j++)
+                for (j = 0; j < 9; j++)
                 {
                     Console.Write
-                        (PlayersCards[i,j]+",");
+                        (PlayersCards[i, j] + ",");
                 }
                 Console.WriteLine();
             }

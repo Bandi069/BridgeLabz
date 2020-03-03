@@ -5,14 +5,13 @@
 // <creator name="Bandi Venu"/>
 // --------------------------------------------------------------------------------------------------------------------
 
-using System;
-using System.Collections.Generic;
-using System.Text;
-using System.IO;
-using OOPS.DeckCards;
-
 namespace OOPS
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+    using System.IO;
+    using OOPS.DeckCards;
     /// <summary>
     /// Class for Deck of Cards
     /// </summary>
@@ -39,8 +38,8 @@ namespace OOPS
             }
             //// Calling PlayGame Method through DeckObject(Cardsplay Method)
             DeckObj.PlayGame(Deck);
-           
+
         }
-       
+
     }
 }
