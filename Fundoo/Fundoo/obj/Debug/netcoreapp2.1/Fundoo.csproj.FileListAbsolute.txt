@@ -1,0 +1,16 @@
+C:\Users\Bridge Labs\source\repos\Fundoo\Fundoo\bin\Debug\netcoreapp2.1\appsettings.Development.json
+C:\Users\Bridge Labs\source\repos\Fundoo\Fundoo\bin\Debug\netcoreapp2.1\appsettings.json
+C:\Users\Bridge Labs\source\repos\Fundoo\Fundoo\bin\Debug\netcoreapp2.1\Properties\launchSettings.json
+C:\Users\Bridge Labs\source\repos\Fundoo\Fundoo\bin\Debug\netcoreapp2.1\Fundoo.deps.json
+C:\Users\Bridge Labs\source\repos\Fundoo\Fundoo\bin\Debug\netcoreapp2.1\Fundoo.runtimeconfig.json
+C:\Users\Bridge Labs\source\repos\Fundoo\Fundoo\bin\Debug\netcoreapp2.1\Fundoo.runtimeconfig.dev.json
+C:\Users\Bridge Labs\source\repos\Fundoo\Fundoo\bin\Debug\netcoreapp2.1\Fundoo.dll
+C:\Users\Bridge Labs\source\repos\Fundoo\Fundoo\bin\Debug\netcoreapp2.1\Fundoo.pdb
+C:\Users\Bridge Labs\source\repos\Fundoo\Fundoo\obj\Debug\netcoreapp2.1\Fundoo.csprojAssemblyReference.cache
+C:\Users\Bridge Labs\source\repos\Fundoo\Fundoo\obj\Debug\netcoreapp2.1\Fundoo.RazorAssemblyInfo.cache
+C:\Users\Bridge Labs\source\repos\Fundoo\Fundoo\obj\Debug\netcoreapp2.1\Fundoo.RazorAssemblyInfo.cs
+C:\Users\Bridge Labs\source\repos\Fundoo\Fundoo\obj\Debug\netcoreapp2.1\Fundoo.AssemblyInfoInputs.cache
+C:\Users\Bridge Labs\source\repos\Fundoo\Fundoo\obj\Debug\netcoreapp2.1\Fundoo.AssemblyInfo.cs
+C:\Users\Bridge Labs\source\repos\Fundoo\Fundoo\obj\Debug\netcoreapp2.1\Fundoo.RazorTargetAssemblyInfo.cache
+C:\Users\Bridge Labs\source\repos\Fundoo\Fundoo\obj\Debug\netcoreapp2.1\Fundoo.dll
+C:\Users\Bridge Labs\source\repos\Fundoo\Fundoo\obj\Debug\netcoreapp2.1\Fundoo.pdb
