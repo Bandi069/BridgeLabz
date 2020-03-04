@@ -38,22 +38,22 @@ namespace EmployeeManagement.Controllers
         /// <returns></returns>
         [HttpPost]
         [Route("api/create")]
-        //public ActionResult AddEmp(ModelClass addemployee)
-        //{
-        //   try
-        //    {
-        //        var result = EmpManager.AddEmployee(addemployee);
-        //        if (result)
-        //        {
-        //            return Ok("Added Sucessfully");
-        //        }
-        //        return BadRequest("Not Added");
-        //   }
-        //   catch (Exception e)
-        //    {
-        //        throw new Exception(e.Message);
-        //    }
-        //}
+        public ActionResult AddEmp(ModelClass addemployee)
+        {
+            try
+            {
+                var result = EmpManager.AddEmployee(addemployee);
+                if (result)
+                {
+                    return Ok("Added Sucessfully");
+                }
+                return BadRequest("Not Added");
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
         /// <summary>
         /// This is update action of employee data
         /// </summary>
