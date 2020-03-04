@@ -6,7 +6,7 @@ namespace Model.LabelModel
 {
     public class ModelLabel
     {
-        public int MyProperty { get; set; }
+        public int Id { get; set; }
         public string EmailId { get; set; }
         public string Label { get; set; }
     }
