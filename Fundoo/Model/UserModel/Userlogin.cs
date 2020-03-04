@@ -4,12 +4,14 @@ using System.Text;
 
 namespace Model.UserModel
 {
-    class Userlogin
+    public class Userlogin
     {
-        private int Id;
-        private string Emailid;
+        private int id;
+        private string emailid;
         private string password;
-        public int EmailId { get; set; }
-        public string Password { get; set; }
+
+        public int Id { get => id; set => id = value; }
+        public string Emailid { get => emailid; set => emailid = value; }
+        public string Password { get => password; set => password = value; }
     }
 }
