@@ -14,22 +14,25 @@ namespace Repository.Repository
 
         }
 
-      public Task<string> LoginAsynChr(LoginModel loginModel)
+        public Task<string> LoginAsynChr(LoginModel loginModel)
         {
-            
+            var user = FindEmailid(loginModel.Emailid);
             return null;
         }
 
-      public  Task<string> ResetPassword(ResetPassword resetPassword)
+        public Task<string> ResetPassword(ResetPassword resetPassword)
         {
             return null;
         }
 
-     public Task<string> ForgotPassword(ForgotPasswordModel forgotPasswordModel)
+        public Task<string> ForgotPassword(ForgotPasswordModel forgotPasswordModel)
+        {
+            return null;
+        }
+
+        private string FindEmailid(string emailid)
         {
             return null;
         }
     }
-
-    
 }
