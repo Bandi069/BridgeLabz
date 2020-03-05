@@ -11,18 +11,21 @@ namespace Repository.Repository
     {
         public UserLogin()
         {
+
         }
-        public Task<string> LoginAsynChr(LoginModel loginModel)
+
+      public Task<string> LoginAsynChr(LoginModel loginModel)
         {
             
             return null;
         }
-        Task<string> IRepositoryuser.ResetPassword(ResetPassword resetPassword)
+
+      public  Task<string> ResetPassword(ResetPassword resetPassword)
         {
             return null;
         }
 
-        Task<string> IRepositoryuser.ForgotPassword(ForgotPasswordModel forgotPasswordModel)
+     public Task<string> ForgotPassword(ForgotPasswordModel forgotPasswordModel)
         {
             return null;
         }
