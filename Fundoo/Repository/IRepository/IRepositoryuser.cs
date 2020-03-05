@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Repository.IRepository
 {
-    public interface IRepository
+    public interface IRepositoryuser
     {
         Task<string> LoginAsynChr(LoginModel loginModel);
-        Task<string> ResetPassword(ResetPasswordModel resetPasswordModel);
+        Task<string> ResetPassword(ResetPassword resetPassword);
         Task<string> ForgotPassword(ForgotPasswordModel forgotPasswordModel);
     }
 }
