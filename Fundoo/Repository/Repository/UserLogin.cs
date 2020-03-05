@@ -1,10 +1,11 @@
-﻿using System;
+﻿using Repository.IRepository;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Repository.Repository
 {
-    class UserLogin
+    public class UserLogin : IUserRepo
     {
 
     }
