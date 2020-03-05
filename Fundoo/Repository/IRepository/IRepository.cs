@@ -10,6 +10,6 @@ namespace Repository.IRepository
     {
         Task<string> LoginAsynChr(LoginModel loginModel);
         Task<string> ResetPassword(ResetPasswordModel resetPasswordModel);
-        
+        Task<string> ForgotPassword(ForgotPasswordModel forgotPasswordModel);
     }
 }
