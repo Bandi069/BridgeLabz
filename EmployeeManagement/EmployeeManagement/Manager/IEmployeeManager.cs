@@ -28,13 +28,13 @@ namespace EmployeeManagement.Manager
         /// </summary>
         /// <param name="Emp"></param>
         /// <returns></returns>
-        string UpdateEmployee(ModelClass Emp);
+        bool UpdateEmployee(ModelClass Emp);
         /// <summary>
         /// This is for delete the employee data
         /// </summary>
         /// <param name="EmployeeID"></param>
         /// <returns></returns>
-        string DeleteEmployee(int EmployeeID);
+        bool DeleteEmployee(int EmployeeID);
         /// <summary>
         /// This is for retrieving the employee data
         /// </summary>

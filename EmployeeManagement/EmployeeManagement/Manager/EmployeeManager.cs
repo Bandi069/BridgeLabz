@@ -29,6 +29,11 @@ namespace EmployeeManagement.Manager
         {
             this.EmployeeRepositary = EmployeeRepositary;
         }
+
+        public EmployeeManager()
+        {
+        }
+
         /// <summary>
         /// This is Add Employee Method
         /// </summary>
@@ -48,31 +53,40 @@ namespace EmployeeManagement.Manager
             //}
         }
 
+        public bool DeleteEmployee(ModelClass deleteemp)
+        {
+            return false;
+        }
+
         /// <summary>
         /// This is Update Employee method
         /// </summary>
         /// <param name="updateemployee"></param>
         /// <returns></returns>
-        public string UpdateEmployee(ModelClass Emp)
+        public bool UpdateEmployee(ModelClass Emp)
         {
-            if (EmployeeRepositary.UpdateEmployee(Emp))
-            {
-                return "In the list Employee Updated Successfully";
-            }
-            return "Employee Not Updated in the list";
+            var result = this.EmployeeRepositary.UpdateEmployee(Emp);
+            return result;
+            //if (EmployeeRepositary.UpdateEmployee(Emp))
+            //{
+            //    return "In the list Employee Updated Successfully";
+            //}
+            //return "Employee Not Updated in the list";
         }
         /// <summary>
         /// This is Delete employee Method
         /// </summary>
         /// <param name="EmployeeId"></param>
         /// <returns></returns>
-        public string DeleteEmployee(int EmployeeID)
+        public bool DeleteEmployee(int EmployeeID)
         {
-            if (EmployeeRepositary.DeleteEmployee(EmployeeID))
-            {
-                return "In the list Employee Delete Successfully";
-            }
-            return "Employee Not Deleted in the list";
+            var result = this.EmployeeRepositary.DeleteEmployee(EmployeeID);
+            return result;
+            /* if (EmployeeRepositary.DeleteEmployee(EmployeeID))
+             {
+                 return "In the list Employee Delete Successfully";
+             }
+             return "Employee Not Deleted in the list";*/
         }
         /// <summary>
         /// This is retrieve of lemployee ist

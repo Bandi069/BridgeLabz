@@ -31,7 +31,7 @@ function ValidatePhonenumber(Phonenumber) {
 
 }
 
-//// This is Validation of EMail ID
+//// This is Validation of Email ID
 function EmailIdValidateion(emailField) {
     var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
     if (reg.test(emailField.value) == false) {
