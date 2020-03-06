@@ -6,6 +6,7 @@ using Repository.UserDbContext;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -35,7 +36,12 @@ namespace Repository.Repository
             {
                 try
                 {
-                    var tokenDescriptor = new SecurityTokenDescriptor { };
+                    var tokenDescriptor = new SecurityTokenDescriptor {
+                    Subject=new System.Security.Claims.ClaimsIdentity(new Claim[]
+                    {
+                        new Claim("Emailid",loginModel.Emailid)
+                    }),
+                    };
 
                 }
                 catch (Exception e)
