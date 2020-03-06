@@ -8,7 +8,7 @@ namespace Repository.IRepository
 {
     public interface IRepositoryuser
     {
-        Task<string> LoginAsynChr(LoginModel loginModel);
+        Task<string> LoginAsync(LoginModel loginModel);
         Task<string> ResetPassword(ResetPassword resetPassword);
         Task<string> ForgotPassword(ForgotPasswordModel forgotPasswordModel);
     }

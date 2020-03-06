@@ -11,7 +11,7 @@ namespace Repository.UserDbContext
         public UserContext(DbContextOptions<UserContext> options) : base(options)
         {
         }
-
         public DbSet<RegistrationModel> Register { get; set; }
+        public string UserData { get;  set; }
     }
 }
