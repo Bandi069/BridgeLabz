@@ -1,5 +1,6 @@
 ﻿using Model.UserModel;
 using Repository.IRepository;
+using Repository.UserDbContext;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -9,17 +10,17 @@ namespace Repository.Repository
 {
     public class UserLogin : IRepositoryuser
     {
-        public UserLogin()
+        private readonly UserContext context;
+        public UserLogin(UserContext context)
         {
-
+            this.context = context;
         }
-
-        public Task<string> LoginAsynChr(LoginModel loginModel)
+        public async Task<string> LoginAsynChr(LoginModel loginModel)
         {
             var user = FindEmailid(loginModel.Emailid);
+
             return null;
         }
-
         public Task<string> ResetPassword(ResetPassword resetPassword)
         {
             return null;
@@ -29,9 +30,9 @@ namespace Repository.Repository
         {
             return null;
         }
-
-        private string FindEmailid(string emailid)
+        public Task FindEmailid(string emailid)
         {
+            RegistrationModel userRegistration;
             return null;
         }
     }

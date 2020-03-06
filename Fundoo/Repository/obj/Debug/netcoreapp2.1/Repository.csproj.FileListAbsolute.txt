@@ -1,0 +1,13 @@
+C:\Users\Bridge Labs\source\repos\Fundoo\Repository\bin\Debug\netcoreapp2.1\Repository.deps.json
+C:\Users\Bridge Labs\source\repos\Fundoo\Repository\bin\Debug\netcoreapp2.1\Repository.runtimeconfig.json
+C:\Users\Bridge Labs\source\repos\Fundoo\Repository\bin\Debug\netcoreapp2.1\Repository.runtimeconfig.dev.json
+C:\Users\Bridge Labs\source\repos\Fundoo\Repository\bin\Debug\netcoreapp2.1\Repository.dll
+C:\Users\Bridge Labs\source\repos\Fundoo\Repository\bin\Debug\netcoreapp2.1\Repository.pdb
+C:\Users\Bridge Labs\source\repos\Fundoo\Repository\bin\Debug\netcoreapp2.1\Model.dll
+C:\Users\Bridge Labs\source\repos\Fundoo\Repository\bin\Debug\netcoreapp2.1\Model.pdb
+C:\Users\Bridge Labs\source\repos\Fundoo\Repository\obj\Debug\netcoreapp2.1\Repository.csprojAssemblyReference.cache
+C:\Users\Bridge Labs\source\repos\Fundoo\Repository\obj\Debug\netcoreapp2.1\Repository.AssemblyInfoInputs.cache
+C:\Users\Bridge Labs\source\repos\Fundoo\Repository\obj\Debug\netcoreapp2.1\Repository.AssemblyInfo.cs
+C:\Users\Bridge Labs\source\repos\Fundoo\Repository\obj\Debug\netcoreapp2.1\Repository.csproj.CopyComplete
+C:\Users\Bridge Labs\source\repos\Fundoo\Repository\obj\Debug\netcoreapp2.1\Repository.dll
+C:\Users\Bridge Labs\source\repos\Fundoo\Repository\obj\Debug\netcoreapp2.1\Repository.pdb
