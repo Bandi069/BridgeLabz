@@ -38,7 +38,7 @@ namespace EmployeeManagement.Controllers
         /// <returns></returns>
         [HttpPost]
         [Route("api/create")]
-        public ActionResult AddEmp(ModelClass addemployee)
+        public async Task<IActionResult> AddEmp(ModelClass addemployee)
         {
             try
             {

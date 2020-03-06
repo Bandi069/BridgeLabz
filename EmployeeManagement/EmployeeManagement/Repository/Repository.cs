@@ -75,7 +75,7 @@ namespace EmployeeManagement.Repositary
         /// </summary>
         /// <param name="Modelobj"></param>
         /// <returns></returns>
-        public bool AddEmployee(ModelClass Modelobj)
+        public async Task<bool> AddEmployee(ModelClass Modelobj)
         {
             using (SqlConnection sqlConnection = new SqlConnection(ConnectionName))
             {

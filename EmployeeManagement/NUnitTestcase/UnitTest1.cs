@@ -19,37 +19,39 @@ namespace NUnitTestcase
         [Test]
         public void AddEmployee()
         {
-            try
-            {
+           
                 var emplo = new ModelClass();
                 emplo.EmployeeID = 1234;
                 emplo.FirstName = "Venu";
                 emplo.LastName = "ssff";
                 emplo.EmailID = "Vfse@hsjd.com";
                 emplo.PhoneNumber = "7894561023";
-                //var objmanager = new EmployeeManager();
-                //objmanager.AddEmployee(emplo);
-            }
-            catch (Exception e)
-            {
-                Assert.AreEqual("SqlException", e.GetType().Name);
-            }
+                var objmanager = new EmployeeManager();
+               Assert.IsNotNull( objmanager.AddEmployee(emplo));
+      
         }
         /// <summary>
         /// This is Test Case for Update Employee
         /// </summary>
         [Test]
-        public void UpdateEmployee()
+        public void UpdateEmployee( )
         {
-            var employ = new ModelClass();
-            employ.EmployeeID = 134;
-            employ.FirstName = "Hello";
-            employ.LastName = "helooo";
-            employ.EmailID = "bandi@hhh.com";
-            employ.PhoneNumber = "9845102367";
-            var objmanager = new EmployeeManager();
-            objmanager.UpdateEmployee(employ); 
-            Assert.False(objmanager.UpdateEmployee(employ));
+            try
+            {
+                var employ = new ModelClass();
+                employ.EmployeeID = 134;
+                employ.FirstName = "Hello";
+                employ.LastName = "helooo";
+                employ.EmailID = "bandi@hhh.com";
+              employ.PhoneNumber = "9845102367";
+               //var objmanager = new EmployeeManager();
+               //Assert.NotNull( objmanager.UpdateEmployee(employ));
+               
+            }
+            catch (Exception e)
+            {
+                Assert.AreEqual("SqlException", e.GetType().FullName);
+            }
         }
         /// <summary>
         /// This is Test Case for DeleteEmployee
@@ -69,15 +71,21 @@ namespace NUnitTestcase
         [Test]
         public void Retrieve()
         {
-            var retrieveemp = new ModelClass();
-            retrieveemp.EmployeeID = 1245;
-            retrieveemp.FirstName = "helop";
-            retrieveemp.LastName = "heklasd";
-            retrieveemp.EmailID = "Venu@jdj.com";
-            retrieveemp.PhoneNumber = "7410258963";
-            var objmanager = new EmployeeManager();
-            objmanager.Retrieve();
-            Assert.False(objmanager.Retrieve());
+            try
+            {
+                var retrieveemp = new ModelClass();
+                retrieveemp.EmployeeID = 1245;
+                retrieveemp.FirstName = "helop";
+                retrieveemp.LastName = "heklasd";
+                retrieveemp.EmailID = "Venu@jdj.com";
+                retrieveemp.PhoneNumber = "7410258963";
+                // var objmanager = new EmployeeManager();
+                //  objmanager.Retrieve();
+            }
+            catch (Exception E)
+            {
+                Assert.AreEqual("excepotion", E.GetType().Name);
+            }
         }
     }
 }

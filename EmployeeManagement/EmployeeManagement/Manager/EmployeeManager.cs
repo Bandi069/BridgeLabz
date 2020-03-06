@@ -39,10 +39,10 @@ namespace EmployeeManagement.Manager
         /// </summary>
         /// <param name="Emp"></param>
         /// <returns></returns>
-        public bool AddEmployee(ModelClass Emp)
+        public async Task<bool> AddEmployee(ModelClass Emp)
         {
-            var result = this.EmployeeRepositary.AddEmployee(Emp);
-            return result;
+             this.EmployeeRepositary.AddEmployee(Emp);
+                return true;
             //if (EmployeeRepositary.AddEmployee(Emp))
             //{
             //    return true; //// Added employee to the list
@@ -65,7 +65,7 @@ namespace EmployeeManagement.Manager
         /// <returns></returns>
         public bool UpdateEmployee(ModelClass Emp)
         {
-            var result = this.EmployeeRepositary.UpdateEmployee(Emp);
+            bool result = this.EmployeeRepositary.UpdateEmployee(Emp);
             return result;
             //if (EmployeeRepositary.UpdateEmployee(Emp))
             //{
@@ -80,7 +80,7 @@ namespace EmployeeManagement.Manager
         /// <returns></returns>
         public bool DeleteEmployee(int EmployeeID)
         {
-            var result = this.EmployeeRepositary.DeleteEmployee(EmployeeID);
+            bool result = this.EmployeeRepositary.DeleteEmployee(EmployeeID);
             return result;
             /* if (EmployeeRepositary.DeleteEmployee(EmployeeID))
              {
