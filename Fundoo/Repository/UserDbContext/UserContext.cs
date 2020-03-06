@@ -12,6 +12,6 @@ namespace Repository.UserDbContext
         {
         }
         public DbSet<RegistrationModel> Register { get; set; }
-        public string UserData { get;  set; }
+        public DbSet<LoginModel> Login { get; set; }
     }
 }

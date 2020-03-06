@@ -31,17 +31,17 @@ namespace Repository.Repository
         public async Task<string> LoginAsync(LoginModel loginModel)
         {
             var user = FindEmailid(loginModel.Emailid);
-            if (user != null && await CheckPasswordAsync(loginModel.Emailid,loginModel.Password))
-            {
-                try
-                {
+            //if (user != null && await CheckPasswordAsync(loginModel.Emailid,loginModel.Password))
+            //{
+            //    try
+            //    {
 
-                }
-                catch(Exception e)
-                {
-                    Console.WriteLine("Exception occurs"+e.Message);
-                }
-            }
+            //    }
+            //    catch(Exception e)
+            //    {
+            //        Console.WriteLine("Exception occurs"+e.Message);
+            //    }
+            //}
             return null;
         }
         public Task<string> ResetPassword(ResetPassword resetPassword)
@@ -55,18 +55,19 @@ namespace Repository.Repository
         }
         public Task FindEmailid(string email)
         {
-            RegistrationModel userRegistration = context.UserData.Where(obj => obj.Emailid == email).SingleOrDefault();
+            var userRegistration = context.Login.Where(obj => obj.Emailid == email).SingleOrDefault();
             IdentityUser IUser = new IdentityUser()
             {
-                Email = userRegistration.Emailid
+                ///Email = userRegistration.Emailid
             };
 
             return Task.Run(()=>IUser);
         }
-        public Task<bool> CheckPasswordAsync(string email,string password)
+        public Task<bool> CheckPasswordAsync(string email, string password)
         {
-            bool checkobj = context.UserData.Where(username => username.Password == password).SingleOrDefault();
+            bool checkobj = context.Login.Where(username => username.Password == password && username.Emailid==email).SingleOrDefault().Emailid==email ?true:false; ;
             return Task.Run(()=> checkobj);
         }
     }
 }
+
