@@ -62,17 +62,28 @@ namespace Repository.Repository
             }
             return "Incorrect Email or Password";
         }
-        public Task<string> ResetPassword(ResetPassword resetPassword)
+        /// <summary>
+        /// This is Task for resetPassword
+        /// </summary>
+        /// <param name="resetPassword"></param>
+        /// <returns></returns>
+        public Task ResetPassword(ResetPassword resetPassword)
         {
             RegistrationModel obj = context.Register.Where(UserName => UserName.Emailid == resetPassword.Emailid).SingleOrDefault();
             obj.Password = resetPassword.Password;
             var user = context.Register.Find(resetPassword.Emailid);
             user.Password = resetPassword.Password;
-            return Task.Run(()=>context.SaveChanges());
+            return Task.Run(()=> context.SaveChanges());
         }
-
+        /// <summary>
+        /// This is Task method for Forgot password
+        /// </summary>
+        /// <param name="forgotPasswordModel"></param>
+        /// <returns></returns>
         public Task<string> ForgotPassword(ForgotPasswordModel forgotPasswordModel)
         {
+            RegistrationModel obj = context.Register.Where(UserName => UserName.Emailid == forgotPasswordModel.Emailid).FirstOrDefault();
+         
             return null;
         }
         public Task FindEmailid(string email)
