@@ -64,6 +64,7 @@ namespace Repository.Repository
         }
         public Task<string> ResetPassword(ResetPassword resetPassword)
         {
+            RegistrationModel obj = context.Register.Where(userName => userName.Emailid == resetPassword.Emailid).SingleOrDefault();
             return null;
         }
 
@@ -80,7 +81,7 @@ namespace Repository.Repository
         }
         public Task<bool> CheckPasswordAsync(string email, string password)
         {
-            bool checkobj = context.Login.Where(username => username.Password == password && username.Emailid == email).SingleOrDefault().Emailid == email ? true : false; ;
+            bool checkobj = context.Login.Where(userName => userName.Password == password && username.Emailid == email).SingleOrDefault().Emailid == email ? true : false;
             return Task.Run(() => checkobj);
         }
     }
