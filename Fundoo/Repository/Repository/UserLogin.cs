@@ -83,7 +83,7 @@ namespace Repository.Repository
         public Task<string> ForgotPassword(ForgotPasswordModel forgotPasswordModel)
         {
             //// RegistrationModel Forgotobj = context.Register.Where(UserName => UserName.Emailid == forgotPasswordModel.Emailid).FirstOrDefault();
-            var user = FindEmailid(forgotPasswordModel.Emailid);
+            var userForgetPassword = FindEmailid(forgotPasswordModel.Emailid);
 
             return null;
         }
