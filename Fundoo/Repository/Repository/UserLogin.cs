@@ -5,6 +5,7 @@ using Repository.IRepository;
 using Repository.UserDbContext;
 using System;
 using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Security.Claims;
 using System.Text;
@@ -29,6 +30,11 @@ namespace Repository.Repository
         {
             this.context = context;
         }
+        /// <summary>
+        /// This is Login Asynchronous Task 
+        /// </summary>
+        /// <param name="loginModel"></param>
+        /// <returns></returns>
         public async Task<string> LoginAsync(LoginModel loginModel)
         {
             var user = FindEmailid(loginModel.Emailid);
@@ -36,13 +42,16 @@ namespace Repository.Repository
             {
                 try
                 {
-                    var tokenDescriptor = new SecurityTokenDescriptor {
-                    Subject=new System.Security.Claims.ClaimsIdentity(new Claim[]
+                    var tokenDescriptor = new SecurityTokenDescriptor
+                    {
+                        Subject = new System.Security.Claims.ClaimsIdentity(new Claim[]
                     {
                         new Claim("Emailid",loginModel.Emailid)
                     }),
                     };
-
+                    var tokenHandler = new JwtSecurityTokenHandler();
+                    var securityToken = tokenHandler.CreateToken(tokenDescriptor);
+                    var token = tokenHandler.WriteToken(securityToken);
                 }
                 catch (Exception e)
                 {
