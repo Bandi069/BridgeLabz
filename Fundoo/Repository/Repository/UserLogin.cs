@@ -69,11 +69,11 @@ namespace Repository.Repository
         /// <returns></returns>
         public Task ResetPassword(ResetPassword resetPassword)
         {
-            RegistrationModel obj = context.Register.Where(UserName => UserName.Emailid == resetPassword.Emailid).SingleOrDefault();
-            obj.Password = resetPassword.Password;
+            RegistrationModel Resetobj = context.Register.Where(UserName => UserName.Emailid == resetPassword.Emailid).SingleOrDefault();
+            Resetobj.Password = resetPassword.Password;
             var user = context.Register.Find(resetPassword.Emailid);
             user.Password = resetPassword.Password;
-            return Task.Run(()=> context.SaveChanges());
+            return Task.Run(() => context.SaveChanges());
         }
         /// <summary>
         /// This is Task method for Forgot password
@@ -82,8 +82,9 @@ namespace Repository.Repository
         /// <returns></returns>
         public Task<string> ForgotPassword(ForgotPasswordModel forgotPasswordModel)
         {
-            RegistrationModel obj = context.Register.Where(UserName => UserName.Emailid == forgotPasswordModel.Emailid).FirstOrDefault();
-         
+            //// RegistrationModel Forgotobj = context.Register.Where(UserName => UserName.Emailid == forgotPasswordModel.Emailid).FirstOrDefault();
+            var user = FindEmailid(forgotPasswordModel.Emailid);
+
             return null;
         }
         public Task FindEmailid(string email)
@@ -99,5 +100,6 @@ namespace Repository.Repository
             return Task.Run(() => checkobj);
         }
     }
+
 }
 
