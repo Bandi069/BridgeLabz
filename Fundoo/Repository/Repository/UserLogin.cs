@@ -52,13 +52,15 @@ namespace Repository.Repository
                     var tokenHandler = new JwtSecurityTokenHandler();
                     var securityToken = tokenHandler.CreateToken(tokenDescriptor);
                     var token = tokenHandler.WriteToken(securityToken);
+                    var Cache = loginModel.Emailid;
+                    return token;
                 }
                 catch (Exception e)
                 {
                     Console.WriteLine("Exception Occurs" + e.Message);
                 }
             }
-            return null;
+            return "Incorrect Email or Password";
         }
         public Task<string> ResetPassword(ResetPassword resetPassword)
         {
