@@ -19,6 +19,11 @@ namespace Manager.Manager
         {
             this.repositoryuser = repositoryuser;
         }
+        public Task<string> Login(LoginModel loginModel)
+        {
+            var result = this.repositoryuser.Login(loginModel);
+            return result;
+        }
         public Task<bool> CheckPassword(string email, string password)
         {
             throw new NotImplementedException();
@@ -39,10 +44,7 @@ namespace Manager.Manager
             throw new NotImplementedException();
         }
 
-        public Task<string> Login(LoginModel loginModel)
-        {
-            throw new NotImplementedException();
-        }
+       
 
         public string Logout(LoginModel loginModel)
         {
