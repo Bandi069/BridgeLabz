@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Manager.InterfaceManager;
+using Manager.Manager;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -11,6 +13,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Repository.IRepository;
+using Repository.Repository;
 using Repository.UserDbContext;
 
 namespace Fundoo
@@ -28,6 +32,8 @@ namespace Fundoo
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddTransient<IRepositoryuser, UserLogin>();
+            services.AddTransient <IAccountManager, AccountManager>();
             services.AddTransient<UserContext>();
             services.AddDbContext<UserContext>(options => options.UseSqlServer(this.Configuration.GetConnectionString("DefaultConnection")));
         }

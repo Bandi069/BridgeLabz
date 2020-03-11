@@ -9,10 +9,16 @@ using Model.UserModel;
 
 namespace Fundoo.Controllers
 {
+    /// <summary>
+    /// This is Account Controller Class
+    /// </summary>
     [Route("api/[controller]")]
     [ApiController]
     public class AccountController : ControllerBase
     {
+        /// <summary>
+        /// Account 
+        /// </summary>
         private readonly IAccountManager accountManager;
         public AccountController(IAccountManager accountManager)
         {

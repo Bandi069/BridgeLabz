@@ -17,12 +17,8 @@ namespace Manager.Manager
         /// This is readonly IRepository  instance
         /// </summary>
         private readonly IRepositoryuser repositoryuser;
-        /// <summary>
-        /// This is Account MAnger Constructor
-        /// </summary>
-        public AccountManager()
-        {
-        }
+       
+        
         /// <summary>
         /// This is constructor of Account Manager class  by passig IRepository
         /// </summary>
