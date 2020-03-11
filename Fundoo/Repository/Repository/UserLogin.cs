@@ -158,7 +158,7 @@ namespace Repository.Repository
                     {
                         new Claim("Emailid", GoogleUser.Emailid)
                     }),
-                    Expires = DateTime.UtcNow.AddDays(7)
+                    Expires = DateTime.UtcNow.AddHours(24)
                 };
                 var tokenHandler = new JwtSecurityTokenHandler();
                 var securityToken = tokenHandler.CreateToken(tokenDescriptor);
@@ -196,6 +196,8 @@ namespace Repository.Repository
         }
         public async Task<string> FacebookLogin(LoginModel loginModel)
         {
+            var User = context.Register.Where(UserName => UserName.Emailid == loginModel.Emailid && UserName.Password == loginModel.Password).SingleOrDefault();
+
             return null;
         }
 
