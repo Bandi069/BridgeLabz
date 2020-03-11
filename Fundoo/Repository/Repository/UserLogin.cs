@@ -3,6 +3,7 @@ using Microsoft.IdentityModel.Tokens;
 using Model.UserModel;
 using Repository.IRepository;
 using Repository.UserDbContext;
+using StackExchange.Redis;
 using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
@@ -135,14 +136,18 @@ namespace Repository.Repository
             try
             {
                 var cacheKey = loginModel.Emailid;
-                ConnectionMultiplexer connectionmulti = ConnectionMultiplexer.Connect("");
+                ConnectionMultiplexer connectionmulti = ConnectionMultiplexer.Connect("172.40.1.77:6379");
+                StackExchange.Redis.IDatabase database = connectionmulti.GetDatabase();
+                database.KeyDelete(cacheKey);
+                return "Account Logout ";
             }
             catch(Exception e)
             {
                 throw new Exception(e.Message);
             }
-            return null;
+           
         }
+
     }
 
 }
