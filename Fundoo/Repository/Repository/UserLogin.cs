@@ -194,6 +194,10 @@ namespace Repository.Repository
             await context.SaveChangesAsync();
             return "User Not Existed";
         }
+        public async Task<string> FacebookLogin(LoginModel loginModel)
+        {
+            return null;
+        }
 
 
     }
