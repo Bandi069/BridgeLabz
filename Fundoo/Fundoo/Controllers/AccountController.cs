@@ -73,13 +73,12 @@ namespace Fundoo.Controllers
             }
             return this.BadRequest("");
         }
-        [HttpPut]
+        [HttpPost]
         [Route("logout")]
         public string Logout(LoginModel loginModel)
         {
             var result = this.accountManager.Logout(loginModel);
             return result;
-            
         }
     }
 }
