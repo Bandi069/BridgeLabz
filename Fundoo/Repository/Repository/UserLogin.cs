@@ -158,13 +158,21 @@ namespace Repository.Repository
                     {
                         new Claim("Emailid", GoogleUser.Emailid)
                     }),
-                    Expires = DateTime.UtcNow.AddDays(3)
+                    Expires = DateTime.UtcNow.AddDays(7)
                 };
                 var tokenHandler = new JwtSecurityTokenHandler();
                 var securityToken = tokenHandler.CreateToken(tokenDescriptor);
                 var token = tokenHandler.WriteToken(securityToken);
                 var chacheKey = loginModel.Emailid;
                 return token;
+            }
+            else
+            {
+                RegistrationModel registration = new RegistrationModel();
+                registration.Emailid = loginModel.Emailid;
+                registration.Password = "sanvedha2212";
+                context.Register.Add(registration);
+                context.SaveChanges();
 
             }
             return null;
