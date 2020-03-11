@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
+using System.Net.Mail;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
@@ -84,7 +85,19 @@ namespace Repository.Repository
         {
             //// RegistrationModel Forgotobj = context.Register.Where(UserName => UserName.Emailid == forgotPasswordModel.Emailid).FirstOrDefault();
             var userForgetPassword = FindEmailid(forgotPasswordModel.Emailid);
+            if(userForgetPassword!=null)
+            {
+                var emailaddress = new MailAddress("bandivenu89@gmail.com");
+                var emailPassword = "sanvedha2212";
+                var toaddress = new MailAddress(forgotPasswordModel.Emailid);
+                string subject = "Reset Password";
+                string body = "TO reset password";
+                SmtpClient smtp = new SmtpClient
+                {
 
+                };
+
+            }
             return null;
         }
         public Task FindEmailid(string email)
