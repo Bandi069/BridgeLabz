@@ -51,6 +51,8 @@ namespace Fundoo.Controllers
             }
             return this.BadRequest("Invalid password");
         }
+        [HttpPost]
+        [Route("googlrlogin")]
         public async Task<IActionResult> GoogleLogin(LoginModel loginModel)
         {
             var result = this.accountManager.GoogleLogin(loginModel);
@@ -60,6 +62,8 @@ namespace Fundoo.Controllers
             }
             return this.BadRequest("Invalid google login");
         }
+        [HttpPost]
+        [Route("facebooklogin")]
         public async Task<IActionResult> FacebookLogin(LoginModel loginModel)
         {
             var result = this.accountManager.FacebookLogin(loginModel);
@@ -69,6 +73,8 @@ namespace Fundoo.Controllers
             }
             return this.BadRequest("");
         }
+        [HttpPut]
+        [Route("logout")]
         public string Logout(LoginModel loginModel)
         {
             var result = this.accountManager.Logout(loginModel);
