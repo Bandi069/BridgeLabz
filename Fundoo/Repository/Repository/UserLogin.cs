@@ -196,8 +196,27 @@ namespace Repository.Repository
         }
         public async Task<string> FacebookLogin(LoginModel loginModel)
         {
-            var User = context.Register.Where(UserName => UserName.Emailid == loginModel.Emailid && UserName.Password == loginModel.Password).SingleOrDefault();
+            var FacebookUser = context.Register.Where(UserName => UserName.Emailid == loginModel.Emailid && UserName.Password == loginModel.Password).SingleOrDefault();
+            if (FacebookUser != null)
+            {
+                var tokenDescriptor = new SecurityTokenDescriptor
+                {
+                    Subject = new ClaimsIdentity(new Claim[]
+                    {
+                        new Claim("Emailid", FacebookUser.Emailid)
+                    }),
+                    Expires = DateTime.UtcNow.AddHours(24)
+                };
+                var tokenHandler = new JwtSecurityTokenHandler();
+                var securityToken = tokenHandler.CreateToken(tokenDescriptor);
+                var token = tokenHandler.WriteToken(securityToken);
+                var chacheKey = loginModel.Emailid;
+                return token;
+            }
+            else
+            {
 
+            }
             return null;
         }
 
