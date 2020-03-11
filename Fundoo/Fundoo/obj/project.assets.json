@@ -4317,7 +4317,8 @@
         "framework": ".NETCoreApp,Version=v2.1",
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "2.1.0",
-          "Model": "1.0.0"
+          "Model": "1.0.0",
+          "Repository": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Manager.dll": {}

@@ -102,6 +102,9 @@
             "projectReferences": {
               "C:\\Users\\Bridge Labs\\source\\repos\\Fundoo\\Model\\Model.csproj": {
                 "projectPath": "C:\\Users\\Bridge Labs\\source\\repos\\Fundoo\\Model\\Model.csproj"
+              },
+              "C:\\Users\\Bridge Labs\\source\\repos\\Fundoo\\Repository\\Repository.csproj": {
+                "projectPath": "C:\\Users\\Bridge Labs\\source\\repos\\Fundoo\\Repository\\Repository.csproj"
               }
             }
           }
