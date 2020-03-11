@@ -29,7 +29,7 @@ namespace Fundoo.Controllers
             }
             return this.BadRequest("Invalid Login");
         }
-        [HttpPost]
+        [HttpPut]
         [Route("resetpassword")]
         public async Task<IActionResult> ResetPassword(ResetPassword resetPassword)
         {
@@ -40,7 +40,7 @@ namespace Fundoo.Controllers
             }
             return this.BadRequest("Invalid Request");
         }
-        [HttpPost]
+        [HttpPut]
         [Route("forgotpassword")]
         public async Task<IActionResult> ForgotPassword(ForgotPasswordModel forgotPasswordModel)
         {
@@ -50,6 +50,28 @@ namespace Fundoo.Controllers
                 return this.Ok(result);
             }
             return this.BadRequest("Invalid password");
+        }
+        public async Task<IActionResult> GoogleLogin(LoginModel loginModel)
+        {
+            var result = this.accountManager.GoogleLogin(loginModel);
+            if (result != null)
+            {
+                return this.Ok(result);
+            }
+            return this.BadRequest("Invalid google login");
+        }
+        public async Task<IActionResult> FacebookLogin(LoginModel loginModel)
+        {
+            var result = this.accountManager.FacebookLogin(loginModel);
+            if(result !=null)
+            {
+                return this.Ok(result);
+            }
+            return this.BadRequest("");
+        }
+        public string Logout(LoginModel loginModel)
+        {
+
         }
     }
 }
