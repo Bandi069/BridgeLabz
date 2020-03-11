@@ -85,7 +85,7 @@ namespace Repository.Repository
         {
             //// RegistrationModel Forgotobj = context.Register.Where(UserName => UserName.Emailid == forgotPasswordModel.Emailid).FirstOrDefault();
             var userForgetPassword = FindEmailid(forgotPasswordModel.Emailid);
-            if(userForgetPassword!=null)
+            if (userForgetPassword != null)
             {
                 var emailaddress = new MailAddress("bandivenu89@gmail.com");
                 var emailPassword = "sanvedha2212";
@@ -94,9 +94,25 @@ namespace Repository.Repository
                 string body = "TO reset password";
                 SmtpClient smtp = new SmtpClient
                 {
-
+                    Host = "smtp.gmail.com",
+                    Port = 587,
+                    EnableSsl = true,
+                    DeliveryMethod = SmtpDeliveryMethod.Network,
+                    UseDefaultCredentials = false,
+                    Credentials = new System.Net.NetworkCredential(emailaddress.Address, emailPassword)
                 };
-
+                using (var message = new MailMessage(emailaddress, toaddress)
+                {
+                    Subject = subject,
+                    Body = body
+                }) try
+                    {
+                        smtp.Send(message);
+                    }
+                    catch (Exception e)
+                    {
+                        throw new Exception(e.Message);
+                    }
             }
             return null;
         }
