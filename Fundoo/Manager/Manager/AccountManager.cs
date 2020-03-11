@@ -8,9 +8,18 @@ using System.Threading.Tasks;
 
 namespace Manager.Manager
 {
+    /// <summary>
+    /// This is account manager class
+    /// </summary>
     public class AccountManager : IAccountManager
     {
+        /// <summary>
+        /// This is readonly IRepository  instance
+        /// </summary>
         private readonly IRepositoryuser repositoryuser;
+        /// <summary>
+        /// This is Account MAnger Constructor
+        /// </summary>
         public AccountManager()
         {
         }
@@ -30,7 +39,7 @@ namespace Manager.Manager
         }
         public async Task<bool> CheckPassword(string email, string password)
         {
-            await this.repositoryuser.CheckPassword(email,password);
+            await this.repositoryuser.CheckPassword(email, password);
             return true;
         }
         public async Task<bool> ForgotPassword(ForgotPasswordModel forgotPasswordModel)
@@ -54,7 +63,5 @@ namespace Manager.Manager
             var result = this.repositoryuser.Logout(loginModel);
             return result;
         }
-
-      
     }
 }
