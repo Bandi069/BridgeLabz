@@ -30,7 +30,7 @@ namespace Fundoo.Controllers
             return this.BadRequest("Invalid Login");
         }
         [HttpPost]
-        [Route("forgotpassword")]
+        [Route("resetpassword")]
         public async Task<IActionResult> ResetPassword(ResetPassword resetPassword)
         {
             var result = this.accountManager.ResetPassword(resetPassword);
@@ -38,8 +38,18 @@ namespace Fundoo.Controllers
             {
                 return this.Ok( result);
             }
+            return this.BadRequest("Invalid Request");
+        }
+        [HttpPost]
+        [Route("forgotpassword")]
+        public async Task<IActionResult> ForgotPassword(ForgotPasswordModel forgotPasswordModel)
+        {
+            var result = this.accountManager.ForgotPassword(forgotPasswordModel);
+            if (result != null)
+            {
+                return this.Ok(result);
+            }
             return this.BadRequest("Invalid password");
         }
-        public 
     }
 }
