@@ -221,12 +221,27 @@ namespace Repository.Repository
                 context.Register.Add(registration);
                 context.SaveChanges();
                 var facebookuser = FindEmailid(loginModel.Emailid);
+                if (facebookuser != null)
+                {
+                    var tokenDescriptor = new SecurityTokenDescriptor
+                    {
+                        Subject = new ClaimsIdentity(new Claim[]
+                    {
+                        new Claim("Emailid", FacebookUser.Emailid)
+                    }),
+                        Expires = DateTime.UtcNow.AddDays(7)
+                    };
+                    var tokenHandler = new JwtSecurityTokenHandler();
+                    var securityToken = tokenHandler.CreateToken(tokenDescriptor);
+                    var token = tokenHandler.WriteToken(securityToken);
+                    var chacheKey = loginModel.Emailid;
+                    return token;
+                }
             }
+            await context.SaveChangesAsync();
+            return "User Not Existed";
             return null;
         }
-
-
     }
-
 }
 
