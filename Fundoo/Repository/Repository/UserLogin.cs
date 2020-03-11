@@ -147,6 +147,11 @@ namespace Repository.Repository
             }
            
         }
+        public async Task<string> GoogleLogin(LoginModel loginModel)
+        {
+            return null;
+        }
+
 
     }
 
