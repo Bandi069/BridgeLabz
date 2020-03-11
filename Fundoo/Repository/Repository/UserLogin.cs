@@ -130,7 +130,10 @@ namespace Repository.Repository
             bool checkobj = context.Login.Where(UserName => UserName.Password == password && UserName.Emailid == email).SingleOrDefault().Emailid == email ? true : false;
             return Task.Run(() => checkobj);
         }
-
+        public string Logout(LoginModel loginModel)
+        {
+            return null;
+        }
     }
 
 }
