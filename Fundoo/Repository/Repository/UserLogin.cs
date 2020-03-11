@@ -141,14 +141,32 @@ namespace Repository.Repository
                 database.KeyDelete(cacheKey);
                 return "Account Logout ";
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 throw new Exception(e.Message);
             }
-           
+
         }
         public async Task<string> GoogleLogin(LoginModel loginModel)
         {
+            var GoogleUser = context.Register.Where(UserName => UserName.Emailid == loginModel.Emailid && UserName.Password == loginModel.Password).SingleOrDefault();
+            if(GoogleUser!=null)
+            {
+                var tokenDescriptor = new SecurityTokenDescriptor
+                {
+                    Subject = new ClaimsIdentity(new Claim[]
+                    {
+                        new Claim("Emailid", GoogleUser.Emailid)
+                    }),
+                    Expires = DateTime.UtcNow.AddDays(3)
+                };
+                var tokenHandler = new JwtSecurityTokenHandler();
+                var securityToken = tokenHandler.CreateToken(tokenDescriptor);
+                var token = tokenHandler.WriteToken(securityToken);
+                var chacheKey = loginModel.Emailid;
+                return token;
+
+            }
             return null;
         }
 
