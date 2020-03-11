@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Manager.InterfaceManager;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Repository.IRepository;
+using Model.UserModel;
 
 namespace Fundoo.Controllers
 {
@@ -12,11 +13,33 @@ namespace Fundoo.Controllers
     [ApiController]
     public class AccountController : ControllerBase
     {
-        private readonly IRepositoryuser repositoryuser;
-        public AccountController(IRepositoryuser repositoryuser)
+        private readonly IAccountManager accountManager;
+        public AccountController(IAccountManager accountManager)
         {
-            this.repositoryuser = repositoryuser;
+            this.accountManager = accountManager;
         }
-        
+        [HttpPost]
+        [Route("login")]
+        public async Task<IActionResult> Login(LoginModel loginModel)
+        {
+            var result = this.accountManager.Login(loginModel);
+            if (result != null)
+            {
+                return this.Ok(result);
+            }
+            return this.BadRequest("Invalid Login");
+        }
+        [HttpPost]
+        [Route("forgotpassword")]
+        public async Task<IActionResult> ResetPassword(ResetPassword resetPassword)
+        {
+            var result = this.accountManager.ResetPassword(resetPassword);
+            if (result != null)
+            {
+                return this.Ok( result);
+            }
+            return this.BadRequest("Invalid password");
+        }
+        public 
     }
 }
