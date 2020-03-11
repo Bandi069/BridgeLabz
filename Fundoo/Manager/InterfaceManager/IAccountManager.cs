@@ -9,8 +9,8 @@ namespace Manager.InterfaceManager
     public interface IAccountManager
     {
         Task<string> Login(LoginModel loginModel);
-        Task ResetPassword(ResetPassword resetPassword);
-        Task<string> ForgotPassword(ForgotPasswordModel forgotPasswordModel);
+        Task<bool> ResetPassword(ResetPassword resetPassword);
+        Task<bool> ForgotPassword(ForgotPasswordModel forgotPasswordModel);
         Task<bool> CheckPassword(string email, string password);
         string Logout(LoginModel loginModel);
         Task<string> GoogleLogin(LoginModel loginModel);

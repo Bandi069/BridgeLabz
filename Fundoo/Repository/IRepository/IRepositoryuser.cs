@@ -11,5 +11,9 @@ namespace Repository.IRepository
         Task<string> Login(LoginModel loginModel);
         Task ResetPassword(ResetPassword resetPassword);
         Task<string> ForgotPassword(ForgotPasswordModel forgotPasswordModel);
+        Task<bool> CheckPassword(string email, string password);
+        string Logout(LoginModel loginModel);
+        Task<string> GoogleLogin(LoginModel loginModel);
+        Task<string> FacebookLogin(LoginModel loginModel);
     }
 }

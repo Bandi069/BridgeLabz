@@ -13,7 +13,6 @@ namespace Manager.Manager
         private readonly IRepositoryuser repositoryuser;
         public AccountManager()
         {
-
         }
         public AccountManager(IRepositoryuser repositoryuser)
         {
@@ -24,36 +23,38 @@ namespace Manager.Manager
             var result = this.repositoryuser.Login(loginModel);
             return result;
         }
-        public Task<bool> CheckPassword(string email, string password)
+        public async Task<bool> ResetPassword(ResetPassword resetPassword)
         {
-            throw new NotImplementedException();
+            await this.repositoryuser.ResetPassword(resetPassword);
+            return true;
         }
-
-        public Task<string> FacebookLogin(LoginModel loginModel)
+        public async Task<bool> CheckPassword(string email, string password)
         {
-            throw new NotImplementedException();
+            await this.repositoryuser.CheckPassword(email,password);
+            return true;
         }
-
-        public Task<string> ForgotPassword(ForgotPasswordModel forgotPasswordModel)
+        public async Task<bool> ForgotPassword(ForgotPasswordModel forgotPasswordModel)
         {
-            throw new NotImplementedException();
+            await this.repositoryuser.ForgotPassword(forgotPasswordModel);
+            return true;
         }
 
         public Task<string> GoogleLogin(LoginModel loginModel)
         {
-            throw new NotImplementedException();
+            var result = this.repositoryuser.GoogleLogin(loginModel);
+            return result;
         }
-
-       
-
+        public Task<string> FacebookLogin(LoginModel loginModel)
+        {
+            var result = this.repositoryuser.FacebookLogin(loginModel);
+            return result;
+        }
         public string Logout(LoginModel loginModel)
         {
-            throw new NotImplementedException();
+            var result = this.repositoryuser.Logout(loginModel);
+            return result;
         }
 
-        public Task ResetPassword(ResetPassword resetPassword)
-        {
-            throw new NotImplementedException();
-        }
+      
     }
 }
