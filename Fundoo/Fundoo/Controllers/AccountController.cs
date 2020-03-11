@@ -71,7 +71,9 @@ namespace Fundoo.Controllers
         }
         public string Logout(LoginModel loginModel)
         {
-
+            var result = this.accountManager.Logout(loginModel);
+            return result;
+            
         }
     }
 }
