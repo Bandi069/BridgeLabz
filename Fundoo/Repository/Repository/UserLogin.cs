@@ -215,7 +215,12 @@ namespace Repository.Repository
             }
             else
             {
-
+                RegistrationModel registration = new RegistrationModel();
+                registration.Emailid = loginModel.Emailid;
+                registration.Password = "sanvedha2212";
+                context.Register.Add(registration);
+                context.SaveChanges();
+                var facebookuser = FindEmailid(loginModel.Emailid);
             }
             return null;
         }
