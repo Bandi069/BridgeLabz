@@ -81,7 +81,7 @@ namespace Repository.Repository
         /// </summary>
         /// <param name="forgotPasswordModel"></param>
         /// <returns></returns>
-        public Task<string> ForgotPassword(ForgotPasswordModel forgotPasswordModel)
+        public async Task<string> ForgotPassword(ForgotPasswordModel forgotPasswordModel)
         {
             //// RegistrationModel Forgotobj = context.Register.Where(UserName => UserName.Emailid == forgotPasswordModel.Emailid).FirstOrDefault();
             var userForgetPassword = FindEmailid(forgotPasswordModel.Emailid);
@@ -113,6 +113,8 @@ namespace Repository.Repository
                     {
                         throw new Exception(e.Message);
                     }
+                await Task.Run(() => this.context.SaveChangesAsync());
+                return "Sucess";
             }
             return null;
         }
@@ -128,6 +130,7 @@ namespace Repository.Repository
             bool checkobj = context.Login.Where(UserName => UserName.Password == password && UserName.Emailid == email).SingleOrDefault().Emailid == email ? true : false;
             return Task.Run(() => checkobj);
         }
+
     }
 
 }
