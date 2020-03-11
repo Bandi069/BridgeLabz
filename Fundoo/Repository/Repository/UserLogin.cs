@@ -37,7 +37,7 @@ namespace Repository.Repository
         /// </summary>
         /// <param name="loginModel"></param>
         /// <returns></returns>
-        public async Task<string> LoginAsync(LoginModel loginModel)
+        public async Task<string> Login(LoginModel loginModel)
         {
             var user = FindEmailid(loginModel.Emailid);
             if (user != null && await CheckPassword(loginModel.Emailid, loginModel.Password))

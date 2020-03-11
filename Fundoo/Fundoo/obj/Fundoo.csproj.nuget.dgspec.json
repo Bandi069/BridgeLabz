@@ -99,7 +99,11 @@
         },
         "frameworks": {
           "netcoreapp2.1": {
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\Bridge Labs\\source\\repos\\Fundoo\\Model\\Model.csproj": {
+                "projectPath": "C:\\Users\\Bridge Labs\\source\\repos\\Fundoo\\Model\\Model.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
