@@ -132,6 +132,15 @@ namespace Repository.Repository
         }
         public string Logout(LoginModel loginModel)
         {
+            try
+            {
+                var cacheKey = loginModel.Emailid;
+                ConnectionMultiplexer connectionmulti = ConnectionMultiplexer.Connect("");
+            }
+            catch(Exception e)
+            {
+                throw new Exception(e.Message);
+            }
             return null;
         }
     }
