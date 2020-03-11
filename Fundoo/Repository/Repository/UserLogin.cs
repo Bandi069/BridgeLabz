@@ -173,7 +173,14 @@ namespace Repository.Repository
                 registration.Password = "sanvedha2212";
                 context.Register.Add(registration);
                 context.SaveChanges();
+                var googleuser = FindEmailid(loginModel.Emailid);
+                if(googleuser!=null)
+                {
+                    var tokenDescriptor = new SecurityTokenDescriptor
+                    {
 
+                    };
+                }
             }
             return null;
         }
