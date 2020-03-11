@@ -40,7 +40,7 @@ namespace Repository.Repository
         public async Task<string> LoginAsync(LoginModel loginModel)
         {
             var user = FindEmailid(loginModel.Emailid);
-            if (user != null && await CheckPasswordAsync(loginModel.Emailid, loginModel.Password))
+            if (user != null && await CheckPassword(loginModel.Emailid, loginModel.Password))
             {
                 try
                 {
@@ -119,6 +119,11 @@ namespace Repository.Repository
             }
             return null;
         }
+        /// <summary>
+        /// This is TAsk for Finding EmailId 
+        /// </summary>
+        /// <param name="email"></param>
+        /// <returns></returns>
         public Task FindEmailid(string email)
         {
             var userRegistration = context.Login.Where(obj => obj.Emailid == email).SingleOrDefault();
@@ -126,11 +131,22 @@ namespace Repository.Repository
 
             return Task.Run(() => IUser);
         }
-        public Task<bool> CheckPasswordAsync(string email, string password)
+        /// <summary>
+        /// This is Task for ChackPassword
+        /// </summary>
+        /// <param name="email"></param>
+        /// <param name="password"></param>
+        /// <returns></returns>
+        public Task<bool> CheckPassword(string email, string password)
         {
             bool checkobj = context.Login.Where(UserName => UserName.Password == password && UserName.Emailid == email).SingleOrDefault().Emailid == email ? true : false;
             return Task.Run(() => checkobj);
         }
+        /// <summary>
+        /// This is Logout Method
+        /// </summary>
+        /// <param name="loginModel"></param>
+        /// <returns></returns>
         public string Logout(LoginModel loginModel)
         {
             try
@@ -147,6 +163,11 @@ namespace Repository.Repository
             }
 
         }
+        /// <summary>
+        /// This is asyn Task for Google Login
+        /// </summary>
+        /// <param name="loginModel"></param>
+        /// <returns></returns>
         public async Task<string> GoogleLogin(LoginModel loginModel)
         {
             var GoogleUser = context.Register.Where(UserName => UserName.Emailid == loginModel.Emailid && UserName.Password == loginModel.Password).SingleOrDefault();
@@ -194,6 +215,11 @@ namespace Repository.Repository
             await context.SaveChangesAsync();
             return "User Not Existed";
         }
+        /// <summary>
+        /// This is Task for Facebook Login
+        /// </summary>
+        /// <param name="loginModel"></param>
+        /// <returns></returns>
         public async Task<string> FacebookLogin(LoginModel loginModel)
         {
             var FacebookUser = context.Register.Where(UserName => UserName.Emailid == loginModel.Emailid && UserName.Password == loginModel.Password).SingleOrDefault();
@@ -240,7 +266,6 @@ namespace Repository.Repository
             }
             await context.SaveChangesAsync();
             return "User Not Existed";
-            return null;
         }
     }
 }

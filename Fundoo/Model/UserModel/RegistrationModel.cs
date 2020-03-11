@@ -51,5 +51,6 @@ namespace Model.UserModel
         [Display(Name = "Password")]
         [DataType(DataType.Password)]
         public string Password { get => password; set => password = value; }
+        
     }
 }
