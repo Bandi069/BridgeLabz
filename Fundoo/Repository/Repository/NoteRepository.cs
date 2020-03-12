@@ -31,7 +31,8 @@ namespace Repository.Repository
                 Archive = null,
                 Trash=false
             };
-            return null;
+            userContext.Notemodels.Add(notemodel);
+            return Task.Run(() => userContext.SaveChanges());
         }
 
         public Task DeleteNote(int NoteID)
