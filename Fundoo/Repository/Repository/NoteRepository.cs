@@ -72,6 +72,11 @@ namespace Repository.Repository
         /// <returns></returns>
         public List<Notemodel> GetNote(int NoteID)
         {
+            var listNote = userContext.Notemodels.Where(list => list.NoteID == NoteID).SingleOrDefault();
+            if (listNote != null)
+            {
+                return userContext.Notemodels.Where(list => list.NoteID == NoteID).ToList();
+            }
             return null;
         }
         /// <summary>
