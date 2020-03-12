@@ -39,7 +39,11 @@ namespace Repository.Repository
         public Task DeleteNote(int Noteid)
         {
             var deletenote = userContext.Notemodels.Where(del => del.NoteID == Noteid).SingleOrDefault();
-
+            if(deletenote!=null)
+            {
+                userContext.Notemodels.Remove(deletenote);
+                return Task.Run(() => userContext.SaveChanges());
+            }
             return null;
         }
 
