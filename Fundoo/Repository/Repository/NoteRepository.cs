@@ -49,11 +49,21 @@ namespace Repository.Repository
 
         public List<Notemodel> GetNote(int NoteID)
         {
+
             return null;
         }
 
         public Task UpdateNote(Notemodel notemodel)
         {
+            var updatenote = userContext.Notemodels.Where(up => up.NoteID == notemodel.NoteID).SingleOrDefault();
+            if(updatenote!=null)
+            {
+                updatenote.Emailid = notemodel.Emailid;
+                updatenote.Description = notemodel.Description;
+                updatenote.Title= notemodel.Title;
+                updatenote.CreateTime= notemodel.CreateTime;
+                updatenote.ModifiedTime= notemodel.ModifiedTime;
+            }
             return null;
         }
     }
