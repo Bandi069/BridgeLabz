@@ -49,16 +49,16 @@ namespace Fundoo
             services.AddDbContext<UserContext>(options => options.UseSqlServer(this.Configuration.GetConnectionString("DefaultConnection")));
             var appSettingSection = this.Configuration.GetSection("AppSetting");
             // services.Configure<AppSetting>(appSettingSection);
-            services.AddAuthentication(configureOptions: x =>
+            services.AddAuthentication(configureOptions: con =>
             {
-                x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-                x.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
-                x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+                con.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                con.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+                con.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
             })
-                .AddJwtBearer(x =>
+                .AddJwtBearer(conf =>
                 {
-                    x.SaveToken = true;
-                    x.TokenValidationParameters = new TokenValidationParameters
+                    conf.SaveToken = true;
+                    conf.TokenValidationParameters = new TokenValidationParameters
                     {
                         ValidateIssuerSigningKey = true,
                         IssuerSigningKey = new SymmetricSecurityKey(key: Encoding.ASCII.GetBytes("JwtSettings:Secret")),
@@ -68,7 +68,7 @@ namespace Fundoo
                         ValidateLifetime = true,
                     };
                 });
-            services.AddCors(OP => OP.AddPolicy("Policy", builder =>
+            services.AddCors(O => O.AddPolicy("Policy", builder =>
             {
                 builder.AllowAnyOrigin();
                 builder.AllowAnyHeader();

@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNet.Identity.EntityFramework;                      
+﻿using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.IdentityModel.Tokens;
 using Model.UserModel;
 using Repository.IRepository;
@@ -46,7 +46,7 @@ namespace Repository.Repository
                 {
                     var tokenDescriptor = new SecurityTokenDescriptor
                     {
-                        Subject = new System.Security.Claims.ClaimsIdentity(new Claim[]
+                        Subject = new ClaimsIdentity(new Claim[]
                     {
                         new Claim("Emailid",loginModel.Emailid)
                     }),
@@ -88,11 +88,11 @@ namespace Repository.Repository
             var userForgetPassword = FindEmailid(forgotPasswordModel.Emailid);
             if (userForgetPassword != null)
             {
-                var emailaddress = new MailAddress("bandivenu89@gmail.com");
-                var emailPassword = "sanvedha2212";
-                var toaddress = new MailAddress(forgotPasswordModel.Emailid);
+                var fromemailaddress = new MailAddress("bandivenu89@gmail.com");
+                var emailPassword = "sanVedha2212";
+                var toEmailaddress = new MailAddress(forgotPasswordModel.Emailid);
                 string subject = "Reset Password";
-                string body = "TO reset password";
+                string body = "To Reset password";
                 SmtpClient smtp = new SmtpClient
                 {
                     Host = "smtp.gmail.com",
@@ -100,13 +100,14 @@ namespace Repository.Repository
                     EnableSsl = true,
                     DeliveryMethod = SmtpDeliveryMethod.Network,
                     UseDefaultCredentials = false,
-                    Credentials = new System.Net.NetworkCredential(emailaddress.Address, emailPassword)
+                    Credentials = new System.Net.NetworkCredential(fromemailaddress.Address, emailPassword)
                 };
-                using (var message = new MailMessage(emailaddress, toaddress)
+                using (var message = new MailMessage(fromemailaddress, toEmailaddress)
                 {
                     Subject = subject,
                     Body = body
-                }) try
+                })
+                    try
                     {
                         smtp.Send(message);
                     }
@@ -171,7 +172,7 @@ namespace Repository.Repository
         public async Task<string> GoogleLogin(LoginModel loginModel)
         {
             var GoogleUser = context.Register.Where(UserName => UserName.Emailid == loginModel.Emailid && UserName.Password == loginModel.Password).SingleOrDefault();
-            if(GoogleUser!=null)
+            if (GoogleUser != null)
             {
                 var tokenDescriptor = new SecurityTokenDescriptor
                 {
@@ -191,11 +192,11 @@ namespace Repository.Repository
             {
                 RegistrationModel registration = new RegistrationModel();
                 registration.Emailid = loginModel.Emailid;
-                registration.Password = "sanvedha2212";
+                registration.Password = "sanVedha2212";
                 context.Register.Add(registration);
                 context.SaveChanges();
                 var googleuser = FindEmailid(loginModel.Emailid);
-                if(googleuser!=null)
+                if (googleuser != null)
                 {
                     var tokenDescriptor = new SecurityTokenDescriptor
                     {
@@ -203,7 +204,7 @@ namespace Repository.Repository
                     {
                         new Claim("Emailid", GoogleUser.Emailid)
                     }),
-                        Expires = DateTime.UtcNow.AddDays(7)
+                        Expires = DateTime.UtcNow.AddHours(24)
                     };
                     var tokenHandler = new JwtSecurityTokenHandler();
                     var securityToken = tokenHandler.CreateToken(tokenDescriptor);
