@@ -25,10 +25,10 @@ namespace Model.NoteModel
         public string Archive { get => archive; set => archive = value; }
         public string AddImg { get => addImg; set => addImg = value; }
         public string Remainder { get => remainder; set => remainder = value; }
-        public bool PinNote { get => pinNote; set => pinNote = value; }
         public string AddColor { get => addColor; set => addColor = value; }
         public bool Trash { get => trash; set => trash = value; }
-        
+        public bool PinNote { get => pinNote; set => pinNote = value; }
+
         public DateTime? CreateTime { get; set; }
         public DateTime? ModifiedTime { get; set; }
      

@@ -94,6 +94,7 @@ namespace Repository.Repository
                 updatenote.Title= notemodel.Title;
                 updatenote.CreateTime= notemodel.CreateTime;
                 updatenote.ModifiedTime= notemodel.ModifiedTime;
+                this.userContext.Notemodels.Update(notemodel);
             }
             return Task.Run(()=>userContext.SaveChanges());
         }
