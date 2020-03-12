@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Model.NoteModel;
 using Model.UserModel;
 using System;
 using System.Collections.Generic;
@@ -12,6 +13,6 @@ namespace Repository.UserDbContext
         {
         }
         public DbSet<RegistrationModel> Register { get; set; }
-        public DbSet<LoginModel> Login { get; set; }
+        public DbSet<Notemodel> Notemodels { get; set; }
     }
 }

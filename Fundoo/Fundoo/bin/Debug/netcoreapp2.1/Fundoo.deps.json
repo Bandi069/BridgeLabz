@@ -30,6 +30,10 @@
           "Microsoft.NETCore.App": "2.1.0",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.1.10",
           "Repository": "1.0.0",
+          "ServiceStack": "3.9.10",
+          "Swashbuckle.AspNetCore.Swagger": "2.1.0",
+          "Swashbuckle.AspNetCore.SwaggerGen": "2.1.0",
+          "Swashbuckle.AspNetCore.SwaggerUI": "5.1.0",
           "System.Configuration.ConfigurationManager": "4.7.0",
           "jose-jwt": "2.5.0"
         },
@@ -104,6 +108,17 @@
         }
       },
       "Microsoft.AspNetCore.Razor.Design/2.1.2": {},
+      "Microsoft.Bcl.AsyncInterfaces/1.0.0": {
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Bcl.AsyncInterfaces.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "4.700.19.46214"
+          }
+        },
+        "compile": {
+          "ref/netstandard2.0/Microsoft.Bcl.AsyncInterfaces.dll": {}
+        }
+      },
       "Microsoft.CodeAnalysis.CSharp.Workspaces/2.8.0": {
         "dependencies": {
           "Microsoft.CodeAnalysis.CSharp": "2.8.0",
@@ -320,7 +335,7 @@
         "dependencies": {
           "System.Buffers": "4.5.0",
           "System.IO.Pipelines": "4.5.1",
-          "System.Runtime.CompilerServices.Unsafe": "4.5.2"
+          "System.Runtime.CompilerServices.Unsafe": "4.6.0"
         },
         "runtime": {
           "lib/netcoreapp2.1/Pipelines.Sockets.Unofficial.dll": {
@@ -332,6 +347,84 @@
           "lib/netcoreapp2.1/Pipelines.Sockets.Unofficial.dll": {}
         }
       },
+      "ServiceStack/3.9.10": {
+        "dependencies": {
+          "ServiceStack.Common": "3.0.6",
+          "ServiceStack.OrmLite.SqlServer": "2.9.0",
+          "ServiceStack.Redis": "2.9.0"
+        },
+        "runtime": {
+          "lib/net40/ServiceStack.Razor.dll": {
+            "assemblyVersion": "3.9.9.0",
+            "fileVersion": "3.9.9.0"
+          },
+          "lib/net40/ServiceStack.ServiceInterface.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          },
+          "lib/net40/ServiceStack.dll": {
+            "assemblyVersion": "3.9.10.0",
+            "fileVersion": "3.9.10.0"
+          }
+        },
+        "compile": {
+          "lib/net40/ServiceStack.Razor.dll": {},
+          "lib/net40/ServiceStack.ServiceInterface.dll": {},
+          "lib/net40/ServiceStack.dll": {}
+        }
+      },
+      "ServiceStack.Common/3.0.6": {
+        "dependencies": {
+          "ServiceStack.Text": "2.9.0"
+        },
+        "runtime": {
+          "lib/ServiceStack.Common.dll": {
+            "assemblyVersion": "1.0.4339.6048",
+            "fileVersion": "1.0.4339.6048"
+          },
+          "lib/ServiceStack.Interfaces.dll": {
+            "assemblyVersion": "1.0.4339.6048",
+            "fileVersion": "1.0.4339.6048"
+          }
+        },
+        "compile": {
+          "lib/ServiceStack.Common.dll": {},
+          "lib/ServiceStack.Interfaces.dll": {}
+        }
+      },
+      "ServiceStack.OrmLite.SqlServer/2.9.0": {
+        "runtime": {
+          "lib/ServiceStack.OrmLite.SqlServer.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          },
+          "lib/ServiceStack.OrmLite.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        },
+        "compile": {
+          "lib/ServiceStack.OrmLite.SqlServer.dll": {},
+          "lib/ServiceStack.OrmLite.dll": {}
+        }
+      },
+      "ServiceStack.Redis/2.9.0": {
+        "runtime": {
+          "lib/ServiceStack.Redis.dll": {
+            "assemblyVersion": "2.0.9.195",
+            "fileVersion": "2.0.9.195"
+          },
+          "lib/ServiceStack.Text.dll": {
+            "assemblyVersion": "2.0.9.42099",
+            "fileVersion": "2.0.9.42099"
+          }
+        },
+        "compile": {
+          "lib/ServiceStack.Redis.dll": {},
+          "lib/ServiceStack.Text.dll": {}
+        }
+      },
+      "ServiceStack.Text/2.9.0": {},
       "StackExchange.Redis/2.0.601": {
         "dependencies": {
           "Pipelines.Sockets.Unofficial": "2.0.22",
@@ -347,6 +440,58 @@
         },
         "compile": {
           "lib/netstandard2.0/StackExchange.Redis.dll": {}
+        }
+      },
+      "Swashbuckle.AspNetCore.Swagger/2.1.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Mvc.Core": "2.1.1",
+          "Microsoft.AspNetCore.Mvc.Formatters.Json": "2.1.1",
+          "NETStandard.Library": "2.0.3"
+        },
+        "runtime": {
+          "lib/netstandard1.6/Swashbuckle.AspNetCore.Swagger.dll": {
+            "assemblyVersion": "2.1.0.0",
+            "fileVersion": "2.1.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard1.6/Swashbuckle.AspNetCore.Swagger.dll": {}
+        }
+      },
+      "Swashbuckle.AspNetCore.SwaggerGen/2.1.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Mvc.ApiExplorer": "2.1.1",
+          "Microsoft.AspNetCore.Mvc.Core": "2.1.1",
+          "Microsoft.AspNetCore.Mvc.DataAnnotations": "2.1.1",
+          "NETStandard.Library": "2.0.3",
+          "Swashbuckle.AspNetCore.Swagger": "2.1.0",
+          "System.Xml.XPath": "4.3.0"
+        },
+        "runtime": {
+          "lib/netstandard1.6/Swashbuckle.AspNetCore.SwaggerGen.dll": {
+            "assemblyVersion": "2.1.0.0",
+            "fileVersion": "2.1.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard1.6/Swashbuckle.AspNetCore.SwaggerGen.dll": {}
+        }
+      },
+      "Swashbuckle.AspNetCore.SwaggerUI/5.1.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Routing": "2.1.1",
+          "Microsoft.AspNetCore.StaticFiles": "2.1.1",
+          "Microsoft.Extensions.FileProviders.Embedded": "2.1.1",
+          "System.Text.Json": "4.6.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Swashbuckle.AspNetCore.SwaggerUI.dll": {
+            "assemblyVersion": "5.1.0.0",
+            "fileVersion": "5.1.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Swashbuckle.AspNetCore.SwaggerUI.dll": {}
         }
       },
       "System.Composition/1.0.31": {
@@ -553,11 +698,11 @@
           "System.Threading.Tasks": "4.3.0"
         }
       },
-      "System.Runtime.CompilerServices.Unsafe/4.5.2": {
+      "System.Runtime.CompilerServices.Unsafe/4.6.0": {
         "runtime": {
           "lib/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.dll": {
-            "assemblyVersion": "4.0.4.1",
-            "fileVersion": "4.6.26919.2"
+            "assemblyVersion": "4.0.5.0",
+            "fileVersion": "4.700.19.46214"
           }
         },
         "compile": {
@@ -651,11 +796,42 @@
           "ref/netstandard2.0/System.Security.Principal.Windows.dll": {}
         }
       },
+      "System.Text.Encodings.Web/4.6.0": {
+        "runtime": {
+          "lib/netstandard2.0/System.Text.Encodings.Web.dll": {
+            "assemblyVersion": "4.0.4.0",
+            "fileVersion": "4.700.19.46214"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/System.Text.Encodings.Web.dll": {}
+        }
+      },
+      "System.Text.Json/4.6.0": {
+        "dependencies": {
+          "Microsoft.Bcl.AsyncInterfaces": "1.0.0",
+          "System.Runtime.CompilerServices.Unsafe": "4.6.0",
+          "System.Text.Encodings.Web": "4.6.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Text.Json.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.700.19.46214"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/System.Text.Json.dll": {}
+        }
+      },
       "Manager/1.0.0": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "2.1.1",
           "Model": "1.0.0",
-          "Repository": "1.0.0"
+          "Repository": "1.0.0",
+          "ServiceStack": "3.9.10",
+          "Swashbuckle.AspNetCore.Swagger": "2.1.0",
+          "Swashbuckle.AspNetCore.SwaggerGen": "2.1.0",
+          "Swashbuckle.AspNetCore.SwaggerUI": "5.1.0"
         },
         "runtime": {
           "Manager.dll": {}
@@ -666,7 +842,11 @@
       },
       "Model/1.0.0": {
         "dependencies": {
-          "Microsoft.EntityFrameworkCore": "2.1.1"
+          "Microsoft.EntityFrameworkCore": "2.1.1",
+          "ServiceStack": "3.9.10",
+          "Swashbuckle.AspNetCore.Swagger": "2.1.0",
+          "Swashbuckle.AspNetCore.SwaggerGen": "2.1.0",
+          "Swashbuckle.AspNetCore.SwaggerUI": "5.1.0"
         },
         "runtime": {
           "Model.dll": {}
@@ -683,7 +863,11 @@
           "Microsoft.EntityFrameworkCore.SqlServer": "2.1.1",
           "Microsoft.IdentityModel.Tokens": "5.6.0",
           "Model": "1.0.0",
+          "ServiceStack": "3.9.10",
           "StackExchange.Redis": "2.0.601",
+          "Swashbuckle.AspNetCore.Swagger": "2.1.0",
+          "Swashbuckle.AspNetCore.SwaggerGen": "2.1.0",
+          "Swashbuckle.AspNetCore.SwaggerUI": "5.1.0",
           "System.IdentityModel.Tokens.Jwt": "5.6.0"
         },
         "runtime": {
@@ -1203,7 +1387,7 @@
       },
       "Microsoft.AspNetCore.Html.Abstractions/2.1.1": {
         "dependencies": {
-          "System.Text.Encodings.Web": "4.5.0"
+          "System.Text.Encodings.Web": "4.6.0"
         },
         "compile": {
           "lib/netstandard2.0/Microsoft.AspNetCore.Html.Abstractions.dll": {}
@@ -1226,7 +1410,7 @@
       "Microsoft.AspNetCore.Http.Abstractions/2.1.1": {
         "dependencies": {
           "Microsoft.AspNetCore.Http.Features": "2.1.1",
-          "System.Text.Encodings.Web": "4.5.0"
+          "System.Text.Encodings.Web": "4.6.0"
         },
         "compile": {
           "lib/netstandard2.0/Microsoft.AspNetCore.Http.Abstractions.dll": {}
@@ -1710,7 +1894,7 @@
           "System.IO.Pipelines": "4.5.1",
           "System.Memory": "4.5.1",
           "System.Numerics.Vectors": "4.5.0",
-          "System.Runtime.CompilerServices.Unsafe": "4.5.2",
+          "System.Runtime.CompilerServices.Unsafe": "4.6.0",
           "System.Security.Principal.Windows": "4.7.0"
         },
         "compile": {
@@ -1741,7 +1925,7 @@
           "Microsoft.Net.Http.Headers": "2.1.1",
           "System.Memory": "4.5.1",
           "System.Numerics.Vectors": "4.5.0",
-          "System.Runtime.CompilerServices.Unsafe": "4.5.2",
+          "System.Runtime.CompilerServices.Unsafe": "4.6.0",
           "System.Security.Cryptography.Cng": "4.5.0",
           "System.Threading.Tasks.Extensions": "4.5.1"
         },
@@ -1890,7 +2074,7 @@
       "Microsoft.AspNetCore.WebUtilities/2.1.1": {
         "dependencies": {
           "Microsoft.Net.Http.Headers": "2.1.1",
-          "System.Text.Encodings.Web": "4.5.0"
+          "System.Text.Encodings.Web": "4.6.0"
         },
         "compile": {
           "lib/netstandard2.0/Microsoft.AspNetCore.WebUtilities.dll": {}
@@ -2449,7 +2633,7 @@
       "Microsoft.Extensions.Primitives/2.1.1": {
         "dependencies": {
           "System.Memory": "4.5.1",
-          "System.Runtime.CompilerServices.Unsafe": "4.5.2"
+          "System.Runtime.CompilerServices.Unsafe": "4.6.0"
         },
         "compile": {
           "lib/netstandard2.0/Microsoft.Extensions.Primitives.dll": {}
@@ -2460,7 +2644,7 @@
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection.Abstractions": "2.1.1",
           "Microsoft.Extensions.Options": "2.1.1",
-          "System.Text.Encodings.Web": "4.5.0"
+          "System.Text.Encodings.Web": "4.6.0"
         },
         "compile": {
           "lib/netstandard2.0/Microsoft.Extensions.WebEncoders.dll": {}
@@ -3480,7 +3664,7 @@
       "System.Text.Encoding.CodePages/4.5.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "3.1.0",
-          "System.Runtime.CompilerServices.Unsafe": "4.5.2"
+          "System.Runtime.CompilerServices.Unsafe": "4.6.0"
         },
         "compileOnly": true
       },
@@ -3490,12 +3674,6 @@
           "Microsoft.NETCore.Targets": "2.1.0",
           "System.Runtime": "4.3.0",
           "System.Text.Encoding": "4.3.0"
-        },
-        "compileOnly": true
-      },
-      "System.Text.Encodings.Web/4.5.0": {
-        "compile": {
-          "lib/netstandard2.0/System.Text.Encodings.Web.dll": {}
         },
         "compileOnly": true
       },
@@ -3679,6 +3857,13 @@
       "path": "microsoft.aspnetcore.razor.design/2.1.2",
       "hashPath": "microsoft.aspnetcore.razor.design.2.1.2.nupkg.sha512"
     },
+    "Microsoft.Bcl.AsyncInterfaces/1.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-K63Y4hORbBcKLWH5wnKgzyn7TOfYzevIEwIedQHBIkmkEBA9SCqgvom+XTuE+fAFGvINGkhFItaZ2dvMGdT5iw==",
+      "path": "microsoft.bcl.asyncinterfaces/1.0.0",
+      "hashPath": "microsoft.bcl.asyncinterfaces.1.0.0.nupkg.sha512"
+    },
     "Microsoft.CodeAnalysis.CSharp.Workspaces/2.8.0": {
       "type": "package",
       "serviceable": true,
@@ -3791,12 +3976,68 @@
       "path": "pipelines.sockets.unofficial/2.0.22",
       "hashPath": "pipelines.sockets.unofficial.2.0.22.nupkg.sha512"
     },
+    "ServiceStack/3.9.10": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-44Wijf1ZVLvyWICBUdVZZmBIlv+Undvj7F1EwWS9dfVY2lg475yLZsy7y0RDTFPogvJKbGNstioUX2Piuyg+cQ==",
+      "path": "servicestack/3.9.10",
+      "hashPath": "servicestack.3.9.10.nupkg.sha512"
+    },
+    "ServiceStack.Common/3.0.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-BE06hInBMo4Rt68FdSvZKJjAIJJqa9VtbNFp6yi/7kM9BE0OjuWvwMwYYnTNbFUKN8ENwPOyU3dKIbxJcvTB6g==",
+      "path": "servicestack.common/3.0.6",
+      "hashPath": "servicestack.common.3.0.6.nupkg.sha512"
+    },
+    "ServiceStack.OrmLite.SqlServer/2.9.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-eC4lwpDoVNbD23WAyONqysAoor83+09o/xZRWnJ5nqk1a8SBFYjY10UAl1/Itt4NlnSGTRQKC2NgMq6twOozrw==",
+      "path": "servicestack.ormlite.sqlserver/2.9.0",
+      "hashPath": "servicestack.ormlite.sqlserver.2.9.0.nupkg.sha512"
+    },
+    "ServiceStack.Redis/2.9.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Mci+LUf+Y2Umcgbjya7bYUyJHT8PotzkYLXEWYr6bH2Y0cHHwDyHTzTI5QWy6XI5aCr0+OsacLJBrcWo/M3XeA==",
+      "path": "servicestack.redis/2.9.0",
+      "hashPath": "servicestack.redis.2.9.0.nupkg.sha512"
+    },
+    "ServiceStack.Text/2.9.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Y2IaeTWQ4RHfwGIy8Qm5NJDHorwVJ9VlutC/QGr6i9aD9HqhYZegcc0BbPap/YvwL1X0GaIEzIwBi2bkIj0xig==",
+      "path": "servicestack.text/2.9.0",
+      "hashPath": "servicestack.text.2.9.0.nupkg.sha512"
+    },
     "StackExchange.Redis/2.0.601": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-aEZQui10BTYL787+GCRlcT5qZe4ioyU2NKIO20ppDFbWE9bUuQLIq2FWQyvVcD+e/a88JFusT77KaQ8C7UDP9g==",
       "path": "stackexchange.redis/2.0.601",
       "hashPath": "stackexchange.redis.2.0.601.nupkg.sha512"
+    },
+    "Swashbuckle.AspNetCore.Swagger/2.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-eDMfiK7bjqxVq/IOhpQ2OY8NqpqP0qMyUWvOGo4ZjMBVmMHi8fwc/BdrlpgdWsnyuvH+wKXAOIf9vBbBjtWAJw==",
+      "path": "swashbuckle.aspnetcore.swagger/2.1.0",
+      "hashPath": "swashbuckle.aspnetcore.swagger.2.1.0.nupkg.sha512"
+    },
+    "Swashbuckle.AspNetCore.SwaggerGen/2.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-6uyl1ixsetE3b2mP4PzD/kAeZkXTqDjeYLOHY9Scoe7B/UDWYuNIWUoK9Iu/vp/61YsVrwZFddxoZ10Mo9eYFg==",
+      "path": "swashbuckle.aspnetcore.swaggergen/2.1.0",
+      "hashPath": "swashbuckle.aspnetcore.swaggergen.2.1.0.nupkg.sha512"
+    },
+    "Swashbuckle.AspNetCore.SwaggerUI/5.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-VsWkTpndapj58rQR9H63n5SdiSJkv8zMeoYADvbkmB7kLAuAOBMufnsO/8StYYTH/1i/4y2hdI1Cs93cNnZbzg==",
+      "path": "swashbuckle.aspnetcore.swaggerui/5.1.0",
+      "hashPath": "swashbuckle.aspnetcore.swaggerui.5.1.0.nupkg.sha512"
     },
     "System.Composition/1.0.31": {
       "type": "package",
@@ -3875,12 +4116,12 @@
       "path": "system.linq.parallel/4.3.0",
       "hashPath": "system.linq.parallel.4.3.0.nupkg.sha512"
     },
-    "System.Runtime.CompilerServices.Unsafe/4.5.2": {
+    "System.Runtime.CompilerServices.Unsafe/4.6.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-wprSFgext8cwqymChhrBLu62LMg/1u92bU+VOwyfBimSPVFXtsNqEWC92Pf9ofzJFlk4IHmJA75EDJn1b2goAQ==",
-      "path": "system.runtime.compilerservices.unsafe/4.5.2",
-      "hashPath": "system.runtime.compilerservices.unsafe.4.5.2.nupkg.sha512"
+      "sha512": "sha512-HxozeSlipUK7dAroTYwIcGwKDeOVpQnJlpVaOkBz7CM4TsE5b/tKlQBZecTjh6FzcSbxndYaxxpsBMz+wMJeyw==",
+      "path": "system.runtime.compilerservices.unsafe/4.6.0",
+      "hashPath": "system.runtime.compilerservices.unsafe.4.6.0.nupkg.sha512"
     },
     "System.Runtime.Serialization.Primitives/4.3.0": {
       "type": "package",
@@ -3916,6 +4157,20 @@
       "sha512": "sha512-ojD0PX0XhneCsUbAZVKdb7h/70vyYMDYs85lwEI+LngEONe/17A0cFaRFqZU+sOEidcVswYWikYOQ9PPfjlbtQ==",
       "path": "system.security.principal.windows/4.7.0",
       "hashPath": "system.security.principal.windows.4.7.0.nupkg.sha512"
+    },
+    "System.Text.Encodings.Web/4.6.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-BXgFO8Yi7ao7hVA/nklD0Hre1Bbce048ZqryGZVFifGNPuh+2jqF1i/jLJLMfFGZIzUOw+nCIeH24SQhghDSPw==",
+      "path": "system.text.encodings.web/4.6.0",
+      "hashPath": "system.text.encodings.web.4.6.0.nupkg.sha512"
+    },
+    "System.Text.Json/4.6.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-4F8Xe+JIkVoDJ8hDAZ7HqLkjctN/6WItJIzQaifBwClC7wmoLSda/Sv2i6i1kycqDb3hWF4JCVbpAweyOKHEUA==",
+      "path": "system.text.json/4.6.0",
+      "hashPath": "system.text.json.4.6.0.nupkg.sha512"
     },
     "Manager/1.0.0": {
       "type": "project",
@@ -5660,13 +5915,6 @@
       "sha512": "sha512-YVMK0Bt/A43RmwizJoZ22ei2nmrhobgeiYwFzC4YAN+nue8RF6djXDMog0UCn+brerQoYVyaS+ghy9P/MUVcmw==",
       "path": "system.text.encoding.extensions/4.3.0",
       "hashPath": "system.text.encoding.extensions.4.3.0.nupkg.sha512"
-    },
-    "System.Text.Encodings.Web/4.5.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-Xg4G4Indi4dqP1iuAiMSwpiWS54ZghzR644OtsRCm/m/lBMG8dUBhLVN7hLm8NNrNTR+iGbshCPTwrvxZPlm4g==",
-      "path": "system.text.encodings.web/4.5.0",
-      "hashPath": "system.text.encodings.web.4.5.0.nupkg.sha512"
     },
     "System.Text.RegularExpressions/4.3.0": {
       "type": "package",

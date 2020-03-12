@@ -1555,6 +1555,15 @@
           "lib/netstandard2.0/Microsoft.AspNetCore.WebUtilities.dll": {}
         }
       },
+      "Microsoft.Bcl.AsyncInterfaces/1.0.0": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard2.0/Microsoft.Bcl.AsyncInterfaces.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Bcl.AsyncInterfaces.dll": {}
+        }
+      },
       "Microsoft.CodeAnalysis.Analyzers/1.1.0": {
         "type": "package"
       },
@@ -3073,6 +3082,79 @@
           }
         }
       },
+      "ServiceStack/3.9.10": {
+        "type": "package",
+        "dependencies": {
+          "ServiceStack.Common": "(, )",
+          "ServiceStack.OrmLite.SqlServer": "(, )",
+          "ServiceStack.Redis": "(, )"
+        },
+        "compile": {
+          "lib/net40/ServiceStack.Razor.dll": {},
+          "lib/net40/ServiceStack.ServiceInterface.dll": {},
+          "lib/net40/ServiceStack.dll": {}
+        },
+        "runtime": {
+          "lib/net40/ServiceStack.Razor.dll": {},
+          "lib/net40/ServiceStack.ServiceInterface.dll": {},
+          "lib/net40/ServiceStack.dll": {}
+        }
+      },
+      "ServiceStack.Common/3.0.6": {
+        "type": "package",
+        "dependencies": {
+          "ServiceStack.Text": "(, )"
+        },
+        "compile": {
+          "lib/ServiceStack.Common.dll": {},
+          "lib/ServiceStack.Interfaces.dll": {}
+        },
+        "runtime": {
+          "lib/ServiceStack.Common.dll": {},
+          "lib/ServiceStack.Interfaces.dll": {}
+        }
+      },
+      "ServiceStack.OrmLite.SqlServer/2.9.0": {
+        "type": "package",
+        "compile": {
+          "lib/ServiceStack.Common.dll": {},
+          "lib/ServiceStack.Interfaces.dll": {},
+          "lib/ServiceStack.OrmLite.SqlServer.dll": {},
+          "lib/ServiceStack.OrmLite.dll": {},
+          "lib/ServiceStack.Text.dll": {}
+        },
+        "runtime": {
+          "lib/ServiceStack.Common.dll": {},
+          "lib/ServiceStack.Interfaces.dll": {},
+          "lib/ServiceStack.OrmLite.SqlServer.dll": {},
+          "lib/ServiceStack.OrmLite.dll": {},
+          "lib/ServiceStack.Text.dll": {}
+        }
+      },
+      "ServiceStack.Redis/2.9.0": {
+        "type": "package",
+        "compile": {
+          "lib/ServiceStack.Common.dll": {},
+          "lib/ServiceStack.Interfaces.dll": {},
+          "lib/ServiceStack.Redis.dll": {},
+          "lib/ServiceStack.Text.dll": {}
+        },
+        "runtime": {
+          "lib/ServiceStack.Common.dll": {},
+          "lib/ServiceStack.Interfaces.dll": {},
+          "lib/ServiceStack.Redis.dll": {},
+          "lib/ServiceStack.Text.dll": {}
+        }
+      },
+      "ServiceStack.Text/2.9.0": {
+        "type": "package",
+        "compile": {
+          "lib/net35/ServiceStack.Text.dll": {}
+        },
+        "runtime": {
+          "lib/net35/ServiceStack.Text.dll": {}
+        }
+      },
       "StackExchange.Redis/2.0.601": {
         "type": "package",
         "dependencies": {
@@ -3100,6 +3182,38 @@
         },
         "runtime": {
           "lib/netstandard1.6/Swashbuckle.AspNetCore.Swagger.dll": {}
+        }
+      },
+      "Swashbuckle.AspNetCore.SwaggerGen/2.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Mvc.ApiExplorer": "1.0.4",
+          "Microsoft.AspNetCore.Mvc.Core": "1.0.4",
+          "Microsoft.AspNetCore.Mvc.DataAnnotations": "1.0.4",
+          "NETStandard.Library": "1.6.1",
+          "Swashbuckle.AspNetCore.Swagger": "2.1.0",
+          "System.Xml.XPath": "4.0.1"
+        },
+        "compile": {
+          "lib/netstandard1.6/Swashbuckle.AspNetCore.SwaggerGen.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.6/Swashbuckle.AspNetCore.SwaggerGen.dll": {}
+        }
+      },
+      "Swashbuckle.AspNetCore.SwaggerUI/5.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Routing": "2.1.0",
+          "Microsoft.AspNetCore.StaticFiles": "2.1.0",
+          "Microsoft.Extensions.FileProviders.Embedded": "2.1.0",
+          "System.Text.Json": "4.6.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Swashbuckle.AspNetCore.SwaggerUI.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Swashbuckle.AspNetCore.SwaggerUI.dll": {}
         }
       },
       "System.AppContext/4.3.0": {
@@ -3980,7 +4094,7 @@
           "ref/netstandard1.5/System.Runtime.dll": {}
         }
       },
-      "System.Runtime.CompilerServices.Unsafe/4.5.2": {
+      "System.Runtime.CompilerServices.Unsafe/4.6.0": {
         "type": "package",
         "compile": {
           "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
@@ -4422,13 +4536,27 @@
           "ref/netstandard1.3/System.Text.Encoding.Extensions.dll": {}
         }
       },
-      "System.Text.Encodings.Web/4.5.0": {
+      "System.Text.Encodings.Web/4.6.0": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/System.Text.Encodings.Web.dll": {}
         },
         "runtime": {
           "lib/netstandard2.0/System.Text.Encodings.Web.dll": {}
+        }
+      },
+      "System.Text.Json/4.6.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Bcl.AsyncInterfaces": "1.0.0",
+          "System.Runtime.CompilerServices.Unsafe": "4.6.0",
+          "System.Text.Encodings.Web": "4.6.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/System.Text.Json.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Text.Json.dll": {}
         }
       },
       "System.Text.RegularExpressions/4.3.0": {
@@ -4614,7 +4742,7 @@
           "System.Xml.ReaderWriter": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.3/_._": {}
+          "ref/netstandard1.3/System.Xml.XPath.dll": {}
         },
         "runtime": {
           "lib/netstandard1.3/System.Xml.XPath.dll": {}
@@ -4647,7 +4775,10 @@
           "Microsoft.EntityFrameworkCore": "2.1.0",
           "Model": "1.0.0",
           "Repository": "1.0.0",
-          "Swashbuckle.AspNetCore.Swagger": "2.1.0"
+          "ServiceStack": "3.9.10",
+          "Swashbuckle.AspNetCore.Swagger": "2.1.0",
+          "Swashbuckle.AspNetCore.SwaggerGen": "2.1.0",
+          "Swashbuckle.AspNetCore.SwaggerUI": "5.1.0"
         },
         "compile": {
           "bin/placeholder/Manager.dll": {}
@@ -4661,7 +4792,10 @@
         "framework": ".NETCoreApp,Version=v2.1",
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "2.1.0",
-          "Swashbuckle.AspNetCore.Swagger": "2.1.0"
+          "ServiceStack": "3.9.10",
+          "Swashbuckle.AspNetCore.Swagger": "2.1.0",
+          "Swashbuckle.AspNetCore.SwaggerGen": "2.1.0",
+          "Swashbuckle.AspNetCore.SwaggerUI": "5.1.0"
         },
         "compile": {
           "bin/placeholder/Model.dll": {}
@@ -4680,8 +4814,11 @@
           "Microsoft.EntityFrameworkCore.SqlServer": "2.1.0",
           "Microsoft.IdentityModel.Tokens": "5.6.0",
           "Model": "1.0.0",
+          "ServiceStack": "3.9.10",
           "StackExchange.Redis": "2.0.601",
           "Swashbuckle.AspNetCore.Swagger": "2.1.0",
+          "Swashbuckle.AspNetCore.SwaggerGen": "2.1.0",
+          "Swashbuckle.AspNetCore.SwaggerUI": "5.1.0",
           "System.IdentityModel.Tokens.Jwt": "5.6.0"
         },
         "compile": {
@@ -6026,6 +6163,30 @@
         "lib/netstandard2.0/Microsoft.AspNetCore.WebUtilities.xml",
         "microsoft.aspnetcore.webutilities.2.1.1.nupkg.sha512",
         "microsoft.aspnetcore.webutilities.nuspec"
+      ]
+    },
+    "Microsoft.Bcl.AsyncInterfaces/1.0.0": {
+      "sha512": "K63Y4hORbBcKLWH5wnKgzyn7TOfYzevIEwIedQHBIkmkEBA9SCqgvom+XTuE+fAFGvINGkhFItaZ2dvMGdT5iw==",
+      "type": "package",
+      "path": "microsoft.bcl.asyncinterfaces/1.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/Microsoft.Bcl.AsyncInterfaces.dll",
+        "lib/net461/Microsoft.Bcl.AsyncInterfaces.xml",
+        "lib/netstandard2.0/Microsoft.Bcl.AsyncInterfaces.dll",
+        "lib/netstandard2.0/Microsoft.Bcl.AsyncInterfaces.xml",
+        "lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll",
+        "lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.xml",
+        "microsoft.bcl.asyncinterfaces.1.0.0.nupkg.sha512",
+        "microsoft.bcl.asyncinterfaces.nuspec",
+        "ref/net461/Microsoft.Bcl.AsyncInterfaces.dll",
+        "ref/netstandard2.0/Microsoft.Bcl.AsyncInterfaces.dll",
+        "ref/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll",
+        "useSharedDesignerContext.txt",
+        "version.txt"
       ]
     },
     "Microsoft.CodeAnalysis.Analyzers/1.1.0": {
@@ -8218,6 +8379,103 @@
         "version.txt"
       ]
     },
+    "ServiceStack/3.9.10": {
+      "sha512": "44Wijf1ZVLvyWICBUdVZZmBIlv+Undvj7F1EwWS9dfVY2lg475yLZsy7y0RDTFPogvJKbGNstioUX2Piuyg+cQ==",
+      "type": "package",
+      "path": "servicestack/3.9.10",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net35/ServiceStack.ServiceInterface.dll",
+        "lib/net35/ServiceStack.ServiceInterface.pdb",
+        "lib/net35/ServiceStack.dll",
+        "lib/net35/ServiceStack.pdb",
+        "lib/net35/ServiceStack.xml",
+        "lib/net40/ServiceStack.Razor.dll",
+        "lib/net40/ServiceStack.Razor.dll.config",
+        "lib/net40/ServiceStack.Razor.pdb",
+        "lib/net40/ServiceStack.ServiceInterface.dll",
+        "lib/net40/ServiceStack.ServiceInterface.pdb",
+        "lib/net40/ServiceStack.dll",
+        "lib/net40/ServiceStack.pdb",
+        "lib/net40/ServiceStack.xml",
+        "servicestack.3.9.10.nupkg.sha512",
+        "servicestack.nuspec"
+      ]
+    },
+    "ServiceStack.Common/3.0.6": {
+      "sha512": "BE06hInBMo4Rt68FdSvZKJjAIJJqa9VtbNFp6yi/7kM9BE0OjuWvwMwYYnTNbFUKN8ENwPOyU3dKIbxJcvTB6g==",
+      "type": "package",
+      "path": "servicestack.common/3.0.6",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/ServiceStack.Common.dll",
+        "lib/ServiceStack.Common.pdb",
+        "lib/ServiceStack.Common.xml",
+        "lib/ServiceStack.Interfaces.dll",
+        "lib/ServiceStack.Interfaces.pdb",
+        "lib/ServiceStack.Interfaces.xml",
+        "servicestack.common.3.0.6.nupkg.sha512",
+        "servicestack.common.nuspec"
+      ]
+    },
+    "ServiceStack.OrmLite.SqlServer/2.9.0": {
+      "sha512": "eC4lwpDoVNbD23WAyONqysAoor83+09o/xZRWnJ5nqk1a8SBFYjY10UAl1/Itt4NlnSGTRQKC2NgMq6twOozrw==",
+      "type": "package",
+      "path": "servicestack.ormlite.sqlserver/2.9.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/ServiceStack.Common.dll",
+        "lib/ServiceStack.Common.pdb",
+        "lib/ServiceStack.Interfaces.dll",
+        "lib/ServiceStack.Interfaces.pdb",
+        "lib/ServiceStack.OrmLite.SqlServer.dll",
+        "lib/ServiceStack.OrmLite.SqlServer.pdb",
+        "lib/ServiceStack.OrmLite.dll",
+        "lib/ServiceStack.OrmLite.pdb",
+        "lib/ServiceStack.Text.dll",
+        "lib/ServiceStack.Text.pdb",
+        "servicestack.ormlite.sqlserver.2.9.0.nupkg.sha512",
+        "servicestack.ormlite.sqlserver.nuget",
+        "servicestack.ormlite.sqlserver.nuspec"
+      ]
+    },
+    "ServiceStack.Redis/2.9.0": {
+      "sha512": "Mci+LUf+Y2Umcgbjya7bYUyJHT8PotzkYLXEWYr6bH2Y0cHHwDyHTzTI5QWy6XI5aCr0+OsacLJBrcWo/M3XeA==",
+      "type": "package",
+      "path": "servicestack.redis/2.9.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/ServiceStack.Common.dll",
+        "lib/ServiceStack.Common.pdb",
+        "lib/ServiceStack.Interfaces.dll",
+        "lib/ServiceStack.Interfaces.pdb",
+        "lib/ServiceStack.Redis.dll",
+        "lib/ServiceStack.Redis.pdb",
+        "lib/ServiceStack.Text.dll",
+        "lib/ServiceStack.Text.pdb",
+        "servicestack.redis.2.9.0.nupkg.sha512",
+        "servicestack.redis.nuget",
+        "servicestack.redis.nuspec"
+      ]
+    },
+    "ServiceStack.Text/2.9.0": {
+      "sha512": "Y2IaeTWQ4RHfwGIy8Qm5NJDHorwVJ9VlutC/QGr6i9aD9HqhYZegcc0BbPap/YvwL1X0GaIEzIwBi2bkIj0xig==",
+      "type": "package",
+      "path": "servicestack.text/2.9.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net35/ServiceStack.Text.dll",
+        "lib/net35/ServiceStack.Text.pdb",
+        "servicestack.text.2.9.0.nupkg.sha512",
+        "servicestack.text.nuget",
+        "servicestack.text.nuspec"
+      ]
+    },
     "StackExchange.Redis/2.0.601": {
       "sha512": "aEZQui10BTYL787+GCRlcT5qZe4ioyU2NKIO20ppDFbWE9bUuQLIq2FWQyvVcD+e/a88JFusT77KaQ8C7UDP9g==",
       "type": "package",
@@ -8248,6 +8506,36 @@
         "lib/netstandard1.6/Swashbuckle.AspNetCore.Swagger.xml",
         "swashbuckle.aspnetcore.swagger.2.1.0.nupkg.sha512",
         "swashbuckle.aspnetcore.swagger.nuspec"
+      ]
+    },
+    "Swashbuckle.AspNetCore.SwaggerGen/2.1.0": {
+      "sha512": "6uyl1ixsetE3b2mP4PzD/kAeZkXTqDjeYLOHY9Scoe7B/UDWYuNIWUoK9Iu/vp/61YsVrwZFddxoZ10Mo9eYFg==",
+      "type": "package",
+      "path": "swashbuckle.aspnetcore.swaggergen/2.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net451/Swashbuckle.AspNetCore.SwaggerGen.dll",
+        "lib/net451/Swashbuckle.AspNetCore.SwaggerGen.xml",
+        "lib/netstandard1.6/Swashbuckle.AspNetCore.SwaggerGen.dll",
+        "lib/netstandard1.6/Swashbuckle.AspNetCore.SwaggerGen.xml",
+        "swashbuckle.aspnetcore.swaggergen.2.1.0.nupkg.sha512",
+        "swashbuckle.aspnetcore.swaggergen.nuspec"
+      ]
+    },
+    "Swashbuckle.AspNetCore.SwaggerUI/5.1.0": {
+      "sha512": "VsWkTpndapj58rQR9H63n5SdiSJkv8zMeoYADvbkmB7kLAuAOBMufnsO/8StYYTH/1i/4y2hdI1Cs93cNnZbzg==",
+      "type": "package",
+      "path": "swashbuckle.aspnetcore.swaggerui/5.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netcoreapp3.0/Swashbuckle.AspNetCore.SwaggerUI.dll",
+        "lib/netcoreapp3.0/Swashbuckle.AspNetCore.SwaggerUI.xml",
+        "lib/netstandard2.0/Swashbuckle.AspNetCore.SwaggerUI.dll",
+        "lib/netstandard2.0/Swashbuckle.AspNetCore.SwaggerUI.xml",
+        "swashbuckle.aspnetcore.swaggerui.5.1.0.nupkg.sha512",
+        "swashbuckle.aspnetcore.swaggerui.nuspec"
       ]
     },
     "System.AppContext/4.3.0": {
@@ -10946,10 +11234,10 @@
         "system.runtime.nuspec"
       ]
     },
-    "System.Runtime.CompilerServices.Unsafe/4.5.2": {
-      "sha512": "wprSFgext8cwqymChhrBLu62LMg/1u92bU+VOwyfBimSPVFXtsNqEWC92Pf9ofzJFlk4IHmJA75EDJn1b2goAQ==",
+    "System.Runtime.CompilerServices.Unsafe/4.6.0": {
+      "sha512": "HxozeSlipUK7dAroTYwIcGwKDeOVpQnJlpVaOkBz7CM4TsE5b/tKlQBZecTjh6FzcSbxndYaxxpsBMz+wMJeyw==",
       "type": "package",
-      "path": "system.runtime.compilerservices.unsafe/4.5.2",
+      "path": "system.runtime.compilerservices.unsafe/4.6.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -10965,7 +11253,7 @@
         "ref/netstandard1.0/System.Runtime.CompilerServices.Unsafe.xml",
         "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll",
         "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.xml",
-        "system.runtime.compilerservices.unsafe.4.5.2.nupkg.sha512",
+        "system.runtime.compilerservices.unsafe.4.6.0.nupkg.sha512",
         "system.runtime.compilerservices.unsafe.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"
@@ -12035,21 +12323,44 @@
         "system.text.encoding.extensions.nuspec"
       ]
     },
-    "System.Text.Encodings.Web/4.5.0": {
-      "sha512": "Xg4G4Indi4dqP1iuAiMSwpiWS54ZghzR644OtsRCm/m/lBMG8dUBhLVN7hLm8NNrNTR+iGbshCPTwrvxZPlm4g==",
+    "System.Text.Encodings.Web/4.6.0": {
+      "sha512": "BXgFO8Yi7ao7hVA/nklD0Hre1Bbce048ZqryGZVFifGNPuh+2jqF1i/jLJLMfFGZIzUOw+nCIeH24SQhghDSPw==",
       "type": "package",
-      "path": "system.text.encodings.web/4.5.0",
+      "path": "system.text.encodings.web/4.6.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
+        "lib/netcoreapp3.0/System.Text.Encodings.Web.dll",
+        "lib/netcoreapp3.0/System.Text.Encodings.Web.xml",
         "lib/netstandard1.0/System.Text.Encodings.Web.dll",
         "lib/netstandard1.0/System.Text.Encodings.Web.xml",
         "lib/netstandard2.0/System.Text.Encodings.Web.dll",
         "lib/netstandard2.0/System.Text.Encodings.Web.xml",
-        "system.text.encodings.web.4.5.0.nupkg.sha512",
+        "system.text.encodings.web.4.6.0.nupkg.sha512",
         "system.text.encodings.web.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
+    "System.Text.Json/4.6.0": {
+      "sha512": "4F8Xe+JIkVoDJ8hDAZ7HqLkjctN/6WItJIzQaifBwClC7wmoLSda/Sv2i6i1kycqDb3hWF4JCVbpAweyOKHEUA==",
+      "type": "package",
+      "path": "system.text.json/4.6.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/System.Text.Json.dll",
+        "lib/net461/System.Text.Json.xml",
+        "lib/netcoreapp3.0/System.Text.Json.dll",
+        "lib/netcoreapp3.0/System.Text.Json.xml",
+        "lib/netstandard2.0/System.Text.Json.dll",
+        "lib/netstandard2.0/System.Text.Json.xml",
+        "system.text.json.4.6.0.nupkg.sha512",
+        "system.text.json.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
@@ -12734,7 +13045,10 @@
       "Microsoft.NETCore.App >= 2.1.0",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 2.1.10",
       "Repository >= 1.0.0",
+      "ServiceStack >= 3.9.10",
       "Swashbuckle.AspNetCore.Swagger >= 2.1.0",
+      "Swashbuckle.AspNetCore.SwaggerGen >= 2.1.0",
+      "Swashbuckle.AspNetCore.SwaggerUI >= 5.1.0",
       "System.Configuration.ConfigurationManager >= 4.7.0",
       "jose-jwt >= 2.5.0"
     ]
@@ -12804,9 +13118,21 @@
             "target": "Package",
             "version": "[2.1.10, )"
           },
+          "ServiceStack": {
+            "target": "Package",
+            "version": "[3.9.10, )"
+          },
           "Swashbuckle.AspNetCore.Swagger": {
             "target": "Package",
             "version": "[2.1.0, )"
+          },
+          "Swashbuckle.AspNetCore.SwaggerGen": {
+            "target": "Package",
+            "version": "[2.1.0, )"
+          },
+          "Swashbuckle.AspNetCore.SwaggerUI": {
+            "target": "Package",
+            "version": "[5.1.0, )"
           },
           "System.Configuration.ConfigurationManager": {
             "target": "Package",
@@ -12833,6 +13159,46 @@
   },
   "logs": [
     {
+      "code": "NU1602",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "ServiceStack 3.9.10 does not provide an inclusive lower bound for dependency ServiceStack.Common. An approximate best match of ServiceStack.Common 3.0.6 was resolved.",
+      "libraryId": "ServiceStack.Common",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v2.1"
+      ]
+    },
+    {
+      "code": "NU1602",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "ServiceStack 3.9.10 does not provide an inclusive lower bound for dependency ServiceStack.OrmLite.SqlServer. An approximate best match of ServiceStack.OrmLite.SqlServer 2.9.0 was resolved.",
+      "libraryId": "ServiceStack.OrmLite.SqlServer",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v2.1"
+      ]
+    },
+    {
+      "code": "NU1602",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "ServiceStack 3.9.10 does not provide an inclusive lower bound for dependency ServiceStack.Redis. An approximate best match of ServiceStack.Redis 2.9.0 was resolved.",
+      "libraryId": "ServiceStack.Redis",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v2.1"
+      ]
+    },
+    {
+      "code": "NU1602",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "ServiceStack.Common 3.0.6 does not provide an inclusive lower bound for dependency ServiceStack.Text. An approximate best match of ServiceStack.Text 2.9.0 was resolved.",
+      "libraryId": "ServiceStack.Text",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v2.1"
+      ]
+    },
+    {
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
@@ -12858,6 +13224,56 @@
       "warningLevel": 1,
       "message": "Package 'Microsoft.AspNet.Identity.EntityFramework 2.2.3' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v2.1'. This package may not be fully compatible with your project.",
       "libraryId": "Microsoft.AspNet.Identity.EntityFramework",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v2.1"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'ServiceStack 3.9.10' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v2.1'. This package may not be fully compatible with your project.",
+      "libraryId": "ServiceStack",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v2.1"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'ServiceStack.Common 3.0.6' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v2.1'. This package may not be fully compatible with your project.",
+      "libraryId": "ServiceStack.Common",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v2.1"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'ServiceStack.OrmLite.SqlServer 2.9.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v2.1'. This package may not be fully compatible with your project.",
+      "libraryId": "ServiceStack.OrmLite.SqlServer",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v2.1"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'ServiceStack.Redis 2.9.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v2.1'. This package may not be fully compatible with your project.",
+      "libraryId": "ServiceStack.Redis",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v2.1"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'ServiceStack.Text 2.9.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v2.1'. This package may not be fully compatible with your project.",
+      "libraryId": "ServiceStack.Text",
       "targetGraphs": [
         ".NETCoreApp,Version=v2.1"
       ]

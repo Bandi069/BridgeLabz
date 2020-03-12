@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNet.Identity.EntityFramework;
+﻿using Microsoft.AspNet.Identity.EntityFramework;                      
 using Microsoft.IdentityModel.Tokens;
 using Model.UserModel;
 using Repository.IRepository;
@@ -59,7 +59,7 @@ namespace Repository.Repository
                 }
                 catch (Exception e)
                 {
-                    Console.WriteLine("Exception Occurs" + e.Message);
+                    throw new Exception(e.Message);
                 }
             }
             return "Incorrect Email or Password";
@@ -126,7 +126,7 @@ namespace Repository.Repository
         /// <returns></returns>
         public Task FindEmailid(string email)
         {
-            var userRegistration = context.Login.Where(obj => obj.Emailid == email).SingleOrDefault();
+            var userRegistration = context.Register.Where(obj => obj.Emailid == email).SingleOrDefault();
             IdentityUser IUser = new IdentityUser() { Email = userRegistration.Emailid };
 
             return Task.Run(() => IUser);
@@ -139,7 +139,7 @@ namespace Repository.Repository
         /// <returns></returns>
         public Task<bool> CheckPassword(string email, string password)
         {
-            bool checkobj = context.Login.Where(UserName => UserName.Password == password && UserName.Emailid == email).SingleOrDefault().Emailid == email ? true : false;
+            bool checkobj = context.Register.Where(UserName => UserName.Password == password && UserName.Emailid == email).SingleOrDefault().Emailid == email ? true : false;
             return Task.Run(() => checkobj);
         }
         /// <summary>

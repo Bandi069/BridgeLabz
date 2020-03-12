@@ -61,32 +61,29 @@ namespace Fundoo
                     x.TokenValidationParameters = new TokenValidationParameters
                     {
                         ValidateIssuerSigningKey = true,
-                        IssuerSigningKey = new SymmetricSecurityKey(key: Encoding.ASCII.GetBytes(JwtSettings.)),
+                        IssuerSigningKey = new SymmetricSecurityKey(key: Encoding.ASCII.GetBytes("JwtSettings:Secret")),
                         ValidateIssuer = false,
                         ValidateAudience = false,
                         RequireExpirationTime = false,
                         ValidateLifetime = true,
                     };
                 });
-            services.AddCors(OP => OP.AddPolicy("Polices", builder =>
+            services.AddCors(OP => OP.AddPolicy("Policy", builder =>
             {
                 builder.AllowAnyOrigin();
                 builder.AllowAnyHeader();
                 builder.AllowAnyMethod();
             }));
-            services.AddSwaggerGen(config =>
+
+            services.AddSwaggerGen(con =>
                {
-                   config.SwaggerDoc("v1", new Swashbuckle.AspNetCore.Swagger.Info
+                   con.SwaggerDoc("v1", new Swashbuckle.AspNetCore.Swagger.Info
                    {
                        Title = "Fundoo Notes API",
                        Version = "v1",
                        Description = "ASP .Net core Web API"
                    });
-                   var Security = new Directory<string, IEnumerable<string>>
-                   {
-                  {"Bearer", new string[0] }
-                   };
-                   config.AddSecurityDefinition(name: "Bearer", new ApiKeyScheme
+                   con.AddSecurityDefinition(name: "Bearer", new ApiKeyScheme
                    {
                        Description = "jwt Authorization using the header scheme",
                        Name = "Authorization",
@@ -96,25 +93,23 @@ namespace Fundoo
 
                });
 
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-            app.UseCors("My Policy");
+            app.UseCors("Policy");
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwagger(Con =>
+                app.UseSwaggerUI(Con =>
                 {
-                    Con.SwaggerEndPoint("/swagger/v1/swagger.json", "Fundoo Api");
+                    Con.SwaggerEndpoint("/swagger/v1/swagger.json", "Fundoo Api");
                 });
             }
-            /*if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }*/
+
             else
             {
                 app.UseHsts();
