@@ -9,13 +9,28 @@ using System.Threading.Tasks;
 
 namespace Repository.Repository
 {
+    /// <summary>
+    /// This is Note Repository Class
+    /// </summary>
     public class NoteRepository : INoteRepository
     {
+        /// <summary>
+        /// User Context
+        /// </summary>
         private readonly UserContext userContext;
+        /// <summary>
+        /// This is OCnstructor Dependency injection
+        /// </summary>
+        /// <param name="userContext"></param>
         public NoteRepository(UserContext userContext)
         {
             this.userContext = userContext;
         }
+        /// <summary>
+        /// This is AddNote Task
+        /// </summary>
+        /// <param name="noteModel"></param>
+        /// <returns></returns>
         public Task AddNote(Notemodel noteModel)
         {
             Notemodel notemodel = new Notemodel()
@@ -35,7 +50,11 @@ namespace Repository.Repository
             userContext.Notemodels.Add(notemodel);
             return Task.Run(() => userContext.SaveChanges());
         }
-
+        /// <summary>
+        /// This is DeleteNode Task
+        /// </summary>
+        /// <param name="Noteid"></param>
+        /// <returns></returns>
         public Task DeleteNote(int Noteid)
         {
             var deletenote = userContext.Notemodels.Where(del => del.NoteID == Noteid).SingleOrDefault();
@@ -46,13 +65,20 @@ namespace Repository.Repository
             }
             return null;
         }
-
+        /// <summary>
+        /// This is Get List node Task 
+        /// </summary>
+        /// <param name="NoteID"></param>
+        /// <returns></returns>
         public List<Notemodel> GetNote(int NoteID)
         {
-
             return null;
         }
-
+        /// <summary>
+        /// This is  Update Note Task
+        /// </summary>
+        /// <param name="notemodel"></param>
+        /// <returns></returns>
         public Task UpdateNote(Notemodel notemodel)
         {
             var updatenote = userContext.Notemodels.Where(up => up.NoteID == notemodel.NoteID).SingleOrDefault();
@@ -64,7 +90,7 @@ namespace Repository.Repository
                 updatenote.CreateTime= notemodel.CreateTime;
                 updatenote.ModifiedTime= notemodel.ModifiedTime;
             }
-            return null;
+            return Task.Run(()=>userContext.SaveChanges());
         }
     }
 }
