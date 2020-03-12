@@ -11,7 +11,7 @@ namespace Manager.InterfaceManager
         Task<string> AddNote(Notemodel noteModel);
         Task<string> DeleteNote(int NoteID);
         Task<string> UpdateNote(Notemodel noteModel);
-        Task<string> getNote(int NoteID);
+        List<Notemodel> GetNote(int NoteID);
 
     }
 }

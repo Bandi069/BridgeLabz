@@ -42,9 +42,23 @@ namespace Manager.Manager
             }
         }
 
-        public Task<string> getNote(int NoteID)
+        public List<Notemodel> GetNote(int NoteID)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var notelist = new List<Notemodel>();
+                var getlist = this.noteRepository.GetNote(NoteID);
+              foreach(var nlist in getlist)
+                {
+                    notelist.Add(nlist);
+                }
+                return notelist;
+               
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
         }
 
         public async Task<string> UpdateNote(Notemodel noteModel)
