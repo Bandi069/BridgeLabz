@@ -23,6 +23,8 @@ namespace Repository.UserDbContext
         /// This is Register DbSet property
         /// </summary>
         public DbSet<RegistrationModel> Register { get; set; }
+        public DbSet<LoginModel>Login { get; set; }
+
         /// <summary>
         /// This is NoteModels Dbset Property
         /// </summary>
