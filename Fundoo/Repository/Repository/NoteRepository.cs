@@ -3,6 +3,7 @@ using Repository.IRepository;
 using Repository.UserDbContext;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -35,8 +36,10 @@ namespace Repository.Repository
             return Task.Run(() => userContext.SaveChanges());
         }
 
-        public Task DeleteNote(int NoteID)
+        public Task DeleteNote(int Noteid)
         {
+            var deletenote = userContext.Notemodels.Where(del => del.NoteID == Noteid).SingleOrDefault();
+
             return null;
         }
 

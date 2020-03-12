@@ -7,7 +7,7 @@ namespace Model.NoteModel
 {
     public class Notemodel
     {
-        private string noteID;
+        private int noteID;
         private bool pinNote;
         private string archive;
         private string description;
@@ -18,7 +18,7 @@ namespace Model.NoteModel
         private bool trash;
         private string emailid;
         [Key]
-        public string NoteID { get => noteID; set => noteID = value; }
+        public int NoteID { get => noteID; set => noteID = value; }
         public string Emailid { get => emailid; set => emailid = value; }
         public string Title { get => title; set => title = value; }
         public string Description { get => description; set => description = value; }
