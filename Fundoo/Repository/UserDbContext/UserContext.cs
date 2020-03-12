@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Model.Label;
 using Model.NoteModel;
 using Model.UserModel;
 using System;
@@ -23,11 +24,13 @@ namespace Repository.UserDbContext
         /// This is Register DbSet property
         /// </summary>
         public DbSet<RegistrationModel> Register { get; set; }
-        public DbSet<LoginModel>Login { get; set; }
+      
 
         /// <summary>
         /// This is NoteModels Dbset Property
         /// </summary>
         public DbSet<Notemodel> Notemodels { get; set; }
+        public DbSet<LabelModel> Label { get; set; }
+
     }
 }
