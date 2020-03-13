@@ -73,7 +73,7 @@ namespace Repository.Repository
         {
             RegistrationModel Resetobj = context.Register.Where(UserName => UserName.Emailid == resetPassword.Emailid).SingleOrDefault();
             Resetobj.Password = resetPassword.Password;
-            var user = context.Register.Find(resetPassword.Emailid);
+            var user = this.context.Register.Find(resetPassword.Emailid);
             user.Password = resetPassword.Password;
             return Task.Run(() => context.SaveChanges());
         }
@@ -154,7 +154,7 @@ namespace Repository.Repository
             {
                 var cacheKey = loginModel.Emailid;
                 ConnectionMultiplexer connectionmulti = ConnectionMultiplexer.Connect("172.40.1.77:6379");
-                StackExchange.Redis.IDatabase database = connectionmulti.GetDatabase();
+                IDatabase database = connectionmulti.GetDatabase();
                 database.KeyDelete(cacheKey);
                 return "Account Logout ";
             }
@@ -171,7 +171,7 @@ namespace Repository.Repository
         /// <returns></returns>
         public async Task<string> GoogleLogin(LoginModel loginModel)
         {
-            var GoogleUser = context.Register.Where(UserName => UserName.Emailid == loginModel.Emailid && UserName.Password == loginModel.Password).SingleOrDefault();
+            var GoogleUser = this.context.Register.Where(UserName => UserName.Emailid == loginModel.Emailid && UserName.Password == loginModel.Password).SingleOrDefault();
             if (GoogleUser != null)
             {
                 var tokenDescriptor = new SecurityTokenDescriptor
@@ -180,7 +180,7 @@ namespace Repository.Repository
                     {
                         new Claim("Emailid", GoogleUser.Emailid)
                     }),
-                    Expires = DateTime.UtcNow.AddHours(24)
+                    Expires = DateTime.UtcNow.AddHours(24) 
                 };
                 var tokenHandler = new JwtSecurityTokenHandler();
                 var securityToken = tokenHandler.CreateToken(tokenDescriptor);
@@ -213,7 +213,7 @@ namespace Repository.Repository
                     return token;
                 }
             }
-            await context.SaveChangesAsync();
+            await this.context.SaveChangesAsync();
             return "User Not Existed";
         }
         /// <summary>

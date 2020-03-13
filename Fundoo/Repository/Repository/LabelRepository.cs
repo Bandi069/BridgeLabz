@@ -40,12 +40,26 @@ namespace Repository.Repository
 
         public string UpdateLabel(LabelModel labelModel)
         {
-            throw new NotImplementedException();
+
+            var update = this.userContext.Label.Where(up => up.LabelID == labelModel.LabelID).SingleOrDefault();
+            if(update!=null)
+            {
+                update.Emailid = labelModel.Emailid;
+                update.Label = labelModel.Label;
+            }
+            this.userContext.Label.Update(update);
+            this.userContext.SaveChanges();
+            return "Updated";
         }
 
         public List<LabelModel> GetLabelModels(int LabelID)
         {
-            throw new NotImplementedException();
+            var getlabel = this.userContext.Label.Where(get => get.LabelID == LabelID).SingleOrDefault();
+            if(getlabel!=null)
+            {
+                return this.userContext.Label.Where(get => get.LabelID == LabelID).ToList();
+            }
+            return null;
         }
 
     }

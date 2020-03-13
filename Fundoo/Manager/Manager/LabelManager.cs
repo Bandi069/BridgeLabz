@@ -16,22 +16,60 @@ namespace Manager.Manager
         }
         public string AddLabel(LabelModel labelModle)
         {
-            throw new NotImplementedException();
+            try
+            {
+                this.labelRepository.AddLabel(labelModle);
+                return "Label Added";
+            }
+            catch(Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+           
         }
 
         public string DeleteLabel(int LabelID)
         {
-            throw new NotImplementedException();
+            try
+            {
+                this.labelRepository.DeleteLabel(LabelID);
+                return "Label Deleted";
+            }
+            catch(Exception e)
+            {
+                throw new Exception(e.Message);
+            }
         }
 
         public List<LabelModel> GetLabelModels(int LabelID)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var getlist = new List<LabelModel>();
+                var list= this.labelRepository.GetLabelModels(LabelID);
+                foreach(var labellist in list)
+                {
+                    getlist.Add(labellist);
+                }
+                return getlist;
+            }
+            catch(Exception e)
+            {
+                throw new Exception(e.Message);
+            }
         }
 
         public string UpdateLabel(LabelModel labelModel)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var update = this.labelRepository.UpdateLabel(labelModel);
+                return update;
+            }
+            catch(Exception e)
+            {
+                throw new Exception(e.Message);
+            }
         }
     }
 }
