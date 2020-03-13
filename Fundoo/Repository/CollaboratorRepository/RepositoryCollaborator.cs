@@ -6,5 +6,7 @@ namespace Repository.CollaboratorRepository
 {
     public class RepositoryCollaborator
     {
+
+
     }
 }
