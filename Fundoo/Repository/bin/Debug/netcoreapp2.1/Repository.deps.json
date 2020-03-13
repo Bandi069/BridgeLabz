@@ -14,6 +14,7 @@
           "Microsoft.EntityFrameworkCore.SqlServer": "2.1.0",
           "Microsoft.IdentityModel.Tokens": "5.6.0",
           "Model": "1.0.0",
+          "NUnit": "3.12.0",
           "ServiceStack": "3.9.10",
           "StackExchange.Redis": "2.0.601",
           "Swashbuckle.AspNetCore.Swagger": "2.1.0",
@@ -723,6 +724,14 @@
           "lib/netstandard1.3/Newtonsoft.Json.dll": {
             "assemblyVersion": "10.0.0.0",
             "fileVersion": "10.0.1.20720"
+          }
+        }
+      },
+      "NUnit/3.12.0": {
+        "runtime": {
+          "lib/netstandard2.0/nunit.framework.dll": {
+            "assemblyVersion": "3.12.0.0",
+            "fileVersion": "3.12.0.0"
           }
         }
       },
@@ -1523,6 +1532,7 @@
       "Model/1.0.0": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "2.1.0",
+          "NUnit": "3.12.0",
           "ServiceStack": "3.9.10",
           "Swashbuckle.AspNetCore.Swagger": "2.1.0",
           "Swashbuckle.AspNetCore.SwaggerGen": "2.1.0",
@@ -1917,6 +1927,13 @@
       "sha512": "sha512-ebWzW9j2nwxQeBo59As2TYn7nYr9BHicqqCwHOD1Vdo+50HBtLPuqdiCYJcLdTRknpYis/DSEOQz5KmZxwrIAg==",
       "path": "newtonsoft.json/10.0.1",
       "hashPath": "newtonsoft.json.10.0.1.nupkg.sha512"
+    },
+    "NUnit/3.12.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-3oJTrcUcT9wmweBUwgUf0f1XIYy6RZq2ziV+RM95HMKAJGsHPN2i3MKK1dAPvDPMRLz799Llj4eyu/STB9Q7OA==",
+      "path": "nunit/3.12.0",
+      "hashPath": "nunit.3.12.0.nupkg.sha512"
     },
     "Pipelines.Sockets.Unofficial/2.0.22": {
       "type": "package",

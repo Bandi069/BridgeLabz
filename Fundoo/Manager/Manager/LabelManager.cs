@@ -7,13 +7,25 @@ using System.Text;
 
 namespace Manager.Manager
 {
+    /// <summary>
+    /// This is Label Manager Class 
+    /// </summary>
     public class LabelManager : IlabelManager
     {
         private readonly ILabelRepository labelRepository;
+        /// <summary>
+        /// This is Labelrepository dependency injection
+        /// </summary>
+        /// <param name="labelRepository"></param>
         public LabelManager(ILabelRepository labelRepository)
         {
             this.labelRepository = labelRepository;
         }
+        /// <summary>
+        /// This is AddLabel method for adding
+        /// </summary>
+        /// <param name="labelModle"></param>
+        /// <returns></returns>
         public string AddLabel(LabelModel labelModle)
         {
             try
@@ -27,7 +39,11 @@ namespace Manager.Manager
             }
            
         }
-
+        /// <summary>
+        /// This is DeleteLabel Method
+        /// </summary>
+        /// <param name="LabelID"></param>
+        /// <returns></returns>
         public string DeleteLabel(int LabelID)
         {
             try
@@ -40,8 +56,12 @@ namespace Manager.Manager
                 throw new Exception(e.Message);
             }
         }
-
-        public List<LabelModel> GetLabelModels(int LabelID)
+        /// <summary>
+        /// This is for get label 
+        /// </summary>
+        /// <param name="LabelID"></param>
+        /// <returns></returns>
+        public List<LabelModel> GetLabel(int LabelID)
         {
             try
             {
@@ -58,7 +78,11 @@ namespace Manager.Manager
                 throw new Exception(e.Message);
             }
         }
-
+        /// <summary>
+        /// This is for Updates Label
+        /// </summary>
+        /// <param name="labelModel"></param>
+        /// <returns></returns>
         public string UpdateLabel(LabelModel labelModel)
         {
             try

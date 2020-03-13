@@ -8,9 +8,9 @@ namespace Repository.IRepository
 {
     public interface INoteRepository
     {
-        Task AddNote(Notemodel noteModel);
-        Task DeleteNote(int NoteID);
-        Task UpdateNote(Notemodel notemodel);
+        Task<string> AddNote(Notemodel noteModel);
+        Task<int> DeleteNote(int NoteID);
+        Task<string> UpdateNote(Notemodel notemodel);
         List<Notemodel> GetNote(int NoteID);
 
     }

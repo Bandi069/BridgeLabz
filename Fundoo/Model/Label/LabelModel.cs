@@ -11,9 +11,9 @@ namespace Model.Label
         private int labelID;
         private string emailid;
         private string label;
-       
+
         public int LabelID { get => labelID; set => labelID = value; }
-       [Key]
+        [Key]
         public string Emailid { get => emailid; set => emailid = value; }
         public string Label { get => label; set => label = value; }
     }

@@ -32,6 +32,27 @@ namespace Repository.Repository
         {
             this.context = context;
         }
+
+        public UserLogin()
+        {
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="registrationModel"></param>
+        /// <returns></returns>
+        public Task Registration(RegistrationModel registrationModel)
+        {
+            RegistrationModel registration = new RegistrationModel()
+            {
+                FirtsName = registrationModel.FirtsName,
+                LastName = registrationModel.LastName,
+                Emailid = registrationModel.Emailid,
+                Password = registrationModel.Password
+            };
+
+            return null;
+        }
         /// <summary>
         /// This is Login Asynchronous Task 
         /// </summary>
@@ -69,13 +90,13 @@ namespace Repository.Repository
         /// </summary>
         /// <param name="resetPassword"></param>
         /// <returns></returns>
-        public Task ResetPassword(ResetPassword resetPassword)
+        public async Task ResetPassword(ResetPassword resetPassword)
         {
-            RegistrationModel Resetobj = context.Register.Where(UserName => UserName.Emailid == resetPassword.Emailid).SingleOrDefault();
+            RegistrationModel Resetobj = this.context.Register.Where(UserName => UserName.Emailid == resetPassword.Emailid).SingleOrDefault();
             Resetobj.Password = resetPassword.Password;
             var user = this.context.Register.Find(resetPassword.Emailid);
             user.Password = resetPassword.Password;
-            return Task.Run(() => context.SaveChanges());
+            await Task.Run(() => this.context.SaveChanges());
         }
         /// <summary>
         /// This is Task method for Forgot password
@@ -89,7 +110,7 @@ namespace Repository.Repository
             if (userForgetPassword != null)
             {
                 var fromemailaddress = new MailAddress("bandivenu89@gmail.com");
-                var emailPassword = "sanVedha2212";
+                var Password = "sanVedha2212";
                 var toEmailaddress = new MailAddress(forgotPasswordModel.Emailid);
                 string subject = "Reset Password";
                 string body = "To Reset password";
@@ -100,7 +121,7 @@ namespace Repository.Repository
                     EnableSsl = true,
                     DeliveryMethod = SmtpDeliveryMethod.Network,
                     UseDefaultCredentials = false,
-                    Credentials = new System.Net.NetworkCredential(fromemailaddress.Address, emailPassword)
+                    Credentials = new System.Net.NetworkCredential(fromemailaddress.Address, Password)
                 };
                 using (var message = new MailMessage(fromemailaddress, toEmailaddress)
                 {

@@ -10,6 +10,6 @@ namespace Manager.InterfaceManager
         string AddLabel(LabelModel labelModle);
         string DeleteLabel(int LabelID);
         string UpdateLabel(LabelModel labelModel);
-        List<LabelModel> GetLabelModels(int LabelID);
+        List<LabelModel> GetLabel(int LabelID);
     }
 }

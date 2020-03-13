@@ -18,6 +18,11 @@ namespace Repository.Repository
         /// User Context
         /// </summary>
         private readonly UserContext userContext;
+
+        public NoteRepository()
+        {
+        }
+
         /// <summary>
         /// This is OCnstructor Dependency injection
         /// </summary>
@@ -31,7 +36,7 @@ namespace Repository.Repository
         /// </summary>
         /// <param name="noteModel"></param>
         /// <returns></returns>
-        public Task AddNote(Notemodel noteModel)
+        public async Task<string> AddNote(Notemodel noteModel)
         {
             Notemodel notemodel = new Notemodel()
             {
@@ -43,34 +48,35 @@ namespace Repository.Repository
                 AddImg = null,
                 AddColor = null,
                 PinNote = false,
-                Remainder = null, 
+                Remainder = null,
                 Archive = null,
-                Trash=false
+                Trash = false
             };
             userContext.Notemodels.Add(notemodel);
-            return Task.Run(() => userContext.SaveChanges());
+            var a = await Task.Run(() => userContext.SaveChanges());
+            return null;
         }
         /// <summary>
         /// This is DeleteNode Task
         /// </summary>
         /// <param name="Noteid"></param>
         /// <returns></returns>
-        public Task DeleteNote(int Noteid)
+        public async Task<int> DeleteNote(int Noteid)
         {
             var deletenote = userContext.Notemodels.Where(del => del.NoteID == Noteid).SingleOrDefault();
-            if(deletenote!=null)
+            if (deletenote != null)
             {
                 userContext.Notemodels.Remove(deletenote);
-                return Task.Run(() => userContext.SaveChanges());
+                await Task.Run(() => userContext.SaveChanges());
             }
-            return null;
+            return default;
         }
         /// <summary>
         /// This is Get List node Task 
         /// </summary>
         /// <param name="NoteID"></param>
         /// <returns></returns>
-        public List<Notemodel> GetNote(int NoteID)
+        public  List<Notemodel> GetNote(int NoteID)
         {
             var listNote = userContext.Notemodels.Where(list => list.NoteID == NoteID).SingleOrDefault();
             if (listNote != null)
@@ -84,19 +90,21 @@ namespace Repository.Repository
         /// </summary>
         /// <param name="notemodel"></param>
         /// <returns></returns>
-        public Task UpdateNote(Notemodel notemodel)
+        public async Task<string> UpdateNote(Notemodel notemodel)
         {
             var updatenote = userContext.Notemodels.Where(up => up.NoteID == notemodel.NoteID).SingleOrDefault();
-            if(updatenote!=null)
+            if (updatenote != null)
             {
                 updatenote.Emailid = notemodel.Emailid;
                 updatenote.Description = notemodel.Description;
-                updatenote.Title= notemodel.Title;
-                updatenote.CreateTime= notemodel.CreateTime;
-                updatenote.ModifiedTime= notemodel.ModifiedTime;
+                updatenote.Title = notemodel.Title;
+                updatenote.CreateTime = notemodel.CreateTime;
+                updatenote.ModifiedTime = notemodel.ModifiedTime;
                 this.userContext.Notemodels.Update(notemodel);
             }
-            return Task.Run(()=>userContext.SaveChanges());
+            await Task.Run(() => userContext.SaveChanges());
+            return null;
         }
+
     }
 }

@@ -2840,6 +2840,21 @@
           "lib/netstandard1.6/NuGet.Frameworks.dll": {}
         }
       },
+      "NUnit/3.12.0": {
+        "type": "package",
+        "dependencies": {
+          "NETStandard.Library": "2.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/nunit.framework.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/nunit.framework.dll": {}
+        },
+        "build": {
+          "build/NUnit.props": {}
+        }
+      },
       "Pipelines.Sockets.Unofficial/2.0.22": {
         "type": "package",
         "dependencies": {
@@ -4774,6 +4789,7 @@
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "2.1.0",
           "Model": "1.0.0",
+          "NUnit": "3.12.0",
           "Repository": "1.0.0",
           "ServiceStack": "3.9.10",
           "Swashbuckle.AspNetCore.Swagger": "2.1.0",
@@ -4792,6 +4808,7 @@
         "framework": ".NETCoreApp,Version=v2.1",
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "2.1.0",
+          "NUnit": "3.12.0",
           "ServiceStack": "3.9.10",
           "Swashbuckle.AspNetCore.Swagger": "2.1.0",
           "Swashbuckle.AspNetCore.SwaggerGen": "2.1.0",
@@ -4814,6 +4831,7 @@
           "Microsoft.EntityFrameworkCore.SqlServer": "2.1.0",
           "Microsoft.IdentityModel.Tokens": "5.6.0",
           "Model": "1.0.0",
+          "NUnit": "3.12.0",
           "ServiceStack": "3.9.10",
           "StackExchange.Redis": "2.0.601",
           "Swashbuckle.AspNetCore.Swagger": "2.1.0",
@@ -8046,6 +8064,36 @@
         "lib/netstandard1.6/NuGet.Frameworks.xml",
         "nuget.frameworks.4.7.0.nupkg.sha512",
         "nuget.frameworks.nuspec"
+      ]
+    },
+    "NUnit/3.12.0": {
+      "sha512": "3oJTrcUcT9wmweBUwgUf0f1XIYy6RZq2ziV+RM95HMKAJGsHPN2i3MKK1dAPvDPMRLz799Llj4eyu/STB9Q7OA==",
+      "type": "package",
+      "path": "nunit/3.12.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "CHANGES.md",
+        "LICENSE.txt",
+        "NOTICES.txt",
+        "build/NUnit.props",
+        "lib/net35/nunit.framework.dll",
+        "lib/net35/nunit.framework.pdb",
+        "lib/net35/nunit.framework.xml",
+        "lib/net40/nunit.framework.dll",
+        "lib/net40/nunit.framework.pdb",
+        "lib/net40/nunit.framework.xml",
+        "lib/net45/nunit.framework.dll",
+        "lib/net45/nunit.framework.pdb",
+        "lib/net45/nunit.framework.xml",
+        "lib/netstandard1.4/nunit.framework.dll",
+        "lib/netstandard1.4/nunit.framework.pdb",
+        "lib/netstandard1.4/nunit.framework.xml",
+        "lib/netstandard2.0/nunit.framework.dll",
+        "lib/netstandard2.0/nunit.framework.pdb",
+        "lib/netstandard2.0/nunit.framework.xml",
+        "nunit.3.12.0.nupkg.sha512",
+        "nunit.nuspec"
       ]
     },
     "Pipelines.Sockets.Unofficial/2.0.22": {
@@ -13044,6 +13092,7 @@
       "Microsoft.AspNetCore.Razor.Design >= 2.1.2",
       "Microsoft.NETCore.App >= 2.1.0",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 2.1.10",
+      "NUnit >= 3.12.0",
       "Repository >= 1.0.0",
       "ServiceStack >= 3.9.10",
       "Swashbuckle.AspNetCore.Swagger >= 2.1.0",
@@ -13117,6 +13166,10 @@
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
             "target": "Package",
             "version": "[2.1.10, )"
+          },
+          "NUnit": {
+            "target": "Package",
+            "version": "[3.12.0, )"
           },
           "ServiceStack": {
             "target": "Package",
