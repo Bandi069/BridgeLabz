@@ -74,36 +74,6 @@ namespace Repository.CollaboratorRepository
                 throw new Exception(ex.Message);
             }
         }
-        /// <summary>
-        /// This is UpdateCollaborator Task
-        /// </summary>
-        /// <param name="modelCollaborator"></param>
-        /// <returns></returns>
-        public Task UpdateCollaborator(ModelCollaborator modelCollaborator)
-        {
-            try
-            {
-                var Update = this.userContext.Notemodels.Where(up => up.NoteID == modelCollaborator.NoteID && up.Emailid == modelCollaborator.SenderMail).SingleOrDefault();
-                if (Update != null)
-                {
-                    var updateuser = this.userContext.Register.Where(ad => ad.Emailid == modelCollaborator.ReceiverMail).SingleOrDefault();
-                    {
-                        var collaborate = new ModelCollaborator()
-                        {
-                            NoteID = modelCollaborator.NoteID,
-                            SenderMail = modelCollaborator.SenderMail,
-                            ReceiverMail = modelCollaborator.ReceiverMail
-                        };
-                        userContext.Add(modelCollaborator);
-                        userContext.SaveChanges();
-                    }
-                }
-                return Task.Run(() => userContext.SaveChanges());
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-        }
+       
     }
 }

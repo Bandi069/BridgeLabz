@@ -32,7 +32,9 @@ namespace Repository.Repository
         {
             this.context = context;
         }
-
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UserLogin"/> class.
+        /// </summary>
         public UserLogin()
         {
         }

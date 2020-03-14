@@ -6,12 +6,18 @@ using Repository.Repository;
 namespace NUnitTestFundoo
 {
     [TestFixture]
-   public class NoteTestCase
+    public class NoteTestCase
     {
+        /// <summary>
+        /// Setups this instance.
+        /// </summary>
         [SetUp]
         public void Setup()
         {
         }
+        /// <summary>
+        /// Adds the note.
+        /// </summary>
         [Test]
         public void AddNote()
         {
@@ -31,6 +37,9 @@ namespace NUnitTestFundoo
             };
             Assert.IsNotNull(noteRepository.AddNote(noteModel));
         }
+        /// <summary>
+        /// Deletenotes this instance.
+        /// </summary>
         [Test]
         public void Deletenote()
         {
@@ -39,6 +48,9 @@ namespace NUnitTestFundoo
             notemodel.NoteID = 1245;
             Assert.IsNotNull(noterepository.DeleteNote(1245));
         }
+        /// <summary>
+        /// Updatenotes this instance.
+        /// </summary>
         [Test]
         public void Updatenote()
         {
@@ -58,14 +70,17 @@ namespace NUnitTestFundoo
             };
             Assert.IsNotNull(noterepository.UpdateNote(notemodel));
         }
+        /// <summary>
+        /// Getnotes this instance.
+        /// </summary>
         [Test]
         public void Getnote()
         {
             NoteRepository noterepository = new NoteRepository();
             var notemodel = new Notemodel();
             notemodel.NoteID = 1245;
-            
-         Assert.IsNotNull(noterepository.GetNote(1245));
+
+            Assert.IsNotNull(noterepository.GetNote(1245));
         }
     }
 }

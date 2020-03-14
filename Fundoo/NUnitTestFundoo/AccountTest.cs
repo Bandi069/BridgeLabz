@@ -4,12 +4,21 @@ using Repository.Repository;
 
 namespace NUnitTestFundoo
 {
+    /// <summary>
+    /// Test class
+    /// </summary>
     public class Tests
     {
+        /// <summary>
+        /// Setups this instance.
+        /// </summary>
         [SetUp]
         public void Setup()
         {
         }
+        /// <summary>
+        /// Logins this instance.
+        /// </summary>
         [Test]
         public void Login()
         {
@@ -22,6 +31,9 @@ namespace NUnitTestFundoo
            
             Assert.IsNotNull(loginobj.Login(logmodel));
         }
+        /// <summary>
+        /// Registrations the model.
+        /// </summary>
         [Test]
         public void RegistrationModel()
         {
@@ -35,6 +47,9 @@ namespace NUnitTestFundoo
             };
               Assert.Null(user.Registration(registrationobj));
         }
+        /// <summary>
+        /// Forgots the password.
+        /// </summary>
         [Test]
         public void ForgotPassword()
         {
@@ -45,14 +60,17 @@ namespace NUnitTestFundoo
             };
             Assert.IsNotNull(user.ForgotPassword(forgot));
         }
+        /// <summary>
+        /// Resets the password.
+        /// </summary>
         [Test]
         public void ResetPassword()
         {
             UserLogin user = new UserLogin();
             ResetPassword reset = new ResetPassword()
             {
-                Emailid= "bandivenu89@gmail.com",
-                Password="lasdh12"
+                Emailid = "bandivenu89@gmail.com",
+                Password = "lasdh12"
             };
             Assert.IsNotNull(user.ResetPassword(reset));
         }

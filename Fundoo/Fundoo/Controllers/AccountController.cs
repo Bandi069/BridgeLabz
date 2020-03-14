@@ -20,10 +20,19 @@ namespace Fundoo.Controllers
         /// Account 
         /// </summary>
         private readonly IAccountManager accountManager;
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AccountController"/> class.
+        /// </summary>
+        /// <param name="accountManager">The account manager.</param>
         public AccountController(IAccountManager accountManager)
         {
             this.accountManager = accountManager;
         }
+        /// <summary>
+        /// Logins the specified login model.
+        /// </summary>
+        /// <param name="loginModel">The login model.</param>
+        /// <returns></returns>
         [HttpPost]
         [Route("login")]
         public async Task<IActionResult> Login(LoginModel loginModel)
@@ -35,6 +44,11 @@ namespace Fundoo.Controllers
             }
             return this.BadRequest("Invalid Login");
         }
+        /// <summary>
+        /// Resets the password.
+        /// </summary>
+        /// <param name="resetPassword">The reset password.</param>
+        /// <returns></returns>
         [HttpPut]
         [Route("resetpassword")]
         public async Task<IActionResult> ResetPassword(ResetPassword resetPassword)
@@ -46,6 +60,11 @@ namespace Fundoo.Controllers
             }
             return this.BadRequest("Invalid Request");
         }
+        /// <summary>
+        /// Forgots the password.
+        /// </summary>
+        /// <param name="forgotPasswordModel">The forgot password model.</param>
+        /// <returns></returns>
         [HttpPut]
         [Route("forgotpassword")]
         public async Task<IActionResult> ForgotPassword(ForgotPasswordModel forgotPasswordModel)
@@ -57,6 +76,11 @@ namespace Fundoo.Controllers
             }
             return this.BadRequest("Invalid password");
         }
+        /// <summary>
+        /// Googles the login.
+        /// </summary>
+        /// <param name="loginModel">The login model.</param>
+        /// <returns></returns>
         [HttpPost]
         [Route("googlelogin")]
         public async Task<IActionResult> GoogleLogin(LoginModel loginModel)
@@ -68,6 +92,11 @@ namespace Fundoo.Controllers
             }
             return this.BadRequest("Invalid google login");
         }
+        /// <summary>
+        /// Facebooks the login.
+        /// </summary>
+        /// <param name="loginModel">The login model.</param>
+        /// <returns></returns>
         [HttpPost]
         [Route("facebooklogin")]
         public async Task<IActionResult> FacebookLogin(LoginModel loginModel)
@@ -86,6 +115,11 @@ namespace Fundoo.Controllers
                 return this.BadRequest(e.Message);
             }
         }
+        /// <summary>
+        /// Logouts the specified login model.
+        /// </summary>
+        /// <param name="loginModel">The login model.</param>
+        /// <returns></returns>
         [HttpPost]
         [Route("logout")]
         public string Logout(LoginModel loginModel)

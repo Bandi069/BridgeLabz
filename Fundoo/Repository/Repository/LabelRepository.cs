@@ -10,11 +10,23 @@ namespace Repository.Repository
 {
     public class LabelRepository : ILabelRepository
     {
+        /// <summary>
+        /// The user context
+        /// </summary>
         private readonly UserContext userContext;
+        /// <summary>
+        /// Initializes a new instance of the <see cref="LabelRepository"/> class.
+        /// </summary>
+        /// <param name="userContext">The user context.</param>
         public LabelRepository(UserContext userContext)
         {
             this.userContext = userContext;
         }
+        /// <summary>
+        /// Adds the label.
+        /// </summary>
+        /// <param name="labelModel">The label model.</param>
+        /// <returns></returns>
         public string AddLabel(LabelModel labelModel)
         {
             LabelModel label = new LabelModel()
@@ -26,7 +38,11 @@ namespace Repository.Repository
             this.userContext.SaveChanges();
             return "Added";
         }
-
+        /// <summary>
+        /// Deletes the label.
+        /// </summary>
+        /// <param name="LabelID">The label identifier.</param>
+        /// <returns></returns>
         public string DeleteLabel(int LabelID)
         {
             var Deletelabel = this.userContext.Label.Where(del => del.LabelID == LabelID).SingleOrDefault();
@@ -37,7 +53,11 @@ namespace Repository.Repository
             this.userContext.SaveChanges();
             return "Deleted";
         }
-
+        /// <summary>
+        /// Updates the label.
+        /// </summary>
+        /// <param name="labelModel">The label model.</param>
+        /// <returns></returns>
         public string UpdateLabel(LabelModel labelModel)
         {
 
@@ -51,7 +71,11 @@ namespace Repository.Repository
             this.userContext.SaveChanges();
             return "Updated";
         }
-
+        /// <summary>
+        /// Gets the label models.
+        /// </summary>
+        /// <param name="LabelID">The label identifier.</param>
+        /// <returns></returns>
         public List<LabelModel> GetLabelModels(int LabelID)
         {
             var getlabel = this.userContext.Label.Where(get => get.LabelID == LabelID).SingleOrDefault();

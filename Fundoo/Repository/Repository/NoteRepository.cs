@@ -18,7 +18,9 @@ namespace Repository.Repository
         /// User Context
         /// </summary>
         private readonly UserContext userContext;
-
+        /// <summary>
+        /// Initializes a new instance of the <see cref="NoteRepository"/> class.
+        /// </summary>
         public NoteRepository()
         {
         }
@@ -37,7 +39,7 @@ namespace Repository.Repository
         /// <param name="noteModel"></param>
         /// <returns></returns>
         public async Task<string> AddNote(Notemodel noteModel)
-        {
+        { 
             Notemodel notemodel = new Notemodel()
             {
                 Emailid = noteModel.Emailid,

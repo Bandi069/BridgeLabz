@@ -23,12 +23,6 @@ namespace Repository.CollaboratorRepository
         /// <param name="modelCollaborator"></param>
         /// <returns></returns>
         Task DeleteCollaborator(ModelCollaborator modelCollaborator);
-        /// <summary>
-        /// This is Update Collabarator 
-        /// </summary>
-        /// <param name="modelCollaborator"></param>
-        /// <returns></returns>
-        Task UpdateCollaborator(ModelCollaborator modelCollaborator);
        
     }
 }

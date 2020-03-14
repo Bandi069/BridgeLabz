@@ -30,6 +30,12 @@ namespace Repository.UserDbContext
         /// This is NoteModels Dbset Property
         /// </summary>
         public DbSet<Notemodel> Notemodels { get; set; }
+        /// <summary>
+        /// Gets or sets the label.
+        /// </summary>
+        /// <value>
+        /// The label.
+        /// </value>
         public DbSet<LabelModel> Label { get; set; }
 
     }
