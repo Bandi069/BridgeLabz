@@ -24,7 +24,6 @@ namespace Repository.Repository
         public NoteRepository()
         {
         }
-
         /// <summary>
         /// This is OCnstructor Dependency injection
         /// </summary>
@@ -39,7 +38,7 @@ namespace Repository.Repository
         /// <param name="noteModel"></param>
         /// <returns></returns>
         public async Task<string> AddNote(Notemodel noteModel)
-        { 
+        {
             Notemodel notemodel = new Notemodel()
             {
                 Emailid = noteModel.Emailid,
@@ -78,7 +77,7 @@ namespace Repository.Repository
         /// </summary>
         /// <param name="NoteID"></param>
         /// <returns></returns>
-        public  List<Notemodel> GetNote(int NoteID)
+        public List<Notemodel> GetNote(int NoteID)
         {
             var listNote = userContext.Notemodels.Where(list => list.NoteID == NoteID).SingleOrDefault();
             if (listNote != null)
