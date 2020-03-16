@@ -210,13 +210,71 @@ namespace Repository.Repository
                 var restoreall = from Notemodel in userContext.Notemodels where Notemodel.Trash == true select Notemodel;
                 if (restoreall != null)
                 {
-                  foreach(var res in restoreall)
+                    foreach (var res in restoreall)
                     {
                         res.Trash = false;
                     }
                     return Task.Run(() => this.userContext.SaveChanges());
                 }
                 return null;
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
+        /// <summary>
+        /// Remainders the specified note identifier.
+        /// </summary>
+        /// <param name="NoteId">The note identifier.</param>
+        /// <param name="remainder">The remainder.</param>
+        /// <returns></returns>
+        /// <exception cref="System.Exception"></exception>
+        public int Remainder(int NoteId, string remainder)
+        {
+            try
+            {
+                var remaind = this.userContext.Notemodels.Where(re => re.NoteID == NoteId).SingleOrDefault();
+                if (remaind != null)
+                {
+                    remaind.Remainder = remaind.ToString();
+                    return this.userContext.SaveChanges();
+                }
+                return 0;
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
+        public Task Archieve(int NoteId)
+        {
+            try
+            {
+                var arch = this.userContext.Notemodels.Where(ar => ar.NoteID == NoteId).SingleOrDefault();
+                if (arch != null)
+                {
+                    arch.Remainder = arch.ToString();
+                    return Task.Run(()=>this.userContext.SaveChanges());
+                }
+                return null ;
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        } 
+        public Task UnArchieve(int NoteId)
+        {
+            try
+            {
+                var unarch = this.userContext.Notemodels.Where(unar => unar.NoteID == NoteId).SingleOrDefault();
+                if (unarch != null)
+                {
+                    unarch.Remainder = unarch.ToString();
+                    return Task.Run(()=>this.userContext.SaveChanges());
+                }
+                return null ;
             }
             catch (Exception e)
             {
