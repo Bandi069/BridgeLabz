@@ -1,4 +1,10 @@
-﻿using Microsoft.AspNet.Identity.EntityFramework;
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="UserLogin.cs" company="Bridgelabz">
+//   Copyright © 2020 Company="BridgeLabz"
+// </copyright>
+// <creator name="Bandi Venu"/>
+// --------------------------------------------------------------------------------------------------------------------
+using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.IdentityModel.Tokens;
 using Model.UserModel;
 using Repository.IRepository;
@@ -52,7 +58,6 @@ namespace Repository.Repository
                 Emailid = registrationModel.Emailid,
                 Password = registrationModel.Password
             };
-
             return null;
         }
         /// <summary>

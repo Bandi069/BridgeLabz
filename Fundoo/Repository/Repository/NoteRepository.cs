@@ -1,6 +1,7 @@
 ﻿using Model.NoteModel;
 using Repository.IRepository;
 using Repository.UserDbContext;
+using ServiceStack.Common.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -76,7 +77,7 @@ namespace Repository.Repository
         /// This is Get List node Task 
         /// </summary>
         /// <param name="NoteID"></param>
-        /// <returns></returns>
+        /// <returns ></returns>
         public List<Notemodel> GetNote(int NoteID)
         {
             var listNote = userContext.Notemodels.Where(list => list.NoteID == NoteID).SingleOrDefault();
@@ -106,6 +107,53 @@ namespace Repository.Repository
             await Task.Run(() => userContext.SaveChanges());
             return null;
         }
-
+        /// <summary>
+        /// Trashes the specified noteid.
+        /// </summary>
+        /// <param name="noteid">The noteid.</param>
+        /// <returns></returns>
+        /// <exception cref="System.Exception"></exception>
+        public Task Trash(int noteid)
+        {
+            try
+            {
+                var trashvar = this.userContext.Notemodels.Where(trash => trash.NoteID == noteid).SingleOrDefault();
+                if (trashvar != null)
+                {
+                    trashvar.Trash = true;
+                    return Task.Run(() => this.userContext.SaveChanges());
+                }
+                return null;
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
+        /// <summary>
+        /// Gets the trash.
+        /// </summary>
+        /// <returns></returns>
+        /// <exception cref="System.Exception"></exception>
+        public List<Notemodel> GetTrash()
+        {
+            try
+            {
+                var trashlist = this.userContext.Notemodels.Where(list => list.Trash == true).SingleOrDefault();
+                if (trashlist != null)
+                {
+                    return this.userContext.Notemodels.Where(list => list.Trash == true).ToList<Notemodel>();
+                }
+                return null;
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
+        public Task Remainder()
+        {
+            return null;
+        }
     }
 }
