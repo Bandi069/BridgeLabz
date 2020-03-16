@@ -151,21 +151,77 @@ namespace Repository.Repository
                 throw new Exception(e.Message);
             }
         }
+        /// <summary>
+        /// Removes the trash.
+        /// </summary>
+        /// <param name="NoteId">The note identifier.</param>
+        /// <returns></returns>
+        /// <exception cref="System.Exception"></exception>
         public Task RemoveTrash(int NoteId)
         {
             try
             {
                 var remove = this.userContext.Notemodels.Where(rm => rm.NoteID == NoteId).SingleOrDefault();
-                if(remove!=null)
+                if (remove != null)
                 {
-
+                    this.userContext.Notemodels.Remove(remove);
                 }
+                return null;
             }
             catch (Exception e)
             {
                 throw new Exception(e.Message);
             }
-            return null;
+
+        }
+        /// <summary>
+        /// Restores the trash.
+        /// </summary>
+        /// <param name="NoteId">The note identifier.</param>
+        /// <returns></returns>
+        /// <exception cref="System.Exception"></exception>
+        public Task RestoreTrash(int NoteId)
+        {
+            try
+            {
+                var restore = this.userContext.Notemodels.Where(res => res.NoteID == NoteId && res.Trash == true).SingleOrDefault();
+                if (restore != null)
+                {
+                    restore.Trash = false;
+                    return Task.Run(() => this.userContext.SaveChanges());
+                }
+                return null;
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
+        /// <summary>
+        /// Restores all trash.
+        /// </summary>
+        /// <param name="NoteId">The note identifier.</param>
+        /// <returns></returns>
+        /// <exception cref="System.Exception"></exception>
+        public Task RestoreAllTrash(int NoteId)
+        {
+            try
+            {
+                var restoreall = from Notemodel in userContext.Notemodels where Notemodel.Trash == true select Notemodel;
+                if (restoreall != null)
+                {
+                  foreach(var res in restoreall)
+                    {
+                        res.Trash = false;
+                    }
+                    return Task.Run(() => this.userContext.SaveChanges());
+                }
+                return null;
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
         }
     }
 }
