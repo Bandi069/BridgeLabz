@@ -51,7 +51,7 @@ namespace Repository.Repository
                 AddColor = null,
                 PinNote = false,
                 Remainder = null,
-                Archive = null,
+                Archive =false,
                 Trash = false
             };
             userContext.Notemodels.Add(notemodel);
@@ -263,16 +263,44 @@ namespace Repository.Repository
             {
                 throw new Exception(e.Message);
             }
-        } 
+        }
+        /// <summary>
+        /// Uns the archieve.
+        /// </summary>
+        /// <param name="NoteId">The note identifier.</param>
+        /// <returns></returns>
+        /// <exception cref="System.Exception"></exception>
         public Task UnArchieve(int NoteId)
         {
             try
             {
-                var unarch = this.userContext.Notemodels.Where(unar => unar.NoteID == NoteId).SingleOrDefault();
+                var unarch = this.userContext.Notemodels.Where(unar => unar.NoteID == NoteId && unar.Archive==true).SingleOrDefault();
                 if (unarch != null)
                 {
-                    unarch.Remainder = unarch.ToString();
+                    unarch.Archive = false;
                     return Task.Run(()=>this.userContext.SaveChanges());
+                }
+                return null ;
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
+        /// <summary>
+        /// Gets the archieve list.
+        /// </summary>
+        /// <param name="NoteId">The note identifier.</param>
+        /// <returns></returns>
+        /// <exception cref="System.Exception"></exception>
+        public List<Notemodel> GetArchieveList(int NoteId)
+        {
+            try
+            {
+                var getarch = this.userContext.Notemodels.Where(getar=> getar.Archive==true).SingleOrDefault();
+                if (getarch != null)
+                {
+                    this.userContext.Notemodels.Where(list => list.Archive == true).ToList();
                 }
                 return null ;
             }

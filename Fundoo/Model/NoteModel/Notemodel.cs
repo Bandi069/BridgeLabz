@@ -21,7 +21,7 @@ namespace Model.NoteModel
         /// <summary>
         /// The archive
         /// </summary>
-        private string archive;
+        private bool archive;
         /// <summary>
         /// The description
         /// </summary>
@@ -85,7 +85,7 @@ namespace Model.NoteModel
         /// <value>
         /// The archive.
         /// </value>
-        public string Archive { get => archive; set => archive = value; }
+        public bool Archive { get; set; }
         /// <summary>
         /// Gets or sets the add img.
         /// </summary>
