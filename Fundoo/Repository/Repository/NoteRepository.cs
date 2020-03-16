@@ -151,8 +151,20 @@ namespace Repository.Repository
                 throw new Exception(e.Message);
             }
         }
-        public Task Remainder()
+        public Task RemoveTrash(int NoteId)
         {
+            try
+            {
+                var remove = this.userContext.Notemodels.Where(rm => rm.NoteID == NoteId).SingleOrDefault();
+                if(remove!=null)
+                {
+
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
             return null;
         }
     }
