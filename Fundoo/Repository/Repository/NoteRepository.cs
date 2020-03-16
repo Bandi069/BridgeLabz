@@ -309,5 +309,24 @@ namespace Repository.Repository
                 throw new Exception(e.Message);
             }
         }
+        public Task Pin(int Noteid)
+        {
+            try
+            {
+                var pinset = this.userContext.Notemodels.Where(p => p.NoteID == Noteid).SingleOrDefault();
+                if(pinset!=null)
+                {
+                    pinset.PinNote = false;
+                    return Task.Run(() => this.userContext.SaveChanges());
+
+                }
+                return null;
+
+            }
+            catch(Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
     }
 }
