@@ -1,4 +1,5 @@
-﻿using Model.NoteModel;
+﻿using Microsoft.AspNetCore.Http;
+using Model.NoteModel;
 using Repository.IRepository;
 using Repository.UserDbContext;
 using ServiceStack.Common.Extensions;
@@ -373,8 +374,9 @@ namespace Repository.Repository
                 throw new Exception(e.Message);
             }
         }
-        public Task AddImage(int Noteid)
+        public Task UploadImage(int Noteid,IFormFile img)
         {
+
             return null;
         }
     }
