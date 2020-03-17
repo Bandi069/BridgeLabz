@@ -44,6 +44,7 @@ namespace Repository.Repository
         public UserLogin()
         {
         }
+
         /// <summary>
         /// This is Registration Task
         /// </summary>
@@ -60,6 +61,7 @@ namespace Repository.Repository
             };
             return null;
         }
+
         /// <summary>
         /// This is Login Asynchronous Task 
         /// </summary>
@@ -92,6 +94,7 @@ namespace Repository.Repository
             }
             return "Incorrect Email or Password";
         }
+
         /// <summary>
         /// This is Task for resetPassword
         /// </summary>
@@ -105,6 +108,7 @@ namespace Repository.Repository
             user.Password = resetPassword.Password;
             await Task.Run(() => this.context.SaveChanges());
         }
+
         /// <summary>
         /// This is Task method for Forgot password
         /// </summary>
@@ -149,6 +153,7 @@ namespace Repository.Repository
             }
             return null;
         }
+
         /// <summary>
         /// This is TAsk for Finding EmailId 
         /// </summary>
@@ -161,6 +166,7 @@ namespace Repository.Repository
 
             return Task.Run(() => IUser);
         }
+
         /// <summary>
         /// This is Task for ChackPassword
         /// </summary>
@@ -172,6 +178,7 @@ namespace Repository.Repository
             bool checkobj = context.Register.Where(UserName => UserName.Password == password && UserName.Emailid == email).SingleOrDefault().Emailid == email ? true : false;
             return Task.Run(() => checkobj);
         }
+
         /// <summary>
         /// This is Logout Method
         /// </summary>
@@ -191,8 +198,8 @@ namespace Repository.Repository
             {
                 throw new Exception(e.Message);
             }
-
         }
+
         /// <summary>
         /// This is asyn Task for Google Login
         /// </summary>
@@ -245,6 +252,7 @@ namespace Repository.Repository
             await this.context.SaveChangesAsync();
             return "User Not Existed";
         }
+
         /// <summary>
         /// This is Task for Facebook Login
         /// </summary>

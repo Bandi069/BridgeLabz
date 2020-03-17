@@ -121,6 +121,10 @@
       "frameworks": {
         "netcoreapp2.1": {
           "dependencies": {
+            "CloudinaryDotNet": {
+              "target": "Package",
+              "version": "[1.10.0, )"
+            },
             "Experimental.System.Messaging": {
               "target": "Package",
               "version": "[1.1.0, )"
@@ -150,10 +154,6 @@
               "target": "Package",
               "version": "[2.1.0, )",
               "autoReferenced": true
-            },
-            "Microsoft.VisualStudio.Services.Client": {
-              "target": "Package",
-              "version": "[16.153.0, )"
             },
             "NUnit": {
               "target": "Package",

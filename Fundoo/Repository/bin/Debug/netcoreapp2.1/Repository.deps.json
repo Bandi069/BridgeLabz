@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v2.1": {
       "Repository/1.0.0": {
         "dependencies": {
+          "Experimental.System.Messaging": "1.1.0",
           "Microsoft.AspNet.Identity.EntityFramework": "2.2.3",
           "Microsoft.EntityFrameworkCore": "2.1.0",
           "Microsoft.EntityFrameworkCore.Relational": "2.1.0",
@@ -35,6 +36,14 @@
           "lib/net45/EntityFramework.dll": {
             "assemblyVersion": "6.0.0.0",
             "fileVersion": "6.1.30225.0"
+          }
+        }
+      },
+      "Experimental.System.Messaging/1.1.0": {
+        "runtime": {
+          "lib/netstandard2.0/Experimental.System.Messaging.dll": {
+            "assemblyVersion": "1.1.0.0",
+            "fileVersion": "1.1.0.0"
           }
         }
       },
@@ -1556,6 +1565,13 @@
       "sha512": "sha512-u/M0OEfqxTUsL5BwzD66eBGm278/ozqdLK3JvMO6QwUxxc+z7ZUkTYm4suDhWRqzkc6mOhvXDQY5dZUwbldxyQ==",
       "path": "entityframework/6.1.0",
       "hashPath": "entityframework.6.1.0.nupkg.sha512"
+    },
+    "Experimental.System.Messaging/1.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-vub7Mtt2WFdFKTZKECVuZx6feP5kUpS9EfVy+Yu4GDfdlMwivRdX4TbdkDYS2lKqCjqzUbnxTbJei1IOqC+CnA==",
+      "path": "experimental.system.messaging/1.1.0",
+      "hashPath": "experimental.system.messaging.1.1.0.nupkg.sha512"
     },
     "Microsoft.AspNet.Identity.Core/2.2.3": {
       "type": "package",

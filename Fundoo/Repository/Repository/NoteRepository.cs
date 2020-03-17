@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using CloudinaryDotNet;
+using CloudinaryDotNet.Actions;
+using Microsoft.AspNetCore.Http;
 using Model.NoteModel;
 using Repository.IRepository;
 using Repository.UserDbContext;
@@ -26,6 +28,7 @@ namespace Repository.Repository
         public NoteRepository()
         {
         }
+
         /// <summary>
         /// This is OCnstructor Dependency injection
         /// </summary>
@@ -34,6 +37,7 @@ namespace Repository.Repository
         {
             this.userContext = userContext;
         }
+
         /// <summary>
         /// This is AddNote Task
         /// </summary>
@@ -59,6 +63,7 @@ namespace Repository.Repository
             var a = await Task.Run(() => userContext.SaveChanges());
             return null;
         }
+
         /// <summary>
         /// This is DeleteNode Task
         /// </summary>
@@ -74,6 +79,7 @@ namespace Repository.Repository
             }
             return default;
         }
+
         /// <summary>
         /// This is Get List node Task 
         /// </summary>
@@ -88,6 +94,7 @@ namespace Repository.Repository
             }
             return null;
         }
+
         /// <summary>
         /// This is  Update Note Task
         /// </summary>
@@ -108,6 +115,7 @@ namespace Repository.Repository
             await Task.Run(() => userContext.SaveChanges());
             return null;
         }
+
         /// <summary>
         /// Trashes the specified noteid.
         /// </summary>
@@ -131,6 +139,7 @@ namespace Repository.Repository
                 throw new Exception(e.Message);
             }
         }
+
         /// <summary>
         /// Gets the trash.
         /// </summary>
@@ -152,6 +161,7 @@ namespace Repository.Repository
                 throw new Exception(e.Message);
             }
         }
+
         /// <summary>
         /// Removes the trash.
         /// </summary>
@@ -175,6 +185,7 @@ namespace Repository.Repository
             }
 
         }
+
         /// <summary>
         /// Restores the trash.
         /// </summary>
@@ -198,6 +209,7 @@ namespace Repository.Repository
                 throw new Exception(e.Message);
             }
         }
+
         /// <summary>
         /// Restores all trash.
         /// </summary>
@@ -224,6 +236,7 @@ namespace Repository.Repository
                 throw new Exception(e.Message);
             }
         }
+
         /// <summary>
         /// Remainders the specified note identifier.
         /// </summary>
@@ -248,6 +261,13 @@ namespace Repository.Repository
                 throw new Exception(e.Message);
             }
         }
+
+        /// <summary>
+        /// Archieves the specified note identifier.
+        /// </summary>
+        /// <param name="NoteId">The note identifier.</param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public Task Archieve(int NoteId)
         {
             try
@@ -265,6 +285,7 @@ namespace Repository.Repository
                 throw new Exception(e.Message);
             }
         }
+
         /// <summary>
         /// Uns the archieve.
         /// </summary>
@@ -288,6 +309,7 @@ namespace Repository.Repository
                 throw new Exception(e.Message);
             }
         }
+
         /// <summary>
         /// Gets the archieve list.
         /// </summary>
@@ -310,6 +332,13 @@ namespace Repository.Repository
                 throw new Exception(e.Message);
             }
         }
+
+        /// <summary>
+        /// Pins the specified noteid.
+        /// </summary>
+        /// <param name="Noteid">The noteid.</param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public Task Pin(int Noteid)
         {
             try
@@ -327,6 +356,7 @@ namespace Repository.Repository
                 throw new Exception(e.Message);
             }
         }
+
         /// <summary>
         /// Uns the pin.
         /// </summary>
@@ -350,6 +380,7 @@ namespace Repository.Repository
                 throw new Exception(e.Message);
             }
         }
+
         /// <summary>
         /// Adds the color.
         /// </summary>
@@ -374,10 +405,26 @@ namespace Repository.Repository
                 throw new Exception(e.Message);
             }
         }
+        /// <summary>
+        /// Uploads the image.
+        /// </summary>
+        /// <param name="Noteid">The noteid.</param>
+        /// <param name="img">The img.</param>
+        /// <returns></returns>
         public Task UploadImage(int Noteid,IFormFile img)
         {
-            var filename = img.OpenReadStream();
-            var name = img.FileName;
+            var filestream = img.OpenReadStream();
+            var filename = img.FileName;
+            ////Initializes a new instance of the CloudinaryDotNet.Account class.
+            Account account = new Account("Venu Cloud name","api key","api secret");
+            //// Initializes a new instance of the CloudinaryDotNet.Cloudinary class with Cloudinary account.
+            Cloudinary cloudinary = new Cloudinary(account);
+            var uploadfile = new ImageUploadParams()
+            {
+                File = new FileDescription(filename,filestream)
+            };
+            var uploadimg = cloudinary.Upload(uploadfile);
+            var imgresult = this.userContext.Notemodels.Where(im => im.NoteID == Noteid).SingleOrDefault();
 
             return null;
         }
