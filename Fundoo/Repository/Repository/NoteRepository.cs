@@ -376,6 +376,8 @@ namespace Repository.Repository
         }
         public Task UploadImage(int Noteid,IFormFile img)
         {
+            var filename = img.OpenReadStream();
+            var name = img.FileName;
 
             return null;
         }
