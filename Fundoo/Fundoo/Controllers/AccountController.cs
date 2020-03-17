@@ -34,6 +34,22 @@ namespace Fundoo.Controllers
         /// <param name="loginModel">The login model.</param>
         /// <returns></returns>
         [HttpPost]
+        [Route("registration")]
+        public async Task<IActionResult>Regsitartion(RegistrationModel registrationModel)
+        {
+            var result = this.accountManager.Registration(registrationModel);
+            if (result != null)
+            {
+                return this.Ok(result);
+            }
+            return this.BadRequest("Registration Failed");
+        }
+        /// <summary>
+        /// Logins the specified login model.
+        /// </summary>
+        /// <param name="loginModel">The login model.</param>
+        /// <returns></returns>
+        [HttpPost]
         [Route("login")]
         public async Task<IActionResult> Login(LoginModel loginModel)
         {
@@ -44,6 +60,7 @@ namespace Fundoo.Controllers
             }
             return this.BadRequest("Invalid Login");
         }
+
         /// <summary>
         /// Resets the password.
         /// </summary>
