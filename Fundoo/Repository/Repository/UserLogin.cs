@@ -4,6 +4,7 @@
 // </copyright>
 // <creator name="Bandi Venu"/>
 // --------------------------------------------------------------------------------------------------------------------
+using Experimental.System.Messaging;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.IdentityModel.Tokens;
 using Model.UserModel;
@@ -50,7 +51,7 @@ namespace Repository.Repository
         /// </summary>
         /// <param name="registrationModel"></param>
         /// <returns></returns>
-        public Task Registration(RegistrationModel registrationModel)
+        public Task<bool> Registration(RegistrationModel registrationModel)
         {
             RegistrationModel registration = new RegistrationModel()
             {
@@ -116,11 +117,34 @@ namespace Repository.Repository
         /// <returns></returns>
         public async Task<string> ForgotPassword(ForgotPasswordModel forgotPasswordModel)
         {
+            string email = forgotPasswordModel.Emailid;
             //// RegistrationModel Forgotobj = context.Register.Where(UserName => UserName.Emailid == forgotPasswordModel.Emailid).FirstOrDefault();
             var userForgetPassword = FindEmailid(forgotPasswordModel.Emailid);
             if (userForgetPassword != null)
             {
+                string Message = email;
+                MessageQueue Myqueue;
                 
+                if (MessageQueue.Exists(@".\private$\Myqueue"))
+                {
+                    Myqueue = new MessageQueue(@".\private$\Myqueue");
+                }
+                else
+                {
+                    Myqueue = MessageQueue.Create(@".\private$\Myqueue");
+                }
+                Message message = new Message();
+                message.Formatter = new BinaryMessageFormatter();
+                message.Body = userForgetPassword;
+                message.Label = "MsmqMessage";
+                if (Message.Contains(email))
+                {
+                    message.Priority = MessagePriority.High;
+                }
+                else
+                {
+                    message.Priority = MessagePriority.Low;
+                }
                 var fromemailaddress = new MailAddress("bandivenu89@gmail.com");
                 var Password = "sanVedha2212";
                 var toEmailaddress = new MailAddress(forgotPasswordModel.Emailid);
@@ -135,14 +159,16 @@ namespace Repository.Repository
                     UseDefaultCredentials = false,
                     Credentials = new System.Net.NetworkCredential(fromemailaddress.Address, Password)
                 };
-                using (var message = new MailMessage(fromemailaddress, toEmailaddress)
+                using (var messages = new MailMessage(fromemailaddress, toEmailaddress)
                 {
                     Subject = subject,
                     Body = body
                 })
                     try
                     {
-                        smtp.Send(message);
+                        Myqueue.Send(Message);
+
+                        smtp.Send(messages);
                     }
                     catch (Exception e)
                     {

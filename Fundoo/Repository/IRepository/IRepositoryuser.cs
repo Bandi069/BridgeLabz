@@ -12,6 +12,12 @@ namespace Repository.IRepository
     public interface IRepositoryuser
     {
         /// <summary>
+        /// Registrations the specified registration model.
+        /// </summary>
+        /// <param name="registrationModel">The registration model.</param>
+        /// <returns></returns>
+        Task<bool> Registration(RegistrationModel registrationModel);
+        /// <summary>
         /// Logins the specified login model.
         /// </summary>
         /// <param name="loginModel">The login model.</param>

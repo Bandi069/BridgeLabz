@@ -10,7 +10,7 @@ namespace Manager.Manager
     /// <summary>
     /// This is Label Manager Class 
     /// </summary>
-    public class LabelManager : IlabelManager
+    public class LabelManager : ILabelManager
     {
         private readonly ILabelRepository labelRepository;
         /// <summary>

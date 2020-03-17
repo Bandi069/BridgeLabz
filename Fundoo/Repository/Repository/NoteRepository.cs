@@ -1,4 +1,5 @@
-﻿using CloudinaryDotNet;
+﻿
+using CloudinaryDotNet;
 using CloudinaryDotNet.Actions;
 using Microsoft.AspNetCore.Http;
 using Model.NoteModel;
@@ -56,7 +57,7 @@ namespace Repository.Repository
                 AddColor = null,
                 PinNote = false,
                 Remainder = null,
-                Archive =false,
+                Archive = false,
                 Trash = false
             };
             userContext.Notemodels.Add(notemodel);
@@ -276,9 +277,9 @@ namespace Repository.Repository
                 if (arch != null)
                 {
                     arch.Remainder = arch.ToString();
-                    return Task.Run(()=>this.userContext.SaveChanges());
+                    return Task.Run(() => this.userContext.SaveChanges());
                 }
-                return null ;
+                return null;
             }
             catch (Exception e)
             {
@@ -296,13 +297,13 @@ namespace Repository.Repository
         {
             try
             {
-                var unarch = this.userContext.Notemodels.Where(unar => unar.NoteID == NoteId && unar.Archive==true).SingleOrDefault();
+                var unarch = this.userContext.Notemodels.Where(unar => unar.NoteID == NoteId && unar.Archive == true).SingleOrDefault();
                 if (unarch != null)
                 {
                     unarch.Archive = false;
-                    return Task.Run(()=>this.userContext.SaveChanges());
+                    return Task.Run(() => this.userContext.SaveChanges());
                 }
-                return null ;
+                return null;
             }
             catch (Exception e)
             {
@@ -320,12 +321,12 @@ namespace Repository.Repository
         {
             try
             {
-                var getarch = this.userContext.Notemodels.Where(getar=> getar.Archive==true).SingleOrDefault();
+                var getarch = this.userContext.Notemodels.Where(getar => getar.Archive == true).SingleOrDefault();
                 if (getarch != null)
                 {
                     this.userContext.Notemodels.Where(list => list.Archive == true).ToList();
                 }
-                return null ;
+                return null;
             }
             catch (Exception e)
             {
@@ -344,14 +345,14 @@ namespace Repository.Repository
             try
             {
                 var pinset = this.userContext.Notemodels.Where(p => p.NoteID == Noteid).SingleOrDefault();
-                if(pinset!=null)
+                if (pinset != null)
                 {
                     pinset.PinNote = true;
                     return Task.Run(() => this.userContext.SaveChanges());
                 }
                 return null;
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 throw new Exception(e.Message);
             }
@@ -368,14 +369,14 @@ namespace Repository.Repository
             try
             {
                 var pinset = this.userContext.Notemodels.Where(p => p.NoteID == Noteid).SingleOrDefault();
-                if(pinset!=null)
+                if (pinset != null)
                 {
                     pinset.PinNote = false;
                     return Task.Run(() => this.userContext.SaveChanges());
                 }
                 return null;
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 throw new Exception(e.Message);
             }
@@ -388,30 +389,31 @@ namespace Repository.Repository
         /// <param name="addcolor">The addcolor.</param>
         /// <returns></returns>
         /// <exception cref="Exception"></exception>
-        public Task AddColor(int Noteid,string addcolor)
+        public Task AddColor(int Noteid, string addcolor)
         {
             try
             {
                 var color = this.userContext.Notemodels.Where(c => c.NoteID == Noteid).SingleOrDefault();
-                if(color != null)
+                if (color != null)
                 {
-                    color.AddColor=addcolor ;
+                    color.AddColor = addcolor;
                     return Task.Run(() => this.userContext.SaveChanges());
                 }
                 return null;
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 throw new Exception(e.Message);
             }
         }
+
         /// <summary>
         /// Uploads the image.
         /// </summary>
         /// <param name="Noteid">The noteid.</param>
         /// <param name="img">The img.</param>
         /// <returns></returns>
-        public string UploadImage(int Noteid,IFormFile img)
+        public string UploadImage(int Noteid, IFormFile img)
         {
             try
             {
@@ -432,11 +434,10 @@ namespace Repository.Repository
                 count = this.userContext.SaveChanges();
                 return imgresult.AddImg;
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 throw new Exception(e.Message);
             }
-           
         }
     }
 }

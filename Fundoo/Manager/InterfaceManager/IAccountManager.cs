@@ -12,6 +12,13 @@ namespace Manager.InterfaceManager
     public interface IAccountManager
     {
         /// <summary>
+        /// Registrations the specified login model.
+        /// </summary>
+        /// <param name="loginModel">The login model.</param>
+        /// <returns></returns>
+        Task<bool> Registration(RegistrationModel registrationModel);
+
+        /// <summary>
         /// This is login 
         /// </summary>
         /// <param name="loginModel"></param>
@@ -36,6 +43,7 @@ namespace Manager.InterfaceManager
         /// <param name="password"></param>
         /// <returns></returns>
         Task<bool> CheckPassword(string email, string password);
+
         /// <summary>
         /// For Logout
         /// </summary>

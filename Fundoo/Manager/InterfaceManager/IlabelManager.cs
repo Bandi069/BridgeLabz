@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Manager.InterfaceManager
 {
-   public interface IlabelManager
+   public interface ILabelManager
     {
         string AddLabel(LabelModel labelModle);
         string DeleteLabel(int LabelID);

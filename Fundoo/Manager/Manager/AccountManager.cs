@@ -27,6 +27,11 @@ namespace Manager.Manager
         {
             this.repositoryuser = repositoryuser;
         }
+        public async Task<bool> Registration(RegistrationModel registrationModel )
+        {
+            await this.repositoryuser.Registration(registrationModel);
+            return true;
+        }
         /// <summary>
         /// This is Task for Login
         /// </summary>
