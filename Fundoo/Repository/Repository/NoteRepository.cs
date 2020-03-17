@@ -373,5 +373,9 @@ namespace Repository.Repository
                 throw new Exception(e.Message);
             }
         }
+        public Task AddImage(int Noteid)
+        {
+            return null;
+        }
     }
 }
