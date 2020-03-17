@@ -316,12 +316,57 @@ namespace Repository.Repository
                 var pinset = this.userContext.Notemodels.Where(p => p.NoteID == Noteid).SingleOrDefault();
                 if(pinset!=null)
                 {
-                    pinset.PinNote = false;
+                    pinset.PinNote = true;
                     return Task.Run(() => this.userContext.SaveChanges());
-
                 }
                 return null;
-
+            }
+            catch(Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
+        /// <summary>
+        /// Uns the pin.
+        /// </summary>
+        /// <param name="Noteid">The noteid.</param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
+        public Task UnPin(int Noteid)
+        {
+            try
+            {
+                var pinset = this.userContext.Notemodels.Where(p => p.NoteID == Noteid).SingleOrDefault();
+                if(pinset!=null)
+                {
+                    pinset.PinNote = false;
+                    return Task.Run(() => this.userContext.SaveChanges());
+                }
+                return null;
+            }
+            catch(Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
+        /// <summary>
+        /// Adds the color.
+        /// </summary>
+        /// <param name="Noteid">The noteid.</param>
+        /// <param name="addcolor">The addcolor.</param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
+        public Task AddColor(int Noteid,string addcolor)
+        {
+            try
+            {
+                var color = this.userContext.Notemodels.Where(c => c.NoteID == Noteid).SingleOrDefault();
+                if(color != null)
+                {
+                    color.AddColor=addcolor ;
+                    return Task.Run(() => this.userContext.SaveChanges());
+                }
+                return null;
             }
             catch(Exception e)
             {
