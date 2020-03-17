@@ -411,22 +411,32 @@ namespace Repository.Repository
         /// <param name="Noteid">The noteid.</param>
         /// <param name="img">The img.</param>
         /// <returns></returns>
-        public Task UploadImage(int Noteid,IFormFile img)
+        public string UploadImage(int Noteid,IFormFile img)
         {
-            var filestream = img.OpenReadStream();
-            var filename = img.FileName;
-            ////Initializes a new instance of the CloudinaryDotNet.Account class.
-            Account account = new Account("Venu Cloud name","api key","api secret");
-            //// Initializes a new instance of the CloudinaryDotNet.Cloudinary class with Cloudinary account.
-            Cloudinary cloudinary = new Cloudinary(account);
-            var uploadfile = new ImageUploadParams()
+            try
             {
-                File = new FileDescription(filename,filestream)
-            };
-            var uploadimg = cloudinary.Upload(uploadfile);
-            var imgresult = this.userContext.Notemodels.Where(im => im.NoteID == Noteid).SingleOrDefault();
-
-            return null;
+                var filestream = img.OpenReadStream();
+                var filename = img.FileName;
+                ////Initializes a new instance of the CloudinaryDotNet.Account class.
+                Account account = new Account("Venu Cloud name", "api key", "api secret");
+                //// Initializes a new instance of the CloudinaryDotNet.Cloudinary class with Cloudinary account.
+                Cloudinary cloudinary = new Cloudinary(account);
+                var uploadfile = new ImageUploadParams()
+                {
+                    File = new FileDescription(filename, filestream)
+                };
+                var uploadimg = cloudinary.Upload(uploadfile);
+                var imgresult = this.userContext.Notemodels.Where(im => im.NoteID == Noteid).SingleOrDefault();
+                imgresult.AddImg = uploadimg.Uri.ToString();
+                int count = 0;
+                count = this.userContext.SaveChanges();
+                return imgresult.AddImg;
+            }
+            catch(Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+           
         }
     }
 }
