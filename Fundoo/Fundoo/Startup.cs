@@ -27,7 +27,6 @@ using Swashbuckle.AspNetCore.Swagger;
 
 namespace Fundoo
 {
-
     public class Startup
     {
         /// <summary>
@@ -44,7 +43,7 @@ namespace Fundoo
         /// <value>
         /// The configuration.
         /// </value>
-        public IConfiguration Configuration { get; }
+        public IConfiguration Configuration { get; set; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
@@ -78,7 +77,7 @@ namespace Fundoo
                         ValidateLifetime = true,
                     };
                 });
-            services.AddCors(O => O.AddPolicy("Policy", builder =>
+            services.AddCors(Co => Co.AddPolicy("Policy", builder =>
             {
                 builder.AllowAnyOrigin();
                 builder.AllowAnyHeader();
@@ -91,18 +90,17 @@ namespace Fundoo
                 {
                     Title = "Fundoo Notes API",
                     Version = "v1",
-                    Description = "ASP .Net core Web API"
+                    Description = "ASP .Net Core Web API"
                 });
                 con.AddSecurityDefinition(name: "Bearer", new ApiKeyScheme
                 {
-                    Description = "jwt Authorization using the header scheme",
+                    Description = "jwt Authorization using header scheme",
                     Name = "Authorization",
                     In = "header",
                     Type = "apiakey",
                 });
 
             });
-
         }
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
