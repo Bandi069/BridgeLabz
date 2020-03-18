@@ -41,7 +41,7 @@ namespace EmployeeManagement.Manager
         /// <returns></returns>
         public async Task<bool> AddEmployee(ModelClass Emp)
         {
-             this.EmployeeRepositary.AddEmployee(Emp);
+            await this.EmployeeRepositary.AddEmployee(Emp);
                 return true;
             //if (EmployeeRepositary.AddEmployee(Emp))
             //{

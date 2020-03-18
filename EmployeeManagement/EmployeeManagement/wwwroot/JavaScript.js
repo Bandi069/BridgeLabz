@@ -2,7 +2,7 @@
 //// This is Form Validation
 function validateForm() {
     var varform = document.forms["FormValidation"]["FirstName"];
-    if (varform.value == "") {
+    if (varform.value =="") {
         alert("Name must be fill");
         return false;
     }

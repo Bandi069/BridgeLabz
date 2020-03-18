@@ -22,7 +22,7 @@ namespace EmployeeManagement.Repositary
         ///This is Add employee model  
         /// </summary>
         /// <param name="ModelObj"></param>
-        bool AddEmployee(ModelClass ModelObj);
+        Task<bool> AddEmployee(ModelClass ModelObj);
 
         /// <summary>
         /// This is update Employee

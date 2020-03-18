@@ -43,7 +43,7 @@ namespace EmployeeManagement.Controllers
             try
             {
                 var result = EmpManager.AddEmployee(addemployee);
-                if (result)
+                if (result !=null)
                 {
                     return Ok("Added Sucessfully");
                 }

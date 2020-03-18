@@ -28,9 +28,7 @@ namespace EmployeeManagement.Repositary
         /// Model class Object
         /// </summary>
         ModelClass Modelobj = new ModelClass();
-        public static string ConnectionName = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=EmployeeManagement;Integrated Security=True"
-;
-
+        public static string ConnectionName = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=EmployeeManagement;Integrated Security=True";
         /// <summary>
         /// This is method for connection
         /// </summary>
@@ -66,7 +64,7 @@ namespace EmployeeManagement.Repositary
                                  EmailID = Convert.ToString(data["EmailID"]),
 
                              }).ToList();
-            //// ruturning the employee list from sql database
+            //// ruturns the employee list from sql database
             return employeeslist;
         }
 
@@ -79,16 +77,16 @@ namespace EmployeeManagement.Repositary
         {
             using (SqlConnection sqlConnection = new SqlConnection(ConnectionName))
             {
-                SqlCommand cal = new SqlCommand("AddNewEmpDetails", sqlConnection);
-                cal.CommandType = CommandType.StoredProcedure;
+                SqlCommand cmd = new SqlCommand("AddNewEmpDetails", sqlConnection);
+                cmd.CommandType = CommandType.StoredProcedure;
                 
-                cal.Parameters.AddWithValue("@EmployeeID", Modelobj.EmployeeID);
-                cal.Parameters.AddWithValue("@FirstName", Modelobj.FirstName);
-                cal.Parameters.AddWithValue("@LastName", Modelobj.LastName);
-                cal.Parameters.AddWithValue("@EmailID", Modelobj.EmailID);
-                cal.Parameters.AddWithValue("@PhoneNumber", Modelobj.PhoneNumber);
+                cmd.Parameters.AddWithValue("@EmployeeID", Modelobj.EmployeeID);
+                cmd.Parameters.AddWithValue("@FirstName", Modelobj.FirstName);
+                cmd.Parameters.AddWithValue("@LastName", Modelobj.LastName);
+                cmd.Parameters.AddWithValue("@EmailID", Modelobj.EmailID);
+                cmd.Parameters.AddWithValue("@PhoneNumber", Modelobj.PhoneNumber);
                 sqlConnection.Open();
-                var i=cal.ExecuteNonQuery();
+                var i=cmd.ExecuteNonQuery();
                 sqlConnection.Close();
                 if (i >= 0)
                 {
@@ -100,7 +98,6 @@ namespace EmployeeManagement.Repositary
                 }
             }
         }
-
         /// <summary>
         /// This is method for Update Employee
         /// </summary>

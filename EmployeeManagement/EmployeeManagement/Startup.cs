@@ -34,7 +34,7 @@ namespace EmployeeManagement
         /// <param name="configuration"></param>
         public Startup(IConfiguration configuration)
         {
-            Configuration = configuration;
+            this.Configuration = configuration;
         }
 
 
@@ -58,7 +58,7 @@ namespace EmployeeManagement
             app.UseStaticFiles();
             app.UseMvc(routes =>
             {
-                routes.MapRoute(name: "default", template: "{controller = User }/{action=Index}/{id?}");
+                routes.MapRoute(name: "default", template: "{controller = User }/{action=Index}/{Employeeid?}");
             });
 
             /*app.Run(async (context) =>
