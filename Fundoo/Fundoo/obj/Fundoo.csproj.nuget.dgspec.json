@@ -70,10 +70,6 @@
               "target": "Package",
               "version": "[3.12.0, )"
             },
-            "ServiceStack": {
-              "target": "Package",
-              "version": "[3.9.10, )"
-            },
             "Swashbuckle.AspNetCore.Swagger": {
               "target": "Package",
               "version": "[2.1.0, )"
@@ -150,6 +146,10 @@
       "frameworks": {
         "netcoreapp2.1": {
           "dependencies": {
+            "Microsoft.AspNetCore.Http": {
+              "target": "Package",
+              "version": "[2.1.0, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[2.1.0, )"
@@ -163,22 +163,6 @@
             "NUnit": {
               "target": "Package",
               "version": "[3.12.0, )"
-            },
-            "ServiceStack": {
-              "target": "Package",
-              "version": "[3.9.10, )"
-            },
-            "Swashbuckle.AspNetCore.Swagger": {
-              "target": "Package",
-              "version": "[2.1.0, )"
-            },
-            "Swashbuckle.AspNetCore.SwaggerGen": {
-              "target": "Package",
-              "version": "[2.1.0, )"
-            },
-            "Swashbuckle.AspNetCore.SwaggerUI": {
-              "target": "Package",
-              "version": "[2.1.0, )"
             }
           },
           "imports": [
@@ -229,6 +213,10 @@
       "frameworks": {
         "netcoreapp2.1": {
           "dependencies": {
+            "Microsoft.AspNetCore.Http": {
+              "target": "Package",
+              "version": "[2.1.0, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[2.1.0, )"
@@ -242,22 +230,6 @@
             "NUnit": {
               "target": "Package",
               "version": "[3.12.0, )"
-            },
-            "ServiceStack": {
-              "target": "Package",
-              "version": "[3.9.10, )"
-            },
-            "Swashbuckle.AspNetCore.Swagger": {
-              "target": "Package",
-              "version": "[2.1.0, )"
-            },
-            "Swashbuckle.AspNetCore.SwaggerGen": {
-              "target": "Package",
-              "version": "[2.1.0, )"
-            },
-            "Swashbuckle.AspNetCore.SwaggerUI": {
-              "target": "Package",
-              "version": "[2.1.0, )"
             }
           },
           "imports": [
@@ -322,7 +294,11 @@
             },
             "Microsoft.AspNet.Identity.EntityFramework": {
               "target": "Package",
-              "version": "[2.2.3, )"
+              "version": "[2.1.0, )"
+            },
+            "Microsoft.AspNetCore.Http": {
+              "target": "Package",
+              "version": "[2.1.0, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
@@ -346,29 +322,9 @@
               "version": "[2.1.0, )",
               "autoReferenced": true
             },
-            "NUnit": {
-              "target": "Package",
-              "version": "[3.12.0, )"
-            },
-            "ServiceStack": {
-              "target": "Package",
-              "version": "[3.9.10, )"
-            },
             "StackExchange.Redis": {
               "target": "Package",
               "version": "[2.0.601, )"
-            },
-            "Swashbuckle.AspNetCore.Swagger": {
-              "target": "Package",
-              "version": "[2.1.0, )"
-            },
-            "Swashbuckle.AspNetCore.SwaggerGen": {
-              "target": "Package",
-              "version": "[2.1.0, )"
-            },
-            "Swashbuckle.AspNetCore.SwaggerUI": {
-              "target": "Package",
-              "version": "[2.1.0, )"
             },
             "System.IdentityModel.Tokens.Jwt": {
               "target": "Package",

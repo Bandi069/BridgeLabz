@@ -77,42 +77,39 @@ namespace Fundoo
                         ValidateLifetime = true,
                     };
                 });
-            services.AddCors(Co => Co.AddPolicy("Policy", builder =>
+            services.AddCors(Co => Co.AddPolicy("MyPolicy", builder =>
             {
                 builder.AllowAnyOrigin();
                 builder.AllowAnyHeader();
                 builder.AllowAnyMethod();
             }));
-
             services.AddSwaggerGen(con =>
             {
-                con.SwaggerDoc("v1", new Swashbuckle.AspNetCore.Swagger.Info
+                con.SwaggerDoc("v1", new Info
                 {
-                    Title = "Fundoo Notes API",
-                    Version = "v1",
-                    Description = "ASP .Net Core Web API"
+                    Title = "FundooNotes API",
+                    Version = "v1"
                 });
                 con.AddSecurityDefinition(name: "Bearer", new ApiKeyScheme
                 {
                     Description = "jwt Authorization using header scheme",
                     Name = "Authorization",
                     In = "header",
-                    Type = "apiakey",
+                    Type = "apikey",
                 });
-
             });
         }
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-            app.UseCors("Policy");
+            app.UseCors("MyPolicy");
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
                 app.UseSwaggerUI(Con =>
                 {
-                    Con.SwaggerEndpoint("/swagger/v1/swagger.json", "Fundoo Api");
+                    Con.SwaggerEndpoint("/swagger/v1/swagger.json", "MyAPI v1");
                 });
             }
             else

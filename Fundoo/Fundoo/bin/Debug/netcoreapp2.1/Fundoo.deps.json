@@ -31,7 +31,6 @@
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.1.10",
           "NUnit": "3.12.0",
           "Repository": "1.0.0",
-          "ServiceStack": "3.9.10",
           "Swashbuckle.AspNetCore.Swagger": "2.1.0",
           "Swashbuckle.AspNetCore.SwaggerGen": "2.1.0",
           "Swashbuckle.AspNetCore.SwaggerUI": "2.1.0",
@@ -107,26 +106,26 @@
           "lib/netstandard1.4/jose-jwt.dll": {}
         }
       },
-      "Microsoft.AspNet.Identity.Core/2.2.3": {
+      "Microsoft.AspNet.Identity.Core/2.1.0": {
         "runtime": {
           "lib/net45/Microsoft.AspNet.Identity.Core.dll": {
             "assemblyVersion": "2.0.0.0",
-            "fileVersion": "2.2.3.11125"
+            "fileVersion": "2.1.30612.0"
           }
         },
         "compile": {
           "lib/net45/Microsoft.AspNet.Identity.Core.dll": {}
         }
       },
-      "Microsoft.AspNet.Identity.EntityFramework/2.2.3": {
+      "Microsoft.AspNet.Identity.EntityFramework/2.1.0": {
         "dependencies": {
           "EntityFramework": "6.1.0",
-          "Microsoft.AspNet.Identity.Core": "2.2.3"
+          "Microsoft.AspNet.Identity.Core": "2.1.0"
         },
         "runtime": {
           "lib/net45/Microsoft.AspNet.Identity.EntityFramework.dll": {
             "assemblyVersion": "2.0.0.0",
-            "fileVersion": "2.2.3.11125"
+            "fileVersion": "2.1.30612.0"
           }
         },
         "compile": {
@@ -387,84 +386,6 @@
           "lib/netcoreapp2.1/Pipelines.Sockets.Unofficial.dll": {}
         }
       },
-      "ServiceStack/3.9.10": {
-        "dependencies": {
-          "ServiceStack.Common": "3.0.6",
-          "ServiceStack.OrmLite.SqlServer": "2.9.0",
-          "ServiceStack.Redis": "2.9.0"
-        },
-        "runtime": {
-          "lib/net40/ServiceStack.Razor.dll": {
-            "assemblyVersion": "3.9.9.0",
-            "fileVersion": "3.9.9.0"
-          },
-          "lib/net40/ServiceStack.ServiceInterface.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          },
-          "lib/net40/ServiceStack.dll": {
-            "assemblyVersion": "3.9.10.0",
-            "fileVersion": "3.9.10.0"
-          }
-        },
-        "compile": {
-          "lib/net40/ServiceStack.Razor.dll": {},
-          "lib/net40/ServiceStack.ServiceInterface.dll": {},
-          "lib/net40/ServiceStack.dll": {}
-        }
-      },
-      "ServiceStack.Common/3.0.6": {
-        "dependencies": {
-          "ServiceStack.Text": "2.9.0"
-        },
-        "runtime": {
-          "lib/ServiceStack.Common.dll": {
-            "assemblyVersion": "1.0.4339.6048",
-            "fileVersion": "1.0.4339.6048"
-          },
-          "lib/ServiceStack.Interfaces.dll": {
-            "assemblyVersion": "1.0.4339.6048",
-            "fileVersion": "1.0.4339.6048"
-          }
-        },
-        "compile": {
-          "lib/ServiceStack.Common.dll": {},
-          "lib/ServiceStack.Interfaces.dll": {}
-        }
-      },
-      "ServiceStack.OrmLite.SqlServer/2.9.0": {
-        "runtime": {
-          "lib/ServiceStack.OrmLite.SqlServer.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          },
-          "lib/ServiceStack.OrmLite.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          }
-        },
-        "compile": {
-          "lib/ServiceStack.OrmLite.SqlServer.dll": {},
-          "lib/ServiceStack.OrmLite.dll": {}
-        }
-      },
-      "ServiceStack.Redis/2.9.0": {
-        "runtime": {
-          "lib/ServiceStack.Redis.dll": {
-            "assemblyVersion": "2.0.9.195",
-            "fileVersion": "2.0.9.195"
-          },
-          "lib/ServiceStack.Text.dll": {
-            "assemblyVersion": "2.0.9.42099",
-            "fileVersion": "2.0.9.42099"
-          }
-        },
-        "compile": {
-          "lib/ServiceStack.Redis.dll": {},
-          "lib/ServiceStack.Text.dll": {}
-        }
-      },
-      "ServiceStack.Text/2.9.0": {},
       "StackExchange.Redis/2.0.601": {
         "dependencies": {
           "Pipelines.Sockets.Unofficial": "2.0.22",
@@ -839,14 +760,11 @@
       },
       "Manager/1.0.0": {
         "dependencies": {
+          "Microsoft.AspNetCore.Http": "2.1.1",
           "Microsoft.EntityFrameworkCore": "2.1.1",
           "Model": "1.0.0",
           "NUnit": "3.12.0",
-          "Repository": "1.0.0",
-          "ServiceStack": "3.9.10",
-          "Swashbuckle.AspNetCore.Swagger": "2.1.0",
-          "Swashbuckle.AspNetCore.SwaggerGen": "2.1.0",
-          "Swashbuckle.AspNetCore.SwaggerUI": "2.1.0"
+          "Repository": "1.0.0"
         },
         "runtime": {
           "Manager.dll": {}
@@ -857,12 +775,9 @@
       },
       "Model/1.0.0": {
         "dependencies": {
+          "Microsoft.AspNetCore.Http": "2.1.1",
           "Microsoft.EntityFrameworkCore": "2.1.1",
-          "NUnit": "3.12.0",
-          "ServiceStack": "3.9.10",
-          "Swashbuckle.AspNetCore.Swagger": "2.1.0",
-          "Swashbuckle.AspNetCore.SwaggerGen": "2.1.0",
-          "Swashbuckle.AspNetCore.SwaggerUI": "2.1.0"
+          "NUnit": "3.12.0"
         },
         "runtime": {
           "Model.dll": {}
@@ -875,18 +790,14 @@
         "dependencies": {
           "CloudinaryDotNet": "1.10.0",
           "Experimental.System.Messaging": "1.1.0",
-          "Microsoft.AspNet.Identity.EntityFramework": "2.2.3",
+          "Microsoft.AspNet.Identity.EntityFramework": "2.1.0",
+          "Microsoft.AspNetCore.Http": "2.1.1",
           "Microsoft.EntityFrameworkCore": "2.1.1",
           "Microsoft.EntityFrameworkCore.Relational": "2.1.1",
           "Microsoft.EntityFrameworkCore.SqlServer": "2.1.1",
           "Microsoft.IdentityModel.Tokens": "5.6.0",
           "Model": "1.0.0",
-          "NUnit": "3.12.0",
-          "ServiceStack": "3.9.10",
           "StackExchange.Redis": "2.0.601",
-          "Swashbuckle.AspNetCore.Swagger": "2.1.0",
-          "Swashbuckle.AspNetCore.SwaggerGen": "2.1.0",
-          "Swashbuckle.AspNetCore.SwaggerUI": "2.1.0",
           "System.IdentityModel.Tokens.Jwt": "5.6.0"
         },
         "runtime": {
@@ -3869,19 +3780,19 @@
       "path": "jose-jwt/2.5.0",
       "hashPath": "jose-jwt.2.5.0.nupkg.sha512"
     },
-    "Microsoft.AspNet.Identity.Core/2.2.3": {
+    "Microsoft.AspNet.Identity.Core/2.1.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-Mv5FpoaxspE8hlWLE4r1IdZtovg/OyFgVRhxQbx47J4sqdLImN1hnM1lnwCj+/wLmqtqFk/RYMoZ5GAcwm/00g==",
-      "path": "microsoft.aspnet.identity.core/2.2.3",
-      "hashPath": "microsoft.aspnet.identity.core.2.2.3.nupkg.sha512"
+      "sha512": "sha512-v3yoJcpo5D/HpGbP89KEOiF0YLKNpBjebuDoWHU7Jxb64rsSPfFeJusYvzbGusYypwOzAtPARXun6Xbxw3kqPA==",
+      "path": "microsoft.aspnet.identity.core/2.1.0",
+      "hashPath": "microsoft.aspnet.identity.core.2.1.0.nupkg.sha512"
     },
-    "Microsoft.AspNet.Identity.EntityFramework/2.2.3": {
+    "Microsoft.AspNet.Identity.EntityFramework/2.1.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-dt4XZChjw3a6jE66Yd6LkF9omspxi0A9lJpwBZz8Wl1sabOS6dlLP1OOTVuUjtPaoAshjoIzvS6DFRQdPyq55g==",
-      "path": "microsoft.aspnet.identity.entityframework/2.2.3",
-      "hashPath": "microsoft.aspnet.identity.entityframework.2.2.3.nupkg.sha512"
+      "sha512": "sha512-uxX8n938L3WA6utxIvlkuJRSsbhyHCof95DTWJeyoRfJZM6nzi7A4V9giyr5o3vYHHbICJY0L11ShnqHRVMW2Q==",
+      "path": "microsoft.aspnet.identity.entityframework/2.1.0",
+      "hashPath": "microsoft.aspnet.identity.entityframework.2.1.0.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Razor.Design/2.1.2": {
       "type": "package",
@@ -4015,41 +3926,6 @@
       "sha512": "sha512-KBrLHtOjnSSgVtNLA3FPxR8+/7+NOjo3CDtUKDKlvFvGiE+x82pEzOgf4J/dRePlTVCaLQzfjssqom6GegNiPg==",
       "path": "pipelines.sockets.unofficial/2.0.22",
       "hashPath": "pipelines.sockets.unofficial.2.0.22.nupkg.sha512"
-    },
-    "ServiceStack/3.9.10": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-44Wijf1ZVLvyWICBUdVZZmBIlv+Undvj7F1EwWS9dfVY2lg475yLZsy7y0RDTFPogvJKbGNstioUX2Piuyg+cQ==",
-      "path": "servicestack/3.9.10",
-      "hashPath": "servicestack.3.9.10.nupkg.sha512"
-    },
-    "ServiceStack.Common/3.0.6": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-BE06hInBMo4Rt68FdSvZKJjAIJJqa9VtbNFp6yi/7kM9BE0OjuWvwMwYYnTNbFUKN8ENwPOyU3dKIbxJcvTB6g==",
-      "path": "servicestack.common/3.0.6",
-      "hashPath": "servicestack.common.3.0.6.nupkg.sha512"
-    },
-    "ServiceStack.OrmLite.SqlServer/2.9.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-eC4lwpDoVNbD23WAyONqysAoor83+09o/xZRWnJ5nqk1a8SBFYjY10UAl1/Itt4NlnSGTRQKC2NgMq6twOozrw==",
-      "path": "servicestack.ormlite.sqlserver/2.9.0",
-      "hashPath": "servicestack.ormlite.sqlserver.2.9.0.nupkg.sha512"
-    },
-    "ServiceStack.Redis/2.9.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-Mci+LUf+Y2Umcgbjya7bYUyJHT8PotzkYLXEWYr6bH2Y0cHHwDyHTzTI5QWy6XI5aCr0+OsacLJBrcWo/M3XeA==",
-      "path": "servicestack.redis/2.9.0",
-      "hashPath": "servicestack.redis.2.9.0.nupkg.sha512"
-    },
-    "ServiceStack.Text/2.9.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-Y2IaeTWQ4RHfwGIy8Qm5NJDHorwVJ9VlutC/QGr6i9aD9HqhYZegcc0BbPap/YvwL1X0GaIEzIwBi2bkIj0xig==",
-      "path": "servicestack.text/2.9.0",
-      "hashPath": "servicestack.text.2.9.0.nupkg.sha512"
     },
     "StackExchange.Redis/2.0.601": {
       "type": "package",

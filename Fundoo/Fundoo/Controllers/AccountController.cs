@@ -98,7 +98,7 @@ namespace Fundoo.Controllers
         /// </summary>
         /// <param name="loginModel">The login model.</param>
         /// <returns></returns>
-        [HttpPost]
+        [HttpPut]
         [Route("googlelogin")]
         public async Task<IActionResult> GoogleLogin(LoginModel loginModel)
         {
@@ -114,7 +114,7 @@ namespace Fundoo.Controllers
         /// </summary>
         /// <param name="loginModel">The login model.</param>
         /// <returns></returns>
-        [HttpPost]
+        [HttpPut]
         [Route("facebooklogin")]
         public async Task<IActionResult> FacebookLogin(LoginModel loginModel)
         {
@@ -132,12 +132,13 @@ namespace Fundoo.Controllers
                 return this.BadRequest(e.Message);
             }
         }
+
         /// <summary>
         /// Logouts the specified login model.
         /// </summary>
         /// <param name="loginModel">The login model.</param>
         /// <returns></returns>
-        [HttpPost]
+        [HttpPut]
         [Route("logout")]
         public string Logout(LoginModel loginModel)
         {

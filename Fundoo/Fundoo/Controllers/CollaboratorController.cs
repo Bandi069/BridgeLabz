@@ -40,7 +40,7 @@ namespace Fundoo.Controllers
                 var add = await this.collaboratorManager.AddCollaborator(modelCollaborator);
                 return Ok(add);
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 return this.BadRequest(e.Message);
             }
@@ -59,12 +59,10 @@ namespace Fundoo.Controllers
                 var Delete = await this.collaboratorManager.DeleteCollaborator(modelCollaborator);
                 return Ok(Delete);
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 return this.BadRequest(e.Message);
             }
         }
-
-
     }
 }

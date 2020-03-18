@@ -5,11 +5,9 @@ using Microsoft.AspNetCore.Http;
 using Model.NoteModel;
 using Repository.IRepository;
 using Repository.UserDbContext;
-using ServiceStack.Common.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Repository.Repository

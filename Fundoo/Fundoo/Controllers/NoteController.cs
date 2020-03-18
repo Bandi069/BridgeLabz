@@ -122,7 +122,7 @@ namespace Fundoo.Controllers
         /// </summary>
         /// <param name="noteid">The noteid.</param>
         /// <returns></returns>
-       [HttpPut]
+        [HttpPut]
         [Route("removetrash")]
         public async Task<IActionResult> RemoveTrash(int noteid)
         {
@@ -185,7 +185,7 @@ namespace Fundoo.Controllers
         {
             try
             {
-               var remainder= this.noteManager.Remainder(NoteId);
+                var remainder = this.noteManager.Remainder(NoteId);
                 return Ok(remainder);
             }
             catch (Exception e)
@@ -239,7 +239,7 @@ namespace Fundoo.Controllers
         /// <returns></returns>
         [HttpPut]
         [Route("getarchieve")]
-        public  List<Notemodel> GetArchieveList()
+        public List<Notemodel> GetArchieveList()
         {
             return this.noteManager.GetArchieveList();
         }
@@ -296,7 +296,7 @@ namespace Fundoo.Controllers
         {
             try
             {
-                var color = await this.noteManager.AddColor(noteid,addcolor);
+                var color = await this.noteManager.AddColor(noteid, addcolor);
                 return this.Ok(color);
             }
             catch (Exception e)
@@ -317,7 +317,7 @@ namespace Fundoo.Controllers
         {
             try
             {
-                var upload = this.noteManager.UploadImage(noteid , img);
+                var upload = this.noteManager.UploadImage(noteid, img);
                 return this.Ok(upload);
             }
             catch (Exception e)

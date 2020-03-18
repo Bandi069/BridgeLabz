@@ -12,7 +12,11 @@ namespace Manager.Manager
     /// </summary>
     public class LabelManager : ILabelManager
     {
+        /// <summary>
+        /// The label repository
+        /// </summary>
         private readonly ILabelRepository labelRepository;
+
         /// <summary>
         /// This is Labelrepository dependency injection
         /// </summary>
