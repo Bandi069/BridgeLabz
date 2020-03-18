@@ -27,6 +27,7 @@ namespace Fundoo.Controllers
         {
             this.noteManager = noteManager;
         }
+
         /// <summary>
         /// Adds the note.
         /// </summary>
@@ -45,7 +46,26 @@ namespace Fundoo.Controllers
             {
                 return this.BadRequest(e.Message);
             }
-
+        }
+        
+        /// <summary>
+        /// Adds the note.
+        /// </summary>
+        /// <param name="noteModel">The note model.</param>
+        /// <returns></returns>
+        [HttpPost]
+        [Route("addnote")]
+        public async Task<IActionResult> DeleteNote(int Noteid)
+        {
+            try
+            {
+                var add = await this.noteManager.DeleteNote(Noteid);
+                return this.Ok(add);
+            }
+            catch(Exception e)
+            {
+                return this.BadRequest(e.Message);
+            }
         }
 
     }
