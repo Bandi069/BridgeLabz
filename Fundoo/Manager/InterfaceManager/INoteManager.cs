@@ -1,4 +1,5 @@
-﻿using Model.NoteModel;
+﻿using Microsoft.AspNetCore.Http;
+using Model.NoteModel;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -36,5 +37,18 @@ namespace Manager.InterfaceManager
         /// <returns></returns>
         List<Notemodel> GetNote(int NoteID);
 
+        Task<string> Trash(int noteid);
+        List<Notemodel> GetTrash();
+        Task<string> RemoveTrash(int NoteId);
+        Task<string> RestoreTrash(int NoteId);
+        Task<string> RestoreAllTrash(int NoteId);
+        string Remainder(int NoteId);
+        Task<string> Archieve(int NoteId);
+        Task<string> UnArchieve(int NoteId);
+        List<Notemodel> GetArchieveList();
+        Task<string> Pin(int Noteid);
+        Task<string> UnPin(int Noteid);
+        Task<string> AddColor(int Noteid, string addcolor);
+        string UploadImage(int Noteid, IFormFile img);
     }
 }

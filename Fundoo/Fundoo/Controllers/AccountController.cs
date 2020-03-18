@@ -35,7 +35,7 @@ namespace Fundoo.Controllers
         /// <returns></returns>
         [HttpPost]
         [Route("registration")]
-        public async Task<IActionResult>Regsitartion(RegistrationModel registrationModel)
+        public async Task<IActionResult> Regsitartion(RegistrationModel registrationModel)
         {
             var result = this.accountManager.Registration(registrationModel);
             if (result != null)

@@ -245,7 +245,7 @@ namespace Repository.Repository
         /// <param name="remainder">The remainder.</param>
         /// <returns></returns>
         /// <exception cref="System.Exception"></exception>
-        public int Remainder(int NoteId, string remainder)
+        public int Remainder(int NoteId)
         {
             try
             {
@@ -317,7 +317,7 @@ namespace Repository.Repository
         /// <param name="NoteId">The note identifier.</param>
         /// <returns></returns>
         /// <exception cref="System.Exception"></exception>
-        public List<Notemodel> GetArchieveList(int NoteId)
+        public List<Notemodel> GetArchieveList()
         {
             try
             {

@@ -86,6 +86,7 @@ namespace Fundoo.Controllers
                 return this.BadRequest(e.Message);
             }
         }
+
         /// <summary>
         /// Gets the list.
         /// </summary>
@@ -96,6 +97,21 @@ namespace Fundoo.Controllers
         public List<Notemodel> GetList(int Noteid)
         {
             return this.noteManager.GetNote(Noteid);
+        }
+
+        [HttpPost]
+        [Route("trash")]
+        public async Task<IActionResult> Trash(int noteid)
+        {
+            try
+            {
+                var update = await this.noteManager.Trash(noteid);
+                return this.Ok(update);
+            }
+            catch (Exception e)
+            {
+                return this.BadRequest(e.Message);
+            }
         }
     }
 }
