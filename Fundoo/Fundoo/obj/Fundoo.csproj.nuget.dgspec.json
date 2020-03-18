@@ -84,7 +84,7 @@
             },
             "Swashbuckle.AspNetCore.SwaggerUI": {
               "target": "Package",
-              "version": "[5.1.0, )"
+              "version": "[2.1.0, )"
             },
             "System.Configuration.ConfigurationManager": {
               "target": "Package",
@@ -178,7 +178,7 @@
             },
             "Swashbuckle.AspNetCore.SwaggerUI": {
               "target": "Package",
-              "version": "[5.1.0, )"
+              "version": "[2.1.0, )"
             }
           },
           "imports": [
@@ -257,7 +257,7 @@
             },
             "Swashbuckle.AspNetCore.SwaggerUI": {
               "target": "Package",
-              "version": "[5.1.0, )"
+              "version": "[2.1.0, )"
             }
           },
           "imports": [
@@ -368,7 +368,7 @@
             },
             "Swashbuckle.AspNetCore.SwaggerUI": {
               "target": "Package",
-              "version": "[5.1.0, )"
+              "version": "[2.1.0, )"
             },
             "System.IdentityModel.Tokens.Jwt": {
               "target": "Package",
