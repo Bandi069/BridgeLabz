@@ -49,24 +49,53 @@ namespace Fundoo.Controllers
         }
         
         /// <summary>
-        /// Adds the note.
+        /// Deletes the note.
         /// </summary>
         /// <param name="noteModel">The note model.</param>
         /// <returns></returns>
-        [HttpPost]
-        [Route("addnote")]
+        [HttpDelete]
+        [Route("deletenote")]
         public async Task<IActionResult> DeleteNote(int Noteid)
         {
             try
             {
-                var add = await this.noteManager.DeleteNote(Noteid);
-                return this.Ok(add);
+                var delete = await this.noteManager.DeleteNote(Noteid);
+                return this.Ok(delete);
             }
             catch(Exception e)
             {
                 return this.BadRequest(e.Message);
             }
         }
-
+        /// <summary>
+        /// Updates the note.
+        /// </summary>
+        /// <param name="noteModel">The note model.</param>
+        /// <returns></returns>
+        [HttpPost]
+        [Route("updatenote")]
+        public async Task<IActionResult> UpdateNote(Notemodel noteModel)
+        {
+            try
+            {
+                var update = await this.noteManager.UpdateNote(noteModel);
+                return this.Ok(update);
+            }
+            catch (Exception e)
+            {
+                return this.BadRequest(e.Message);
+            }
+        }
+        /// <summary>
+        /// Gets the list.
+        /// </summary>
+        /// <param name="Noteid">The noteid.</param>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("show")]
+        public List<Notemodel> GetList(int Noteid)
+        {
+            return this.noteManager.GetNote(Noteid);
+        }
     }
 }
