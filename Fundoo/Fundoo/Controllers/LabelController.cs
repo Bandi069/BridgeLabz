@@ -22,7 +22,7 @@ namespace Fundoo.Controllers
         /// Initializes a new instance of the <see cref="LabelController"/> class.
         /// </summary>
         /// <param name="labelManager">The label manager.</param>
-        public LabelController(ILabelManager labelManager )
+        public LabelController(ILabelManager labelManager)
         {
             this.labelManager = labelManager;
         }
@@ -40,7 +40,7 @@ namespace Fundoo.Controllers
                 var add = this.labelManager.AddLabel(labelModel);
                 return Ok(add);
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 return this.BadRequest(e.Message);
             }
@@ -59,7 +59,7 @@ namespace Fundoo.Controllers
                 var delete = this.labelManager.DeleteLabel(labelid);
                 return Ok(delete);
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 return this.BadRequest(e.Message);
             }
@@ -78,7 +78,7 @@ namespace Fundoo.Controllers
                 var update = this.labelManager.UpdateLabel(labelModel);
                 return Ok(update);
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 return this.BadRequest(e.Message);
             }
@@ -90,15 +90,14 @@ namespace Fundoo.Controllers
         /// <returns></returns>
         /// <exception cref="Exception"></exception>
         [HttpGet]
-        [Route("getlabel")]
+        [Route("show")]
         public List<LabelModel> GetLabel(int Labelid)
         {
             try
             {
-
                 return this.labelManager.GetLabel(Labelid);
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 throw new Exception(e.Message);
             }
