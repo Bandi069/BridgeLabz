@@ -212,6 +212,7 @@ namespace Fundoo.Controllers
                 return this.BadRequest(e.Message);
             }
         }
+
         /// <summary>
         /// Uns the archieve.
         /// </summary>
@@ -231,6 +232,7 @@ namespace Fundoo.Controllers
                 return this.BadRequest(e.Message);
             }
         }
+
         /// <summary>
         /// Gets the archieve list.
         /// </summary>
@@ -242,6 +244,11 @@ namespace Fundoo.Controllers
             return this.noteManager.GetArchieveList();
         }
 
+        /// <summary>
+        /// Pins the specified noteid.
+        /// </summary>
+        /// <param name="noteid">The noteid.</param>
+        /// <returns></returns>
         [HttpPut]
         [Route("pin")]
         public async Task<IActionResult> Pin(int noteid)
@@ -256,7 +263,12 @@ namespace Fundoo.Controllers
                 return this.BadRequest(e.Message);
             }
         }
-        
+
+        /// <summary>
+        /// Uns the pin.
+        /// </summary>
+        /// <param name="noteid">The noteid.</param>
+        /// <returns></returns>
         [HttpPut]
         [Route("pin")]
         public async Task<IActionResult> UnPin(int noteid)
@@ -265,6 +277,48 @@ namespace Fundoo.Controllers
             {
                 var unpin = await this.noteManager.UnPin(noteid);
                 return this.Ok(unpin);
+            }
+            catch (Exception e)
+            {
+                return this.BadRequest(e.Message);
+            }
+        }
+
+        /// <summary>
+        /// Adds the color.
+        /// </summary>
+        /// <param name="noteid">The noteid.</param>
+        /// <param name="addcolor">The addcolor.</param>
+        /// <returns></returns>
+        [HttpPut]
+        [Route("addcolor")]
+        public async Task<IActionResult> AddColor(int noteid, string addcolor)
+        {
+            try
+            {
+                var color = await this.noteManager.AddColor(noteid,addcolor);
+                return this.Ok(color);
+            }
+            catch (Exception e)
+            {
+                return this.BadRequest(e.Message);
+            }
+        }
+
+        /// <summary>
+        /// Uploads the image.
+        /// </summary>
+        /// <param name="noteid">The noteid.</param>
+        /// <param name="img">The img.</param>
+        /// <returns></returns>
+        [HttpPut]
+        [Route("uploadimage")]
+        public IActionResult UploadImage(int noteid, IFormFile img)
+        {
+            try
+            {
+                var upload = this.noteManager.UploadImage(noteid , img);
+                return this.Ok(upload);
             }
             catch (Exception e)
             {

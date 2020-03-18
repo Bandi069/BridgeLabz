@@ -73,7 +73,7 @@ namespace Fundoo.Controllers
             var result = this.accountManager.ResetPassword(resetPassword);
             if (result != null)
             {
-                return this.Ok( result);
+                return this.Ok(result);
             }
             return this.BadRequest("Invalid Request");
         }
@@ -123,11 +123,11 @@ namespace Fundoo.Controllers
             {
                 if (result != null)
                 {
-                    return this.Ok(result);
+                    return this.Ok(new { result });
                 }
                 return this.BadRequest();
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 return this.BadRequest(e.Message);
             }
