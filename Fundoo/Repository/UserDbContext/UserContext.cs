@@ -20,16 +20,17 @@ namespace Repository.UserDbContext
         public UserContext(DbContextOptions<UserContext> options) : base(options)
         {
         }
+
         /// <summary>
         /// This is Register DbSet property
         /// </summary>
         public DbSet<RegistrationModel> Register { get; set; }
-      
 
         /// <summary>
         /// This is NoteModels Dbset Property
         /// </summary>
         public DbSet<Notemodel> Notemodels { get; set; }
+
         /// <summary>
         /// Gets or sets the label.
         /// </summary>

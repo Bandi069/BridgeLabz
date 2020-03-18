@@ -83,6 +83,7 @@ namespace Fundoo.Controllers
                 return this.BadRequest(e.Message);
             }
         }
+
         /// <summary>
         /// Gets the label.
         /// </summary>
