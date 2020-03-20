@@ -7244,19 +7244,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Bridge Labs\\.nuget\\packages\\": {}
+    "C:\\Users\\tree\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Bridge Labs\\Documents\\GitHub\\BridgeLabz\\BridgeLabz\\EmployeeManagement\\NUnitTestcase\\NUnitTestcase.csproj",
+      "projectUniqueName": "C:\\Users\\tree\\Documents\\GitHub\\BridgeLabz\\EmployeeManagement\\NUnitTestcase\\NUnitTestcase.csproj",
       "projectName": "NUnitTestcase",
-      "projectPath": "C:\\Users\\Bridge Labs\\Documents\\GitHub\\BridgeLabz\\BridgeLabz\\EmployeeManagement\\NUnitTestcase\\NUnitTestcase.csproj",
-      "packagesPath": "C:\\Users\\Bridge Labs\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Bridge Labs\\Documents\\GitHub\\BridgeLabz\\BridgeLabz\\EmployeeManagement\\NUnitTestcase\\obj\\",
+      "projectPath": "C:\\Users\\tree\\Documents\\GitHub\\BridgeLabz\\EmployeeManagement\\NUnitTestcase\\NUnitTestcase.csproj",
+      "packagesPath": "C:\\Users\\tree\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\tree\\Documents\\GitHub\\BridgeLabz\\EmployeeManagement\\NUnitTestcase\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Bridge Labs\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\tree\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -7269,8 +7269,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\Bridge Labs\\Documents\\GitHub\\BridgeLabz\\BridgeLabz\\EmployeeManagement\\EmployeeManagement\\EmployeeManagement.csproj": {
-              "projectPath": "C:\\Users\\Bridge Labs\\Documents\\GitHub\\BridgeLabz\\BridgeLabz\\EmployeeManagement\\EmployeeManagement\\EmployeeManagement.csproj"
+            "C:\\Users\\tree\\Documents\\GitHub\\BridgeLabz\\EmployeeManagement\\EmployeeManagement\\EmployeeManagement.csproj": {
+              "projectPath": "C:\\Users\\tree\\Documents\\GitHub\\BridgeLabz\\EmployeeManagement\\EmployeeManagement\\EmployeeManagement.csproj"
             }
           }
         }
@@ -7312,7 +7312,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
       }
     }
   }
