@@ -1,0 +1,42 @@
+<mat-card class="card">
+    <div class="form" align="center">
+        <div class="title">
+            <mat-card-header>
+                <mat-card-title class="registertitle">
+                    <mat-label class="fundoo">
+                        <h1>FUNDOO</h1>
+                    </mat-label>
+                </mat-card-title>
+            </mat-card-header>
+            <mat-card-header>
+                <mat-card-title>
+                    <h2>Signin Fundoo Account</h2>
+                </mat-card-title>
+            </mat-card-header>
+        </div>
+        <mat-form-field class="width" appearance="outline" class="line">
+            <mat-label class="labelColor">Email<sup>*</sup></mat-label>
+            <input matInput [formControl]="email" placeholder="Email">
+            <mat-error *ngIf="email.hasError('email') && !email.hasError('required')">Invalid email
+            </mat-error>
+            <mat-error *ngIf="email.hasError('required')">
+                Email is required
+            </mat-error>
+        </mat-form-field>
+        <br>
+        <mat-form-field class="width" appearance="outline" class="smallname">
+            <mat-label class="labelColor">Password<sup>*</sup></mat-label>
+            <input matInput [formControl]="password" placeholder="" type="password">
+            <mat-error *ngIf="password.hasError('required')">*required</mat-error>
+            <mat-error *ngIf="password.hasError('minlength')"> Minimum length 6
+            </mat-error>
+        </mat-form-field>
+        <div class="button">
+            <button mat-raised-button color="primary" type="button">Signin</button>
+        </div>
+        <br>
+        <div class="forgot" routerLink="/forgotpassword"><a href="forgotpassword">Forgot Password?</a></div>
+        <br>
+        <div class="newaccount" routerLink="/register">Don't Have Account? <a href="register">Register</a></div>
+    </div>
+</mat-card>
