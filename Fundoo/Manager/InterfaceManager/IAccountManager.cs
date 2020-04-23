@@ -23,7 +23,7 @@ namespace Manager.InterfaceManager
         /// </summary>
         /// <param name="loginModel"></param>
         /// <returns></returns>
-        Task<string> Login(LoginModel loginModel);
+        string Login(LoginModel loginModel);
         /// <summary>
         /// This is for reset the password
         /// </summary>
@@ -42,7 +42,7 @@ namespace Manager.InterfaceManager
         /// <param name="email"></param>
         /// <param name="password"></param>
         /// <returns></returns>
-        Task<bool> CheckPassword(string email, string password);
+        //bool CheckPassword(string email, string password);
 
         /// <summary>
         /// For Logout
@@ -55,12 +55,12 @@ namespace Manager.InterfaceManager
         /// </summary>
         /// <param name="loginModel"></param>
         /// <returns></returns>
-        Task<string> GoogleLogin(LoginModel loginModel);
+        Task<bool> GoogleLogin(LoginModel loginModel);
         /// <summary>
         /// for Facebook Login
         /// </summary>
         /// <param name="loginModel"></param>
         /// <returns></returns>
-        Task<string> FacebookLogin(LoginModel loginModel);
+        Task<bool> FacebookLogin(LoginModel loginModel);
     }
 }

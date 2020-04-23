@@ -1,8 +1,8 @@
 {
   "runtimeOptions": {
     "additionalProbingPaths": [
-      "C:\\Users\\Bridge Labs\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\Bridge Labs\\.nuget\\packages"
+      "C:\\Users\\tree\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\tree\\.nuget\\packages"
     ]
   }
 }

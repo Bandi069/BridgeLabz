@@ -9,6 +9,20 @@ namespace Repository.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
+                name: "Collobarator",
+                columns: table => new
+                {
+                    NoteID = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    SenderMail = table.Column<string>(nullable: true),
+                    ReceiverMail = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Collobarator", x => x.NoteID);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Label",
                 columns: table => new
                 {
@@ -30,7 +44,7 @@ namespace Repository.Migrations
                     Emailid = table.Column<string>(nullable: true),
                     Title = table.Column<string>(nullable: true),
                     Description = table.Column<string>(nullable: true),
-                    Archive = table.Column<string>(nullable: true),
+                    Archive = table.Column<bool>(nullable: false),
                     AddImg = table.Column<string>(nullable: true),
                     Remainder = table.Column<string>(nullable: true),
                     AddColor = table.Column<string>(nullable: true),
@@ -61,6 +75,9 @@ namespace Repository.Migrations
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "Collobarator");
+
             migrationBuilder.DropTable(
                 name: "Label");
 

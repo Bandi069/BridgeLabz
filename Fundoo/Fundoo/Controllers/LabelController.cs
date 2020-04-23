@@ -1,4 +1,5 @@
 ﻿using Manager.InterfaceManager;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Model.Label;
 using System;
@@ -8,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace Fundoo.Controllers
 {
+    [Authorize]
     /// <summary>
     /// This is Label Controller
     /// </summary>
@@ -33,7 +35,7 @@ namespace Fundoo.Controllers
         /// <returns></returns>
         [HttpPost]
         [Route("addlabel")]
-        public ActionResult AddLabel(LabelModel labelModel)
+        public ActionResult AddLabel([FromBody]LabelModel labelModel)
         {
             try
             {
@@ -71,7 +73,7 @@ namespace Fundoo.Controllers
         /// <returns></returns>
         [HttpDelete]
         [Route("updatelabel")]
-        public ActionResult UpdateLabel(LabelModel labelModel)
+        public ActionResult UpdateLabel([FromBody]LabelModel labelModel)
         {
             try
             {
@@ -91,7 +93,7 @@ namespace Fundoo.Controllers
         /// <returns></returns>
         /// <exception cref="Exception"></exception>
         [HttpGet]
-        [Route("show")]
+        [Route("displaylabel")]
         public List<LabelModel> GetLabel(int Labelid)
         {
             try

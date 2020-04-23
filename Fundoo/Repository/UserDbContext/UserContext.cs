@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Model.Collaborator;
 using Model.Label;
 using Model.NoteModel;
 using Model.UserModel;
@@ -38,6 +39,8 @@ namespace Repository.UserDbContext
         /// The label.
         /// </value>
         public DbSet<LabelModel> Label { get; set; }
+        public DbSet<ModelCollaborator> Collobarator { get; set; }
+
 
     }
 }

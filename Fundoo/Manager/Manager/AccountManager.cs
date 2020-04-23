@@ -42,7 +42,7 @@ namespace Manager.Manager
         /// </summary>
         /// <param name="loginModel"></param>
         /// <returns></returns>
-        public Task<string> Login(LoginModel loginModel)
+        public string Login(LoginModel loginModel)
         {
             var result = this.repositoryuser.Login(loginModel);
             return result;
@@ -63,11 +63,18 @@ namespace Manager.Manager
         /// <param name="email"></param>
         /// <param name="password"></param>
         /// <returns></returns>
-        public async Task<bool> CheckPassword(string email, string password)
-        {
-            await this.repositoryuser.CheckPassword(email, password);
-            return true;
-        }
+        //public bool CheckPassword(string email, string password)
+        //{
+        //    var checkobj=this.repositoryuser.CheckPassword(email, password);
+        //    if (checkobj != null)
+        //    {
+        //        return true;
+        //    }
+        //    else
+        //    {
+        //        return false;
+        //    }
+        //}
         /// <summary>
         /// This is async task for ForgotPassword
         /// </summary>
@@ -83,7 +90,7 @@ namespace Manager.Manager
         /// </summary>
         /// <param name="loginModel"></param>
         /// <returns></returns>
-        public Task<string> GoogleLogin(LoginModel loginModel)
+        public Task<bool> GoogleLogin(LoginModel loginModel)
         {
             var result = this.repositoryuser.GoogleLogin(loginModel);
             return result;
@@ -93,7 +100,7 @@ namespace Manager.Manager
         /// </summary>
         /// <param name="loginModel"></param>
         /// <returns></returns>
-        public Task<string> FacebookLogin(LoginModel loginModel)
+        public Task<bool> FacebookLogin(LoginModel loginModel)
         {
             var result = this.repositoryuser.FacebookLogin(loginModel);
             return result;

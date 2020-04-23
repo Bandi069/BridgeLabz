@@ -4517,19 +4517,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Bridge Labs\\.nuget\\packages\\": {}
+    "C:\\Users\\tree\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Bridge Labs\\source\\repos\\Fundoo\\Repository\\Repository.csproj",
+      "projectUniqueName": "C:\\Users\\tree\\Documents\\GitHub\\BridgeLabz\\BridgeLabz\\Fundoo\\Repository\\Repository.csproj",
       "projectName": "Repository",
-      "projectPath": "C:\\Users\\Bridge Labs\\source\\repos\\Fundoo\\Repository\\Repository.csproj",
-      "packagesPath": "C:\\Users\\Bridge Labs\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Bridge Labs\\source\\repos\\Fundoo\\Repository\\obj\\",
+      "projectPath": "C:\\Users\\tree\\Documents\\GitHub\\BridgeLabz\\BridgeLabz\\Fundoo\\Repository\\Repository.csproj",
+      "packagesPath": "C:\\Users\\tree\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\tree\\Documents\\GitHub\\BridgeLabz\\BridgeLabz\\Fundoo\\Repository\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Bridge Labs\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\tree\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -4542,8 +4542,8 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "C:\\Users\\Bridge Labs\\source\\repos\\Fundoo\\Model\\Model.csproj": {
-              "projectPath": "C:\\Users\\Bridge Labs\\source\\repos\\Fundoo\\Model\\Model.csproj"
+            "C:\\Users\\tree\\Documents\\GitHub\\BridgeLabz\\BridgeLabz\\Fundoo\\Model\\Model.csproj": {
+              "projectPath": "C:\\Users\\tree\\Documents\\GitHub\\BridgeLabz\\BridgeLabz\\Fundoo\\Model\\Model.csproj"
             }
           }
         }
@@ -4614,7 +4614,7 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
       }
     }
   },

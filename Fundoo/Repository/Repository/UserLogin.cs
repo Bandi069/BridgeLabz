@@ -6,6 +6,7 @@
 // --------------------------------------------------------------------------------------------------------------------
 using Experimental.System.Messaging;
 using Microsoft.AspNet.Identity.EntityFramework;
+using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using Model.UserModel;
 using Repository.IRepository;
@@ -31,13 +32,15 @@ namespace Repository.Repository
         /// This is readonly private UserContext
         /// </summary>
         private readonly UserContext context;
+        private readonly IConfiguration configuration;
         /// <summary>
         /// This is UserLogin Constructor by passing UserContext
         /// </summary>
         /// <param name="context"></param>
-        public UserLogin(UserContext context)
+        public UserLogin(UserContext context,IConfiguration configuration)
         {
             this.context = context;
+            this.configuration = configuration;
         }
         /// <summary>
         /// Initializes a new instance of the <see cref="UserLogin"/> class.
@@ -51,8 +54,8 @@ namespace Repository.Repository
         /// </summary>
         /// <param name="registrationModel"></param>
         /// <returns></returns>
-        public Task<bool> Registration(RegistrationModel registrationModel)
-        {
+        public Task<int> Registration(RegistrationModel registrationModel)
+        { 
             RegistrationModel registration = new RegistrationModel()
             {
                 FirtsName = registrationModel.FirtsName,
@@ -60,7 +63,9 @@ namespace Repository.Repository
                 Emailid = registrationModel.Emailid,
                 Password = registrationModel.Password
             };
-            return null;
+            var register = this.context.Register.Add(registration);
+            var result = this.context.SaveChanges();
+            return Task.Run(()=>result);
         }
 
         /// <summary>
@@ -68,32 +73,52 @@ namespace Repository.Repository
         /// </summary>
         /// <param name="loginModel"></param>
         /// <returns></returns>
-        public async Task<string> Login(LoginModel loginModel)
+        public string Login(LoginModel loginModel)
         {
-            var user = FindEmailid(loginModel.Emailid);
-            if (user != null && await CheckPassword(loginModel.Emailid, loginModel.Password))
+            //var user = FindEmailid(loginModel.Emailid);
+            //if (user != null && await CheckPassword(loginModel.Emailid, loginModel.Password))
+            //{
+            //    try
+            //    {
+            //        var tokenDescriptor = new SecurityTokenDescriptorool> Registration(RegistrationModel registrationModel)
+        
+            //        {
+            //            Subject = new ClaimsIdentity(new Claim[]
+            //        {
+            //            new Claim("Emailid",loginModel.Emailid)
+            //        }),
+            //        };
+            //        var tokenHandler = new JwtSecurityTokenHandler();
+            //        var securityToken = tokenHandler.CreateToken(tokenDescriptor);
+            //        var token = tokenHandler.WriteToken(securityToken);
+            //        var Cache = loginModel.Emailid;
+            //        return token;
+            //    }
+            //    catch (Exception e)
+            //    {
+            //        throw new Exception(e.Message);
+            //    }
+            //}
+            //return "Incorrect Email or Password";
+            if (FindEmailid(loginModel.Emailid))
             {
-                try
+                if (CheckPassword(loginModel.Emailid, loginModel.Password))
                 {
-                    var tokenDescriptor = new SecurityTokenDescriptor
-                    {
-                        Subject = new ClaimsIdentity(new Claim[]
-                    {
-                        new Claim("Emailid",loginModel.Emailid)
-                    }),
-                    };
-                    var tokenHandler = new JwtSecurityTokenHandler();
-                    var securityToken = tokenHandler.CreateToken(tokenDescriptor);
-                    var token = tokenHandler.WriteToken(securityToken);
-                    var Cache = loginModel.Emailid;
-                    return token;
-                }
-                catch (Exception e)
-                {
-                    throw new Exception(e.Message);
+                    var key = configuration["Jwt:key"];
+                    var secretKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(key));
+                    var signInCr = new SigningCredentials(secretKey, SecurityAlgorithms.HmacSha256);
+                    var token = new JwtSecurityToken(
+                        issuer: configuration["Jwt:_url"],
+                        audience: configuration["Jwt:_url"],
+                        expires: DateTime.Now.AddMinutes(60),
+                        signingCredentials: signInCr);
+                    var FinalToken = new JwtSecurityTokenHandler().WriteToken(token);
+                    //// this.distributedCache.SetString("Token", FinalToken);
+                    return FinalToken;
                 }
             }
-            return "Incorrect Email or Password";
+
+            return "login failed";
         }
 
         /// <summary>
@@ -101,13 +126,22 @@ namespace Repository.Repository
         /// </summary>
         /// <param name="resetPassword"></param>
         /// <returns></returns>
-        public async Task ResetPassword(ResetPassword resetPassword)
+        public async Task<string> ResetPassword(ResetPassword resetPassword)
         {
+                string password = resetPassword.Password;
             RegistrationModel Resetobj = this.context.Register.Where(UserName => UserName.Emailid == resetPassword.Emailid).SingleOrDefault();
-            Resetobj.Password = resetPassword.Password;
-            var user = this.context.Register.Find(resetPassword.Emailid);
-            user.Password = resetPassword.Password;
-            await Task.Run(() => this.context.SaveChanges());
+                if (Resetobj != null)
+                {
+                    Resetobj.Password = resetPassword.Password;
+                    var user = this.context.Register.Find(resetPassword.Emailid);
+                    user.Password = resetPassword.Password;
+                    await Task.Run(() => this.context.SaveChanges());
+                    return "Succesfull";
+                }
+                else
+                {
+                    return null;
+                }
         }
 
         /// <summary>
@@ -146,7 +180,7 @@ namespace Repository.Repository
                     message.Priority = MessagePriority.Low;
                 }
                 var fromemailaddress = new MailAddress("bandivenu89@gmail.com");
-                var Password = "sanVedha2212";
+                var Password = "sanVedha2212$";
                 var toEmailaddress = new MailAddress(forgotPasswordModel.Emailid);
                 string subject = "Reset Password";
                 string body = "To Reset password";
@@ -185,12 +219,18 @@ namespace Repository.Repository
         /// </summary>
         /// <param name="email"></param>
         /// <returns></returns>
-        public Task FindEmailid(string email)
+        public bool FindEmailid(string email)
         {
             var userRegistration = context.Register.Where(obj => obj.Emailid == email).SingleOrDefault();
-            IdentityUser IUser = new IdentityUser() { Email = userRegistration.Emailid };
+            if(userRegistration!=null)
+            {
+                return true;
+            }
+            else { return false; }
+            //IdentityUser IUser = new IdentityUser() { Email = userRegistration.Emailid };
 
-            return Task.Run(() => IUser);
+            //return Task.Run(() => IUser);
+
         }
 
         /// <summary>
@@ -199,10 +239,15 @@ namespace Repository.Repository
         /// <param name="email"></param>
         /// <param name="password"></param>
         /// <returns></returns>
-        public Task<bool> CheckPassword(string email, string password)
+        public bool CheckPassword(string email, string password)
         {
-            bool checkobj = context.Register.Where(UserName => UserName.Password == password && UserName.Emailid == email).SingleOrDefault().Emailid == email ? true : false;
-            return Task.Run(() => checkobj);
+            var checkobj = this.context.Register.Where(UserName => UserName.Password == password && UserName.Emailid == email).SingleOrDefault().Emailid == email ? true : false;
+            //return Task.Run(() => checkobj);
+            if (checkobj!=null)
+            {
+                return true;
+            }
+            else { return false; }
         }
 
         /// <summary>
@@ -220,9 +265,9 @@ namespace Repository.Repository
                 database.KeyDelete(cacheKey);
                 return "Account Logout ";
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                throw new Exception(e.Message);
+                throw new Exception(ex.Message);
             }
         }
 
@@ -231,7 +276,7 @@ namespace Repository.Repository
         /// </summary>
         /// <param name="loginModel"></param>
         /// <returns></returns>
-        public async Task<string> GoogleLogin(LoginModel loginModel)
+        public async Task<bool> GoogleLogin(LoginModel loginModel)
         {
             var GoogleUser = this.context.Register.Where(UserName => UserName.Emailid == loginModel.Emailid && UserName.Password == loginModel.Password).SingleOrDefault();
             if (GoogleUser != null)
@@ -248,7 +293,7 @@ namespace Repository.Repository
                 var securityToken = tokenHandler.CreateToken(tokenDescriptor);
                 var token = tokenHandler.WriteToken(securityToken);
                 var chacheKey = loginModel.Emailid;
-                return token;
+                return true;
             }
             else
             {
@@ -272,11 +317,11 @@ namespace Repository.Repository
                     var securityToken = tokenHandler.CreateToken(tokenDescriptor);
                     var token = tokenHandler.WriteToken(securityToken);
                     var chacheKey = loginModel.Emailid;
-                    return token;
+                    return true;
                 }
             }
             await this.context.SaveChangesAsync();
-            return "User Not Existed";
+            return false;
         }
 
         /// <summary>
@@ -284,7 +329,7 @@ namespace Repository.Repository
         /// </summary>
         /// <param name="loginModel"></param>
         /// <returns></returns>
-        public async Task<string> FacebookLogin(LoginModel loginModel)
+        public async Task<bool> FacebookLogin(LoginModel loginModel)
         {
             var FacebookUser = context.Register.Where(UserName => UserName.Emailid == loginModel.Emailid && UserName.Password == loginModel.Password).SingleOrDefault();
             if (FacebookUser != null)
@@ -301,7 +346,7 @@ namespace Repository.Repository
                 var securityToken = tokenHandler.CreateToken(tokenDescriptor);
                 var token = tokenHandler.WriteToken(securityToken);
                 var chacheKey = loginModel.Emailid;
-                return token;
+                return true;
             }
             else
             {
@@ -325,11 +370,11 @@ namespace Repository.Repository
                     var securityToken = tokenHandler.CreateToken(tokenDescriptor);
                     var token = tokenHandler.WriteToken(securityToken);
                     var chacheKey = loginModel.Emailid;
-                    return token;
+                    return true;
                 }
             }
             await context.SaveChangesAsync();
-            return "User Not Existed";
+            return false;
         }
     }
 }

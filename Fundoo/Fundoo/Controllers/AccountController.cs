@@ -12,8 +12,8 @@ namespace Fundoo.Controllers
     /// <summary>
     /// This is Account Controller Class
     /// </summary>
-    [Route("api/[controller]")]
-    [ApiController]
+    //[Route("api/[controller]")]
+    //[ApiController]
     public class AccountController : ControllerBase
     {
         /// <summary>
@@ -34,7 +34,7 @@ namespace Fundoo.Controllers
         /// <param name="loginModel">The login model.</param>
         /// <returns></returns>
         [HttpPost]
-        [Route("registration")]
+        [Route("accountregistration")]
         public async Task<IActionResult> Regsitartion(RegistrationModel registrationModel)
         {
             var result = this.accountManager.Registration(registrationModel);
@@ -50,8 +50,8 @@ namespace Fundoo.Controllers
         /// <param name="loginModel">The login model.</param>
         /// <returns></returns>
         [HttpPost]
-        [Route("login")]
-        public async Task<IActionResult> Login(LoginModel loginModel)
+        [Route("accountlogin")]
+        public async Task<IActionResult> Login([FromBody]LoginModel loginModel)
         {
             var result = this.accountManager.Login(loginModel);
             if (result != null)

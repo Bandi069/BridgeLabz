@@ -10,7 +10,7 @@ using Repository.UserDbContext;
 namespace Repository.Migrations
 {
     [DbContext(typeof(UserContext))]
-    [Migration("20200313092504_fundoo")]
+    [Migration("20200423085953_fundoo")]
     partial class fundoo
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -20,6 +20,21 @@ namespace Repository.Migrations
                 .HasAnnotation("ProductVersion", "2.1.14-servicing-32113")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+            modelBuilder.Entity("Model.Collaborator.ModelCollaborator", b =>
+                {
+                    b.Property<int>("NoteID")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("ReceiverMail");
+
+                    b.Property<string>("SenderMail");
+
+                    b.HasKey("NoteID");
+
+                    b.ToTable("Collobarator");
+                });
 
             modelBuilder.Entity("Model.Label.LabelModel", b =>
                 {
@@ -45,7 +60,7 @@ namespace Repository.Migrations
 
                     b.Property<string>("AddImg");
 
-                    b.Property<string>("Archive");
+                    b.Property<bool>("Archive");
 
                     b.Property<DateTime?>("CreateTime");
 

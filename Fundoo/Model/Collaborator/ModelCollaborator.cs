@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
 
 namespace Model.Collaborator
@@ -27,6 +28,7 @@ namespace Model.Collaborator
         /// <value>
         /// The note identifier.
         /// </value>
+        [Key]
         public int NoteID { get => noteID; set => noteID = value; }
         /// <summary>
         /// Gets or sets the sender mail.

@@ -43,6 +43,7 @@ namespace Model.UserModel
         /// </summary>
         [Required]
         public string LastName { get => lastname; set => lastname = value; }
+
         /// <summary>
         /// This is Emailid Property
         /// It is a Primary key

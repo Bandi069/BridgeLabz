@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Manager.InterfaceManager;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Model.NoteModel;
 
 namespace Fundoo.Controllers
 {
+    [Authorize]
     /// <summary>
     /// Note Controller Class
     /// </summary>
@@ -93,7 +95,7 @@ namespace Fundoo.Controllers
         /// <param name="Noteid">The noteid.</param>
         /// <returns></returns>
         [HttpGet]
-        [Route("show")]
+        [Route("displaynote")]
         public List<Notemodel> GetList(int Noteid)
         {
             return this.noteManager.GetNote(Noteid);
@@ -180,7 +182,7 @@ namespace Fundoo.Controllers
         /// <param name="NoteId">The note identifier.</param>
         /// <returns></returns>
         [HttpPut]
-        [Route("remainder")]
+        [Route("reminder")]
         public IActionResult Remainder(int NoteId)
         {
             try
@@ -199,7 +201,7 @@ namespace Fundoo.Controllers
         /// <param name="noteid">The noteid.</param>
         /// <returns></returns>
         [HttpPut]
-        [Route("archieve")]
+        [Route("archive")]
         public async Task<IActionResult> Archieve(int noteid)
         {
             try
@@ -219,7 +221,7 @@ namespace Fundoo.Controllers
         /// <param name="noteid">The noteid.</param>
         /// <returns></returns>
         [HttpPut]
-        [Route("unarchieve")]
+        [Route("unarchive")]
         public async Task<IActionResult> UnArchieve(int noteid)
         {
             try
@@ -238,7 +240,7 @@ namespace Fundoo.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpPut]
-        [Route("getarchieve")]
+        [Route("getarchive")]
         public List<Notemodel> GetArchieveList()
         {
             return this.noteManager.GetArchieveList();
@@ -270,7 +272,7 @@ namespace Fundoo.Controllers
         /// <param name="noteid">The noteid.</param>
         /// <returns></returns>
         [HttpPut]
-        [Route("pin")]
+        [Route("unpin")]
         public async Task<IActionResult> UnPin(int noteid)
         {
             try

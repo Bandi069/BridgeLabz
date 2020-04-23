@@ -19,6 +19,21 @@ namespace Repository.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+            modelBuilder.Entity("Model.Collaborator.ModelCollaborator", b =>
+                {
+                    b.Property<int>("NoteID")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("ReceiverMail");
+
+                    b.Property<string>("SenderMail");
+
+                    b.HasKey("NoteID");
+
+                    b.ToTable("Collobarator");
+                });
+
             modelBuilder.Entity("Model.Label.LabelModel", b =>
                 {
                     b.Property<string>("Emailid")
@@ -43,7 +58,7 @@ namespace Repository.Migrations
 
                     b.Property<string>("AddImg");
 
-                    b.Property<string>("Archive");
+                    b.Property<bool>("Archive");
 
                     b.Property<DateTime?>("CreateTime");
 
