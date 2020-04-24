@@ -19,6 +19,7 @@ using Microsoft.IdentityModel.Tokens;
 using Repository.IRepository;
 using Repository.Repository;
 using Repository.UserDbContext;
+using Swashbuckle.AspNetCore.Filters;
 using Swashbuckle.AspNetCore.Swagger;
 
 namespace Fundoo
@@ -108,7 +109,7 @@ namespace Fundoo
                     In = "header",
                     Type = "apikey",
                 });
-                //con.OperationFilter<SecurityRequirementsOperationFilter>();
+                con.OperationFilter<SecurityRequirementsOperationFilter>();
             });
             services.Configure<IISOptions>(options =>
             {
@@ -128,13 +129,14 @@ namespace Fundoo
                 app.UseHsts();
             }
             app.UseMvc();
+            app.UseHttpsRedirection();
+            app.UseAuthentication();
             app.UseSwagger();
-            app.UseSwaggerUI(Con =>
+          app.UseSwaggerUI(Con =>
             {
                 Con.SwaggerEndpoint("/swagger/v1/swagger.json", "MyAPI v1");
             });
-           // app.UseHttpsRedirection();
-          
+                   
         }
     }
 }

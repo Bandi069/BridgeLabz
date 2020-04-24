@@ -35,14 +35,18 @@ namespace Fundoo.Controllers
         /// <returns></returns>
         [HttpPost]
         [Route("accountregistration")]
-        public async Task<IActionResult> Regsitartion(RegistrationModel registrationModel)
+        public IActionResult Registration([FromBody]RegistrationModel registrationModel)
         {
-            var result = this.accountManager.Registration(registrationModel);
-            if (result != null)
+            try
             {
-                return this.Ok(result);
+
+                var result =  this.accountManager.Registration(registrationModel);
+                    return this.Ok(result);
             }
-            return this.BadRequest("Registration Failed");
+            catch(Exception e)
+            {
+                return this.BadRequest(e.Message);
+            }
         }
         /// <summary>
         /// Logins the specified login model.
@@ -53,12 +57,22 @@ namespace Fundoo.Controllers
         [Route("accountlogin")]
         public async Task<IActionResult> Login([FromBody]LoginModel loginModel)
         {
-            var result = this.accountManager.Login(loginModel);
-            if (result != null)
+            try
             {
-                return this.Ok(result);
+                var result = this.accountManager.Login(loginModel);
+                if (result != null)
+                {
+                    return this.Ok(result);
+                }
+                else
+                {
+                    return BadRequest("Invalid login");
+                }
             }
-            return this.BadRequest("Invalid Login");
+            catch (Exception e)
+            {
+                return this.BadRequest(e.Message);
+            }
         }
 
         /// <summary>

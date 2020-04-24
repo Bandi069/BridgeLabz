@@ -54,7 +54,7 @@ namespace Repository.Repository
         /// </summary>
         /// <param name="registrationModel"></param>
         /// <returns></returns>
-        public Task<int> Registration(RegistrationModel registrationModel)
+        public  Task<int> Registration(RegistrationModel registrationModel)
         { 
             RegistrationModel registration = new RegistrationModel()
             {
@@ -64,8 +64,8 @@ namespace Repository.Repository
                 Password = registrationModel.Password
             };
             var register = this.context.Register.Add(registration);
-            var result = this.context.SaveChanges();
-            return Task.Run(()=>result);
+            var res= this.context.SaveChanges();
+            return Task.Run(() => res);
         }
 
         /// <summary>

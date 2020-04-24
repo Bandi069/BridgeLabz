@@ -22,8 +22,8 @@ C:\Users\Bridge Labs\source\repos\Fundoo\Fundoo\obj\Debug\netcoreapp2.1\Fundoo.c
 C:\Users\Bridge Labs\source\repos\Fundoo\Fundoo\obj\Debug\netcoreapp2.1\Fundoo.dll
 C:\Users\Bridge Labs\source\repos\Fundoo\Fundoo\obj\Debug\netcoreapp2.1\Fundoo.pdb
 C:\Users\tree\Documents\GitHub\BridgeLabz\BridgeLabz\Fundoo\Fundoo\bin\Debug\netcoreapp2.1\appsettings.Development.json
-C:\Users\tree\Documents\GitHub\BridgeLabz\BridgeLabz\Fundoo\Fundoo\bin\Debug\netcoreapp2.1\Properties\launchSettings.json
 C:\Users\tree\Documents\GitHub\BridgeLabz\BridgeLabz\Fundoo\Fundoo\bin\Debug\netcoreapp2.1\appsettings.json
+C:\Users\tree\Documents\GitHub\BridgeLabz\BridgeLabz\Fundoo\Fundoo\bin\Debug\netcoreapp2.1\Properties\launchSettings.json
 C:\Users\tree\Documents\GitHub\BridgeLabz\BridgeLabz\Fundoo\Fundoo\bin\Debug\netcoreapp2.1\Fundoo.deps.json
 C:\Users\tree\Documents\GitHub\BridgeLabz\BridgeLabz\Fundoo\Fundoo\bin\Debug\netcoreapp2.1\Fundoo.runtimeconfig.json
 C:\Users\tree\Documents\GitHub\BridgeLabz\BridgeLabz\Fundoo\Fundoo\bin\Debug\netcoreapp2.1\Fundoo.runtimeconfig.dev.json
