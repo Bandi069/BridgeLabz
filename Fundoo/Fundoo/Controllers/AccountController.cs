@@ -39,9 +39,8 @@ namespace Fundoo.Controllers
         {
             try
             {
-
                 var result =  this.accountManager.Registration(registrationModel);
-                    return this.Ok(result);
+                return this.Ok(result);
             }
             catch(Exception e)
             {
