@@ -36,14 +36,17 @@ namespace Repository.Migrations
 
             modelBuilder.Entity("Model.Label.LabelModel", b =>
                 {
-                    b.Property<string>("Emailid")
-                        .ValueGeneratedOnAdd();
+                    b.Property<int>("LabelID")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Email");
 
                     b.Property<string>("Label");
 
-                    b.Property<int>("LabelID");
+                    b.Property<int>("NoteId");
 
-                    b.HasKey("Emailid");
+                    b.HasKey("LabelID");
 
                     b.ToTable("Label");
                 });
@@ -60,17 +63,19 @@ namespace Repository.Migrations
 
                     b.Property<bool>("Archive");
 
-                    b.Property<DateTime?>("CreateTime");
+                    b.Property<DateTime?>("Date");
 
                     b.Property<string>("Description");
 
-                    b.Property<string>("Emailid");
+                    b.Property<string>("Email");
+
+                    b.Property<DateTime?>("ModifiedDate");
 
                     b.Property<DateTime?>("ModifiedTime");
 
                     b.Property<bool>("PinNote");
 
-                    b.Property<string>("Remainder");
+                    b.Property<string>("Reminder");
 
                     b.Property<string>("Title");
 
@@ -83,10 +88,10 @@ namespace Repository.Migrations
 
             modelBuilder.Entity("Model.UserModel.RegistrationModel", b =>
                 {
-                    b.Property<string>("Emailid")
+                    b.Property<string>("Email")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("FirtsName")
+                    b.Property<string>("FirstName")
                         .IsRequired();
 
                     b.Property<string>("LastName")
@@ -96,7 +101,7 @@ namespace Repository.Migrations
                         .IsRequired()
                         .HasMaxLength(20);
 
-                    b.HasKey("Emailid");
+                    b.HasKey("Email");
 
                     b.ToTable("Register");
                 });

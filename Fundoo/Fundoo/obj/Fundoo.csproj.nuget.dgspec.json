@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\tree\\Documents\\GitHub\\BridgeLabz\\BridgeLabz\\Fundoo\\Fundoo\\Fundoo.csproj": {}
+    "C:\\Users\\Bandi\\Documents\\GitHub\\BridgeLabz\\Fundoo\\Fundoo\\Fundoo.csproj": {}
   },
   "projects": {
-    "C:\\Users\\tree\\Documents\\GitHub\\BridgeLabz\\BridgeLabz\\Fundoo\\Fundoo\\Fundoo.csproj": {
+    "C:\\Users\\Bandi\\Documents\\GitHub\\BridgeLabz\\Fundoo\\Fundoo\\Fundoo.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\tree\\Documents\\GitHub\\BridgeLabz\\BridgeLabz\\Fundoo\\Fundoo\\Fundoo.csproj",
+        "projectUniqueName": "C:\\Users\\Bandi\\Documents\\GitHub\\BridgeLabz\\Fundoo\\Fundoo\\Fundoo.csproj",
         "projectName": "Fundoo",
-        "projectPath": "C:\\Users\\tree\\Documents\\GitHub\\BridgeLabz\\BridgeLabz\\Fundoo\\Fundoo\\Fundoo.csproj",
-        "packagesPath": "C:\\Users\\tree\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\tree\\Documents\\GitHub\\BridgeLabz\\BridgeLabz\\Fundoo\\Fundoo\\obj\\",
+        "projectPath": "C:\\Users\\Bandi\\Documents\\GitHub\\BridgeLabz\\Fundoo\\Fundoo\\Fundoo.csproj",
+        "packagesPath": "C:\\Users\\Bandi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Bandi\\Documents\\GitHub\\BridgeLabz\\Fundoo\\Fundoo\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\tree\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Bandi\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -27,11 +27,11 @@
         "frameworks": {
           "netcoreapp2.1": {
             "projectReferences": {
-              "C:\\Users\\tree\\Documents\\GitHub\\BridgeLabz\\BridgeLabz\\Fundoo\\Manager\\Manager.csproj": {
-                "projectPath": "C:\\Users\\tree\\Documents\\GitHub\\BridgeLabz\\BridgeLabz\\Fundoo\\Manager\\Manager.csproj"
+              "C:\\Users\\Bandi\\Documents\\GitHub\\BridgeLabz\\Fundoo\\Manager\\Manager.csproj": {
+                "projectPath": "C:\\Users\\Bandi\\Documents\\GitHub\\BridgeLabz\\Fundoo\\Manager\\Manager.csproj"
               },
-              "C:\\Users\\tree\\Documents\\GitHub\\BridgeLabz\\BridgeLabz\\Fundoo\\Repository\\Repository.csproj": {
-                "projectPath": "C:\\Users\\tree\\Documents\\GitHub\\BridgeLabz\\BridgeLabz\\Fundoo\\Repository\\Repository.csproj"
+              "C:\\Users\\Bandi\\Documents\\GitHub\\BridgeLabz\\Fundoo\\Repository\\Repository.csproj": {
+                "projectPath": "C:\\Users\\Bandi\\Documents\\GitHub\\BridgeLabz\\Fundoo\\Repository\\Repository.csproj"
               }
             }
           }
@@ -70,6 +70,10 @@
               "target": "Package",
               "version": "[3.12.0, )"
             },
+            "StackExchange.Redis": {
+              "target": "Package",
+              "version": "[2.0.601, )"
+            },
             "Swashbuckle.AspNetCore.Filters": {
               "target": "Package",
               "version": "[4.0.1, )"
@@ -105,21 +109,21 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\tree\\Documents\\GitHub\\BridgeLabz\\BridgeLabz\\Fundoo\\Manager\\Manager.csproj": {
+    "C:\\Users\\Bandi\\Documents\\GitHub\\BridgeLabz\\Fundoo\\Manager\\Manager.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\tree\\Documents\\GitHub\\BridgeLabz\\BridgeLabz\\Fundoo\\Manager\\Manager.csproj",
+        "projectUniqueName": "C:\\Users\\Bandi\\Documents\\GitHub\\BridgeLabz\\Fundoo\\Manager\\Manager.csproj",
         "projectName": "Manager",
-        "projectPath": "C:\\Users\\tree\\Documents\\GitHub\\BridgeLabz\\BridgeLabz\\Fundoo\\Manager\\Manager.csproj",
-        "packagesPath": "C:\\Users\\tree\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\tree\\Documents\\GitHub\\BridgeLabz\\BridgeLabz\\Fundoo\\Manager\\obj\\",
+        "projectPath": "C:\\Users\\Bandi\\Documents\\GitHub\\BridgeLabz\\Fundoo\\Manager\\Manager.csproj",
+        "packagesPath": "C:\\Users\\Bandi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Bandi\\Documents\\GitHub\\BridgeLabz\\Fundoo\\Manager\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\tree\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Bandi\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -132,11 +136,11 @@
         "frameworks": {
           "netcoreapp2.1": {
             "projectReferences": {
-              "C:\\Users\\tree\\Documents\\GitHub\\BridgeLabz\\BridgeLabz\\Fundoo\\Model\\Model.csproj": {
-                "projectPath": "C:\\Users\\tree\\Documents\\GitHub\\BridgeLabz\\BridgeLabz\\Fundoo\\Model\\Model.csproj"
+              "C:\\Users\\Bandi\\Documents\\GitHub\\BridgeLabz\\Fundoo\\Model\\Model.csproj": {
+                "projectPath": "C:\\Users\\Bandi\\Documents\\GitHub\\BridgeLabz\\Fundoo\\Model\\Model.csproj"
               },
-              "C:\\Users\\tree\\Documents\\GitHub\\BridgeLabz\\BridgeLabz\\Fundoo\\Repository\\Repository.csproj": {
-                "projectPath": "C:\\Users\\tree\\Documents\\GitHub\\BridgeLabz\\BridgeLabz\\Fundoo\\Repository\\Repository.csproj"
+              "C:\\Users\\Bandi\\Documents\\GitHub\\BridgeLabz\\Fundoo\\Repository\\Repository.csproj": {
+                "projectPath": "C:\\Users\\Bandi\\Documents\\GitHub\\BridgeLabz\\Fundoo\\Repository\\Repository.csproj"
               }
             }
           }
@@ -179,21 +183,21 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\tree\\Documents\\GitHub\\BridgeLabz\\BridgeLabz\\Fundoo\\Model\\Model.csproj": {
+    "C:\\Users\\Bandi\\Documents\\GitHub\\BridgeLabz\\Fundoo\\Model\\Model.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\tree\\Documents\\GitHub\\BridgeLabz\\BridgeLabz\\Fundoo\\Model\\Model.csproj",
+        "projectUniqueName": "C:\\Users\\Bandi\\Documents\\GitHub\\BridgeLabz\\Fundoo\\Model\\Model.csproj",
         "projectName": "Model",
-        "projectPath": "C:\\Users\\tree\\Documents\\GitHub\\BridgeLabz\\BridgeLabz\\Fundoo\\Model\\Model.csproj",
-        "packagesPath": "C:\\Users\\tree\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\tree\\Documents\\GitHub\\BridgeLabz\\BridgeLabz\\Fundoo\\Model\\obj\\",
+        "projectPath": "C:\\Users\\Bandi\\Documents\\GitHub\\BridgeLabz\\Fundoo\\Model\\Model.csproj",
+        "packagesPath": "C:\\Users\\Bandi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Bandi\\Documents\\GitHub\\BridgeLabz\\Fundoo\\Model\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\tree\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Bandi\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -246,21 +250,21 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\tree\\Documents\\GitHub\\BridgeLabz\\BridgeLabz\\Fundoo\\Repository\\Repository.csproj": {
+    "C:\\Users\\Bandi\\Documents\\GitHub\\BridgeLabz\\Fundoo\\Repository\\Repository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\tree\\Documents\\GitHub\\BridgeLabz\\BridgeLabz\\Fundoo\\Repository\\Repository.csproj",
+        "projectUniqueName": "C:\\Users\\Bandi\\Documents\\GitHub\\BridgeLabz\\Fundoo\\Repository\\Repository.csproj",
         "projectName": "Repository",
-        "projectPath": "C:\\Users\\tree\\Documents\\GitHub\\BridgeLabz\\BridgeLabz\\Fundoo\\Repository\\Repository.csproj",
-        "packagesPath": "C:\\Users\\tree\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\tree\\Documents\\GitHub\\BridgeLabz\\BridgeLabz\\Fundoo\\Repository\\obj\\",
+        "projectPath": "C:\\Users\\Bandi\\Documents\\GitHub\\BridgeLabz\\Fundoo\\Repository\\Repository.csproj",
+        "packagesPath": "C:\\Users\\Bandi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Bandi\\Documents\\GitHub\\BridgeLabz\\Fundoo\\Repository\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\tree\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Bandi\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -273,8 +277,8 @@
         "frameworks": {
           "netcoreapp2.1": {
             "projectReferences": {
-              "C:\\Users\\tree\\Documents\\GitHub\\BridgeLabz\\BridgeLabz\\Fundoo\\Model\\Model.csproj": {
-                "projectPath": "C:\\Users\\tree\\Documents\\GitHub\\BridgeLabz\\BridgeLabz\\Fundoo\\Model\\Model.csproj"
+              "C:\\Users\\Bandi\\Documents\\GitHub\\BridgeLabz\\Fundoo\\Model\\Model.csproj": {
+                "projectPath": "C:\\Users\\Bandi\\Documents\\GitHub\\BridgeLabz\\Fundoo\\Model\\Model.csproj"
               }
             }
           }
@@ -345,7 +349,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
         }
       }
     }

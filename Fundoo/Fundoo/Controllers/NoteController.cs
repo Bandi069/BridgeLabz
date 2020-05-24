@@ -10,7 +10,7 @@ using Model.NoteModel;
 
 namespace Fundoo.Controllers
 {
-    [Authorize]
+    //[Authorize]
     /// <summary>
     /// Note Controller Class
     /// </summary>
@@ -36,12 +36,12 @@ namespace Fundoo.Controllers
         /// <param name="noteModel">The note model.</param>
         /// <returns></returns>
         [HttpPost]
-        [Route("addnote")]
-        public async Task<IActionResult> AddNote(Notemodel noteModel)
+        [Route("addnotes")]
+        public IActionResult AddNote([FromBody]Notemodel noteModel)
         {
             try
             {
-                var add = await this.noteManager.AddNote(noteModel);
+                  var add =  this.noteManager.AddNote(noteModel);
                 return this.Ok(add);
             }
             catch (Exception e)
@@ -57,11 +57,11 @@ namespace Fundoo.Controllers
         /// <returns></returns>
         [HttpDelete]
         [Route("deletenote")]
-        public async Task<IActionResult> DeleteNote(int Noteid)
+        public IActionResult DeleteNote(int Noteid)
         {
             try
             {
-                var delete = await this.noteManager.DeleteNote(Noteid);
+                var delete =  this.noteManager.DeleteNote(Noteid);
                 return this.Ok(delete);
             }
             catch (Exception e)
@@ -76,11 +76,11 @@ namespace Fundoo.Controllers
         /// <returns></returns>
         [HttpPost]
         [Route("updatenote")]
-        public async Task<IActionResult> UpdateNote(Notemodel noteModel)
+        public  IActionResult UpdateNote(Notemodel noteModel)
         {
             try
             {
-                var update = await this.noteManager.UpdateNote(noteModel);
+                var update =  this.noteManager.UpdateNote(noteModel);
                 return this.Ok(update);
             }
             catch (Exception e)
@@ -100,6 +100,14 @@ namespace Fundoo.Controllers
         {
             return this.noteManager.GetNote(Noteid);
         }
+        [HttpGet]
+        [Route("getnote")]
+        public List<Notemodel> Getnote()
+        {
+            
+            return this.noteManager.Getallnote();
+        }
+
         /// <summary>
         /// Trashes the specified noteid.
         /// </summary>

@@ -4,6 +4,7 @@ using Repository.IRepository;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Manager.Manager
 {
@@ -90,16 +91,28 @@ namespace Manager.Manager
         /// </summary>
         /// <param name="labelModel"></param>
         /// <returns></returns>
-        public string UpdateLabel(LabelModel labelModel)
+        public string UpdateLabel(int noteid,string name)
         {
             try
             {
-                var update = this.labelRepository.UpdateLabel(labelModel);
+                var update = this.labelRepository.UpdateLabel(noteid,name);
                 return update;
             }
             catch(Exception e)
             {
                 throw new Exception(e.Message);
+            }
+        }
+        public async Task<List<LabelModel>> GetAllLabels()
+        {
+            try
+            {
+
+                return await this.labelRepository.GetAllLabels();
+            }
+            catch (Exception exception)
+            {
+                throw new Exception(exception.Message);
             }
         }
     }

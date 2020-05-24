@@ -17,25 +17,26 @@ namespace Repository.IRepository
         /// </summary>
         /// <param name="noteModel">The note model.</param>
         /// <returns></returns>
-        Task<string> AddNote(Notemodel noteModel);
+        string AddNote(Notemodel noteModel);
         /// <summary>
         /// Deletes the note.
         /// </summary>
         /// <param name="NoteID">The note identifier.</param>
         /// <returns></returns>
-        Task<int> DeleteNote(int NoteID);
+        string DeleteNote(int NoteID);
         /// <summary>
         /// Updates the note.
         /// </summary>
         /// <param name="notemodel">The notemodel.</param>
         /// <returns></returns>
-        Task<string> UpdateNote(Notemodel notemodel);
+        string UpdateNote(Notemodel notemodel);
         /// <summary>
         /// Gets the note.
         /// </summary>
         /// <param name="NoteID">The note identifier.</param>
         /// <returns></returns>
         List<Notemodel> GetNote(int NoteID);
+        List<Notemodel> Getallnote();
         /// <summary>
         /// Trashes the specified noteid.
         /// </summary>
@@ -71,6 +72,7 @@ namespace Repository.IRepository
         /// <param name="NoteId">The note identifier.</param>
         /// <returns></returns>
         int Remainder(int NoteId);
+        int DeleteReminder(int id);
         /// <summary>
         /// Archieves the specified note identifier.
         /// </summary>

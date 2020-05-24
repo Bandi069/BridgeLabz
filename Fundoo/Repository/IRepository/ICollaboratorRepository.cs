@@ -16,13 +16,13 @@ namespace Repository.CollaboratorRepository
         /// </summary>
         /// <param name="modelCollaborator"></param>
         /// <returns></returns>
-        Task AddCollaborator(ModelCollaborator modelCollaborator);
+        string AddCollaborator(ModelCollaborator modelCollaborator);
         /// <summary>
         /// This is Delete Collaborator Task
         /// </summary>
         /// <param name="modelCollaborator"></param>
         /// <returns></returns>
-        Task DeleteCollaborator(ModelCollaborator modelCollaborator);
+        string DeleteCollaborator(int id);
        
     }
 }

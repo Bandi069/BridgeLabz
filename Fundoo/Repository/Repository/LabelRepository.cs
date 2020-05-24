@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Repository.Repository
 {
@@ -29,14 +30,23 @@ namespace Repository.Repository
         /// <returns></returns>
         public string AddLabel(LabelModel labelModel)
         {
-            LabelModel label = new LabelModel()
+            try
             {
-                Emailid= labelModel.Emailid,
-                Label= labelModel.Label
-            };
-            this.userContext.Label.Add(label);
-            this.userContext.SaveChanges();
-            return "Added";
+                LabelModel label = new LabelModel()
+                {
+                    LabelID = labelModel.LabelID,
+                    NoteId = labelModel.NoteId,
+                    Email = labelModel.Email,
+                    Label = labelModel.Label
+                };
+                this.userContext.Label.Add(label);
+                this.userContext.SaveChanges();
+                return "Label Added";
+            }
+            catch(Exception e )
+            {
+                throw new Exception(e.Message);
+            }
         }
         /// <summary>
         /// Deletes the label.
@@ -49,27 +59,32 @@ namespace Repository.Repository
             if (Deletelabel != null)
             {
                 this.userContext.Label.Remove(Deletelabel);
+
+                this.userContext.SaveChanges();
+                return "Deleted";
             }
-            this.userContext.SaveChanges();
-            return "Deleted";
+            else { return null; }
         }
         /// <summary>
         /// Updates the label.
         /// </summary>
         /// <param name="labelModel">The label model.</param>
         /// <returns></returns>
-        public string UpdateLabel(LabelModel labelModel)
+        public string UpdateLabel(int LabelID, string name)
         {
 
-            var update = this.userContext.Label.Where(up => up.LabelID == labelModel.LabelID).SingleOrDefault();
-            if(update!=null)
+            var update = this.userContext.Label.Where(up => up.LabelID == LabelID).SingleOrDefault();
+            if (update != null)
             {
-                update.Emailid = labelModel.Emailid;
-                update.Label = labelModel.Label;
+                  update.Label = name;
+                //  update.Email = labelModel.Email;
+               // update.Label = Label;
+
+                this.userContext.Label.Update(update);
+                this.userContext.SaveChanges();
+                return "Updated";
             }
-            this.userContext.Label.Update(update);
-            this.userContext.SaveChanges();
-            return "Updated";
+            else { return default; }
         }
         /// <summary>
         /// Gets the label models.
@@ -85,6 +100,10 @@ namespace Repository.Repository
             }
             return null;
         }
-
+        public async Task<List<LabelModel>> GetAllLabels()
+        {
+            await this.userContext.SaveChangesAsync();
+            return this.userContext.Label.ToList<LabelModel>();
+        }
     }
 }

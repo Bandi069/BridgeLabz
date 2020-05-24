@@ -32,9 +32,9 @@ namespace Manager.Manager
         /// </summary>
         /// <param name="registrationModel"></param>
         /// <returns></returns>
-        public async Task<bool> Registration(RegistrationModel registrationModel )
+        public async  Task<bool> Registration(RegistrationModel registrationModel )
         {
-            await this.repositoryuser.Registration(registrationModel);
+          await this.repositoryuser.Registration(registrationModel);
             return true;
         }
         /// <summary>
@@ -52,45 +52,27 @@ namespace Manager.Manager
         /// </summary>
         /// <param name="resetPassword"></param>
         /// <returns></returns>
-        public async Task<bool> ResetPassword(ResetPassword resetPassword)
+        public async Task<string> ResetPassword(ResetPassword resetPassword)
         {
-            await this.repositoryuser.ResetPassword(resetPassword);
-            return true;
+          return  await this.repositoryuser.ResetPassword(resetPassword);
         }
-        /// <summary>
-        /// This is async Task for CheckPassword
-        /// </summary>
-        /// <param name="email"></param>
-        /// <param name="password"></param>
-        /// <returns></returns>
-        //public bool CheckPassword(string email, string password)
-        //{
-        //    var checkobj=this.repositoryuser.CheckPassword(email, password);
-        //    if (checkobj != null)
-        //    {
-        //        return true;
-        //    }
-        //    else
-        //    {
-        //        return false;
-        //    }
-        //}
+        
         /// <summary>
         /// This is async task for ForgotPassword
         /// </summary>
         /// <param name="forgotPasswordModel"></param>
         /// <returns></returns>
-        public async Task<bool> ForgotPassword(ForgotPasswordModel forgotPasswordModel)
+        public async Task<string> ForgotPassword(ForgotPasswordModel forgotPasswordModel)
         {
-            await this.repositoryuser.ForgotPassword(forgotPasswordModel);
-            return true;
+            return await this.repositoryuser.ForgotPassword(forgotPasswordModel);
+             
         }
         /// <summary>
         /// This is task for Google Login
         /// </summary>
         /// <param name="loginModel"></param>
         /// <returns></returns>
-        public Task<bool> GoogleLogin(LoginModel loginModel)
+        public Task<string> GoogleLogin(LoginModel loginModel)
         {
             var result = this.repositoryuser.GoogleLogin(loginModel);
             return result;
@@ -100,7 +82,7 @@ namespace Manager.Manager
         /// </summary>
         /// <param name="loginModel"></param>
         /// <returns></returns>
-        public Task<bool> FacebookLogin(LoginModel loginModel)
+        public Task<string> FacebookLogin(LoginModel loginModel)
         {
             var result = this.repositoryuser.FacebookLogin(loginModel);
             return result;

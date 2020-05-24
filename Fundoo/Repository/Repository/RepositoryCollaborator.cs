@@ -30,14 +30,14 @@ namespace Repository.CollaboratorRepository
         /// </summary>
         /// <param name="modelCollaborator"></param>
         /// <returns></returns>
-        public Task AddCollaborator(ModelCollaborator modelCollaborator)
+        public string AddCollaborator(ModelCollaborator modelCollaborator)
         {
             try
             {
-                var add = this.userContext.Notemodels.Where(ad => ad.NoteID == modelCollaborator.NoteID && ad.Emailid == modelCollaborator.SenderMail).SingleOrDefault();
+                var add = this.userContext.Notemodels.Where(ad => ad.NoteID == modelCollaborator.NoteID && ad.Email == modelCollaborator.SenderMail).SingleOrDefault();
                 if (add != null)
                 {
-                    var adduser = this.userContext.Register.Where(ad => ad.Emailid == modelCollaborator.ReceiverMail).SingleOrDefault();
+                    var adduser = this.userContext.Register.Where(ad => ad.Email == modelCollaborator.ReceiverMail).SingleOrDefault();
                     {
                         var collaborate = new ModelCollaborator()
                         {
@@ -49,7 +49,8 @@ namespace Repository.CollaboratorRepository
                         userContext.SaveChanges();
                     }
                 }
-                return Task.Run(() => userContext.SaveChanges());
+                Task.Run(() => userContext.SaveChanges());
+                return "Collaborator Added Succcesfully";
             }
             catch (Exception e)
             {
@@ -61,19 +62,20 @@ namespace Repository.CollaboratorRepository
         /// </summary>
         /// <param name="modelCollaborator"></param>
         /// <returns></returns>
-        public Task DeleteCollaborator(ModelCollaborator modelCollaborator)
+        public string DeleteCollaborator(int NoteID)
         {
             try
             {
-                var delete = this.userContext.Notemodels.Where(del => del.NoteID == modelCollaborator.NoteID).SingleOrDefault();
+                var delete = this.userContext.Notemodels.Where(del => del.NoteID == NoteID).SingleOrDefault();
                 this.userContext.Notemodels.Remove(delete);
-                return Task.Run(() => userContext.SaveChanges());
+                Task.Run(() => userContext.SaveChanges());
+                return "Collaborator Deleted Succesfully";
             }
             catch (Exception ex)
             {
                 throw new Exception(ex.Message);
             }
         }
-       
+
     }
 }

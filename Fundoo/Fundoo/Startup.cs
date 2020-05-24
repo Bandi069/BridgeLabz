@@ -16,6 +16,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
+using Repository.CollaboratorRepository;
 using Repository.IRepository;
 using Repository.Repository;
 using Repository.UserDbContext;
@@ -49,41 +50,44 @@ namespace Fundoo
             //Configuration.Bind(key: nameof(Jwtsettings), Jwtsettings);
             //services.AddSingleton(Jwtsettings);
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddDbContextPool<UserContext>(options =>
+               options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddSingleton<UserContext>();
             services.AddTransient<IRepositoryuser, UserLogin>();
             services.AddTransient<IAccountManager, AccountManager>();
+            services.AddTransient<INoteRepository, NoteRepository>();
+            services.AddTransient<INoteManager, NoteManager>();
+            services.AddTransient<ILabelRepository, LabelRepository>();
+            services.AddTransient<ILabelManager, LabelManager>();
+            services.AddTransient<ICollaboratorRepository, RepositoryCollaborator>();
+            services.AddTransient<ICollaboratorManager, CollaboratorManager>();
             services.AddTransient<UserContext>();
-            services.AddDbContext<UserContext>(options => options.UseSqlServer(this.Configuration.GetConnectionString("DefaultConnection")));
-            var appSettingSection = this.Configuration.GetSection("AppSetting");
-            services.AddIdentity<IdentityUser, IdentityRole>()
-                .AddEntityFrameworkStores<UserContext>()
-                .AddDefaultTokenProviders();
+           
+            //var appSettingSection = this.Configuration.GetSection("AppSetting");
+            //services.AddIdentity<IdentityUser, IdentityRole>()
+            //    .AddEntityFrameworkStores<UserContext>()
+            //    .AddDefaultTokenProviders();
             services.Configure<DataProtectionTokenProviderOptions>(option => option.TokenLifespan = TimeSpan.FromHours(1));
 
             var secretKey = Configuration["Jwt:Key"];
             var symmerticKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey));
             // services.Configure<AppSetting>(appSettingSection);
-            services.AddAuthentication(configureOptions: con =>
+            services.AddAuthentication(con =>
             {
                 con.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-               // con.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+                // con.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
                 con.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-            })
-                .AddJwtBearer(conf =>
+            }).AddJwtBearer(conf =>
                 {
                     conf.SaveToken = true;
                     conf.TokenValidationParameters = new TokenValidationParameters
                     {
                         ValidateAudience = true,
-                        ValidateIssuerSigningKey = true,
-                      //  IssuerSigningKey =true,
-                        //new SymmetricSecurityKey(key: Encoding.ASCII.GetBytes("JwtSettings:Secret")),
                         ValidateIssuer = true,
-                       // ValidateAudience = false,
-                       
-                        //ValidateLifetime = true,
-                        ValidIssuer=Configuration["Jwt:_url"],
-                        ValidAudience=Configuration["Jwt:_url"],
-                        IssuerSigningKey=symmerticKey,
+                        ValidateIssuerSigningKey = true,
+                        ValidIssuer = Configuration["Jwt:url"],
+                        ValidAudience = Configuration["Jwt:url"],
+                        IssuerSigningKey = symmerticKey,
                         RequireExpirationTime = true
                     };
                 });
@@ -94,7 +98,10 @@ namespace Fundoo
                 builder.AllowAnyMethod();
                 //builder.WithOrigins("http://localhost:44349");
             }));
-            
+            //services.AddCors(c =>
+            //{
+            //    c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin());
+            //});
             services.AddSwaggerGen(con =>
             {
                 con.SwaggerDoc("v1", new Swashbuckle.AspNetCore.Swagger.Info
@@ -107,14 +114,14 @@ namespace Fundoo
                     Description = "jwt Authorization using header scheme",
                     Name = "Authorization",
                     In = "header",
-                    Type = "apikey",
+                    Type = "apiKey",
                 });
                 con.OperationFilter<SecurityRequirementsOperationFilter>();
             });
-            services.Configure<IISOptions>(options =>
-            {
-                options.AutomaticAuthentication = false;
-            });
+            //services.Configure<IISOptions>(options =>
+            //{
+            //    options.AutomaticAuthentication = false;
+            //});
         }
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
@@ -128,15 +135,15 @@ namespace Fundoo
             {
                 app.UseHsts();
             }
-            app.UseMvc();
-            app.UseHttpsRedirection();
+           
             app.UseAuthentication();
+            app.UseMvc();
             app.UseSwagger();
-          app.UseSwaggerUI(Con =>
-            {
-                Con.SwaggerEndpoint("/swagger/v1/swagger.json", "MyAPI v1");
-            });
-                   
+            app.UseSwaggerUI(Con =>
+              {
+                  Con.SwaggerEndpoint("/swagger/v1/swagger.json", "MyAPI v1");
+              });
+
         }
     }
 }

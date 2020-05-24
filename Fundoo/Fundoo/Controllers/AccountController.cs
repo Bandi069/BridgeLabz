@@ -35,12 +35,12 @@ namespace Fundoo.Controllers
         /// <returns></returns>
         [HttpPost]
         [Route("accountregistration")]
-        public IActionResult Registration([FromBody]RegistrationModel registrationModel)
+        public async Task<IActionResult> Registration([FromBody]RegistrationModel registrationModel)
         {
             try
             {
-                var result =  this.accountManager.Registration(registrationModel);
-                return this.Ok(result);
+                var result = await this.accountManager.Registration(registrationModel);
+                return this.Ok(new { result });
             }
             catch(Exception e)
             {
@@ -54,14 +54,19 @@ namespace Fundoo.Controllers
         /// <returns></returns>
         [HttpPost]
         [Route("accountlogin")]
-        public async Task<IActionResult> Login([FromBody]LoginModel loginModel)
+        public IActionResult NormalLogin(string email, string password)
         {
             try
             {
+                var loginModel = new LoginModel
+                {
+                    Email=email,
+                    Password=password
+                };
                 var result = this.accountManager.Login(loginModel);
                 if (result != null)
                 {
-                    return this.Ok(result);
+                    return this.Ok(new { result });
                 }
                 else
                 {
@@ -81,7 +86,7 @@ namespace Fundoo.Controllers
         /// <returns></returns>
         [HttpPut]
         [Route("resetpassword")]
-        public async Task<IActionResult> ResetPassword(ResetPassword resetPassword)
+        public async Task<IActionResult> ResetPassword([FromBody]ResetPassword resetPassword)
         {
             var result = this.accountManager.ResetPassword(resetPassword);
             if (result != null)
@@ -97,7 +102,7 @@ namespace Fundoo.Controllers
         /// <returns></returns>
         [HttpPut]
         [Route("forgotpassword")]
-        public async Task<IActionResult> ForgotPassword(ForgotPasswordModel forgotPasswordModel)
+        public async Task<IActionResult> ForgotPassword([FromBody]ForgotPasswordModel forgotPasswordModel)
         {
             var result = this.accountManager.ForgotPassword(forgotPasswordModel);
             if (result != null)

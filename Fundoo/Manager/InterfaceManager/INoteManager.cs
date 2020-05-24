@@ -17,19 +17,20 @@ namespace Manager.InterfaceManager
         /// </summary>
         /// <param name="noteModel"></param>
         /// <returns></returns>
-        Task<string> AddNote(Notemodel noteModel);
+        string AddNote(Notemodel noteModel);
         /// <summary>
         /// This is Delete Note Task
         /// </summary>
         /// <param name="NoteID"></param>
         /// <returns></returns>
-        Task<string> DeleteNote(int NoteID);
+        string DeleteNote(int NoteID);
+        List<Notemodel> Getallnote();
         /// <summary>
         /// This is Update Note Task
         /// </summary>
         /// <param name="noteModel"></param>
         /// <returns></returns>
-        Task<string> UpdateNote(Notemodel noteModel);
+        string UpdateNote(Notemodel noteModel);
         /// <summary>
         /// This is Get Note Task 
         /// </summary>
@@ -71,6 +72,7 @@ namespace Manager.InterfaceManager
         /// <param name="NoteId">The note identifier.</param>
         /// <returns></returns>
         string Remainder(int NoteId);
+        int DeleteRemainder(int id);
         /// <summary>
         /// Archieves the specified note identifier.
         /// </summary>

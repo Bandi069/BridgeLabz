@@ -40,7 +40,7 @@ namespace Fundoo.Controllers
             try
             {
                 var add = this.labelManager.AddLabel(labelModel);
-                return Ok(add);
+                return Ok(new { add });
             }
             catch (Exception e)
             {
@@ -59,7 +59,7 @@ namespace Fundoo.Controllers
             try
             {
                 var delete = this.labelManager.DeleteLabel(labelid);
-                return Ok(delete);
+                return Ok(new { delete });
             }
             catch (Exception e)
             {
@@ -73,12 +73,12 @@ namespace Fundoo.Controllers
         /// <returns></returns>
         [HttpDelete]
         [Route("updatelabel")]
-        public ActionResult UpdateLabel([FromBody]LabelModel labelModel)
+        public ActionResult UpdateLabel(int id,string name)
         {
             try
             {
-                var update = this.labelManager.UpdateLabel(labelModel);
-                return Ok(update);
+                var update = this.labelManager.UpdateLabel(id,name);
+                return Ok(new { update });
             }
             catch (Exception e)
             {
@@ -104,6 +104,12 @@ namespace Fundoo.Controllers
             {
                 throw new Exception(e.Message);
             }
+        }
+        [HttpGet]
+        [Route("api/getAllLabels")]
+        public async Task<List<LabelModel>> GetAllLables()
+        {
+            return await this.labelManager.GetAllLabels();
         }
 
     }

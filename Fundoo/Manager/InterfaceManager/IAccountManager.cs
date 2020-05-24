@@ -29,13 +29,13 @@ namespace Manager.InterfaceManager
         /// </summary>
         /// <param name="resetPassword"></param>
         /// <returns></returns>
-        Task<bool> ResetPassword(ResetPassword resetPassword);
+        Task<string> ResetPassword(ResetPassword resetPassword);
         /// <summary>
         /// This is for Forget Password
         /// </summary>
         /// <param name="forgotPasswordModel"></param>
         /// <returns></returns>
-        Task<bool> ForgotPassword(ForgotPasswordModel forgotPasswordModel);
+        Task<string> ForgotPassword(ForgotPasswordModel forgotPasswordModel);
         /// <summary>
         /// Checks the password
         /// </summary>
@@ -55,12 +55,12 @@ namespace Manager.InterfaceManager
         /// </summary>
         /// <param name="loginModel"></param>
         /// <returns></returns>
-        Task<bool> GoogleLogin(LoginModel loginModel);
+        Task<string> GoogleLogin(LoginModel loginModel);
         /// <summary>
         /// for Facebook Login
         /// </summary>
         /// <param name="loginModel"></param>
         /// <returns></returns>
-        Task<bool> FacebookLogin(LoginModel loginModel);
+        Task<string> FacebookLogin(LoginModel loginModel);
     }
 }

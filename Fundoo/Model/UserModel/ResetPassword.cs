@@ -15,7 +15,7 @@ namespace Model.UserModel
         /// <value>
         /// The emailid.
         /// </value>
-        public string Emailid { get; set; }
+        public string Email { get; set; }
         /// <summary>
         /// Gets or sets the password.
         /// </summary>

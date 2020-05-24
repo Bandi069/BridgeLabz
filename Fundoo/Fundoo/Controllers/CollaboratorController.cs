@@ -36,12 +36,12 @@ namespace Fundoo.Controllers
         /// <returns></returns>
         [HttpPost]
         [Route("addcollaborator")]
-        public async Task<IActionResult> AddCollaborator([FromBody]ModelCollaborator modelCollaborator)
+        public  IActionResult AddCollaborator([FromBody]ModelCollaborator modelCollaborator)
         {
             try
             {
-                var add = await this.collaboratorManager.AddCollaborator(modelCollaborator);
-                return Ok(add);
+                var add =  this.collaboratorManager.AddCollaborator(modelCollaborator);
+                return Ok(new { add });
             }
             catch (Exception e)
             {
@@ -55,12 +55,12 @@ namespace Fundoo.Controllers
         /// <returns></returns>
         [HttpDelete]
         [Route("deletecollaborator")]
-        public async Task<IActionResult> DeleteCollaborator([FromBody]ModelCollaborator modelCollaborator)
+        public  IActionResult DeleteCollaborator(int id)
         {
             try
             {
-                var Delete = await this.collaboratorManager.DeleteCollaborator(modelCollaborator);
-                return Ok(Delete);
+                var Delete =  this.collaboratorManager.DeleteCollaborator(id);
+                return Ok(new { Delete });
             }
             catch (Exception e)
             {

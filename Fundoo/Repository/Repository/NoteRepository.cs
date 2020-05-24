@@ -42,25 +42,31 @@ namespace Repository.Repository
         /// </summary>
         /// <param name="noteModel"></param>
         /// <returns></returns>
-        public async Task<string> AddNote(Notemodel noteModel)
+        public string AddNote(Notemodel noteModel)
         {
             Notemodel notemodel = new Notemodel()
             {
-                Emailid = noteModel.Emailid,
+                Email = noteModel.Email,
                 Title = noteModel.Title,
                 Description = noteModel.Description,
-                CreateTime = noteModel.CreateTime,
+                Date = noteModel.Date,
                 ModifiedTime = noteModel.ModifiedTime,
-                AddImg = null,
-                AddColor = null,
-                PinNote = false,
-                Remainder = null,
-                Archive = false,
-                Trash = false
+                AddImg = noteModel.AddImg,
+                AddColor = noteModel.AddColor,
+                PinNote = noteModel.PinNote,
+                Reminder = noteModel.Reminder,
+                Archive = noteModel.Archive,
+                Trash = noteModel.Trash
             };
-            userContext.Notemodels.Add(notemodel);
-            var a = await Task.Run(() => userContext.SaveChanges());
-            return null;
+            //if (noteModel.Title != " " || noteModel.Description != " ")
+            //{
+
+                userContext.Notemodels.Add(notemodel);
+                this.userContext.SaveChanges();
+                return "New Note Added";
+           // }
+           // else { return null; }
+
         }
 
         /// <summary>
@@ -68,15 +74,19 @@ namespace Repository.Repository
         /// </summary>
         /// <param name="Noteid"></param>
         /// <returns></returns>
-        public async Task<int> DeleteNote(int Noteid)
+        public string DeleteNote(int Noteid)
         {
             var deletenote = userContext.Notemodels.Where(del => del.NoteID == Noteid).SingleOrDefault();
             if (deletenote != null)
             {
                 userContext.Notemodels.Remove(deletenote);
-                await Task.Run(() => userContext.SaveChanges());
+                Task.Run(() => userContext.SaveChanges());
+                return "Note Deleted Successfully";
             }
-            return default;
+            else
+            {
+                return null;
+            }
         }
 
         /// <summary>
@@ -99,20 +109,25 @@ namespace Repository.Repository
         /// </summary>
         /// <param name="notemodel"></param>
         /// <returns></returns>
-        public async Task<string> UpdateNote(Notemodel notemodel)
+        public string UpdateNote(Notemodel notemodel)
         {
             var updatenote = userContext.Notemodels.Where(up => up.NoteID == notemodel.NoteID).SingleOrDefault();
             if (updatenote != null)
             {
-                updatenote.Emailid = notemodel.Emailid;
+                updatenote.Email = notemodel.Email;
                 updatenote.Description = notemodel.Description;
                 updatenote.Title = notemodel.Title;
-                updatenote.CreateTime = notemodel.CreateTime;
+                updatenote.Date = notemodel.Date;
                 updatenote.ModifiedTime = notemodel.ModifiedTime;
                 this.userContext.Notemodels.Update(notemodel);
+                Task.Run(() => userContext.SaveChanges());
+                return "Note Updated";
             }
-            await Task.Run(() => userContext.SaveChanges());
-            return null;
+            else
+            {
+                return null;
+
+            }
         }
 
         /// <summary>
@@ -250,7 +265,7 @@ namespace Repository.Repository
                 var remaind = this.userContext.Notemodels.Where(re => re.NoteID == NoteId).SingleOrDefault();
                 if (remaind != null)
                 {
-                    remaind.Remainder = remaind.ToString();
+                    remaind.Reminder = remaind.ToString();
                     return this.userContext.SaveChanges();
                 }
                 return 0;
@@ -260,6 +275,43 @@ namespace Repository.Repository
                 throw new Exception(e.Message);
             }
         }
+        public int DeleteReminder(int id)
+        {
+            try
+            {
+                if (this.FindById(id))
+                {
+                    var note = this.userContext.Notemodels.Where(op => op.NoteID == id).SingleOrDefault();
+                    var res = Task.Run(() => note.Reminder);
+                    if (res != null && !res.Equals(string.Empty))
+                    {
+                        note.Reminder = string.Empty;
+                        var result = this.userContext.SaveChanges();
+                        return result;
+                    }
+                    return 0;
+                }
+                return 0;
+            }
+            catch (Exception exception)
+            {
+                throw new Exception(exception.Message);
+            }
+        }
+
+        private bool FindById(int id)
+        {
+            var result = this.userContext.Notemodels.Where(option => option.NoteID == id).SingleOrDefault();
+            if (result != null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
 
         /// <summary>
         /// Archieves the specified note identifier.
@@ -274,7 +326,7 @@ namespace Repository.Repository
                 var arch = this.userContext.Notemodels.Where(ar => ar.NoteID == NoteId).SingleOrDefault();
                 if (arch != null)
                 {
-                    arch.Remainder = arch.ToString();
+                    arch.Reminder = arch.ToString();
                     return Task.Run(() => this.userContext.SaveChanges());
                 }
                 return null;
@@ -389,20 +441,24 @@ namespace Repository.Repository
         /// <exception cref="Exception"></exception>
         public Task AddColor(int Noteid, string addcolor)
         {
-            try
+
+            var color = this.userContext.Notemodels.Where(c => c.NoteID == Noteid).SingleOrDefault();
+            if (color != null)
             {
-                var color = this.userContext.Notemodels.Where(c => c.NoteID == Noteid).SingleOrDefault();
-                if (color != null)
+                if (addcolor != null)
                 {
                     color.AddColor = addcolor;
+                    this.userContext.Notemodels.Update(color);
                     return Task.Run(() => this.userContext.SaveChanges());
                 }
-                return null;
+
+                else
+                {
+                    return null;
+                }
             }
-            catch (Exception e)
-            {
-                throw new Exception(e.Message);
-            }
+            throw new Exception();
+
         }
 
         /// <summary>
@@ -436,6 +492,18 @@ namespace Repository.Repository
             {
                 throw new Exception(e.Message);
             }
+        }
+
+        public async Task<List<Notemodel>> GetAllNotes()
+        {
+            await this.userContext.SaveChangesAsync();
+            var notes = this.userContext.Notemodels.GroupBy(op => op.Email).Select(grp => grp.ToList()).ToList();
+            return this.userContext.Notemodels.ToList();
+        }
+
+        public List<Notemodel> Getallnote()
+        {
+            return this.userContext.Notemodels.ToList();
         }
     }
 }

@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Manager.InterfaceManager
 {
@@ -27,12 +28,13 @@ namespace Manager.InterfaceManager
         /// </summary>
         /// <param name="labelModel">The label model.</param>
         /// <returns></returns>
-        string UpdateLabel(LabelModel labelModel);
+        string UpdateLabel(int noteid,string name);
         /// <summary>
         /// Gets the label.
         /// </summary>
         /// <param name="LabelID">The label identifier.</param>
         /// <returns></returns>
         List<LabelModel> GetLabel(int LabelID);
+        Task<List<LabelModel>> GetAllLabels();
     }
 }

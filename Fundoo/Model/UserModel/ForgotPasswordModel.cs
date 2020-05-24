@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
 
 namespace Model.UserModel
@@ -9,12 +10,11 @@ namespace Model.UserModel
     /// </summary>
     public class ForgotPasswordModel
     {
-        /// <summary>
-        /// Gets or sets the emailid.
-        /// </summary>
-        /// <value>
-        /// The emailid.
-        /// </value>
-        public string Emailid { get; set; }
+        
+        private string email;
+        [EmailAddress]
+        public string Email { get => email; set => email = value; }
+
+        
     }
 }

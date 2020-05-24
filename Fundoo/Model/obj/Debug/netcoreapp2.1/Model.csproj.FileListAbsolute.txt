@@ -18,3 +18,15 @@ C:\Users\tree\Documents\GitHub\BridgeLabz\BridgeLabz\Fundoo\Model\obj\Debug\netc
 C:\Users\tree\Documents\GitHub\BridgeLabz\BridgeLabz\Fundoo\Model\obj\Debug\netcoreapp2.1\Model.AssemblyInfo.cs
 C:\Users\tree\Documents\GitHub\BridgeLabz\BridgeLabz\Fundoo\Model\obj\Debug\netcoreapp2.1\Model.dll
 C:\Users\tree\Documents\GitHub\BridgeLabz\BridgeLabz\Fundoo\Model\obj\Debug\netcoreapp2.1\Model.pdb
+C:\Users\Bandi\Documents\GitHub\BridgeLabz\Fundoo\Model\bin\Debug\netcoreapp2.1\Model.deps.json
+C:\Users\Bandi\Documents\GitHub\BridgeLabz\Fundoo\Model\bin\Debug\netcoreapp2.1\Model.runtimeconfig.json
+C:\Users\Bandi\Documents\GitHub\BridgeLabz\Fundoo\Model\bin\Debug\netcoreapp2.1\Model.runtimeconfig.dev.json
+C:\Users\Bandi\Documents\GitHub\BridgeLabz\Fundoo\Model\bin\Debug\netcoreapp2.1\Model.dll
+C:\Users\Bandi\Documents\GitHub\BridgeLabz\Fundoo\Model\bin\Debug\netcoreapp2.1\Model.pdb
+C:\Users\Bandi\Documents\GitHub\BridgeLabz\Fundoo\Model\obj\Debug\netcoreapp2.1\Model.csproj.CoreCompileInputs.cache
+C:\Users\Bandi\Documents\GitHub\BridgeLabz\Fundoo\Model\obj\Debug\netcoreapp2.1\Model.AssemblyInfoInputs.cache
+C:\Users\Bandi\Documents\GitHub\BridgeLabz\Fundoo\Model\obj\Debug\netcoreapp2.1\Model.AssemblyInfo.cs
+C:\Users\Bandi\Documents\GitHub\BridgeLabz\Fundoo\Model\obj\Debug\netcoreapp2.1\Model.dll
+C:\Users\Bandi\Documents\GitHub\BridgeLabz\Fundoo\Model\obj\Debug\netcoreapp2.1\Model.pdb
+C:\Users\Bandi\Documents\GitHub\BridgeLabz\Fundoo\Model\obj\Debug\netcoreapp2.1\Model.genruntimeconfig.cache
+C:\Users\Bandi\Documents\GitHub\BridgeLabz\Fundoo\Model\obj\Debug\netcoreapp2.1\Model.csprojAssemblyReference.cache

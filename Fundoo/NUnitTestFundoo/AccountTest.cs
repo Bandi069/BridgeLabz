@@ -25,7 +25,7 @@ namespace NUnitTestFundoo
             UserLogin loginobj = new UserLogin();
             LoginModel logmodel = new LoginModel
             {
-                Emailid = "bandivenu89@gmail.com",
+                Email = "bandivenu89@gmail.com",
                 Password = "132154"
             };
            
@@ -40,9 +40,9 @@ namespace NUnitTestFundoo
             UserLogin user = new UserLogin();
             RegistrationModel registrationobj = new RegistrationModel()
             {
-                FirtsName = "Venu",
+                FirstName = "Venu",
                 LastName = "Bandi",
-                Emailid = "bandivenu89@gmail.com",
+                Email = "bandivenu89@gmail.com",
                 Password = "321546"
             };
               Assert.Null(user.Registration(registrationobj));
@@ -56,7 +56,7 @@ namespace NUnitTestFundoo
             UserLogin user = new UserLogin();
             ForgotPasswordModel forgot = new ForgotPasswordModel
             {
-                Emailid= "bandivenu89@gmail.com",
+                Email= "bandivenu89@gmail.com",
             };
             Assert.IsNotNull(user.ForgotPassword(forgot));
         }
@@ -69,7 +69,7 @@ namespace NUnitTestFundoo
             UserLogin user = new UserLogin();
             ResetPassword reset = new ResetPassword()
             {
-                Emailid = "bandivenu89@gmail.com",
+                Email = "bandivenu89@gmail.com",
                 Password = "lasdh12"
             };
             Assert.IsNotNull(user.ResetPassword(reset));

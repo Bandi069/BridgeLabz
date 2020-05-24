@@ -20,15 +20,15 @@ namespace Model.UserModel
         /// <summary>
         /// This is private string variable firstname
         /// </summary>
-        private string firtsname;
+        private string firstName;
         /// <summary>
         /// This is private string variable Lastname
         /// </summary>
-        private string lastname;
+        private string lastName;
         /// <summary>
         /// This is private string variable emailid
         /// </summary>
-        private string emailid;
+        private string email;
         /// <summary>
         /// This is private string  variable Password
         /// </summary>
@@ -37,12 +37,12 @@ namespace Model.UserModel
         /// This is  FirstName Property
         /// </summary>
         [Required]
-        public string FirtsName { get => firtsname; set => firtsname = value; }
+        public string FirstName { get => firstName; set => firstName = value; }
         /// <summary>
         /// This is LastName Property
         /// </summary>
         [Required]
-        public string LastName { get => lastname; set => lastname = value; }
+        public string LastName { get => lastName; set => lastName = value; }
 
         /// <summary>
         /// This is Emailid Property
@@ -50,7 +50,7 @@ namespace Model.UserModel
         /// </summary>
         [Key]
         [Required]
-        public string Emailid { get => emailid; set => emailid = value; }
+        public string Email { get => email; set => email = value; }
         /// <summary>
         /// This is Password Property
         /// </summary>
@@ -59,6 +59,5 @@ namespace Model.UserModel
         [Display(Name = "Password")]
         [DataType(DataType.Password)]
         public string Password { get => password; set => password = value; }
-        
     }
 }

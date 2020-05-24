@@ -53,12 +53,12 @@ namespace Repository.IRepository
         /// </summary>
         /// <param name="loginModel">The login model.</param>
         /// <returns></returns>
-        Task<bool> GoogleLogin(LoginModel loginModel);
+        Task<string> GoogleLogin(LoginModel loginModel);
         /// <summary>
         /// Facebooks the login.
         /// </summary>
         /// <param name="loginModel">The login model.</param>
         /// <returns></returns>
-        Task<bool> FacebookLogin(LoginModel loginModel);
+        Task<string> FacebookLogin(LoginModel loginModel);
     }
 }

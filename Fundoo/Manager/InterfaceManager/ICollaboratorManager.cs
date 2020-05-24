@@ -16,12 +16,12 @@ namespace Manager.InterfaceManager
         /// </summary>
         /// <param name="modelCollaborator">The model collaborator.</param>
         /// <returns></returns>
-        Task<string> AddCollaborator(ModelCollaborator modelCollaborator);
+        string AddCollaborator(ModelCollaborator modelCollaborator);
         /// <summary>
         /// Deletes the collaborator.
         /// </summary>
         /// <param name="modelCollaborator">The model collaborator.</param>
         /// <returns></returns>
-        Task<string> DeleteCollaborator(ModelCollaborator modelCollaborator);
+       string DeleteCollaborator(int noteid);
     }
 }

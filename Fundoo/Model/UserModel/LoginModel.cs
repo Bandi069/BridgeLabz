@@ -10,28 +10,9 @@ namespace Model.UserModel
     /// </summary>
     public class LoginModel
     {
-        /// <summary>
-        /// The emailid
-        /// </summary>
-        private string emailid;
-        /// <summary>
-        /// The password
-        /// </summary>
-        private string password;
-        /// <summary>
-        /// Gets or sets the emailid.
-        /// </summary>
-        /// <value>
-        /// The emailid.
-        /// </value>
+
         [Key]
-        public string Emailid { get => emailid; set => emailid = value; }
-        /// <summary>
-        /// Gets or sets the password.
-        /// </summary>
-        /// <value>
-        /// The password.
-        /// </value>
-        public string Password { get => password; set => password = value; }
+        public string Email { get; set; }
+        public string Password { get; set; }
     }
 }

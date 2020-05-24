@@ -31,11 +31,11 @@ namespace Manager.Manager
         /// </summary>
         /// <param name="noteModel"></param>
         /// <returns></returns>
-        public async Task<string> AddNote(Notemodel noteModel)
+        public  string AddNote(Notemodel noteModel)
         {
             try
             {
-                await this.noteRepository.AddNote(noteModel);
+                 this.noteRepository.AddNote(noteModel);
                 return "Note Added";
             }
             catch (Exception e)
@@ -48,11 +48,11 @@ namespace Manager.Manager
         /// </summary>
         /// <param name="NoteID"></param>
         /// <returns></returns>
-        public async Task<string> DeleteNote(int NoteID)
+        public  string DeleteNote(int NoteID)
         {
             try
             {
-                await this.noteRepository.DeleteNote(NoteID);
+                 this.noteRepository.DeleteNote(NoteID);
                 return "Note Deleted";
             }
             catch (Exception e)
@@ -87,11 +87,11 @@ namespace Manager.Manager
         /// </summary>
         /// <param name="noteModel"></param>
         /// <returns></returns>
-        public async Task<string> UpdateNote(Notemodel noteModel)
+        public string UpdateNote(Notemodel noteModel)
         {
             try
             {
-                await this.noteRepository.UpdateNote(noteModel);
+                 this.noteRepository.UpdateNote(noteModel);
                 return "Note Updated";
             }
             catch (Exception e)
@@ -209,6 +209,18 @@ namespace Manager.Manager
             catch (Exception e)
             {
                 throw new Exception(e.Message);
+            }
+        }
+        public int DeleteRemainder(int id)
+        {
+            try
+            {
+                return this.noteRepository.DeleteReminder(id);
+
+            }
+            catch (Exception exception)
+            {
+                throw new Exception(exception.Message);
             }
         }
         /// <summary>
@@ -348,6 +360,11 @@ namespace Manager.Manager
             {
                 throw new Exception(e.Message);
             }
+        }
+
+        public List<Notemodel> Getallnote()
+        {
+            return this.noteRepository.Getallnote();
         }
     }
 }

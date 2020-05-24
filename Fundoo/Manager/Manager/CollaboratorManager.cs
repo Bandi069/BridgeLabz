@@ -32,12 +32,12 @@ namespace Manager.Manager
         /// <param name="modelCollaborator">The model collaborator.</param>
         /// <returns></returns>
         /// <exception cref="Exception"></exception>
-        public async Task<string> AddCollaborator(ModelCollaborator modelCollaborator)
+        public  string AddCollaborator(ModelCollaborator modelCollaborator)
         {
             try
             {
-                await this.collaboratorRepository.AddCollaborator(modelCollaborator);
-                return "Collaborator Added";
+               return  this.collaboratorRepository.AddCollaborator(modelCollaborator);
+                 
             }
             catch (Exception e)
             {
@@ -51,12 +51,12 @@ namespace Manager.Manager
         /// <param name="modelCollaborator">The model collaborator.</param>
         /// <returns></returns>
         /// <exception cref="Exception"></exception>
-        public async Task<string> DeleteCollaborator(ModelCollaborator modelCollaborator)
+        public string DeleteCollaborator(int noteid)
         {
             try
             {
-                await this.collaboratorRepository.DeleteCollaborator(modelCollaborator);
-                return "Collaborator Deleted";
+                return this.collaboratorRepository.DeleteCollaborator(noteid);
+                 
             }
             catch (Exception e)
             {

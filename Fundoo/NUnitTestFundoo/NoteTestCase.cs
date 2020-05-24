@@ -25,13 +25,13 @@ namespace NUnitTestFundoo
             Notemodel noteModel = new Notemodel()
             {
                 NoteID = 123,
-                Emailid = "bandivenu89@gmail.com",
+                Email = "bandivenu89@gmail.com",
                 Title = "title",
                 Description = "descrip",
                 Archive = true,
                 AddImg = "NewImage",
                 AddColor = "Red",
-                Remainder = "remaindeme",
+                Reminder = "remaindeme",
                 Trash = true,
                 PinNote = true,
             };
@@ -58,13 +58,13 @@ namespace NUnitTestFundoo
             Notemodel notemodel = new Notemodel()
             {
                 NoteID = 1245,
-                Emailid = "bandivenu89@gmail.com",
+                Email = "bandivenu89@gmail.com",
                 Title = "title",
                 Description = "descrip",
                 Archive = true,
                 AddImg = "NewImage",
                 AddColor = "Red",
-                Remainder = "remaindeme",
+                Reminder = "remaindeme",
                 Trash = true,
                 PinNote = true,
             };

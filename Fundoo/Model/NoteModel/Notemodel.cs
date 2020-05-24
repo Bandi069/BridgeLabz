@@ -37,7 +37,7 @@ namespace Model.NoteModel
         /// <summary>
         /// The remainder
         /// </summary>
-        private string remainder;
+        private string reminder;
         /// <summary>
         /// The add color
         /// </summary>
@@ -49,7 +49,10 @@ namespace Model.NoteModel
         /// <summary>
         /// The emailid
         /// </summary>
-        private string emailid;
+        private string email;
+        private DateTime? date;
+        private DateTime? modifiedDate;
+
         /// <summary>
         /// Gets or sets the note identifier.
         /// </summary>
@@ -58,13 +61,7 @@ namespace Model.NoteModel
         /// </value>
         [Key]
         public int NoteID { get => noteID; set => noteID = value; }
-        /// <summary>
-        /// Gets or sets the emailid.
-        /// </summary>
-        /// <value>
-        /// The emailid.
-        /// </value>
-        public string Emailid { get => emailid; set => emailid = value; }
+       
         /// <summary>
         /// Gets or sets the title.
         /// </summary>
@@ -79,13 +76,7 @@ namespace Model.NoteModel
         /// The description.
         /// </value>
         public string Description { get => description; set => description = value; }
-        /// <summary>
-        /// Gets or sets the archive.
-        /// </summary>
-        /// <value>
-        /// The archive.
-        /// </value>
-        public bool Archive { get; set; }
+        
         /// <summary>
         /// Gets or sets the add img.
         /// </summary>
@@ -93,13 +84,7 @@ namespace Model.NoteModel
         /// The add img.
         /// </value>
         public string AddImg { get => addImg; set => addImg = value; }
-        /// <summary>
-        /// Gets or sets the remainder.
-        /// </summary>
-        /// <value>
-        /// The remainder.
-        /// </value>
-        public string Remainder { get => remainder; set => remainder = value; }
+        
         /// <summary>
         /// Gets or sets the color of the add.
         /// </summary>
@@ -121,21 +106,12 @@ namespace Model.NoteModel
         ///   <c>true</c> if [pin note]; otherwise, <c>false</c>.
         /// </value>
         public bool PinNote { get => pinNote; set => pinNote = value; }
-
-        /// <summary>
-        /// Gets or sets the create time.
-        /// </summary>
-        /// <value>
-        /// The create time.
-        /// </value>
-        public DateTime? CreateTime { get; set; }
-        /// <summary>
-        /// Gets or sets the modified time.
-        /// </summary>
-        /// <value>
-        /// The modified time.
-        /// </value>
+        
         public DateTime? ModifiedTime { get; set; }
-
+        public DateTime? Date { get => date; set => date = value; }
+        public bool Archive { get => archive; set => archive = value; }
+        public string Email { get => email; set => email = value; }
+        public string Reminder { get => reminder; set => reminder = value; }
+        public DateTime? ModifiedDate { get => modifiedDate; set => modifiedDate = value; }
     }
 }
