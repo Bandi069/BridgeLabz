@@ -307,7 +307,7 @@ namespace Fundoo.Controllers
             try
             {
                 var color = await this.noteManager.AddColor(noteid, addcolor);
-                return this.Ok(color);
+                return Ok(color);
             }
             catch (Exception e)
             {

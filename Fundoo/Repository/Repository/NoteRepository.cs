@@ -61,11 +61,11 @@ namespace Repository.Repository
             //if (noteModel.Title != " " || noteModel.Description != " ")
             //{
 
-                userContext.Notemodels.Add(notemodel);
-                this.userContext.SaveChanges();
-                return "New Note Added";
-           // }
-           // else { return null; }
+            userContext.Notemodels.Add(notemodel);
+            this.userContext.SaveChanges();
+            return "New Note Added";
+            // }
+            // else { return null; }
 
         }
 
